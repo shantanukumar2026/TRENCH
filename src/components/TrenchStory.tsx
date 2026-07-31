@@ -129,11 +129,11 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
           <div className="bg-[#F0F7FF] border-2 border-blue-300 rounded-2xl p-8 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-blueprint-dense">
             <div className="lg:col-span-6 relative h-[360px] rounded-xl overflow-hidden shadow-md border border-blue-200">
               <img 
-                src={timelineEras[activeTimelineIdx].image} 
+                src={timelineEras[activeTimelineIdx].image || '/images/trench_shield.png'} 
                 alt={timelineEras[activeTimelineIdx].title} 
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80';
+                  e.currentTarget.src = '/images/trench_shield.png';
                 }}
                 className="w-full h-full object-cover"
               />

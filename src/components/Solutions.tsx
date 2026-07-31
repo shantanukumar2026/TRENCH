@@ -47,7 +47,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
                     alt={sol.title} 
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1000&q=80';
+                      e.currentTarget.src = '/images/trench_shield.png';
                     }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

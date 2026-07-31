@@ -43,7 +43,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                 alt={product.name} 
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80';
+                  e.currentTarget.src = '/images/trench_shield.png';
                 }}
                 className="w-full h-full object-cover"
               />

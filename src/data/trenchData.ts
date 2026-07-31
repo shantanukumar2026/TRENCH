@@ -260,7 +260,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy four-point lifting lugs rated for 24,000 lbs WLL',
       'Stackable design with heavy pin-lock sockets'
     ],
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80',
+    image: '/images/trench_shield.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -282,7 +282,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'High-velocity hydraulic inner channel surface',
       'Interlocking end caps and bottom outlet adapters'
     ],
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    image: '/images/drainage_channel.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -304,7 +304,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Hot-dip galvanized internal cable rack ladders',
       'Integrated butyl rubber gasketed joint seals'
     ],
-    image: 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80',
+    image: '/images/concrete_vault.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -326,7 +326,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Immune to electrochemical soil corrosion',
       'Factory chamfered spigot ends for easy push-on jointing'
     ],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    image: '/images/pvc_pipe.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -348,7 +348,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'High compressive resistance during concrete placement',
       'UV-stabilized weather-resistant formulation'
     ],
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80',
+    image: '/images/concrete_vault.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -370,7 +370,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy-duty dual-action hydraulic cylinders',
       'Includes safety lock pins and release hook assembly'
     ],
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    image: '/images/trench_shield.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -392,7 +392,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Pickhole design prevents debris accumulation',
       'Proof-loaded to 50,000 lbs minimum'
     ],
-    image: 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80',
+    image: '/images/drainage_channel.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   },
@@ -414,7 +414,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Lightweight construction reduces crane rental costs',
       '100-year structural design life rating'
     ],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    image: '/images/pvc_pipe.png',
     cadFileAvailable: true,
     specSheetUrl: '#'
   }
@@ -426,7 +426,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     title: 'MUNICIPAL WATER INFRASTRUCTURE',
     tagline: 'High-Pressure Potable Distribution & Main Replacements',
     description: 'Engineered water main pipe systems, valve vaults, and OSHA-compliant trench shields for major city utility modernizations.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/pvc_pipe.png',
     cadOverlay: 'ANSI/AWWA C900 • OSHA SUBPART P • H-20 RATED',
     recommendedProducts: ['TU-8000 Trench Shield', 'TU-C900 PVC Pressure Pipe', 'TU-Modular Access Vault'],
     specs: [
@@ -440,7 +440,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     title: 'UNDERGROUND POWER & TELECOM',
     tagline: 'High-Voltage Duct Banks & Structured Fiber Nodes',
     description: 'Precision duct spacers, concrete pull boxes, and non-conductive access risers designed to house critical electrical and fiber grids.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/concrete_vault.png',
     cadOverlay: 'NEMA TC-2 • IEEE 1234 • H-20 TRAFFIC',
     recommendedProducts: ['TU-SnapLock Duct Spacer', 'TU-Modular Concrete Access Vault', 'TU-IronClad 24 Cover'],
     specs: [
@@ -454,7 +454,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     title: 'ROAD & HIGHWAY INFRASTRUCTURE',
     tagline: 'Heavy Load Street Castings & Sub-Pavement Drainage',
     description: 'AASHTO M306 traffic-rated manhole castings, pre-sloped highway channels, and heavy culvert pipe assemblies built for high axle loads.',
-    image: 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/drainage_channel.png',
     cadOverlay: 'AASHTO M306 • FAA AC 150 • EN 1433 CLASS F',
     recommendedProducts: ['TU-IronClad 24 Cover', 'TU-HydroDrain 200 System', 'TU-MegaFlow HDPE Pipe'],
     specs: [
@@ -468,7 +468,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     title: 'STORMWATER & FLOOD CONTROL',
     tagline: 'High-Volume Retention Basins & Culvert Infrastructure',
     description: 'Large-bore corrugated HDPE pipe, storm retention boxes, and debris filtration grates engineered to mitigate urban flooding.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/trench_shield.png',
     cadOverlay: 'AASHTO M294 • ASTM F2306 • EPA PHASE II',
     recommendedProducts: ['TU-MegaFlow HDPE Pipe', 'TU-HydroDrain 200 System', 'TU-8000 Steel Shield'],
     specs: [
@@ -493,9 +493,9 @@ export const CASE_STUDY_DATA: CaseStudyData = {
   scale: '4,200 Linear Feet of Excavation',
   installationTime: '18 Days Ahead of Schedule',
   result: '100% OSHA Subpart P Compliance with Zero Crew Incidents',
-  beforeImg: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80',
-  duringImg: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-  afterImg: 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80',
+  beforeImg: '/images/trench_shield.png',
+  duringImg: '/images/drainage_channel.png',
+  afterImg: '/images/concrete_vault.png',
   metrics: [
     { label: 'TOTAL PIPE INSTALLED', value: '4,200 LF' },
     { label: 'EXCAVATION DEPTH', value: '18.5 FT Avg' },
