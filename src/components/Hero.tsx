@@ -95,10 +95,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
               onMouseLeave={() => setIsPhotoHovered(false)}
               className="relative h-[380px] sm:h-[480px] lg:h-[540px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#0085F4]/15 border-2 border-[#0085F4]/20 transition-all duration-700"
             >
-              {/* High-Quality Real Bright U.S. Underground Utility Construction Photograph */}
+              {/* High-Quality Real Bright Human-Free U.S. Underground Infrastructure Piping Photograph */}
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80"
-                alt="American Underground Trench Construction Project"
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80"
+                alt="American Underground Infrastructure Utility System"
                 className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
                   isPhotoHovered ? 'scale-[1.03]' : 'scale-100'
                 }`}
