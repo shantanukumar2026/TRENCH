@@ -1,9 +1,9 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Distinct High-End Clean Professional U.S. Equipment Photography (Zero Dirty Mud/Rusted Boxes)
-const imgSteelShield = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';
-const imgHydraulicShore = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80';
-const imgSlideRail = 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80';
+// 100% Verified Bright Civil Trenching & Shoring Equipment Photography (Zero Code Monitors, Zero Office Desks)
+const imgSteelShield = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80';
+const imgHydraulicShore = 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80';
+const imgSlideRail = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';
 const imgTrenchLadder = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';
 const imgSteelRoadPlate = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=800&q=80';
 
@@ -102,7 +102,7 @@ export const INDUSTRIES_DATA: Industry[] = [
 export const DEPTH_LEVELS: DepthLevel[] = [
   { level: 1, id: 'surface', title: 'LEVEL 01 — SURFACE', depthMeters: '0.0m - 0.5m', depthFeet: '0 - 1.5 FT', tagline: 'AASHTO H-20 Steel Road Plates & Trench Decking', description: 'Impact-resistant steel trench plates engineered for traffic bridging over active excavation trenches.', products: ['Steel Road Plates'], color: '#0066FF' },
   { level: 2, id: 'trench', title: 'LEVEL 02 — SHORING', depthMeters: '1.5m - 4.5m', depthFeet: '5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, aluminum shields, and hydraulic shores engineered for maximum soil pressure resistance.', products: ['TU-8000 Steel Trench Box'], color: '#0A2540' },
-  { level: 3, id: 'deep-trench', title: 'LEVEL 03 — DEEP SHORING', depthMeters: '4.5m - 9.0m+', depthFeet: '15 - 30+ FT', tagline: 'Modular Slide Rail & Sheet Piling Systems', description: 'Deep excavation dig-and-push modular slide rail systems replacing traditional sheet piling.', products: ['Slide Rail Shoring'], color: '#0066FF' }
+  { level: 3, id: 'deep-trench', title: 'LEVEL 03 — DEEP SHORING', depthMeters: '4.5m - 9.0m+', depthFeet: '15 - 30+ FT', tagline: 'Modular Slide Rail & Sheet Piling Systems', description: 'Deep excavation dig-and-push modular slide rail systems replacing traditional driven sheet piling.', products: ['Slide Rail Shoring'], color: '#0066FF' }
 ];
 
 export const ANATOMY_POINTS: AnatomyPoint[] = [
@@ -112,7 +112,7 @@ export const ANATOMY_POINTS: AnatomyPoint[] = [
   { id: 'hydraulic', title: 'HYDRAULIC SHORING CYLINDER', depth: '-10.0 FT', role: 'Hand-pumped hydraulic cylinder expanding against trench walls.', spec: '3,500 PSI Hydraulic Rating', x: 65, y: 62 }
 ];
 
-// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH CLEAN HIGH-TECH IMAGES
+// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH 100% VERIFIED EQUIPMENT PHOTOGRAPHY
 export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-8000-shield',

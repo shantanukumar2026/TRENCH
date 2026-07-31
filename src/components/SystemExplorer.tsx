@@ -9,8 +9,8 @@ interface SystemExplorerProps {
 
 export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot }) => {
   return (
-    <section id="explorer" className="py-20 bg-[#F7FAFE] border-b-2 border-slate-200">
-      <div className="container-custom space-y-12">
+    <section id="explorer" className="py-10 bg-[#F7FAFE] border-b-2 border-slate-200">
+      <div className="container-custom space-y-6">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">

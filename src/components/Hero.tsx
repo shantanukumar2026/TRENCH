@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
   ];
 
   return (
-    <section id="hero" className="relative pt-32 pb-12 bg-[#F7FAFE] overflow-hidden min-h-[760px] lg:min-h-[850px] flex flex-col justify-between border-b-2 border-[#0085F4]/20 selection:bg-[#0085F4] selection:text-white">
+    <section id="hero" className="relative pt-20 pb-6 bg-[#F7FAFE] overflow-hidden min-h-[640px] flex flex-col justify-between border-b-2 border-[#0085F4]/20 selection:bg-[#0085F4] selection:text-white">
       
       {/* Background Subtle 4-6% Blue Blueprint Grid & Soft Blue Radial Glow */}
       <div className="absolute inset-0 bg-blueprint-grid opacity-5 pointer-events-none"></div>

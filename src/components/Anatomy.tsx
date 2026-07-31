@@ -34,8 +34,8 @@ export const Anatomy: React.FC = () => {
   ];
 
   return (
-    <section id="anatomy" className="py-20 bg-white border-b-2 border-slate-200">
-      <div className="container-custom space-y-12">
+    <section id="anatomy" className="py-10 bg-white border-b-2 border-slate-200">
+      <div className="container-custom space-y-6">
         
         {/* Section Header — Neat & Clean Typography */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">

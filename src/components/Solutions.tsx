@@ -10,30 +10,29 @@ interface SolutionsProps {
 
 export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDocLink }) => {
   return (
-    <section id="solutions" className="py-24 bg-white border-b border-blue-200 relative">
-      <div className="container-custom">
+    <section id="solutions" className="py-10 bg-white border-b-2 border-slate-200 relative">
+      <div className="container-custom space-y-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F0F7FF] border border-blue-200">
-            <Layers className="w-3.5 h-3.5 text-[#C00000]" />
-            <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-              INFRASTRUCTURE SOLUTIONS MATRIX
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-            SOLUTIONS BY <span className="text-[#2166D1]">APPLICATION</span>
-          </h2>
-          <div className="flex justify-center items-center gap-2">
-            <span className="blue-accent-bar"></span>
-            <p className="text-[#163B66] font-medium text-base">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#F4F8FF] border border-[#0085F4]/30">
+              <Layers className="w-4 h-4 text-[#0085F4]" />
+              <span className="text-xs font-mono font-bold text-[#004AAD] uppercase tracking-widest">
+                INFRASTRUCTURE SOLUTIONS MATRIX
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
+              SOLUTIONS BY <span className="text-[#0085F4]">APPLICATION</span>
+            </h2>
+            <p className="text-sm text-[#475569] font-medium max-w-2xl">
               End-to-end engineered infrastructure packages optimized for contractors, municipalities, and utility authorities.
             </p>
           </div>
         </div>
 
         {/* Cinematic Horizontal Modules */}
-        <div className="space-y-12">
+        <div className="space-y-6">
           {SOLUTION_APPS.map((sol: SolutionApp, index: number) => {
             const isEven = index % 2 === 0;
             return (

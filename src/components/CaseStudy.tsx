@@ -17,125 +17,107 @@ export const CaseStudy: React.FC = () => {
   };
 
   return (
-    <section id="casestudy" className="py-24 bg-blueprint-dense border-b border-blue-200 relative overflow-hidden">
+    <section id="casestudy" className="py-10 bg-[#F8FAFC] border-b-2 border-slate-200 relative overflow-hidden">
       <div className="container-custom">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-blue-200 shadow-sm">
-            <FileCheck className="w-3.5 h-3.5 text-[#C00000]" />
-            <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-              FIELD ENGINEERING CASE STUDY
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-            PROJECT <span className="text-[#2166D1]">042</span>
-          </h2>
-          <div className="flex justify-center items-center gap-2">
-            <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6 mb-8">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm">
+              <FileCheck className="w-4 h-4 text-[#0085F4]" />
+              <span className="text-xs font-mono font-bold text-[#004AAD] uppercase tracking-widest">
+                FIELD ENGINEERING CASE STUDY
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
+              PROJECT <span className="text-[#0085F4]">042</span>
+            </h2>
+            <p className="text-sm text-[#475569] font-medium max-w-2xl">
               Municipal Utility Infrastructure Corridor Expansion — Real project performance metrics.
             </p>
           </div>
         </div>
 
         {/* Case Study Card */}
-        <div className="bg-white border-2 border-blue-300 rounded-xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div className="bg-white border-2 border-slate-200 overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 items-stretch">
           
-          {/* Left Column: Interactive Image Viewer with State Toggle */}
-          <div className="lg:col-span-7 relative min-h-[420px] bg-[#F0F7FF] flex flex-col justify-between p-6">
+          {/* Left Column: Interactive Image Viewer */}
+          <div className="lg:col-span-7 relative min-h-[380px] bg-[#F4F8FF] flex flex-col justify-between p-6">
             <img 
               src={getImageForTab()} 
               alt="Project 042 State" 
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/trench_shield.png';
-              }}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
             />
-            {/* Tonal Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0754AE]/85 via-transparent to-transparent"></div>
-
-            {/* Top State Selector Bar */}
-            <div className="relative z-10 flex justify-between items-center bg-white/90 backdrop-blur-md p-1.5 rounded-lg border border-blue-200">
-              <div className="text-xs font-mono font-bold text-[#0754AE] px-2 hidden sm:block">
-                EXCAVATION PHASE:
-              </div>
+            
+            {/* Top Phase Selector Strip */}
+            <div className="relative z-10 flex items-center justify-between bg-white/90 backdrop-blur-md p-2 border border-slate-200 font-mono text-xs">
+              <span className="font-bold text-[#004AAD]">EXCAVATION PHASE:</span>
               <div className="flex gap-1">
-                {[
-                  { id: 'before', label: '01 BEFORE SITE' },
-                  { id: 'during', label: '02 CONSTRUCTION' },
-                  { id: 'after', label: '03 COMPLETED' }
-                ].map((tab) => (
+                {(['before', 'during', 'after'] as const).map((tab, i) => (
                   <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-3 py-1.5 text-xs font-mono font-bold rounded transition-all uppercase ${
-                      activeTab === tab.id
-                        ? 'bg-[#C00000] text-white shadow'
-                        : 'text-[#0754AE] hover:bg-[#DBEAFE]'
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-3 py-1 font-bold text-xs uppercase transition-all ${
+                      activeTab === tab 
+                        ? 'bg-[#004AAD] text-white shadow-sm' 
+                        : 'bg-white text-[#004AAD] hover:bg-[#F4F8FF]'
                     }`}
                   >
-                    {tab.label}
+                    0{i + 1} {tab}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Bottom Floating Metadata */}
-            <div className="relative z-10 text-white space-y-1">
-              <div className="flex items-center gap-2 text-xs font-mono text-blue-200">
-                <MapPin className="w-3.5 h-3.5 text-[#C00000]" />
-                {CASE_STUDY_DATA.location}
+            {/* Bottom Floating Title */}
+            <div className="relative z-10 bg-white/95 backdrop-blur-md p-4 border border-slate-200 font-mono space-y-1">
+              <div className="flex items-center gap-1.5 text-xs text-[#0085F4] font-bold">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>{CASE_STUDY_DATA.location}</span>
               </div>
-              <h3 className="text-2xl font-bold font-heading uppercase">
+              <h3 className="text-base font-bold text-[#004AAD] uppercase font-heading">
                 {CASE_STUDY_DATA.title}
               </h3>
             </div>
           </div>
 
-          {/* Right Column: Measurable Data Strip */}
-          <div className="lg:col-span-5 p-8 bg-[#F0F7FF] flex flex-col justify-between space-y-6">
-            <div>
-              <span className="text-xs font-mono text-[#C00000] font-bold uppercase tracking-wider block mb-1">
-                APPLICATION & SCOPE
-              </span>
-              <p className="text-slate-800 font-bold text-base">
-                {CASE_STUDY_DATA.application}
-              </p>
+          {/* Right Column: Key Metrics & Data */}
+          <div className="lg:col-span-5 p-6 space-y-6 flex flex-col justify-between font-mono bg-white">
+            <div className="space-y-4">
+              <div>
+                <span className="text-xs font-bold text-[#D90429] uppercase tracking-wider block mb-1">APPLICATION &amp; SCOPE</span>
+                <h4 className="text-lg font-bold text-[#004AAD] font-heading">{CASE_STUDY_DATA.application}</h4>
+              </div>
 
-              {/* Verified Metrics Grid */}
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                {CASE_STUDY_DATA.metrics.map((m, mIdx) => (
-                  <div key={mIdx} className="bg-white p-3.5 rounded border border-blue-200 font-mono">
-                    <div className="text-[10px] text-slate-500 uppercase">{m.label}</div>
-                    <div className="text-lg font-extrabold text-[#0754AE] mt-0.5">{m.value}</div>
+              {/* 4 Performance Metrics */}
+              <div className="grid grid-cols-2 gap-3">
+                {CASE_STUDY_DATA.metrics.map((metric, i) => (
+                  <div key={i} className="p-3 bg-[#F8FAFC] border border-slate-200">
+                    <div className="text-[10px] text-slate-500 font-bold uppercase">{metric.label}</div>
+                    <div className="text-lg font-extrabold text-[#004AAD] mt-0.5">{metric.value}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Products Used */}
-              <div className="mt-6">
-                <span className="text-xs font-mono text-slate-500 font-bold uppercase block mb-2">
-                  PRODUCTS SUPPLIED FOR PROJECT:
-                </span>
-                <div className="space-y-1.5 font-mono text-xs text-slate-700">
-                  {CASE_STUDY_DATA.productsUsed.map((p, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#2166D1]" />
-                      {p}
-                    </div>
+              {/* Supplied Products List */}
+              <div className="space-y-2 pt-2">
+                <span className="text-xs font-bold text-[#004AAD] uppercase block">PRODUCTS SUPPLIED FOR PROJECT:</span>
+                <ul className="space-y-1.5 text-xs text-slate-700">
+                  {CASE_STUDY_DATA.productsUsed.map((prod, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#0085F4] shrink-0" />
+                      <span>{prod}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
 
-            {/* Bottom Result Highlight */}
-            <div className="p-4 bg-white rounded border-l-4 border-[#C00000] font-mono text-xs space-y-1 shadow-sm">
-              <div className="text-[#C00000] font-bold">PROJECT RESULT:</div>
-              <div className="text-[#0754AE] font-bold">{CASE_STUDY_DATA.result}</div>
+            {/* Bottom Result Box */}
+            <div className="p-4 bg-[#F4F8FF] border-l-4 border-l-[#0085F4] border border-slate-200 space-y-1">
+              <span className="text-[10px] font-bold text-[#D90429] uppercase">PROJECT RESULT:</span>
+              <p className="text-xs font-bold text-[#004AAD]">{CASE_STUDY_DATA.result}</p>
             </div>
-
           </div>
 
         </div>
