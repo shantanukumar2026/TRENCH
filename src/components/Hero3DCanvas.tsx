@@ -1,412 +1,476 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Layers, RotateCcw, Play, CheckCircle2, ChevronRight } from 'lucide-react';
 
-export const Hero3DCanvas: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [activeLayerInfo, setActiveLayerInfo] = useState<string>('TRENCH SHORING BOX — TU-8000 (OSHA SUBPART P COMPLIANT)');
+interface Hero3DCanvasProps {
+  onHoverHotspot?: (id: number | null) => void;
+}
 
+export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
+  const [viewMode, setViewMode] = useState<'system' | 'exploded' | 'installation'>('system');
+  const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
+  const [installStep, setInstallStep] = useState<number>(1);
+  const [isPlayingInstall, setIsPlayingInstall] = useState<boolean>(false);
+
+  // Auto-play construction sequence in INSTALLATION mode
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.parentElement?.clientWidth || 800);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || 580);
-
-    const handleResize = () => {
-      if (!canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.clientWidth;
-      height = canvas.height = canvas.parentElement.clientHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Fluid flow particles inside the C900 water pipe
-    const particles: { x: number; y: number; speed: number; radius: number; alpha: number }[] = [];
-    for (let i = 0; i < 40; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: 0,
-        speed: 1.8 + Math.random() * 2.2,
-        radius: 2 + Math.random() * 2,
-        alpha: 0.4 + Math.random() * 0.5
-      });
+    let timer: NodeJS.Timeout;
+    if (viewMode === 'installation' && isPlayingInstall) {
+      timer = setInterval(() => {
+        setInstallStep((prev) => (prev >= 7 ? 1 : prev + 1));
+      }, 1600);
     }
+    return () => clearInterval(timer);
+  }, [viewMode, isPlayingInstall]);
 
-    let pulse = 0;
+  const hotspots = [
+    {
+      id: 1,
+      number: '01',
+      title: 'TRENCH SHIELD',
+      subtitle: 'Worker protection system',
+      x: 34,
+      y: 46,
+      modeY: viewMode === 'exploded' ? 38 : 46
+    },
+    {
+      id: 2,
+      number: '02',
+      title: 'PIPE SYSTEM',
+      subtitle: 'Underground water / sewer infrastructure',
+      x: 52,
+      y: 68,
+      modeY: viewMode === 'exploded' ? 76 : 68
+    },
+    {
+      id: 3,
+      number: '03',
+      title: 'UTILITY BEDDING',
+      subtitle: 'Engineered pipe support',
+      x: 52,
+      y: 84,
+      modeY: viewMode === 'exploded' ? 90 : 84
+    },
+    {
+      id: 4,
+      number: '04',
+      title: 'EXCAVATION ZONE',
+      subtitle: 'Controlled underground workspace',
+      x: 20,
+      y: 62,
+      modeY: 62
+    },
+    {
+      id: 5,
+      number: '05',
+      title: 'ROAD SURFACE',
+      subtitle: 'Surface infrastructure',
+      x: 75,
+      y: 16,
+      modeY: viewMode === 'exploded' ? 10 : 16
+    }
+  ];
 
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      pulse += 0.03;
-
-      // Dynamic tilt based on cursor
-      const tiltX = (mousePos.x / width - 0.5) * 12;
-      const tiltY = (mousePos.y / height - 0.5) * 8;
-
-      // Safety bounds for content drawing (avoid top header bar and bottom spec bar)
-      const topBoundary = 56;
-      const bottomBoundary = height - 68;
-      const usableHeight = bottomBoundary - topBoundary;
-
-      // ────── 1. BACKGROUND BLUEPRINT & STRATA GRADIENT ──────
-      const bgGradient = ctx.createLinearGradient(0, topBoundary, 0, bottomBoundary);
-      bgGradient.addColorStop(0, '#FFFFFF');
-      bgGradient.addColorStop(0.25, '#F0F7FF');
-      bgGradient.addColorStop(0.65, '#E2EAF8');
-      bgGradient.addColorStop(1, '#D0DFEE');
-      ctx.fillStyle = bgGradient;
-      ctx.fillRect(0, topBoundary, width, usableHeight);
-
-      // Blueprint Mesh Grid
-      ctx.strokeStyle = 'rgba(33, 102, 209, 0.06)';
-      ctx.lineWidth = 1;
-      const gridSize = 28;
-      for (let x = 0; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, topBoundary);
-        ctx.lineTo(x, bottomBoundary);
-        ctx.stroke();
-      }
-      for (let y = topBoundary; y < bottomBoundary; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
-      // ────── 2. SURFACE ROAD GRADE (AASHTO H-20 TRAFFIC DECK) ──────
-      const roadTop = topBoundary + 10;
-      const roadHeight = 44;
-
-      ctx.fillStyle = '#0754AE';
-      ctx.fillRect(0, roadTop, width, roadHeight);
-
-      // Asphalt texture stripe
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-      ctx.lineWidth = 1;
-      for (let x = 0; x < width; x += 16) {
-        ctx.beginPath();
-        ctx.moveTo(x, roadTop);
-        ctx.lineTo(x + 8, roadTop + roadHeight);
-        ctx.stroke();
-      }
-
-      // Yellow Centerline Dashes
-      ctx.strokeStyle = '#FFD700';
-      ctx.lineWidth = 3;
-      ctx.setLineDash([18, 14]);
-      ctx.beginPath();
-      ctx.moveTo(0, roadTop + roadHeight / 2);
-      ctx.lineTo(width, roadTop + roadHeight / 2);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Surface Grade Elevation Marker
-      ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 11px JetBrains Mono, monospace';
-      ctx.fillText('ELEV: 0.00m [AASHTO H-20 HEAVY TRAFFIC DECK]', 24, roadTop + 26);
-
-      // ────── 3. EXCAVATED TRENCH CAVITY & SOIL STRATA ──────
-      const trenchTop = roadTop + roadHeight;
-      const trenchBottom = bottomBoundary - 10;
-      const trenchLeft = width * 0.24 + tiltX * 0.3;
-      const trenchRight = width * 0.76 + tiltX * 0.3;
-
-      // Soil Side Walls (Hatched Pattern)
-      ctx.fillStyle = 'rgba(7, 84, 174, 0.08)';
-      
-      // Left Soil Wall
-      ctx.beginPath();
-      ctx.moveTo(0, trenchTop);
-      ctx.lineTo(trenchLeft, trenchTop);
-      ctx.lineTo(trenchLeft + 15, trenchBottom);
-      ctx.lineTo(0, trenchBottom);
-      ctx.closePath();
-      ctx.fill();
-
-      // Right Soil Wall
-      ctx.beginPath();
-      ctx.moveTo(width, trenchTop);
-      ctx.lineTo(trenchRight, trenchTop);
-      ctx.lineTo(trenchRight - 15, trenchBottom);
-      ctx.lineTo(width, trenchBottom);
-      ctx.closePath();
-      ctx.fill();
-
-      // Wall Hatch Lines
-      ctx.strokeStyle = 'rgba(7, 84, 174, 0.15)';
-      ctx.lineWidth = 1;
-      for (let y = trenchTop + 15; y < trenchBottom; y += 24) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(trenchLeft, y - 10);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(trenchRight, y - 10);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
-      // ────── 4. STEEL TRENCH SHIELD BOX (TU-8000 3D RENDERING) ──────
-      const boxLeft = trenchLeft + 28;
-      const boxRight = trenchRight - 28;
-      const boxTop = trenchTop + 24;
-      const boxBottom = trenchBottom - 75;
-      const boxWidth = boxRight - boxLeft;
-      const boxHeight = boxBottom - boxTop;
-      const wallThickness = 22;
-
-      // Side Wall Shoring Plates (Steel Blue Gradient)
-      const steelGradLeft = ctx.createLinearGradient(boxLeft - wallThickness, 0, boxLeft, 0);
-      steelGradLeft.addColorStop(0, '#0754AE');
-      steelGradLeft.addColorStop(0.5, '#2166D1');
-      steelGradLeft.addColorStop(1, '#1E73E8');
-
-      const steelGradRight = ctx.createLinearGradient(boxRight, 0, boxRight + wallThickness, 0);
-      steelGradRight.addColorStop(0, '#1E73E8');
-      steelGradRight.addColorStop(0.5, '#2166D1');
-      steelGradRight.addColorStop(1, '#0754AE');
-
-      // Left Plate
-      ctx.fillStyle = steelGradLeft;
-      ctx.fillRect(boxLeft - wallThickness, boxTop, wallThickness, boxHeight);
-      ctx.strokeStyle = '#FFFFFF';
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(boxLeft - wallThickness, boxTop, wallThickness, boxHeight);
-
-      // Right Plate
-      ctx.fillStyle = steelGradRight;
-      ctx.fillRect(boxRight, boxTop, wallThickness, boxHeight);
-      ctx.strokeRect(boxRight, boxTop, wallThickness, boxHeight);
-
-      // Wall Reinforcement Flanges & Ribs
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-      ctx.lineWidth = 1;
-      for (let y = boxTop + 20; y < boxBottom; y += 32) {
-        ctx.beginPath();
-        ctx.moveTo(boxLeft - wallThickness, y);
-        ctx.lineTo(boxLeft, y);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(boxRight, y);
-        ctx.lineTo(boxRight + wallThickness, y);
-        ctx.stroke();
-      }
-
-      // Chrome Telescopic Spreader Pipes (Top & Bottom Crossbraces)
-      const topSpreaderY = boxTop + 30;
-      const botSpreaderY = boxBottom - 30;
-
-      const spreaderGrad = ctx.createLinearGradient(0, topSpreaderY - 8, 0, topSpreaderY + 8);
-      spreaderGrad.addColorStop(0, '#E2EAF8');
-      spreaderGrad.addColorStop(0.4, '#2166D1');
-      spreaderGrad.addColorStop(1, '#0754AE');
-
-      // Top Spreader Pipe
-      ctx.fillStyle = spreaderGrad;
-      ctx.fillRect(boxLeft, topSpreaderY - 8, boxWidth, 16);
-      ctx.strokeStyle = '#FFFFFF';
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(boxLeft, topSpreaderY - 8, boxWidth, 16);
-
-      // Bottom Spreader Pipe
-      ctx.fillRect(boxLeft, botSpreaderY - 8, boxWidth, 16);
-      ctx.strokeRect(boxLeft, botSpreaderY - 8, boxWidth, 16);
-
-      // Pin Locking Hubs (Precision Blue Rings)
-      const pins = [
-        { x: boxLeft, y: topSpreaderY },
-        { x: boxRight, y: topSpreaderY },
-        { x: boxLeft, y: botSpreaderY },
-        { x: boxRight, y: botSpreaderY }
-      ];
-
-      pins.forEach((pin) => {
-        ctx.fillStyle = '#2166D1';
-        ctx.beginPath();
-        ctx.arc(pin.x, pin.y, 7, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-      });
-
-      // Shield Dimension Label
-      ctx.fillStyle = '#0754AE';
-      ctx.font = 'bold 10px JetBrains Mono, monospace';
-      ctx.fillText('TU-8000 DOUBLE-WALL STEEL SHIELD', boxLeft + 12, boxTop + 16);
-
-      // ────── 5. AWWA C900 WATER MAIN PIPE & FLUID FLOW ──────
-      const pipeY = trenchBottom - 38;
-      const pipeRadius = 24;
-
-      // Pipe Crushed Stone Bedding Layer
-      ctx.fillStyle = '#BFDBFE';
-      ctx.fillRect(boxLeft - 10, pipeY + pipeRadius - 4, boxWidth + 20, 24);
-      ctx.strokeStyle = '#3B82F6';
-      ctx.strokeRect(boxLeft - 10, pipeY + pipeRadius - 4, boxWidth + 20, 24);
-
-      ctx.fillStyle = '#0754AE';
-      ctx.font = '9px JetBrains Mono, monospace';
-      ctx.fillText('ENGINEERED PEA GRAVEL BEDDING (-5.00m)', boxLeft, pipeY + pipeRadius + 13);
-
-      // AWWA C900 PVC Pressure Pipe Cylinder
-      const pipeGrad = ctx.createLinearGradient(0, pipeY - pipeRadius, 0, pipeY + pipeRadius);
-      pipeGrad.addColorStop(0, '#3B82F6');
-      pipeGrad.addColorStop(0.3, '#2166D1');
-      pipeGrad.addColorStop(1, '#0754AE');
-
-      ctx.fillStyle = pipeGrad;
-      ctx.fillRect(boxLeft - 18, pipeY - pipeRadius, boxWidth + 36, pipeRadius * 2);
-      ctx.strokeStyle = '#FFFFFF';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(boxLeft - 18, pipeY - pipeRadius, boxWidth + 36, pipeRadius * 2);
-
-      // Pipe Gasket Collar Joints
-      ctx.fillStyle = '#0754AE';
-      ctx.fillRect(boxLeft + 40, pipeY - pipeRadius - 3, 10, pipeRadius * 2 + 6);
-      ctx.fillRect(boxRight - 50, pipeY - pipeRadius - 3, 10, pipeRadius * 2 + 6);
-
-      // Internal Hydro Fluid Particles
-      particles.forEach((p) => {
-        p.y = pipeY + (Math.sin(p.x * 0.03 + pulse) * 8);
-        p.x += p.speed;
-        if (p.x > boxRight + 18) p.x = boxLeft - 18;
-
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // Clear Floating Pipe Badge (positioned safely ABOVE pipe, zero overlap)
-      const badgeWidth = 240;
-      const badgeX = boxLeft + (boxWidth - badgeWidth) / 2;
-      const badgeY = pipeY - pipeRadius - 28;
-
-      ctx.fillStyle = 'rgba(7, 84, 174, 0.92)';
-      ctx.fillRect(badgeX, badgeY, badgeWidth, 20);
-      ctx.strokeStyle = '#3B82F6';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(badgeX, badgeY, badgeWidth, 20);
-
-      ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 9.5px JetBrains Mono, monospace';
-      ctx.fillText('ANSI/AWWA C900 16" WATER MAIN (235 PSI)', badgeX + 10, badgeY + 13);
-
-      // ────── 6. DEPTH RULER & STRATA ELEVATION MARKERS ──────
-      const levels = [
-        { label: '0.00m SURFACE GRADE', y: roadTop + 22 },
-        { label: '-1.50m ACCESS VAULT', y: boxTop + 25 },
-        { label: '-3.00m SHORING SHIELD', y: topSpreaderY + 40 },
-        { label: '-5.00m UTILITY BEDDING', y: pipeY }
-      ];
-
-      levels.forEach((lvl) => {
-        ctx.strokeStyle = '#2166D1';
-        ctx.lineWidth = 1;
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(trenchRight + wallThickness + 5, lvl.y);
-        ctx.lineTo(width - 15, lvl.y);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        ctx.fillStyle = '#2166D1';
-        ctx.beginPath();
-        ctx.arc(width - 15, lvl.y, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = '#0754AE';
-        ctx.font = 'bold 10px JetBrains Mono, monospace';
-        ctx.fillText(lvl.label, width - 160, lvl.y - 5);
-      });
-
-      // ────── 7. INTERACTIVE CROSSHAIR & DEPTH READOUT ──────
-      if (mousePos.x > 0 && mousePos.y > topBoundary && mousePos.y < bottomBoundary) {
-        ctx.strokeStyle = '#2166D1';
-        ctx.lineWidth = 1;
-        
-        // Vertical Crosshair line
-        ctx.beginPath();
-        ctx.moveTo(mousePos.x, topBoundary);
-        ctx.lineTo(mousePos.x, bottomBoundary);
-        ctx.stroke();
-
-        // Horizontal Crosshair line
-        ctx.beginPath();
-        ctx.moveTo(0, mousePos.y);
-        ctx.lineTo(width, mousePos.y);
-        ctx.stroke();
-
-        // Glowing node
-        ctx.fillStyle = '#2166D1';
-        ctx.beginPath();
-        ctx.arc(mousePos.x, mousePos.y, 5, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Tooltip box (placed safely above cursor to prevent bottom collision)
-        const depthVal = (((mousePos.y - trenchTop) / (trenchBottom - trenchTop)) * 6).toFixed(2);
-        const tooltipY = Math.max(topBoundary + 20, Math.min(mousePos.y - 30, bottomBoundary - 40));
-
-        ctx.fillStyle = 'rgba(7, 84, 174, 0.95)';
-        ctx.fillRect(mousePos.x + 14, tooltipY, 185, 24);
-        ctx.strokeStyle = '#3B82F6';
-        ctx.strokeRect(mousePos.x + 14, tooltipY, 185, 24);
-
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = 'bold 10px JetBrains Mono, monospace';
-        ctx.fillText(`STRATA DEPTH: -${depthVal}m`, mousePos.x + 22, tooltipY + 16);
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [mousePos]);
+  const installSteps = [
+    { step: 1, title: 'EXCAVATION', desc: 'Controlled earth trench digging to invert grade.' },
+    { step: 2, title: 'TRENCH PROTECTION', desc: 'Lowering steel trench shield box for crew protection.' },
+    { step: 3, title: 'PIPE BEDDING', desc: 'Placing engineered washed gravel bedding envelope.' },
+    { step: 4, title: 'PIPE INSTALLATION', desc: 'Positioning AWWA water/sewer main at invert depth.' },
+    { step: 5, title: 'UTILITY CONNECTIONS', desc: 'Routing conduit lines and installing access ladder.' },
+    { step: 6, title: 'BACKFILL', desc: 'Compacting granular backfill material in controlled lifts.' },
+    { step: 7, title: 'ROAD RESTORATION', desc: 'Paving finished AASHTO H-20 asphalt roadway deck.' }
+  ];
 
   return (
-    <div 
-      className="relative w-full h-[520px] lg:h-[580px] rounded-xl overflow-hidden border border-blue-200 shadow-xl bg-[#F0F7FF] group"
-      onMouseMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-      }}
-    >
-      <canvas ref={canvasRef} className="w-full h-full block cursor-crosshair" />
+    <div className="relative bg-[#F7FAFE] border-2 border-[#0085F4]/20 shadow-2xl overflow-hidden font-mono text-xs select-none">
+      
+      {/* Background Soft Blue Radial Glow & Subtle 5-8% Blueprint Grid */}
+      <div className="absolute inset-0 bg-blueprint-grid opacity-8 pointer-events-none"></div>
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#0085F4]/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#00BBFF]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* Top Floating Status Header Bar */}
-      <div className="absolute top-3 left-3 right-3 flex justify-between items-center bg-white/90 backdrop-blur-md px-4 py-2 rounded border border-blue-200 shadow-sm text-xs font-mono z-10">
-        <div className="flex items-center gap-3">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#2166D1] animate-pulse"></span>
-          <span className="font-bold text-[#0754AE]">REAL-TIME 3D UNDERGROUND CUTAWAY MODEL</span>
+      {/* Top Header Control Strip */}
+      <div className="relative z-20 bg-white/90 backdrop-blur-md px-4 py-3 border-b-2 border-[#0085F4]/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#0085F4] animate-pulse"></span>
+          <span className="font-bold text-[#004AAD] text-xs uppercase tracking-wider">
+            3D UNDERGROUND CUTAWAY VISUALIZATION
+          </span>
         </div>
-        <div className="hidden sm:flex items-center gap-4 text-slate-600">
-          <span>LATERAL EARTH: <strong className="text-[#0754AE]">1,450 PSF</strong></span>
-          <span>SOIL: <strong className="text-[#0754AE]">TYPE B/C</strong></span>
-          <span>CAD MODE: <strong className="text-[#2166D1]">ACTIVE</strong></span>
+
+        {/* Mode Selector Buttons */}
+        <div className="flex items-center gap-1 bg-[#F7FAFE] p-1 border border-[#0085F4]/30">
+          <button
+            onClick={() => { setViewMode('system'); setIsPlayingInstall(false); }}
+            className={`px-3 py-1.5 font-bold transition-all text-[11px] ${
+              viewMode === 'system'
+                ? 'bg-[#004AAD] text-white shadow-sm'
+                : 'text-[#004AAD] hover:bg-[#0085F4]/10'
+            }`}
+          >
+            SYSTEM VIEW
+          </button>
+
+          <button
+            onClick={() => { setViewMode('exploded'); setIsPlayingInstall(false); }}
+            className={`px-3 py-1.5 font-bold transition-all text-[11px] ${
+              viewMode === 'exploded'
+                ? 'bg-[#004AAD] text-white shadow-sm'
+                : 'text-[#004AAD] hover:bg-[#0085F4]/10'
+            }`}
+          >
+            EXPLODED
+          </button>
+
+          <button
+            onClick={() => { setViewMode('installation'); setIsPlayingInstall(true); }}
+            className={`px-3 py-1.5 font-bold transition-all text-[11px] ${
+              viewMode === 'installation'
+                ? 'bg-[#004AAD] text-white shadow-sm'
+                : 'text-[#004AAD] hover:bg-[#0085F4]/10'
+            }`}
+          >
+            INSTALLATION
+          </button>
         </div>
       </div>
 
-      {/* Bottom Floating Technical Specification Panel (Fixed bounds, zero collision) */}
-      <div className="absolute bottom-3 left-3 right-3 bg-[#0754AE]/95 text-white p-3.5 rounded border border-blue-400 shadow-lg flex flex-col sm:flex-row justify-between items-center gap-3 text-xs font-mono z-10">
-        <div className="flex items-center gap-2">
-          <span className="text-[#DBEAFE] font-bold">▲ SPECIFICATION:</span>
-          <span>{activeLayerInfo}</span>
+      {/* Main 3D Cutaway Interactive Graphic Container */}
+      <div className="relative h-[440px] sm:h-[480px] w-full flex items-center justify-center p-4">
+        
+        {/* Vector SVG Cutaway Graphics */}
+        <svg className="w-full h-full overflow-visible" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            {/* Soft Radial Gradient behind 3D Cutaway */}
+            <radialGradient id="cutawayGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#00BBFF" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#004AAD" stopOpacity="0" />
+            </radialGradient>
+
+            {/* Road Surface Asphalt Texture */}
+            <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#334155" />
+              <stop offset="100%" stopColor="#1E293B" />
+            </linearGradient>
+
+            {/* Earth Soil Layer Strata */}
+            <linearGradient id="soilLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#E2E8F0" />
+              <stop offset="100%" stopColor="#CBD5E1" />
+            </linearGradient>
+
+            {/* Steel Shield Metallic Blue Coating */}
+            <linearGradient id="shieldSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0066FF" />
+              <stop offset="50%" stopColor="#004AAD" />
+              <stop offset="100%" stopColor="#003380" />
+            </linearGradient>
+
+            {/* Water Main Pipe Blue PVC */}
+            <linearGradient id="pvcPipe" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#00BBFF" />
+              <stop offset="50%" stopColor="#0085F4" />
+              <stop offset="100%" stopColor="#004AAD" />
+            </linearGradient>
+
+            {/* Pipe Bedding Gravel Pattern */}
+            <pattern id="gravelBedding" width="12" height="12" patternUnits="userSpaceOnUse">
+              <rect width="12" height="12" fill="#E2E8F0" />
+              <circle cx="3" cy="3" r="1.5" fill="#94A3B8" />
+              <circle cx="9" cy="7" r="2" fill="#64748B" />
+              <circle cx="4" cy="10" r="1.2" fill="#475569" />
+            </pattern>
+          </defs>
+
+          {/* Background Soft Glow */}
+          <circle cx="400" cy="240" r="280" fill="url(#cutawayGlow)" />
+
+          {/* ────── 1. EXCAVATED SOIL WALLS & BASE ────── */}
+          {/* Left Soil Mass */}
+          <path
+            d="M 0,80 L 260,80 L 260,420 L 0,420 Z"
+            fill="url(#soilLeft)"
+            stroke="#94A3B8"
+            strokeWidth="1.5"
+            className="transition-transform duration-500"
+            style={{ transform: viewMode === 'exploded' ? 'translateX(-30px)' : 'none' }}
+          />
+
+          {/* Right Soil Mass */}
+          <path
+            d="M 540,80 L 800,80 L 800,420 L 540,420 Z"
+            fill="url(#soilLeft)"
+            stroke="#94A3B8"
+            strokeWidth="1.5"
+            className="transition-transform duration-500"
+            style={{ transform: viewMode === 'exploded' ? 'translateX(30px)' : 'none' }}
+          />
+
+          {/* ────── 5. ROAD / PAVEMENT SURFACE DECK ────── */}
+          <g
+            className="transition-transform duration-500"
+            style={{ transform: viewMode === 'exploded' ? 'translateY(-24px)' : 'none' }}
+            onMouseEnter={() => setHoveredHotspot(5)}
+            onMouseLeave={() => setHoveredHotspot(null)}
+          >
+            <rect x="0" y="40" width="800" height="40" fill="url(#roadGradient)" />
+            {/* Sub-base crushed stone */}
+            <rect x="0" y="72" width="800" height="8" fill="#94A3B8" />
+            {/* White Road Centerline */}
+            <line x1="0" y1="60" x2="800" y2="60" stroke="#FFFFFF" strokeWidth="3" strokeDasharray="24 16" />
+          </g>
+
+          {/* ────── 4. EXCAVATION ZONE WORKSPACE ────── */}
+          <rect
+            x="262"
+            y="82"
+            width="276"
+            height="336"
+            fill={hoveredHotspot === 4 ? '#E6F0FF' : '#F8FAFC'}
+            stroke="#0085F4"
+            strokeWidth="1.5"
+            strokeDasharray="6 4"
+            className="transition-colors duration-300"
+            onMouseEnter={() => setHoveredHotspot(4)}
+            onMouseLeave={() => setHoveredHotspot(null)}
+          />
+
+          {/* ────── 3. ENGINEERED GRAVEL PIPE BEDDING ────── */}
+          {(viewMode !== 'installation' || installStep >= 3) && (
+            <rect
+              x="264"
+              y="340"
+              width="272"
+              height="76"
+              fill="url(#gravelBedding)"
+              stroke={hoveredHotspot === 3 ? '#0066FF' : '#94A3B8'}
+              strokeWidth={hoveredHotspot === 3 ? 3 : 1.5}
+              className="transition-transform duration-500 cursor-pointer"
+              style={{ transform: viewMode === 'exploded' ? 'translateY(24px)' : 'none' }}
+              onMouseEnter={() => setHoveredHotspot(3)}
+              onMouseLeave={() => setHoveredHotspot(null)}
+            />
+          )}
+
+          {/* ────── 1. STEEL TRENCH SHIELD POSITIONED INSIDE EXCAVATION ────── */}
+          {(viewMode !== 'installation' || installStep >= 2) && (
+            <g
+              className="transition-transform duration-500 cursor-pointer"
+              style={{ transform: viewMode === 'exploded' ? 'translateY(-36px)' : 'none' }}
+              onMouseEnter={() => setHoveredHotspot(1)}
+              onMouseLeave={() => setHoveredHotspot(null)}
+            >
+              {/* Left Double-Wall Shield Panel */}
+              <rect
+                x="270"
+                y="100"
+                width="24"
+                height="280"
+                fill="url(#shieldSteel)"
+                stroke={hoveredHotspot === 1 ? '#00BBFF' : '#004AAD'}
+                strokeWidth={hoveredHotspot === 1 ? 3 : 2}
+              />
+              <rect x="274" y="110" width="16" height="260" fill="#0085F4" opacity="0.4" />
+
+              {/* Right Double-Wall Shield Panel */}
+              <rect
+                x="506"
+                y="100"
+                width="24"
+                height="280"
+                fill="url(#shieldSteel)"
+                stroke={hoveredHotspot === 1 ? '#00BBFF' : '#004AAD'}
+                strokeWidth={hoveredHotspot === 1 ? 3 : 2}
+              />
+              <rect x="510" y="110" width="16" height="260" fill="#0085F4" opacity="0.4" />
+
+              {/* Structural Spreader Pipes */}
+              <rect x="294" y="140" width="212" height="14" fill="#004AAD" stroke="#0085F4" strokeWidth="1.5" />
+              <rect x="294" y="320" width="212" height="14" fill="#004AAD" stroke="#0085F4" strokeWidth="1.5" />
+
+              {/* Spreader Collar Pins */}
+              <circle cx="294" cy="147" r="7" fill="#00BBFF" />
+              <circle cx="506" cy="147" r="7" fill="#00BBFF" />
+              <circle cx="294" cy="327" r="7" fill="#00BBFF" />
+              <circle cx="506" cy="327" r="7" fill="#00BBFF" />
+            </g>
+          )}
+
+          {/* ────── 7. OSHA ACCESS LADDER ────── */}
+          {(viewMode !== 'installation' || installStep >= 5) && (
+            <g className="transition-transform duration-500" style={{ transform: viewMode === 'exploded' ? 'translateY(-20px)' : 'none' }}>
+              <line x1="310" y1="80" x2="310" y2="360" stroke="#D90429" strokeWidth="3" />
+              <line x1="324" y1="80" x2="324" y2="360" stroke="#D90429" strokeWidth="3" />
+              {[100, 130, 160, 190, 220, 250, 280, 310, 340].map((ly, i) => (
+                <line key={i} x1="310" y1={ly} x2="324" y2={ly} stroke="#D90429" strokeWidth="2" />
+              ))}
+            </g>
+          )}
+
+          {/* ────── 2. LARGE UNDERGROUND WATER/SEWER PIPE ────── */}
+          {(viewMode !== 'installation' || installStep >= 4) && (
+            <g
+              className="transition-transform duration-500 cursor-pointer"
+              style={{ transform: viewMode === 'exploded' ? 'translateY(36px)' : 'none' }}
+              onMouseEnter={() => setHoveredHotspot(2)}
+              onMouseLeave={() => setHoveredHotspot(null)}
+            >
+              {/* Main Pipe Outer Shell */}
+              <circle
+                cx="400"
+                cy="320"
+                r="48"
+                fill="url(#pvcPipe)"
+                stroke={hoveredHotspot === 2 ? '#00BBFF' : '#004AAD'}
+                strokeWidth={hoveredHotspot === 2 ? 4 : 2.5}
+              />
+              {/* Internal Water Bore */}
+              <circle cx="400" cy="320" r="36" fill="#F4F8FF" stroke="#0085F4" strokeWidth="2" />
+              <circle cx="400" cy="320" r="26" fill="#0085F4" opacity="0.25" />
+              <text x="400" y="324" textAnchor="middle" fill="#004AAD" fontSize="11" fontWeight="bold" fontFamily="monospace">
+                WATER MAIN
+              </text>
+            </g>
+          )}
+
+          {/* ────── 8. SUPPORTING UNDERGROUND UTILITY LINES ────── */}
+          {(viewMode !== 'installation' || installStep >= 5) && (
+            <g className="transition-transform duration-500" style={{ transform: viewMode === 'exploded' ? 'translateY(-10px)' : 'none' }}>
+              {/* Electrical Conduit Bank */}
+              <rect x="200" y="240" width="30" height="30" fill="#004AAD" stroke="#0085F4" strokeWidth="1.5" />
+              <circle cx="208" cy="248" r="4" fill="#00BBFF" />
+              <circle cx="222" cy="248" r="4" fill="#00BBFF" />
+              <circle cx="208" cy="262" r="4" fill="#00BBFF" />
+              <circle cx="222" cy="262" r="4" fill="#00BBFF" />
+
+              {/* Gas / Fiber Cable Conduit */}
+              <circle cx="580" cy="220" r="16" fill="#D90429" opacity="0.85" stroke="#FFFFFF" strokeWidth="1.5" />
+              <text x="580" y="224" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" fontFamily="monospace">
+                GAS
+              </text>
+            </g>
+          )}
+
+          {/* ────── LEADER LINES & HOTSPOT CALLOUT OVERLAYS ────── */}
+          {hotspots.map((hs) => {
+            const isHovered = hoveredHotspot === hs.id;
+            const cx = (hs.x / 100) * 800;
+            const cy = (hs.modeY / 100) * 480;
+
+            return (
+              <g key={hs.id} className="transition-all duration-300">
+                {/* Thin #0085F4 / #00BBFF Leader Line */}
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={isHovered ? 10 : 6}
+                  fill={isHovered ? '#00BBFF' : '#0085F4'}
+                  stroke="#FFFFFF"
+                  strokeWidth="2"
+                  className="transition-all duration-200 cursor-pointer"
+                  onMouseEnter={() => setHoveredHotspot(hs.id)}
+                  onMouseLeave={() => setHoveredHotspot(null)}
+                />
+                
+                {/* Hotspot Ring Pulse */}
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={isHovered ? 18 : 12}
+                  fill="none"
+                  stroke="#00BBFF"
+                  strokeWidth="1.5"
+                  opacity={isHovered ? 0.9 : 0.4}
+                  className="animate-ping"
+                />
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Floating Numbered Engineering Callout Cards */}
+        <div className="absolute inset-0 pointer-events-none hidden sm:block">
+          {hotspots.map((hs) => {
+            const isHovered = hoveredHotspot === hs.id;
+            return (
+              <div
+                key={hs.id}
+                style={{ left: `${hs.x}%`, top: `${hs.modeY}%` }}
+                className={`absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 ${
+                  isHovered ? 'scale-110 z-30' : 'z-20'
+                }`}
+                onMouseEnter={() => setHoveredHotspot(hs.id)}
+                onMouseLeave={() => setHoveredHotspot(null)}
+              >
+                <div
+                  className={`p-2.5 bg-white/95 backdrop-blur-md border-2 shadow-lg max-w-[170px] transition-all ${
+                    isHovered
+                      ? 'border-[#00BBFF] shadow-2xl ring-2 ring-[#00BBFF]/30'
+                      : 'border-[#0085F4]/30 hover:border-[#0085F4]'
+                  }`}
+                >
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="px-1.5 py-0.5 bg-[#004AAD] text-white text-[10px] font-bold">
+                      {hs.number}
+                    </span>
+                    <span className="font-bold text-[#004AAD] text-[11px] truncate uppercase">
+                      {hs.title}
+                    </span>
+                  </div>
+                  <p className="text-[10px] text-[#475569] font-medium leading-tight">
+                    {hs.subtitle}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="flex items-center gap-2 text-blue-200">
-          <span className="px-2 py-0.5 bg-blue-800 rounded text-[10px]">PARALLAX CONTROLLED</span>
-          <span className="text-white">HOVER TO EXPLORE DEPTH</span>
+
+        {/* INSTALLATION STEP ANIMATION CONTROLLER OVERLAY */}
+        {viewMode === 'installation' && (
+          <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 border-2 border-[#0085F4]/30 shadow-xl flex items-center justify-between gap-4 font-mono z-30">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-1 bg-[#004AAD] text-white text-xs font-bold">
+                STEP 0{installStep}
+              </span>
+              <div>
+                <span className="font-bold text-[#004AAD] text-xs uppercase block">
+                  {installSteps[installStep - 1].title}
+                </span>
+                <span className="text-[10px] text-[#475569] block truncate max-w-sm">
+                  {installSteps[installStep - 1].desc}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setIsPlayingInstall(!isPlayingInstall)}
+                className="px-3 py-1.5 bg-[#0085F4] text-white font-bold text-xs hover:bg-[#004AAD] transition-colors flex items-center gap-1"
+              >
+                {isPlayingInstall ? 'PAUSE' : 'PLAY SEQUENCE'}
+              </button>
+              <button
+                onClick={() => setInstallStep(1)}
+                className="p-1.5 bg-[#F7FAFE] border border-[#0085F4]/30 text-[#004AAD] hover:bg-[#0085F4]/10"
+                title="Restart Sequence"
+              >
+                <RotateCcw className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Information Bar */}
+      <div className="bg-white px-4 py-3 border-t-2 border-[#0085F4]/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono font-bold text-[#004AAD] z-20 relative">
+        <div className="flex items-center gap-2">
+          <span className="text-[#0085F4]">TRENCH PROTECTION SYSTEM</span>
+          <span className="text-slate-300">•</span>
+          <span className="text-[#475569]">Shield • Pipe • Bedding • Access</span>
+        </div>
+
+        <div className="flex items-center gap-2 text-[#0085F4]">
+          <span>DRAG TO EXPLORE ↔</span>
         </div>
       </div>
     </div>
