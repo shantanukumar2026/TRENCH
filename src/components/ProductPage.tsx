@@ -19,7 +19,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({
   const [viewMode, setViewMode] = useState<'3d' | 'exploded' | 'install' | 'dimensions'>('3d');
   const [rotationDegree, setRotationDegree] = useState<number>(0);
 
-  // Find related products in same category
   const relatedProducts = PRODUCTS_CATALOGUE.filter(p => p.id !== product.id && p.category === product.category).slice(0, 4);
 
   return (
@@ -27,7 +26,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
       <div className="container-custom space-y-12">
         
         {/* Top Breadcrumb Rail */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-blue-200 pb-4 font-mono text-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-blue-200 pb-4 font-mono text-xs">
           <div className="flex items-center gap-2 text-[#0754AE]">
             <button
               onClick={onBackToCatalogue}
@@ -45,14 +44,14 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           <div className="flex items-center gap-3">
             <button 
               onClick={() => alert(`Share link for ${product.name} copied to clipboard!`)}
-              className="p-2 rounded bg-white border border-blue-200 text-[#0754AE] hover:bg-[#F0F7FF]"
+              className="p-2 bg-white border border-blue-200 text-[#0754AE] hover:bg-[#F0F7FF] rounded-none"
               title="Share product link"
             >
               <Share2 className="w-4 h-4" />
             </button>
             <button 
               onClick={() => window.print()}
-              className="p-2 rounded bg-white border border-blue-200 text-[#0754AE] hover:bg-[#F0F7FF]"
+              className="p-2 bg-white border border-blue-200 text-[#0754AE] hover:bg-[#F0F7FF] rounded-none"
               title="Print spec sheet"
             >
               <Printer className="w-4 h-4" />
@@ -65,13 +64,13 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           
           {/* Left Column: Interactive 3D Product Presentation */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="relative h-[420px] sm:h-[480px] rounded-2xl overflow-hidden border-2 border-blue-300 bg-white shadow-2xl bg-blueprint-grid flex items-center justify-center p-8">
+            <div className="relative h-[420px] sm:h-[480px] border-2 border-blue-300 bg-white shadow-2xl bg-blueprint-grid flex items-center justify-center p-8 rounded-none">
               
               <div className="absolute top-4 left-4 z-10 flex gap-2">
-                <span className="px-2.5 py-1 rounded bg-[#0754AE] text-white text-[10px] font-mono font-bold uppercase">
+                <span className="px-2.5 py-1 bg-[#0754AE] text-white text-[10px] font-mono font-bold uppercase rounded-none">
                   {product.category}
                 </span>
-                <span className="px-2.5 py-1 rounded bg-[#C00000] text-white text-[10px] font-mono font-bold">
+                <span className="px-2.5 py-1 bg-[#C00000] text-white text-[10px] font-mono font-bold rounded-none">
                   {product.partNumber || '[VERIFIED PART #]'}
                 </span>
               </div>
@@ -85,36 +84,36 @@ export const ProductPage: React.FC<ProductPageProps> = ({
               />
 
               {/* View Control Tabs Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-blue-200 shadow-md font-mono text-xs font-bold flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 border-2 border-blue-200 shadow-md font-mono text-xs font-bold flex items-center justify-between rounded-none">
                 <div className="flex gap-1.5">
                   <button
                     onClick={() => setViewMode('3d')}
-                    className={`px-3 py-1.5 rounded-lg ${viewMode === '3d' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
+                    className={`px-3 py-1.5 rounded-none ${viewMode === '3d' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
                   >
                     360° VIEW
                   </button>
                   <button
                     onClick={() => setViewMode('exploded')}
-                    className={`px-3 py-1.5 rounded-lg ${viewMode === 'exploded' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
+                    className={`px-3 py-1.5 rounded-none ${viewMode === 'exploded' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
                   >
                     EXPLODED
                   </button>
                   <button
                     onClick={() => setViewMode('install')}
-                    className={`px-3 py-1.5 rounded-lg ${viewMode === 'install' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
+                    className={`px-3 py-1.5 rounded-none ${viewMode === 'install' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
                   >
                     INSTALLATION
                   </button>
                   <button
                     onClick={() => setViewMode('dimensions')}
-                    className={`px-3 py-1.5 rounded-lg ${viewMode === 'dimensions' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
+                    className={`px-3 py-1.5 rounded-none ${viewMode === 'dimensions' ? 'bg-[#0754AE] text-white shadow-sm' : 'bg-[#F0F7FF] text-[#0754AE]'}`}
                   >
                     CAD DIMENSIONS
                   </button>
                 </div>
                 <button
                   onClick={() => setRotationDegree((prev) => (prev + 90) % 360)}
-                  className="p-2 rounded-lg bg-[#0754AE] text-white hover:bg-[#2166D1]"
+                  className="p-2 bg-[#0754AE] text-white hover:bg-[#2166D1] rounded-none"
                   title="Rotate 90°"
                 >
                   <RefreshCw className="w-4 h-4 text-white" />
@@ -146,7 +145,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           <div className="lg:col-span-6 space-y-8">
             
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F0F7FF] border border-blue-200 font-mono text-xs font-bold text-[#0754AE]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F0F7FF] border border-blue-200 font-mono text-xs font-bold text-[#0754AE] rounded-none">
                 <ShieldCheck className="w-4 h-4 text-[#C00000]" />
                 <span>GOVERNING STANDARD: {product.standard || '[APPLICABLE STANDARD]'}</span>
               </div>
@@ -162,22 +161,22 @@ export const ProductPage: React.FC<ProductPageProps> = ({
 
             {/* Quick Specs Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs">
-              <div className="p-3.5 bg-white border border-blue-200 rounded-xl shadow-sm space-y-1">
+              <div className="p-3.5 bg-white border-2 border-blue-200 shadow-sm space-y-1 rounded-none">
                 <span className="text-[10px] text-slate-500 font-bold uppercase block">MATERIAL</span>
                 <span className="font-bold text-[#0754AE] text-xs block truncate">{product.material || '[VERIFIED MATERIAL]'}</span>
               </div>
-              <div className="p-3.5 bg-white border border-blue-200 rounded-xl shadow-sm space-y-1">
+              <div className="p-3.5 bg-white border-2 border-blue-200 shadow-sm space-y-1 rounded-none">
                 <span className="text-[10px] text-slate-500 font-bold uppercase block">LOAD RATING</span>
                 <span className="font-bold text-[#C00000] text-xs block truncate">{product.loadRating || '[VERIFIED RATING]'}</span>
               </div>
-              <div className="p-3.5 bg-white border border-blue-200 rounded-xl shadow-sm space-y-1">
+              <div className="p-3.5 bg-white border-2 border-blue-200 shadow-sm space-y-1 rounded-none">
                 <span className="text-[10px] text-slate-500 font-bold uppercase block">SIZE RANGE</span>
                 <span className="font-bold text-[#0754AE] text-xs block truncate">{product.sizeRange || '[AVAILABLE SIZES]'}</span>
               </div>
             </div>
 
             {/* Engineering Highlights */}
-            <div className="space-y-3 bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
+            <div className="space-y-3 bg-white p-6 border-2 border-blue-200 shadow-sm rounded-none">
               <h3 className="text-sm font-mono font-bold text-[#0754AE] uppercase tracking-wider">
                 ENGINEERING &amp; STRUCTURAL HIGHLIGHTS:
               </h3>
@@ -194,42 +193,42 @@ export const ProductPage: React.FC<ProductPageProps> = ({
         </div>
 
         {/* HOW IT WORKS: Roadway & Ground Installation Sequence */}
-        <div className="bg-white p-8 rounded-2xl border-2 border-blue-200 shadow-xl space-y-6">
-          <div className="flex items-center justify-between border-b border-blue-200 pb-4">
+        <div className="bg-white p-8 border-2 border-blue-300 shadow-xl space-y-6 rounded-none">
+          <div className="flex items-center justify-between border-b-2 border-blue-200 pb-4">
             <div className="space-y-1">
               <span className="text-xs font-mono font-bold text-[#C00000] uppercase tracking-widest block">INSTALLATION SEQUENCE</span>
               <h2 className="text-2xl font-bold text-[#0754AE] font-heading uppercase">
                 HOW IT WORKS — UNDERGROUND INSTALLATION RELATIONSHIP
               </h2>
             </div>
-            <span className="text-xs font-mono font-bold text-[#0754AE] bg-[#F0F7FF] px-3 py-1.5 rounded border border-blue-200">
+            <span className="text-xs font-mono font-bold text-[#0754AE] bg-[#F0F7FF] px-3 py-1.5 border border-blue-200 rounded-none">
               ROAD SURFACE → SUBGRADE → PRODUCT INVERT
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 font-mono text-xs text-center">
-            <div className="p-4 bg-[#F0F7FF] rounded-xl border border-blue-200 space-y-2">
-              <span className="w-6 h-6 rounded-full bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold">1</span>
+            <div className="p-4 bg-[#F0F7FF] border border-blue-200 space-y-2 rounded-none">
+              <span className="w-6 h-6 bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold rounded-none">1</span>
               <div className="font-bold text-[#0754AE]">ROAD SURFACE DECK</div>
               <p className="text-[11px] text-[#163B66]">AASHTO H-20 / HS-20 traffic rated finished pavement.</p>
             </div>
-            <div className="p-4 bg-[#F0F7FF] rounded-xl border border-blue-200 space-y-2">
-              <span className="w-6 h-6 rounded-full bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold">2</span>
+            <div className="p-4 bg-[#F0F7FF] border border-blue-200 space-y-2 rounded-none">
+              <span className="w-6 h-6 bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold rounded-none">2</span>
               <div className="font-bold text-[#0754AE]">ACCESS SHAFT COVER</div>
               <p className="text-[11px] text-[#163B66]">Adjustable grade ring and ductile iron street casting.</p>
             </div>
-            <div className="p-4 bg-[#F0F7FF] rounded-xl border border-blue-200 space-y-2">
-              <span className="w-6 h-6 rounded-full bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold">3</span>
+            <div className="p-4 bg-[#F0F7FF] border border-blue-200 space-y-2 rounded-none">
+              <span className="w-6 h-6 bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold rounded-none">3</span>
               <div className="font-bold text-[#0754AE]">{product.name.toUpperCase()}</div>
               <p className="text-[11px] text-[#163B66]">Engineered main product body positioned at invert depth.</p>
             </div>
-            <div className="p-4 bg-[#F0F7FF] rounded-xl border border-blue-200 space-y-2">
-              <span className="w-6 h-6 rounded-full bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold">4</span>
+            <div className="p-4 bg-[#F0F7FF] border border-blue-200 space-y-2 rounded-none">
+              <span className="w-6 h-6 bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold rounded-none">4</span>
               <div className="font-bold text-[#0754AE]">BEDDING ENVELOPE</div>
               <p className="text-[11px] text-[#163B66]">ASTM C33 washed stone embedment supporting load.</p>
             </div>
-            <div className="p-4 bg-[#F0F7FF] rounded-xl border border-blue-200 space-y-2">
-              <span className="w-6 h-6 rounded-full bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold">5</span>
+            <div className="p-4 bg-[#F0F7FF] border border-blue-200 space-y-2 rounded-none">
+              <span className="w-6 h-6 bg-[#0754AE] text-white flex items-center justify-center mx-auto text-xs font-bold rounded-none">5</span>
               <div className="font-bold text-[#0754AE]">UTILITY MAIN NODE</div>
               <p className="text-[11px] text-[#163B66]">Connected water, sewer, or electrical main corridor.</p>
             </div>
@@ -237,8 +236,8 @@ export const ProductPage: React.FC<ProductPageProps> = ({
         </div>
 
         {/* Technical Data Specification Table */}
-        <div className="bg-white p-8 rounded-2xl border-2 border-blue-200 shadow-xl space-y-6">
-          <div className="border-b border-blue-200 pb-4">
+        <div className="bg-white p-8 border-2 border-blue-300 shadow-xl space-y-6 rounded-none">
+          <div className="border-b-2 border-blue-200 pb-4">
             <h2 className="text-2xl font-bold text-[#0754AE] font-heading uppercase">
               TECHNICAL DATA &amp; ENGINEERING SPECIFICATIONS
             </h2>
@@ -275,7 +274,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
         {/* COMPLETE THE SYSTEM: Related Products */}
         {relatedProducts.length > 0 && (
           <div className="space-y-6 pt-4">
-            <div className="border-b border-blue-200 pb-3 flex items-center justify-between">
+            <div className="border-b-2 border-blue-200 pb-3 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-[#0754AE] font-heading uppercase">
                 COMPLETE THE SYSTEM — COMPATIBLE PRODUCTS
               </h2>
@@ -287,10 +286,10 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 <div
                   key={rel.id}
                   onClick={() => onSelectRelatedProduct(rel)}
-                  className="bg-white rounded-xl border border-blue-200 p-5 hover:border-[#2166D1] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+                  className="bg-white border-2 border-blue-200 p-5 hover:border-[#2166D1] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between rounded-none"
                 >
                   <div className="space-y-3">
-                    <div className="h-36 rounded-lg overflow-hidden border border-blue-100 bg-[#F0F7FF]">
+                    <div className="h-36 border-2 border-blue-200 bg-[#F0F7FF] overflow-hidden rounded-none">
                       <img
                         src={rel.image}
                         alt={rel.name}

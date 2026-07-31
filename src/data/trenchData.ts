@@ -1,5 +1,21 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
+// Authentic Getty Infrastructure Images from src/assets/images/
+import imgSteelBox from '../assets/images/gettyimages-1157931869-1024x1024.jpg';
+import imgDrainageChannel from '../assets/images/gettyimages-1176819057-1024x1024.jpg';
+import imgConcreteVault from '../assets/images/gettyimages-1158438565-1024x1024.jpg';
+import imgPvcPipe from '../assets/images/gettyimages-1222819839-1024x1024.jpg';
+import imgManholeCover from '../assets/images/gettyimages-1349322660-1024x1024.jpg';
+import imgHydraulicShore from '../assets/images/gettyimages-1367548904-1024x1024.jpg';
+import imgHdpePipe from '../assets/images/gettyimages-1324527712-1024x1024.jpg';
+import imgExcavatorBucket from '../assets/images/gettyimages-141843304-1024x1024.jpg';
+import imgPipeHandling from '../assets/images/gettyimages-1152010565-1024x1024.jpg';
+import imgDuctBank from '../assets/images/gettyimages-1374927924-1024x1024.jpg';
+import imgDewateringPump from '../assets/images/gettyimages-1431428704-1024x1024.jpg';
+import imgTrenchTools from '../assets/images/gettyimages-1479422287-1024x1024.jpg';
+import imgRoadPlate from '../assets/images/gettyimages-175600364-1024x1024.jpg';
+import imgValveBox from '../assets/images/gettyimages-2164291973-1024x1024.jpg';
+
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
     number: '01',
@@ -8,18 +24,18 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Safety & Protection',
     tagline: 'OSHA 1926 Subpart P Certified Shielding & Shoring Systems',
     description: 'Heavy steel trench boxes, lightweight aluminum shields, hydraulic shores, and slide rail systems engineered for maximum soil pressure resistance.',
-    image: '/images/trench_shield.png',
+    image: imgSteelBox,
     hotspotIndex: 1,
     subcategories: [
-      { id: 'trench-boxes', name: 'Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: '/images/trench_shield.png', productFamilies: ['Steel Trench Box', 'Heavy-Duty Trench Box'] },
-      { id: 'trench-shields', name: 'Trench Shields', description: 'Lightweight aluminum and steel shielding panels for mobile crews.', image: '/images/trench_shield.png', productFamilies: ['Aluminum Trench Shield'] },
-      { id: 'manhole-boxes', name: 'Manhole Boxes', description: '4-sided box enclosures engineered for vault & manhole excavation.', image: '/images/concrete_vault.png', productFamilies: ['Manhole Box'] },
-      { id: 'hydraulic-shoring', name: 'Hydraulic Shoring', description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground.', image: '/images/trench_shield.png', productFamilies: ['Hydraulic Shore', 'Vertical Hydraulic Shore'] },
-      { id: 'aluminum-shoring', name: 'Aluminum Shoring', description: 'Modular aluminum shoring panels for tight urban utility work.', image: '/images/trench_shield.png', productFamilies: ['Aluminum Shoring Panel'] },
-      { id: 'slide-rail', name: 'Slide Rail Systems', description: 'Modular dig-and-push shoring systems replacing traditional sheet piling.', image: '/images/trench_shield.png', productFamilies: ['Slide Rail Panel'] },
-      { id: 'sheeting-bracing', name: 'Sheeting & Bracing', description: 'Interlocking steel trench sheet piling and structural Wales.', image: '/images/trench_shield.png', productFamilies: ['Spreaders'] },
-      { id: 'trench-access', name: 'Trench Access', description: 'OSHA compliant access ladders, platforms, and walk-through entry gates.', image: '/images/trench_shield.png', productFamilies: ['Trench Ladder', 'Access Platform'] },
-      { id: 'safety-accessories', name: 'Safety Accessories', description: 'Edge guard rails, davit arm retrieval systems, and trench crossing bridges.', image: '/images/trench_shield.png', productFamilies: ['Edge Protection'] }
+      { id: 'trench-boxes', name: 'Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: imgSteelBox, productFamilies: ['Steel Trench Box', 'Heavy-Duty Trench Box'] },
+      { id: 'trench-shields', name: 'Trench Shields', description: 'Lightweight aluminum and steel shielding panels for mobile crews.', image: imgSteelBox, productFamilies: ['Aluminum Trench Shield'] },
+      { id: 'manhole-boxes', name: 'Manhole Boxes', description: '4-sided box enclosures engineered for vault & manhole excavation.', image: imgConcreteVault, productFamilies: ['Manhole Box'] },
+      { id: 'hydraulic-shoring', name: 'Hydraulic Shoring', description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground.', image: imgHydraulicShore, productFamilies: ['Hydraulic Shore', 'Vertical Hydraulic Shore'] },
+      { id: 'aluminum-shoring', name: 'Aluminum Shoring', description: 'Modular aluminum shoring panels for tight urban utility work.', image: imgHydraulicShore, productFamilies: ['Aluminum Shoring Panel'] },
+      { id: 'slide-rail', name: 'Slide Rail Systems', description: 'Modular dig-and-push shoring systems replacing traditional sheet piling.', image: imgSteelBox, productFamilies: ['Slide Rail Panel'] },
+      { id: 'sheeting-bracing', name: 'Sheeting & Bracing', description: 'Interlocking steel trench sheet piling and structural Wales.', image: imgSteelBox, productFamilies: ['Spreaders'] },
+      { id: 'trench-access', name: 'Trench Access', description: 'OSHA compliant access ladders, platforms, and walk-through entry gates.', image: imgTrenchTools, productFamilies: ['Trench Ladder', 'Access Platform'] },
+      { id: 'safety-accessories', name: 'Safety Accessories', description: 'Edge guard rails, davit arm retrieval systems, and trench crossing bridges.', image: imgTrenchTools, productFamilies: ['Edge Protection'] }
     ]
   },
   {
@@ -29,15 +45,15 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Excavation',
     tagline: 'Heavy-Duty Trenching Buckets & Ground Breaking Attachments',
     description: 'Engineered excavator trenching buckets, compaction wheels, rock breakers, and material handling attachments for earthmoving.',
-    image: '/images/trench_shield.png',
+    image: imgExcavatorBucket,
     hotspotIndex: 2,
     subcategories: [
-      { id: 'excavator-buckets', name: 'Excavator Buckets', description: 'Heavy-capacity digging and trenching buckets for 10t to 50t excavators.', image: '/images/trench_shield.png', productFamilies: ['Standard Trenching Bucket'] },
-      { id: 'trenching-buckets', name: 'Trenching Buckets', description: 'Narrow-profile high-taper buckets for clean trench wall digging.', image: '/images/trench_shield.png', productFamilies: ['Heavy-Duty Trenching Bucket', 'Narrow Utility Bucket'] },
-      { id: 'compaction-equipment', name: 'Compaction Equipment', description: 'Excavator-mounted compaction wheels and hydraulic plate compactors.', image: '/images/trench_shield.png', productFamilies: ['Compaction Wheel', 'Plate Compactor'] },
-      { id: 'ground-breaking', name: 'Ground Breaking', description: 'Hydraulic rock breakers and severe-duty ripper teeth.', image: '/images/trench_shield.png', productFamilies: ['Hydraulic Breaker', 'Rock Bucket'] },
-      { id: 'material-handling', name: 'Material Handling', description: 'Hydraulic demolition grapples and heavy lifting attachments.', image: '/images/trench_shield.png', productFamilies: ['Excavator Grapple', 'Lifting Attachment'] },
-      { id: 'excavation-attachments', name: 'Excavation Attachments', description: 'Quick couplers, tilt rotators, and specialized trench bedding buckets.', image: '/images/trench_shield.png', productFamilies: ['Material Bucket'] }
+      { id: 'excavator-buckets', name: 'Excavator Buckets', description: 'Heavy-capacity digging and trenching buckets for 10t to 50t excavators.', image: imgExcavatorBucket, productFamilies: ['Standard Trenching Bucket'] },
+      { id: 'trenching-buckets', name: 'Trenching Buckets', description: 'Narrow-profile high-taper buckets for clean trench wall digging.', image: imgExcavatorBucket, productFamilies: ['Heavy-Duty Trenching Bucket', 'Narrow Utility Bucket'] },
+      { id: 'compaction-equipment', name: 'Compaction Equipment', description: 'Excavator-mounted compaction wheels and hydraulic plate compactors.', image: imgRoadPlate, productFamilies: ['Compaction Wheel', 'Plate Compactor'] },
+      { id: 'ground-breaking', name: 'Ground Breaking', description: 'Hydraulic rock breakers and severe-duty ripper teeth.', image: imgExcavatorBucket, productFamilies: ['Hydraulic Breaker', 'Rock Bucket'] },
+      { id: 'material-handling', name: 'Material Handling', description: 'Hydraulic demolition grapples and heavy lifting attachments.', image: imgExcavatorBucket, productFamilies: ['Excavator Grapple', 'Lifting Attachment'] },
+      { id: 'excavation-attachments', name: 'Excavation Attachments', description: 'Quick couplers, tilt rotators, and specialized trench bedding buckets.', image: imgExcavatorBucket, productFamilies: ['Material Bucket'] }
     ]
   },
   {
@@ -47,16 +63,16 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Pipe Installation',
     tagline: 'Precision Pipe Handling, Alignment Clamps & Rigging Systems',
     description: 'Precision pipe rollers, nylon slings, alignment clamps, and pipe pullers engineered for damage-free utility placement.',
-    image: '/images/pvc_pipe.png',
+    image: imgPipeHandling,
     hotspotIndex: 3,
     subcategories: [
-      { id: 'pipe-handling', name: 'Pipe Handling', description: 'Heavy-duty pipe rollers, cradles, and non-marring nylon slings.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Roller', 'Pipe Sling'] },
-      { id: 'pipe-alignment', name: 'Pipe Alignment', description: 'Internal and external alignment clamps for exact joint centering.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Clamp', 'Alignment Clamp'] },
-      { id: 'pipe-supports', name: 'Pipe Supports', description: 'Adjustable pipe stands, cradles, and structural bedding supports.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Support', 'Pipe Stand'] },
-      { id: 'installation-tools', name: 'Pipe Installation Tools', description: 'Hydraulic pipe pullers, joint pushers, and assembly tools.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Puller'] },
-      { id: 'lifting-systems', name: 'Lifting Systems', description: 'Grade 100 pipe lifting hooks and multi-leg sling assemblies.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Lifting Hook'] },
-      { id: 'pipe-cutting', name: 'Pipe Cutting', description: 'Guillotine pipe cutters, bevelers, and field chamfering tools.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Cutter', 'Chamfering Tool'] },
-      { id: 'connection-equipment', name: 'Connection Equipment', description: 'Mechanical restraint harnesses and joint lubricant systems.', image: '/images/pvc_pipe.png', productFamilies: ['Installation Guide'] }
+      { id: 'pipe-handling', name: 'Pipe Handling', description: 'Heavy-duty pipe rollers, cradles, and non-marring nylon slings.', image: imgPipeHandling, productFamilies: ['Pipe Roller', 'Pipe Sling'] },
+      { id: 'pipe-alignment', name: 'Pipe Alignment', description: 'Internal and external alignment clamps for exact joint centering.', image: imgPipeHandling, productFamilies: ['Pipe Clamp', 'Alignment Clamp'] },
+      { id: 'pipe-supports', name: 'Pipe Supports', description: 'Adjustable pipe stands, cradles, and structural bedding supports.', image: imgPipeHandling, productFamilies: ['Pipe Support', 'Pipe Stand'] },
+      { id: 'installation-tools', name: 'Pipe Installation Tools', description: 'Hydraulic pipe pullers, joint pushers, and assembly tools.', image: imgPipeHandling, productFamilies: ['Pipe Puller'] },
+      { id: 'lifting-systems', name: 'Lifting Systems', description: 'Grade 100 pipe lifting hooks and multi-leg sling assemblies.', image: imgPipeHandling, productFamilies: ['Pipe Lifting Hook'] },
+      { id: 'pipe-cutting', name: 'Pipe Cutting', description: 'Guillotine pipe cutters, bevelers, and field chamfering tools.', image: imgPipeHandling, productFamilies: ['Pipe Cutter', 'Chamfering Tool'] },
+      { id: 'connection-equipment', name: 'Connection Equipment', description: 'Mechanical restraint harnesses and joint lubricant systems.', image: imgPipeHandling, productFamilies: ['Installation Guide'] }
     ]
   },
   {
@@ -66,16 +82,16 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Water & Sewer',
     tagline: 'AWWA C900 Pressure Pipe, Valve Boxes & Municipal Fittings',
     description: 'ANSI/AWWA C900 PVC pressure water mains, ductile iron fittings, valve access boxes, and emergency repair clamps.',
-    image: '/images/pvc_pipe.png',
+    image: imgPvcPipe,
     hotspotIndex: 4,
     subcategories: [
-      { id: 'water-main', name: 'Water Main', description: 'ANSI/AWWA C900 uPVC and Ductile Iron pressure water pipes.', image: '/images/pvc_pipe.png', productFamilies: ['Water Pipe'] },
-      { id: 'sewer-systems', name: 'Sewer Systems', description: 'Gravity sewer pipe, force main pipe, and flexible rubber couplings.', image: '/images/pvc_pipe.png', productFamilies: ['Sewer Pipe'] },
-      { id: 'valve-access', name: 'Valve Access', description: 'Cast iron valve boxes, curb boxes, and Bison Box enclosures.', image: '/images/concrete_vault.png', productFamilies: ['Valve Box', 'Curb Box', 'Bison Box', 'Service Box'] },
-      { id: 'service-connections', name: 'Service Connections', description: 'Ductile iron service saddles, corporation stops, and curb stops.', image: '/images/pvc_pipe.png', productFamilies: ['Service Saddle'] },
-      { id: 'fittings', name: 'Fittings', description: 'Ductile iron mechanical joint tees, elbows, and flange adapters.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Fitting', 'Flange Adapter', 'Coupling'] },
-      { id: 'repair-products', name: 'Repair Products', description: 'Stainless steel full-circle repair clamps and transition couplings.', image: '/images/pvc_pipe.png', productFamilies: ['Repair Clamp'] },
-      { id: 'valves', name: 'Valves', description: 'Resilient wedge gate valves, butterfly valves, and valve operating keys.', image: '/images/pvc_pipe.png', productFamilies: ['Gate Valve', 'Valve Extension', 'Valve Wrench'] }
+      { id: 'water-main', name: 'Water Main', description: 'ANSI/AWWA C900 uPVC and Ductile Iron pressure water pipes.', image: imgPvcPipe, productFamilies: ['Water Pipe'] },
+      { id: 'sewer-systems', name: 'Sewer Systems', description: 'Gravity sewer pipe, force main pipe, and flexible rubber couplings.', image: imgPvcPipe, productFamilies: ['Sewer Pipe'] },
+      { id: 'valve-access', name: 'Valve Access', description: 'Cast iron valve boxes, curb boxes, and Bison Box enclosures.', image: imgValveBox, productFamilies: ['Valve Box', 'Curb Box', 'Bison Box', 'Service Box'] },
+      { id: 'service-connections', name: 'Service Connections', description: 'Ductile iron service saddles, corporation stops, and curb stops.', image: imgPvcPipe, productFamilies: ['Service Saddle'] },
+      { id: 'fittings', name: 'Fittings', description: 'Ductile iron mechanical joint tees, elbows, and flange adapters.', image: imgPvcPipe, productFamilies: ['Pipe Fitting', 'Flange Adapter', 'Coupling'] },
+      { id: 'repair-products', name: 'Repair Products', description: 'Stainless steel full-circle repair clamps and transition couplings.', image: imgPvcPipe, productFamilies: ['Repair Clamp'] },
+      { id: 'valves', name: 'Valves', description: 'Resilient wedge gate valves, butterfly valves, and valve operating keys.', image: imgPvcPipe, productFamilies: ['Gate Valve', 'Valve Extension', 'Valve Wrench'] }
     ]
   },
   {
@@ -85,16 +101,16 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Drainage',
     tagline: 'Pre-Sloped Polymer Channels, Catch Basins & HDPE Culverts',
     description: 'Pre-sloped polymer concrete channel drains, AASHTO H-20 catch basins, slotted grates, and corrugated storm culverts.',
-    image: '/images/drainage_channel.png',
+    image: imgDrainageChannel,
     hotspotIndex: 5,
     subcategories: [
-      { id: 'trench-drainage', name: 'Trench Drainage', description: 'Modular trench drain channels with ductile iron edge rails.', image: '/images/drainage_channel.png', productFamilies: ['Trench Drain'] },
-      { id: 'channel-drainage', name: 'Channel Drainage', description: 'Pre-sloped polymer concrete channel drainage systems.', image: '/images/drainage_channel.png', productFamilies: ['Channel Drain', 'Slot Drain'] },
-      { id: 'catch-basins', name: 'Catch Basins', description: 'Precast concrete and polymer catch basins with sediment buckets.', image: '/images/drainage_channel.png', productFamilies: ['Catch Basin', 'Drainage Inlet'] },
-      { id: 'stormwater-systems', name: 'Stormwater Systems', description: 'Underground retention/detention storm chambers.', image: '/images/drainage_channel.png', productFamilies: ['Stormwater Chamber'] },
-      { id: 'culverts', name: 'Culverts', description: 'Corrugated HDPE dual-wall storm pipe and flared end sections.', image: '/images/pvc_pipe.png', productFamilies: ['Culvert Pipe', 'End Section'] },
-      { id: 'drainage-grates', name: 'Drainage Grates', description: 'Heavy-duty slotted, mesh, and ADA-compliant grates.', image: '/images/drainage_channel.png', productFamilies: ['Drain Grate', 'Catch Basin Grate'] },
-      { id: 'detention-retention', name: 'Detention / Retention', description: 'Modular stormwater retention boxes and control structures.', image: '/images/drainage_channel.png', productFamilies: ['Area Drain'] }
+      { id: 'trench-drainage', name: 'Trench Drainage', description: 'Modular trench drain channels with ductile iron edge rails.', image: imgDrainageChannel, productFamilies: ['Trench Drain'] },
+      { id: 'channel-drainage', name: 'Channel Drainage', description: 'Pre-sloped polymer concrete channel drainage systems.', image: imgDrainageChannel, productFamilies: ['Channel Drain', 'Slot Drain'] },
+      { id: 'catch-basins', name: 'Catch Basins', description: 'Precast concrete and polymer catch basins with sediment buckets.', image: imgDrainageChannel, productFamilies: ['Catch Basin', 'Drainage Inlet'] },
+      { id: 'stormwater-systems', name: 'Stormwater Systems', description: 'Underground retention/detention storm chambers.', image: imgHdpePipe, productFamilies: ['Stormwater Chamber'] },
+      { id: 'culverts', name: 'Culverts', description: 'Corrugated HDPE dual-wall storm pipe and flared end sections.', image: imgHdpePipe, productFamilies: ['Culvert Pipe', 'End Section'] },
+      { id: 'drainage-grates', name: 'Drainage Grates', description: 'Heavy-duty slotted, mesh, and ADA-compliant grates.', image: imgDrainageChannel, productFamilies: ['Drain Grate', 'Catch Basin Grate'] },
+      { id: 'detention-retention', name: 'Detention / Retention', description: 'Modular stormwater retention boxes and control structures.', image: imgHdpePipe, productFamilies: ['Area Drain'] }
     ]
   },
   {
@@ -104,16 +120,16 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Underground Access',
     tagline: 'AASHTO M306 Traffic Castings, Precast Risers & Access Hatches',
     description: 'AASHTO M306 heavy-duty ductile iron manhole frames, precast concrete riser rings, and spring-assisted aluminum hatches.',
-    image: '/images/concrete_vault.png',
+    image: imgManholeCover,
     hotspotIndex: 6,
     subcategories: [
-      { id: 'manholes', name: 'Manholes', description: 'Precast concrete monolithic manhole bases and cone sections.', image: '/images/concrete_vault.png', productFamilies: ['Manhole Riser'] },
-      { id: 'frames-covers', name: 'Frames & Covers', description: 'AASHTO M306 heavy ductile iron frames and covers.', image: '/images/drainage_channel.png', productFamilies: ['Manhole Cover', 'Manhole Frame', 'Heavy-Duty Frame & Cover'] },
-      { id: 'risers', name: 'Risers', description: 'Precast concrete manhole riser sections and grade rings.', image: '/images/concrete_vault.png', productFamilies: ['Grade Ring'] },
-      { id: 'grade-adjustment', name: 'Grade Adjustment', description: 'Polymer rubber and composite grade adjustment rings.', image: '/images/concrete_vault.png', productFamilies: ['Adjustment Ring'] },
-      { id: 'access-hatches', name: 'Access Hatches', description: 'Spring-assisted aluminum diamond plate double door hatches.', image: '/images/concrete_vault.png', productFamilies: ['Access Hatch'] },
-      { id: 'steps-accessories', name: 'Steps & Accessories', description: 'Copolymer polypropylene manhole steps and locking covers.', image: '/images/concrete_vault.png', productFamilies: ['Manhole Step', 'Locking Cover'] },
-      { id: 'utility-access', name: 'Utility Access', description: 'Cast iron valve and inspection covers for utility nodes.', image: '/images/concrete_vault.png', productFamilies: ['Utility Cover', 'Inspection Cover'] }
+      { id: 'manholes', name: 'Manholes', description: 'Precast concrete monolithic manhole bases and cone sections.', image: imgConcreteVault, productFamilies: ['Manhole Riser'] },
+      { id: 'frames-covers', name: 'Frames & Covers', description: 'AASHTO M306 heavy ductile iron frames and covers.', image: imgManholeCover, productFamilies: ['Manhole Cover', 'Manhole Frame', 'Heavy-Duty Frame & Cover'] },
+      { id: 'risers', name: 'Risers', description: 'Precast concrete manhole riser sections and grade rings.', image: imgConcreteVault, productFamilies: ['Grade Ring'] },
+      { id: 'grade-adjustment', name: 'Grade Adjustment', description: 'Polymer rubber and composite grade adjustment rings.', image: imgConcreteVault, productFamilies: ['Adjustment Ring'] },
+      { id: 'access-hatches', name: 'Access Hatches', description: 'Spring-assisted aluminum diamond plate double door hatches.', image: imgConcreteVault, productFamilies: ['Access Hatch'] },
+      { id: 'steps-accessories', name: 'Steps & Accessories', description: 'Copolymer polypropylene manhole steps and locking covers.', image: imgManholeCover, productFamilies: ['Manhole Step', 'Locking Cover'] },
+      { id: 'utility-access', name: 'Utility Access', description: 'Cast iron valve and inspection covers for utility nodes.', image: imgManholeCover, productFamilies: ['Utility Cover', 'Inspection Cover'] }
     ]
   },
   {
@@ -123,16 +139,16 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Utility & Electrical',
     tagline: 'Precision Duct Spacers, Electrical Vaults & Fiber Pull Boxes',
     description: 'NEMA TC-2 PVC conduit, SnapLock multi-duct spacers, precast electrical pull boxes, and non-conductive access vaults.',
-    image: '/images/concrete_vault.png',
+    image: imgDuctBank,
     hotspotIndex: 7,
     subcategories: [
-      { id: 'utility-conduit', name: 'Utility Conduit', description: 'NEMA TC-2 Schedule 40/80 PVC conduit and DB-120 duct.', image: '/images/pvc_pipe.png', productFamilies: ['PVC Conduit', 'HDPE Conduit'] },
-      { id: 'duct-bank', name: 'Duct Bank', description: 'SnapLock vertical and horizontal duct bank spacers.', image: '/images/concrete_vault.png', productFamilies: ['Duct Spacer'] },
-      { id: 'utility-vaults', name: 'Utility Vaults', description: '5,000 PSI precast concrete electrical and fiber optic vaults.', image: '/images/concrete_vault.png', productFamilies: ['Utility Vault'] },
-      { id: 'handholes', name: 'Handholes', description: 'Polymer concrete composite handholes and access enclosures.', image: '/images/concrete_vault.png', productFamilies: ['Electrical Handhole'] },
-      { id: 'pull-boxes', name: 'Pull Boxes', description: 'Precast pull boxes with knockouts and cable racks.', image: '/images/concrete_vault.png', productFamilies: ['Pull Box'] },
-      { id: 'cable-installation', name: 'Cable Installation', description: 'Cable pulling rollers, sheave wheels, and duct mandrels.', image: '/images/concrete_vault.png', productFamilies: ['Cable Roller', 'Cable Pulling Guide'] },
-      { id: 'conduit-accessories', name: 'Conduit Accessories', description: 'Conduit bends, bell ends, couplings, and expansion joints.', image: '/images/pvc_pipe.png', productFamilies: ['Conduit Coupling', 'Conduit Bend', 'Conduit Fitting'] }
+      { id: 'utility-conduit', name: 'Utility Conduit', description: 'NEMA TC-2 Schedule 40/80 PVC conduit and DB-120 duct.', image: imgDuctBank, productFamilies: ['PVC Conduit', 'HDPE Conduit'] },
+      { id: 'duct-bank', name: 'Duct Bank', description: 'SnapLock vertical and horizontal duct bank spacers.', image: imgDuctBank, productFamilies: ['Duct Spacer'] },
+      { id: 'utility-vaults', name: 'Utility Vaults', description: '5,000 PSI precast concrete electrical and fiber optic vaults.', image: imgConcreteVault, productFamilies: ['Utility Vault'] },
+      { id: 'handholes', name: 'Handholes', description: 'Polymer concrete composite handholes and access enclosures.', image: imgConcreteVault, productFamilies: ['Electrical Handhole'] },
+      { id: 'pull-boxes', name: 'Pull Boxes', description: 'Precast pull boxes with knockouts and cable racks.', image: imgConcreteVault, productFamilies: ['Pull Box'] },
+      { id: 'cable-installation', name: 'Cable Installation', description: 'Cable pulling rollers, sheave wheels, and duct mandrels.', image: imgDuctBank, productFamilies: ['Cable Roller', 'Cable Pulling Guide'] },
+      { id: 'conduit-accessories', name: 'Conduit Accessories', description: 'Conduit bends, bell ends, couplings, and expansion joints.', image: imgDuctBank, productFamilies: ['Conduit Coupling', 'Conduit Bend', 'Conduit Fitting'] }
     ]
   },
   {
@@ -142,15 +158,15 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Dewatering',
     tagline: 'Submersible Trash Pumps, Wellpoint Systems & Filtration',
     description: 'Heavy-duty electric submersible trash pumps, wellpoint header systems, discharge hoses, and sediment filtration tanks.',
-    image: '/images/trench_shield.png',
+    image: imgDewateringPump,
     hotspotIndex: 8,
     subcategories: [
-      { id: 'submersible-pumps', name: 'Submersible Pumps', description: 'High-head electric submersible dewatering pumps.', image: '/images/trench_shield.png', productFamilies: ['Submersible Pump'] },
-      { id: 'trash-pumps', name: 'Trash Pumps', description: 'Engine-driven self-priming trash pumps handling 3" solids.', image: '/images/trench_shield.png', productFamilies: ['Trash Pump'] },
-      { id: 'wellpoint-systems', name: 'Wellpoint Systems', description: 'Vacuum-assisted wellpoint pumps, headers, and wellpoint tips.', image: '/images/trench_shield.png', productFamilies: ['Wellpoint Pump', 'Wellpoint Header', 'Wellpoint'] },
-      { id: 'discharge-systems', name: 'Discharge Systems', description: 'Heavy-duty layflat discharge hose and quick-cam couplings.', image: '/images/pvc_pipe.png', productFamilies: ['Discharge Hose', 'Suction Hose', 'Pump Coupling'] },
-      { id: 'filtration', name: 'Filtration', description: 'Dewatering filter bags, suction strainers, and geotextile socks.', image: '/images/trench_shield.png', productFamilies: ['Strainer', 'Filter Bag'] },
-      { id: 'groundwater-control', name: 'Groundwater Control', description: 'Mobile settlement tanks and oil-water separators.', image: '/images/concrete_vault.png', productFamilies: ['Settlement Tank'] }
+      { id: 'submersible-pumps', name: 'Submersible Pumps', description: 'High-head electric submersible dewatering pumps.', image: imgDewateringPump, productFamilies: ['Submersible Pump'] },
+      { id: 'trash-pumps', name: 'Trash Pumps', description: 'Engine-driven self-priming trash pumps handling 3" solids.', image: imgDewateringPump, productFamilies: ['Trash Pump'] },
+      { id: 'wellpoint-systems', name: 'Wellpoint Systems', description: 'Vacuum-assisted wellpoint pumps, headers, and wellpoint tips.', image: imgDewateringPump, productFamilies: ['Wellpoint Pump', 'Wellpoint Header', 'Wellpoint'] },
+      { id: 'discharge-systems', name: 'Discharge Systems', description: 'Heavy-duty layflat discharge hose and quick-cam couplings.', image: imgPvcPipe, productFamilies: ['Discharge Hose', 'Suction Hose', 'Pump Coupling'] },
+      { id: 'filtration', name: 'Filtration', description: 'Dewatering filter bags, suction strainers, and geotextile socks.', image: imgDewateringPump, productFamilies: ['Strainer', 'Filter Bag'] },
+      { id: 'groundwater-control', name: 'Groundwater Control', description: 'Mobile settlement tanks and oil-water separators.', image: imgConcreteVault, productFamilies: ['Settlement Tank'] }
     ]
   },
   {
@@ -160,15 +176,15 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Tools',
     tagline: 'Specialized Valve Keys, Laser Levels & Trench Access Ramps',
     description: 'Heavy trench shovels, telescoping valve operating keys, pipe cutters, pipe lasers, and OSHA compliant jobsite safety barricades.',
-    image: '/images/trench_shield.png',
+    image: imgTrenchTools,
     hotspotIndex: 9,
     subcategories: [
-      { id: 'trench-tools', name: 'Trench Tools', description: 'Narrow steel trench shovels and clean-out scoops.', image: '/images/trench_shield.png', productFamilies: ['Trench Shovel'] },
-      { id: 'valve-tools', name: 'Valve Tools', description: 'Telescoping valve keys, curb box keys, and hydrant wrenches.', image: '/images/pvc_pipe.png', productFamilies: ['Valve Wrench', 'Curb Box Key'] },
-      { id: 'pipe-tools', name: 'Pipe Tools', description: 'Guillotine pipe cutters, bevelers, and squeeze-off tools.', image: '/images/pvc_pipe.png', productFamilies: ['Pipe Cutter'] },
-      { id: 'measuring-equipment', name: 'Measuring Equipment', description: 'Green-beam pipe lasers, optical levels, and grade rods.', image: '/images/trench_shield.png', productFamilies: ['Grade Rod', 'Laser Level', 'Measuring Tool'] },
-      { id: 'lifting-equipment', name: 'Lifting Equipment', description: 'Grade 100 4-leg chain slings, lifting hooks, and shackles.', image: '/images/trench_shield.png', productFamilies: ['Lifting Hook', 'Chain Sling'] },
-      { id: 'jobsite-safety', name: 'Jobsite Safety', description: 'OSHA trench access ladders, safety barricades, and utility markers.', image: '/images/trench_shield.png', productFamilies: ['Barricade', 'Utility Marker', 'Trench Access Ladder'] }
+      { id: 'trench-tools', name: 'Trench Tools', description: 'Narrow steel trench shovels and clean-out scoops.', image: imgTrenchTools, productFamilies: ['Trench Shovel'] },
+      { id: 'valve-tools', name: 'Valve Tools', description: 'Telescoping valve keys, curb box keys, and hydrant wrenches.', image: imgTrenchTools, productFamilies: ['Valve Wrench', 'Curb Box Key'] },
+      { id: 'pipe-tools', name: 'Pipe Tools', description: 'Guillotine pipe cutters, bevelers, and squeeze-off tools.', image: imgTrenchTools, productFamilies: ['Pipe Cutter'] },
+      { id: 'measuring-equipment', name: 'Measuring Equipment', description: 'Green-beam pipe lasers, optical levels, and grade rods.', image: imgTrenchTools, productFamilies: ['Grade Rod', 'Laser Level', 'Measuring Tool'] },
+      { id: 'lifting-equipment', name: 'Lifting Equipment', description: 'Grade 100 4-leg chain slings, lifting hooks, and shackles.', image: imgPipeHandling, productFamilies: ['Lifting Hook', 'Chain Sling'] },
+      { id: 'jobsite-safety', name: 'Jobsite Safety', description: 'OSHA trench access ladders, safety barricades, and utility markers.', image: imgTrenchTools, productFamilies: ['Barricade', 'Utility Marker', 'Trench Access Ladder'] }
     ]
   },
   {
@@ -178,15 +194,15 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Restoration',
     tagline: 'Heavy Road Plates, Vibratory Rammers & Bedding Equipment',
     description: 'AASHTO H-20 steel road plates, vibratory compaction rammers, asphalt cutters, and bedding placement attachments.',
-    image: '/images/trench_shield.png',
+    image: imgRoadPlate,
     hotspotIndex: 10,
     subcategories: [
-      { id: 'road-plates', name: 'Road Plates', description: 'AASHTO H-20 traffic-rated steel road plates with lifting pin holes.', image: '/images/trench_shield.png', productFamilies: ['Road Plate'] },
-      { id: 'compaction', name: 'Compaction', description: 'Vibratory rammers, compaction plates, and excavator wheels.', image: '/images/trench_shield.png', productFamilies: ['Compaction Plate', 'Vibratory Rammer', 'Compaction Wheel'] },
-      { id: 'bedding-equipment', name: 'Bedding Equipment', description: 'Trench bedding stone placement boxes and aggregate chutes.', image: '/images/trench_shield.png', productFamilies: ['Pipe Bedding Equipment'] },
-      { id: 'backfill-equipment', name: 'Backfill Equipment', description: 'Excavator backfill blades and stone shooter attachments.', image: '/images/trench_shield.png', productFamilies: ['Backfill Attachment'] },
-      { id: 'asphalt-equipment', name: 'Asphalt Equipment', description: 'Excavator asphalt cutters and joint sealing equipment.', image: '/images/trench_shield.png', productFamilies: ['Asphalt Cutter', 'Surface Compactor'] },
-      { id: 'surface-restoration', name: 'Surface Restoration', description: 'Concrete repair tools and pavement restoration machinery.', image: '/images/trench_shield.png', productFamilies: ['Concrete Repair Tool', 'Pavement Restoration Equipment'] }
+      { id: 'road-plates', name: 'Road Plates', description: 'AASHTO H-20 traffic-rated steel road plates with lifting pin holes.', image: imgRoadPlate, productFamilies: ['Road Plate'] },
+      { id: 'compaction', name: 'Compaction', description: 'Vibratory rammers, compaction plates, and excavator wheels.', image: imgRoadPlate, productFamilies: ['Compaction Plate', 'Vibratory Rammer', 'Compaction Wheel'] },
+      { id: 'bedding-equipment', name: 'Bedding Equipment', description: 'Trench bedding stone placement boxes and aggregate chutes.', image: imgRoadPlate, productFamilies: ['Pipe Bedding Equipment'] },
+      { id: 'backfill-equipment', name: 'Backfill Equipment', description: 'Excavator backfill blades and stone shooter attachments.', image: imgRoadPlate, productFamilies: ['Backfill Attachment'] },
+      { id: 'asphalt-equipment', name: 'Asphalt Equipment', description: 'Excavator asphalt cutters and joint sealing equipment.', image: imgRoadPlate, productFamilies: ['Asphalt Cutter', 'Surface Compactor'] },
+      { id: 'surface-restoration', name: 'Surface Restoration', description: 'Concrete repair tools and pavement restoration machinery.', image: imgRoadPlate, productFamilies: ['Concrete Repair Tool', 'Pavement Restoration Equipment'] }
     ]
   }
 ];
@@ -210,7 +226,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'MUNICIPAL WATER INFRASTRUCTURE',
     tagline: 'High-Pressure Potable Distribution & Main Replacements',
     description: 'Engineered water main pipe systems, valve access boxes, and OSHA-compliant trench shields for major city utility modernizations.',
-    image: '/images/pvc_pipe.png',
+    image: imgPvcPipe,
     relevantCategories: ['water-sewer', 'pipe-installation', 'safety-protection', 'manholes-underground-access'],
     specs: [
       { label: 'PRESSURE RATING', value: '235 PSI Max' },
@@ -223,7 +239,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'SEWER & WASTEWATER SYSTEMS',
     tagline: 'Gravity Mains, Force Mains & Sanitary Structures',
     description: 'Heavy ductile iron fittings, precast concrete manhole structures, and deep excavation shoring for sanitary sewer installations.',
-    image: '/images/concrete_vault.png',
+    image: imgConcreteVault,
     relevantCategories: ['water-sewer', 'manholes-underground-access', 'safety-protection', 'dewatering-groundwater-control'],
     specs: [
       { label: 'SEEDING STANDARD', value: 'ASTM C478 / ASTM C858' },
@@ -236,7 +252,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'STORMWATER & FLOOD CONTROL',
     tagline: 'High-Volume Retention Basins & Culvert Infrastructure',
     description: 'Large-bore corrugated HDPE pipe, pre-sloped polymer channel drains, and retention chambers engineered to mitigate urban flooding.',
-    image: '/images/drainage_channel.png',
+    image: imgDrainageChannel,
     relevantCategories: ['drainage-stormwater', 'pipe-installation', 'backfill-surface-restoration'],
     specs: [
       { label: 'MANNING COEFFICIENT', value: 'n = 0.012 Smooth Bores' },
@@ -249,7 +265,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'UNDERGROUND POWER & TELECOM',
     tagline: 'High-Voltage Duct Banks & Structured Fiber Nodes',
     description: 'Precision duct spacers, concrete pull boxes, and non-conductive access risers designed to house critical electrical and fiber grids.',
-    image: '/images/concrete_vault.png',
+    image: imgDuctBank,
     relevantCategories: ['utility-conduit-electrical', 'manholes-underground-access', 'safety-protection'],
     specs: [
       { label: 'DIELECTRIC', value: 'High Insulation Grade' },
@@ -262,7 +278,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'ROAD & HIGHWAY INFRASTRUCTURE',
     tagline: 'Heavy Load Street Castings & Sub-Pavement Drainage',
     description: 'AASHTO M306 traffic-rated manhole castings, pre-sloped highway channels, and steel road plates built for high axle loads.',
-    image: '/images/trench_shield.png',
+    image: imgRoadPlate,
     relevantCategories: ['backfill-surface-restoration', 'drainage-stormwater', 'manholes-underground-access'],
     specs: [
       { label: 'PROOF LOAD', value: '50,000 LBS Minimum' },
@@ -314,7 +330,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy four-point lifting lugs rated for 24,000 lbs WLL',
       'Stackable design with heavy pin-lock sockets'
     ],
-    image: '/images/trench_shield.png',
+    image: imgSteelBox,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Industrial Safety Blue Powder Coat',
@@ -343,7 +359,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'High-velocity hydraulic inner channel surface',
       'Interlocking end caps and bottom outlet adapters'
     ],
-    image: '/images/drainage_channel.png',
+    image: imgDrainageChannel,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Ductile Iron Black Asphaltic Coating',
@@ -372,7 +388,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Hot-dip galvanized internal cable rack ladders',
       'Integrated butyl rubber gasketed joint seals'
     ],
-    image: '/images/concrete_vault.png',
+    image: imgConcreteVault,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Natural Precast / Bituminous Exterior Coating',
@@ -401,7 +417,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Immune to electrochemical soil corrosion',
       'Factory chamfered spigot ends for easy push-on jointing'
     ],
-    image: '/images/pvc_pipe.png',
+    image: imgPvcPipe,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Blue AWWA Potable Water Color Code',
@@ -429,7 +445,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Telescoping extension prevents frost heave load transfer',
       'Base bell fits up to 12-inch gate valve bonnets'
     ],
-    image: '/images/concrete_vault.png',
+    image: imgValveBox,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Black Asphaltic Dip',
@@ -458,7 +474,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'High compressive resistance during concrete placement',
       'UV-stabilized weather-resistant formulation'
     ],
-    image: '/images/concrete_vault.png',
+    image: imgDuctBank,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Natural High-Impact Base Plastic',
@@ -487,7 +503,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy-duty dual-action hydraulic cylinders',
       'Includes safety lock pins and release hook assembly'
     ],
-    image: '/images/trench_shield.png',
+    image: imgHydraulicShore,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Anodized Aircraft Aluminum',
@@ -516,7 +532,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Pickhole design prevents debris accumulation',
       'Proof-loaded to 50,000 lbs minimum'
     ],
-    image: '/images/drainage_channel.png',
+    image: imgManholeCover,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Black Asphaltic Coating',
@@ -545,7 +561,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Lightweight construction reduces crane rental costs',
       '100-year structural design life rating'
     ],
-    image: '/images/pvc_pipe.png',
+    image: imgHdpePipe,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'High-Density Black Resin',
@@ -573,7 +589,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Center flush-mount lifting pin for rapid crane handling',
       'High-traction aggregate epoxy skid-resistant coating'
     ],
-    image: '/images/trench_shield.png',
+    image: imgRoadPlate,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'High-Traction Anti-Skid Coating',
@@ -589,7 +605,7 @@ export const SOLUTION_APPS: SolutionApp[] = [
     title: 'MUNICIPAL WATER INFRASTRUCTURE',
     tagline: 'High-Pressure Potable Distribution & Main Replacements',
     description: 'Engineered water main pipe systems, valve access boxes, and OSHA-compliant trench shields for major city utility modernizations.',
-    image: '/images/pvc_pipe.png',
+    image: imgPvcPipe,
     cadOverlay: 'ANSI/AWWA C900 • OSHA SUBPART P • H-20 RATED',
     recommendedProducts: ['TU-8000 Steel Trench Shield', 'TU-C900 PVC Pressure Pipe', 'Bison Box Valve Access'],
     specs: [
@@ -603,7 +619,7 @@ export const SOLUTION_APPS: SolutionApp[] = [
     title: 'UNDERGROUND POWER & TELECOM',
     tagline: 'High-Voltage Duct Banks & Structured Fiber Nodes',
     description: 'Precision duct spacers, concrete pull boxes, and non-conductive access risers designed to house critical electrical and fiber grids.',
-    image: '/images/concrete_vault.png',
+    image: imgDuctBank,
     cadOverlay: 'NEMA TC-2 • IEEE 1234 • H-20 TRAFFIC',
     recommendedProducts: ['TU-SnapLock Duct Spacer', 'TU-Modular Concrete Access Vault', 'TU-IronClad 24 Cover'],
     specs: [
@@ -617,7 +633,7 @@ export const SOLUTION_APPS: SolutionApp[] = [
     title: 'ROAD & HIGHWAY INFRASTRUCTURE',
     tagline: 'Heavy Load Street Castings & Sub-Pavement Drainage',
     description: 'AASHTO M306 traffic-rated manhole castings, pre-sloped highway channels, and steel road plates built for high axle loads.',
-    image: '/images/drainage_channel.png',
+    image: imgDrainageChannel,
     cadOverlay: 'AASHTO M306 • FAA AC 150 • EN 1433 CLASS F',
     recommendedProducts: ['TU-IronClad 24 Cover', 'TU-HydroDrain 200 System', 'AASHTO H-20 Road Plate'],
     specs: [
@@ -642,9 +658,9 @@ export const CASE_STUDY_DATA: CaseStudyData = {
   scale: '4,200 Linear Feet of Excavation',
   installationTime: '18 Days Ahead of Schedule',
   result: '100% OSHA Subpart P Compliance with Zero Crew Incidents',
-  beforeImg: '/images/trench_shield.png',
-  duringImg: '/images/drainage_channel.png',
-  afterImg: '/images/concrete_vault.png',
+  beforeImg: imgSteelBox,
+  duringImg: imgPipeHandling,
+  afterImg: imgRoadPlate,
   metrics: [
     { label: 'TOTAL PIPE INSTALLED', value: '4,200 LF' },
     { label: 'EXCAVATION DEPTH', value: '18.5 FT Avg' },

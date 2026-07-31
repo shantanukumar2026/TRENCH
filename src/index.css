@@ -3,37 +3,35 @@
 @tailwind utilities;
 
 /* 
-  TRENCH UNLIMITED™ — PROPRIETARY DESIGN SYSTEM
-  ULTRA-CLEAN & NEAT GEIST + SYSTEM UI TYPOGRAPHY
-  STRICT HIGH-CONTRAST TEXT COLORS (WHITE ON DARK, DEEP BLUE ON LIGHT)
-  100% FULL-WIDTH ENTERPRISE ARCHITECTURE
+  TRENCH UNLIMITED™ — PROPRIETARY ENGINEERING DESIGN SYSTEM
+  SQUARE CAD INDUSTRIAL GEOMETRY (0px ROUNDED CORNERS)
+  GEIST & SYSTEM UI TYPOGRAPHY
+  STRICT ZERO-BLACK BLUE PALETTE (#0754AE, #2166D1, #0085F4, #C00000)
 */
 
 :root {
   /* Brand Core Palette */
   --trench-blue: #2166D1;
   --deep-logo-blue: #0754AE;
-  --accent-blue: #1E73E8;
+  --accent-blue: #0085F4;
+  --cyan-flow: #00BBFF;
+  --red-accent: #C00000;
   
   /* Supporting Blues & Slates */
-  --bright-blue: #1E73E8;
-  --sky-blue: #3B82F6;
   --powder-blue: #DBEAFE;
   --ice-blue: #F0F7FF;
   --steel-blue: #4682B4;
   --light-slate-blue: #64748B;
   --cool-slate-gray: #94A3B8;
-  --very-light-slate: #E2E8F0;
   --off-white: #F8FAFC;
-  --very-light-blue-gray: #F1F5F9;
   --white: #FFFFFF;
   
   /* Strict Text Colors */
-  --text-primary: #0754AE;       /* Deep logo blue for light backgrounds */
-  --text-body: #163B66;          /* Deep rich readable slate blue for light body copy */
-  --text-muted: #1E4E8C;         /* Rich medium blue for secondary info on light bg */
-  --text-white: #FFFFFF;         /* Pure white on blue/red backgrounds */
-  --text-light-blue: #DBEAFE;    /* Smoke white / light blue on dark blue */
+  --text-primary: #0754AE;
+  --text-body: #163B66;
+  --text-muted: #1E4E8C;
+  --text-white: #FFFFFF;
+  --text-light-blue: #DBEAFE;
   
   /* Borders & Dividers */
   --border-light: #E2E8F0;
@@ -47,20 +45,21 @@
   --shadow-glow: 0 0 20px rgba(33, 102, 209, 0.25);
   
   /* Geist & System UI Ultra-Clean Font Tokens */
-  --font-heading: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
   
-  /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
+  /* STRICT SQUARE RADIUS */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-full: 0px;
 }
 
-/* Reset & Base Styles — ALL BODY & ELEMENTS USE ULTRA-CLEAN GEIST + SYSTEM UI */
+/* Reset & Base Styles — ALL CARDS & BUTTONS ARE SQUARE */
 * {
   box-sizing: border-box;
+  border-radius: 0px !important; /* Force crisp sharp industrial square corners */
 }
 
 html {
@@ -83,14 +82,14 @@ body {
   color: #163B66;
 }
 
-/* Global Button & Link Reset - NO UNDERLINES */
 button, a {
   cursor: pointer;
   outline: none;
   text-decoration: none !important;
+  border-radius: 0px !important;
 }
 
-/* Typography Hierarchy — ALL HEADINGS USE GEIST + SYSTEM UI */
+/* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading) !important;
   text-transform: uppercase;
@@ -104,9 +103,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   letter-spacing: -0.01em;
 }
 
-/* ────── EXPLICIT HIGH-CONTRAST TEXT UTILITIES ────── */
-.text-white, 
-[class*="text-white"] {
+/* High Contrast Color Overrides */
+.text-white, [class*="text-white"] {
   color: #FFFFFF !important;
 }
 
@@ -118,10 +116,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #BFDBFE !important;
 }
 
-.text-blue-300 {
-  color: #93C5FD !important;
-}
-
 .text-yellow-400, .text-amber-400 {
   color: #FFD700 !important;
 }
@@ -130,29 +124,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .bg-blueprint-grid {
   background-color: var(--ice-blue);
   background-image: 
-    linear-gradient(rgba(33, 102, 209, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 102, 209, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(33, 102, 209, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 102, 209, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .bg-blueprint-dense {
   background-color: #EBF3FF;
   background-image: 
-    linear-gradient(rgba(7, 84, 174, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 84, 174, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(7, 84, 174, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 84, 174, 0.12) 1px, transparent 1px);
   background-size: 16px 16px;
-}
-
-/* Technical Ground Layer Pattern */
-.bg-ground-strata {
-  background: linear-gradient(
-    180deg, 
-    var(--white) 0%, 
-    var(--ice-blue) 25%, 
-    #E6F0FA 50%, 
-    #DCE8F5 75%, 
-    var(--very-light-blue-gray) 100%
-  );
 }
 
 /* Trench Blue Gradient Container */
@@ -161,50 +143,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #FFFFFF !important;
 }
 
-.bg-trench-gradient h1,
-.bg-trench-gradient h2,
-.bg-trench-gradient h3,
-.bg-trench-gradient h4,
-.bg-trench-gradient h5,
-.bg-trench-gradient h6,
-.bg-trench-gradient p,
-.bg-trench-gradient span,
-.bg-trench-gradient div {
-  color: #FFFFFF !important;
-}
-
-/* Precision Blue Accent Line */
-.blue-accent-bar, .red-accent-bar {
-  display: inline-block;
-  height: 3px;
-  width: 36px;
-  background-color: var(--trench-blue);
-  border-radius: 2px;
-}
-
-/* Technical Badge Pill */
-.tech-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  background-color: rgba(33, 102, 209, 0.08);
-  border: 1px solid var(--border-blue);
-  color: var(--deep-logo-blue);
-  font-family: var(--font-mono) !important;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.tech-badge-red {
-  background-color: rgba(33, 102, 209, 0.08);
-  border-color: var(--border-blue);
-  color: var(--deep-logo-blue);
-}
-
-/* Custom Corporate Buttons */
+/* Custom Square Buttons */
 .btn-primary, .btn-red {
   display: inline-flex;
   align-items: center;
@@ -214,25 +153,27 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--deep-logo-blue);
   color: #FFFFFF !important;
   font-family: var(--font-heading) !important;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: none;
-  border-radius: var(--radius-sm);
+  border: 2px solid var(--deep-logo-blue);
+  border-radius: 0px !important;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(7, 84, 174, 0.15);
   text-decoration: none !important;
 }
 
-button.bg-red-600, button.bg-red-700 {
+button.bg-red-600, button.bg-red-700, .bg-red-corporate {
   background-color: #C00000 !important;
   color: #FFFFFF !important;
+  border-radius: 0px !important;
 }
 
 .btn-primary:hover, .btn-red:hover {
   background-color: var(--trench-blue);
+  border-color: var(--trench-blue);
   box-shadow: var(--shadow-glow);
   transform: translateY(-2px);
 }
@@ -246,12 +187,12 @@ button.bg-red-600, button.bg-red-700 {
   background-color: #FFFFFF;
   color: var(--deep-logo-blue);
   font-family: var(--font-heading) !important;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border: 2px solid var(--border-blue);
-  border-radius: var(--radius-sm);
+  border-radius: 0px !important;
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none !important;
@@ -263,43 +204,32 @@ button.bg-red-600, button.bg-red-700 {
   transform: translateY(-2px);
 }
 
-.btn-ghost-white {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #FFFFFF !important;
-  font-family: var(--font-heading) !important;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
+/* Custom Industrial Square Product Card Styling */
+.product-card-square {
+  background-color: #FFFFFF;
+  border: 2px solid #BFDBFE;
+  border-radius: 0px !important;
+  box-shadow: 0 4px 16px rgba(7, 84, 174, 0.08);
   transition: all 0.25s ease;
-  text-decoration: none !important;
 }
 
-.btn-ghost-white:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-color: #FFFFFF;
-  transform: translateY(-2px);
+.product-card-square:hover {
+  border-color: #2166D1;
+  box-shadow: 0 12px 32px rgba(7, 84, 174, 0.18);
+  transform: translateY(-3px);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: var(--ice-blue);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--steel-blue);
-  border-radius: 4px;
+  border-radius: 0px !important;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--trench-blue);
@@ -309,20 +239,20 @@ button.bg-red-600, button.bg-red-700 {
 .container-custom {
   width: 100% !important;
   max-width: 100% !important;
-  padding-left: 3rem !important;  /* 48px */
-  padding-right: 3rem !important; /* 48px */
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 @media (max-width: 768px) {
   .container-custom {
-    padding-left: 1.25rem !important; /* 20px */
-    padding-right: 1.25rem !important; /* 20px */
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 }
 
-/* ────── DARK BACKGROUND & FOOTER HIGH-CONTRAST OVERRIDES ────── */
+/* Dark Blue Container Text Rules */
 footer,
 footer p, 
 footer span, 
@@ -341,11 +271,6 @@ footer label {
 
 footer .text-blue-100,
 footer .text-blue-200,
-footer .text-blue-300,
-footer .text-slate-300 {
+footer .text-blue-300 {
   color: #DBEAFE !important;
-}
-
-footer .text-yellow-400 {
-  color: #FFD700 !important;
 }
