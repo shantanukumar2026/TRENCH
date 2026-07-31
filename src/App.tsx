@@ -15,6 +15,7 @@ import { EngineeringWorkspace } from './components/EngineeringWorkspace';
 import { HowItWorks } from './components/HowItWorks';
 import { CaseStudy } from './components/CaseStudy';
 import { Catalogue } from './components/Catalogue';
+import { ProductPage } from './components/ProductPage';
 import { ResourcesHub } from './components/ResourcesHub';
 import { CompanyProfile } from './components/CompanyProfile';
 import { TrenchStory } from './components/TrenchStory';
@@ -28,10 +29,12 @@ import { Product } from './types';
 import { PRODUCTS_CATALOGUE } from './data/trenchData';
 
 export function App() {
-  const [activePage, setActivePage] = useState<'home' | 'story'>('home');
+  const [activePage, setActivePage] = useState<'home' | 'story' | 'product'>('home');
+  const [activeProductPage, setActiveProductPage] = useState<Product | null>(null);
+
   const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
   const [submittalDrawerOpen, setSubmittalDrawerOpen] = useState<boolean>(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
   const [quoteInitialProduct, setQuoteInitialProduct] = useState<Product | null>(null);
 
   // Category & Filter States
@@ -52,6 +55,12 @@ export function App() {
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }, 50);
+  };
+
+  const handleOpenProductPage = (product: Product) => {
+    setActiveProductPage(product);
+    setActivePage('product');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleToggleCompare = (product: Product) => {
@@ -83,7 +92,7 @@ export function App() {
     <div className="min-h-screen bg-slate-50 text-[#163B66] font-body selection:bg-[#2166D1] selection:text-white">
       {/* Primary Fixed Navbar */}
       <Navbar 
-        activePage={activePage}
+        activePage={activePage === 'story' ? 'story' : 'home'}
         onSelectPage={(page) => {
           setActivePage(page);
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -94,7 +103,16 @@ export function App() {
       />
 
       {/* Dynamic View Rendering */}
-      {activePage === 'home' ? (
+      {activePage === 'product' && activeProductPage ? (
+        <main className="pt-24">
+          <ProductPage 
+            product={activeProductPage}
+            onBackToCatalogue={() => { setActivePage('home'); scrollToSection('catalogue'); }}
+            onRequestQuote={handleRequestQuoteForProduct}
+            onSelectRelatedProduct={handleOpenProductPage}
+          />
+        </main>
+      ) : activePage === 'home' ? (
         <main>
           {/* 1. Hero Section — "Below The Surface" 3D Cutaway */}
           <Hero 
@@ -132,8 +150,8 @@ export function App() {
               <CategoryDetail 
                 categoryId={activeCategoryDetailId}
                 onBackToAll={() => { setActiveCategoryDetailId(null); setSelectedCategoryFilter('all'); }}
-                onSelectSubcategory={(subId) => scrollToSection('catalogue')}
-                onSelectProduct={(p) => setSelectedProduct(p)}
+                onSelectSubcategory={() => scrollToSection('catalogue')}
+                onSelectProduct={handleOpenProductPage}
                 onRequestQuote={handleRequestQuoteForProduct}
               />
             </div>
@@ -141,7 +159,7 @@ export function App() {
 
           {/* 6. Featured Engineering Product 3D Stage */}
           <ProductStage 
-            onRequestSpecSheet={() => setSelectedProduct(PRODUCTS_CATALOGUE[0])}
+            onRequestSpecSheet={() => handleOpenProductPage(PRODUCTS_CATALOGUE[0])}
           />
 
           {/* 7. The Trench Anatomy (Educational Cutaway) */}
@@ -182,7 +200,7 @@ export function App() {
 
           {/* 14. Product Catalogue Engine */}
           <Catalogue 
-            onSelectProduct={(p) => setSelectedProduct(p)}
+            onSelectProduct={handleOpenProductPage}
             onRequestQuote={handleRequestQuoteForProduct}
             onToggleCompare={handleToggleCompare}
             comparedProductIds={comparedProductIds}
@@ -243,8 +261,8 @@ export function App() {
       />
 
       <ProductModal 
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        product={selectedProductModal}
+        onClose={() => setSelectedProductModal(null)}
         onRequestQuote={handleRequestQuoteForProduct}
       />
 
