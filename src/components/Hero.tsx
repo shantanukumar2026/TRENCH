@@ -103,8 +103,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
             >
               {/* High-Quality Real Local U.S. Underground Trench Construction Photograph */}
               <img
-                src="/images/assets/gettyimages-1374927924-1024x1024.jpg"
-                alt="American Outdoor Underground Trench Excavation Site"
+                src="/images/assets/gettyimages-1479422287-1024x1024.jpg"
+                alt="Modern infrastructure water treatment facility aerial view"
                 className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
                   isPhotoHovered ? 'scale-[1.03]' : 'scale-100'
                 }`}
