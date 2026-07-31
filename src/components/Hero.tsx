@@ -82,9 +82,52 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
             </div>
           </div>
 
-          {/* Right Column: 3D Interactive Underground Cutaway Engine */}
-          <div className="lg:col-span-7">
+          {/* Right Column: 3D Interactive Underground Cutaway Engine & Visual Product Showcase */}
+          <div className="lg:col-span-7 space-y-6">
             <Hero3DCanvas />
+
+            {/* Visual Product Showcase Strip */}
+            <div className="grid grid-cols-4 gap-3">
+              <div 
+                onClick={onExploreProducts}
+                className="bg-white border-2 border-blue-200 p-2 cursor-pointer hover:border-[#0066FF] hover:shadow-md transition-all group"
+              >
+                <div className="h-20 bg-[#F4F8FF] overflow-hidden mb-1.5 border border-blue-100">
+                  <img src="/images/trench_shield.png" alt="Trench Shield" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#0A2540] uppercase block truncate">STEEL SHIELD</span>
+              </div>
+
+              <div 
+                onClick={onExploreProducts}
+                className="bg-white border-2 border-blue-200 p-2 cursor-pointer hover:border-[#0066FF] hover:shadow-md transition-all group"
+              >
+                <div className="h-20 bg-[#F4F8FF] overflow-hidden mb-1.5 border border-blue-100">
+                  <img src="/images/drainage_channel.png" alt="Drainage Channel" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#0A2540] uppercase block truncate">DRAIN CHANNEL</span>
+              </div>
+
+              <div 
+                onClick={onExploreProducts}
+                className="bg-white border-2 border-blue-200 p-2 cursor-pointer hover:border-[#0066FF] hover:shadow-md transition-all group"
+              >
+                <div className="h-20 bg-[#F4F8FF] overflow-hidden mb-1.5 border border-blue-100">
+                  <img src="/images/concrete_vault.png" alt="Concrete Vault" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#0A2540] uppercase block truncate">ACCESS VAULT</span>
+              </div>
+
+              <div 
+                onClick={onExploreProducts}
+                className="bg-white border-2 border-blue-200 p-2 cursor-pointer hover:border-[#0066FF] hover:shadow-md transition-all group"
+              >
+                <div className="h-20 bg-[#F4F8FF] overflow-hidden mb-1.5 border border-blue-100">
+                  <img src="/images/pvc_pipe.png" alt="PVC Pipe" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#0A2540] uppercase block truncate">WATER MAIN</span>
+              </div>
+            </div>
           </div>
 
         </div>
