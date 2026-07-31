@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, ShieldCheck, Layers, BookOpen, Clock, Activity, HardHat, Compass, FileCheck, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck, AlertTriangle, CheckCircle2, ArrowRight, Layers, HardHat, Ruler, ArrowDown } from 'lucide-react';
 
 interface TrenchStoryProps {
   onExploreProducts: () => void;
@@ -7,335 +7,363 @@ interface TrenchStoryProps {
 }
 
 export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onRequestQuote }) => {
-  const [activeTimelineIdx, setActiveTimelineIdx] = useState<number>(3); // Default modern era
-
-  const timelineEras = [
-    {
-      year: '1800s',
-      title: 'EARLY MANUAL EXCAVATIONS',
-      subtitle: 'Unreinforced Dirt Cuts & High Hazards',
-      description: 'Before modern heavy machinery, underground trenches were dug entirely by hand. Soil cave-ins were extremely common because unreinforced vertical earth walls could not withstand hydrostatic pressure.',
-      riskLevel: 'CRITICAL RISK',
-      tech: 'Pickaxes, Shovels, Timber Props',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      year: '1930s',
-      title: 'TIMBER SHORING & BRICK VAULTS',
-      subtitle: 'Early Structural Lateral Support',
-      description: 'The expansion of municipal water grids forced contractors to use heavy wood timber shores and hand-laid brick access shafts. While safer, timber rotted under groundwater exposure.',
-      riskLevel: 'MODERATE RISK',
-      tech: 'Heavy Timber Bracing & Brick Masonry',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      year: '1970s',
-      title: 'THE OSHA SUBPART P ERA',
-      subtitle: 'Standardized Soil Classification & Steel Shields',
-      description: 'In 1989, OSHA enacted strict Subpart P excavation standards requiring certified shoring for any trench deeper than 5 feet in unstable soil (Type A, B, C). Steel trench boxes became mandatory.',
-      riskLevel: 'REGULATED SAFETY',
-      tech: 'Double-Wall Steel Boxes & Hydraulic Shores',
-      image: 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      year: 'PRESENT',
-      title: 'TRENCH UNLIMITED™ SYSTEM',
-      subtitle: 'Everything Trench — Engineered Infrastructure',
-      description: 'Today, Trench Unlimited™ delivers comprehensive, PE-stamped underground systems: high-tensile steel shields, precast concrete access vaults, polymer channel drainage, and C900/HDPE main piping.',
-      riskLevel: 'ZERO INCIDENT STANDARD',
-      tech: 'High-Tensile A572 Steel, Precast Vaults, CAD/BIM',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'
-    }
-  ];
-
   return (
-    <div className="pt-36 pb-20 bg-blueprint-grid">
-      {/* 1. Hero Banner: What Trench Means */}
-      <section className="py-20 bg-trench-gradient text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+    <div className="pt-24 bg-white">
 
-        <div className="container-custom relative z-10 text-center max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 backdrop-blur-md border border-white/20">
-            <BookOpen className="w-4 h-4 text-[#C00000]" />
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-blue-100">
-              FIELD ENGINEERING DOCUMENTARY STORY
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 1: FULL-WIDTH HERO — "What Is a Trench?"
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden">
+        {/* Full-bleed background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/assets/gettyimages-1374927924-1024x1024.jpg"
+            alt="Active trench excavation site"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/90 via-[#004AAD]/70 to-transparent"></div>
+        </div>
+
+        <div className="container-custom relative z-10 py-28 max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/15 border border-white/30 mb-6">
+            <Layers className="w-4 h-4 text-white" />
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-white">
+              UNDERSTANDING THE TRENCH
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight font-heading uppercase leading-none">
-            THE STORY OF <br />
-            <span className="text-blue-200">THE TRENCH</span>
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-white font-heading uppercase leading-tight mb-6">
+            WHAT IS <br /><span className="text-[#00BBFF]">A TRENCH?</span>
           </h1>
 
-          <div className="flex justify-center">
-            <span className="h-1 w-20 bg-[#C00000] rounded"></span>
-          </div>
-
-          <p className="text-lg text-blue-100 font-medium leading-relaxed max-w-3xl mx-auto">
-            A trench is not just an excavation in dirt—it is the vital cut through the earth that houses the unseen arteries of modern civilization. Water, electricity, gas, high-speed fiber, and storm drainage all rely on engineered trenches.
+          <p className="text-lg text-blue-100 font-medium leading-relaxed max-w-2xl mb-4">
+            A trench is a narrow excavation cut into the earth — deeper than it is wide, and no more than 15 feet across at the bottom. Every water line, sewer main, gas pipe, fiber optic cable, and electrical conduit running beneath America's streets was installed inside one.
           </p>
-
-          <div className="pt-4 flex flex-wrap justify-center gap-6 font-mono text-xs text-blue-200">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#C00000]" />
-              <span>OSHA 1926 SUBPART P CERTIFIED</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Activity className="w-4 h-4 text-blue-300" />
-              <span>LATERAL SOIL PRESSURE DYNAMICS</span>
-            </div>
-          </div>
+          <p className="text-base text-blue-200 font-medium leading-relaxed max-w-2xl">
+            Without trenches, modern civilization stops. No running water. No natural gas. No drainage. No communications. The trench is where infrastructure begins.
+          </p>
         </div>
       </section>
 
-      {/* 2. Interactive Historical Evolution Timeline */}
-      <section className="py-24 bg-white border-b border-blue-200">
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 2: THE PROBLEM — "Why Trenches Are Dangerous"
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-[#FFF8F0] border-y-2 border-orange-200">
         <div className="container-custom">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F0F7FF] border border-blue-200">
-              <Clock className="w-3.5 h-3.5 text-[#C00000]" />
-              <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-                HISTORICAL CHRONOLOGY
-              </span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-              THE EVOLUTION OF <span className="text-[#2166D1]">TRENCH SAFETY</span>
-            </h2>
-            <p className="text-blue-600 font-medium text-base">
-              From dangerous unreinforced earth cuts to modern high-tensile steel shoring box engineering.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Timeline Buttons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {timelineEras.map((era, idx) => (
-              <button
-                key={era.year}
-                onClick={() => setActiveTimelineIdx(idx)}
-                className={`p-4 rounded-xl border-2 font-mono text-left transition-all ${
-                  activeTimelineIdx === idx
-                    ? 'bg-[#0754AE] text-white border-[#0754AE] shadow-xl scale-[1.02]'
-                    : 'bg-[#F0F7FF] text-[#0754AE] border-blue-200 hover:border-[#2166D1]'
-                }`}
-              >
-                <div className="text-2xl font-black font-heading">{era.year}</div>
-                <div className="text-xs font-bold truncate mt-1">{era.title}</div>
-              </button>
-            ))}
-          </div>
-
-          {/* Active Era Showcase Card */}
-          <div className="bg-[#F0F7FF] border-2 border-blue-300 rounded-2xl p-8 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-blueprint-dense">
-            <div className="lg:col-span-6 relative h-[360px] rounded-xl overflow-hidden shadow-md border border-blue-200">
-              <img 
-                src={timelineEras[activeTimelineIdx].image || '/images/trench_shield.png'} 
-                alt={timelineEras[activeTimelineIdx].title} 
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = '/images/trench_shield.png';
-                }}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute top-4 left-4 bg-[#C00000] text-white px-3 py-1 font-mono text-xs font-bold uppercase rounded shadow">
-                {timelineEras[activeTimelineIdx].riskLevel}
-              </div>
-            </div>
-
-            <div className="lg:col-span-6 space-y-4 text-blue-600">
-              <div className="text-xs font-mono text-[#C00000] font-bold uppercase tracking-wider">
-                ERA {timelineEras[activeTimelineIdx].year} • {timelineEras[activeTimelineIdx].subtitle}
-              </div>
-              <h3 className="text-3xl font-extrabold text-[#0754AE] font-heading uppercase">
-                {timelineEras[activeTimelineIdx].title}
-              </h3>
-              <p className="font-medium text-base leading-relaxed">
-                {timelineEras[activeTimelineIdx].description}
-              </p>
-
-              <div className="p-4 bg-white rounded-lg border border-blue-200 font-mono text-xs space-y-1">
-                <span className="text-blue-400 uppercase font-bold">KEY TECHNOLOGY & EQUIPMENT:</span>
-                <div className="text-[#0754AE] font-bold text-sm">
-                  {timelineEras[activeTimelineIdx].tech}
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3. The Science of Soil Pressure: Why Trenches Need Shoring */}
-      <section className="py-24 bg-blueprint-grid border-b border-blue-200">
-        <div className="container-custom">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-blue-200 shadow-sm">
-                <Activity className="w-3.5 h-3.5 text-[#C00000]" />
-                <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-                  SOIL MECHANICS & LOAD PHYSICS
+            {/* Left: The danger */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-100 border border-orange-300">
+                <AlertTriangle className="w-4 h-4 text-orange-600" />
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-orange-700">
+                  THE HIDDEN DANGER
                 </span>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-                THE PHYSICS BEHIND <br />
-                <span className="text-[#2166D1]">SOIL PRESSURE</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] font-heading uppercase leading-tight">
+                CAVE-INS KILL <br /><span className="text-[#D90429]">IN SECONDS.</span>
               </h2>
 
-              <p className="text-blue-600 font-medium text-base leading-relaxed">
-                One cubic yard of soil can weigh as much as an automobile (2,700 to 3,000 lbs). When an un-shored trench wall is cut, lateral earth pressure creates intense sheer stress. Without engineered shoring panels, a cave-in occurs in less than a second.
+              <p className="text-base text-[#004AAD] font-medium leading-relaxed">
+                One cubic yard of soil weighs approximately <strong>3,000 pounds</strong> — as much as a compact car. When trench walls collapse, workers are buried instantly under thousands of pounds of earth.
               </p>
 
-              <div className="space-y-3 font-mono text-xs">
-                <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center">
-                  <div>
-                    <div className="font-bold text-[#0754AE]">TYPE A SOIL (Cohesive Clay)</div>
-                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength &gt; 1.5 tons/sq ft</div>
-                  </div>
-                  <span className="px-2 py-1 bg-blue-100 text-[#0754AE] font-bold rounded">25° Angle</span>
-                </div>
+              <p className="text-base text-[#004AAD] font-medium leading-relaxed">
+                Cave-ins are the <strong>#1 cause of death</strong> in trenching operations. OSHA reports that trench collapses are <strong>2.5x more likely to be fatal</strong> than other construction accidents. Many victims suffocate within minutes.
+              </p>
 
-                <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center">
-                  <div>
-                    <div className="font-bold text-[#0754AE]">TYPE B SOIL (Granular Silt / Loam)</div>
-                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength 0.5 to 1.5 tons/sq ft</div>
-                  </div>
-                  <span className="px-2 py-1 bg-amber-100 text-amber-800 font-bold rounded">45° Angle</span>
+              {/* Key stats */}
+              <div className="grid grid-cols-3 gap-4 pt-2">
+                <div className="p-4 bg-white border-2 border-orange-200 text-center">
+                  <div className="text-2xl font-extrabold text-[#D90429]">3,000</div>
+                  <div className="text-[10px] font-mono font-bold text-[#004AAD] uppercase mt-1">LBS PER CUBIC YARD</div>
                 </div>
-
-                <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center border-l-4 border-l-[#C00000]">
-                  <div>
-                    <div className="font-bold text-[#C00000]">TYPE C SOIL (Submerged Sand / Gravel)</div>
-                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength &lt; 0.5 tons/sq ft</div>
-                  </div>
-                  <span className="px-2 py-1 bg-red-100 text-[#C00000] font-bold rounded">34° Angle</span>
+                <div className="p-4 bg-white border-2 border-orange-200 text-center">
+                  <div className="text-2xl font-extrabold text-[#D90429]">5 FT</div>
+                  <div className="text-[10px] font-mono font-bold text-[#004AAD] uppercase mt-1">OSHA PROTECTION REQUIRED</div>
+                </div>
+                <div className="p-4 bg-white border-2 border-orange-200 text-center">
+                  <div className="text-2xl font-extrabold text-[#D90429]">2.5×</div>
+                  <div className="text-[10px] font-mono font-bold text-[#004AAD] uppercase mt-1">MORE LIKELY FATAL</div>
                 </div>
               </div>
             </div>
 
-            {/* Visual Formula Box */}
-            <div className="lg:col-span-6 bg-white border-2 border-blue-300 rounded-2xl p-8 shadow-2xl font-mono space-y-6">
-              <div className="flex justify-between items-center pb-4 border-b border-slate-200">
-                <span className="text-xs font-bold text-[#0754AE]">RANKINE LATERAL EARTH PRESSURE FORMULA</span>
-                <span className="text-xs text-[#C00000] font-bold">PE CALCULATED</span>
-              </div>
-
-              <div className="p-6 bg-[#F0F7FF] rounded-xl border border-blue-200 text-center space-y-3">
-                <div className="text-2xl font-extrabold text-[#0754AE]">
-                  P<sub>a</sub> = ½ · γ · H² · K<sub>a</sub>
-                </div>
-                <p className="text-xs text-blue-500 font-sans">
-                  Where <strong>γ</strong> = soil density, <strong>H</strong> = excavation depth, and <strong>K<sub>a</sub></strong> = active earth pressure coefficient.
+            {/* Right: Image */}
+            <div className="relative">
+              <img
+                src="/images/assets/gettyimages-2269261031-1024x1024.jpg"
+                alt="Deep trench excavation requiring cave-in protection"
+                className="w-full h-[440px] object-cover shadow-lg border-2 border-orange-200"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-3 border border-orange-200">
+                <p className="text-xs font-mono font-bold text-[#D90429] uppercase">
+                  OSHA 29 CFR 1926 SUBPART P — Any trench 5 feet deep or more requires a protective system.
                 </p>
               </div>
-
-              <div className="space-y-3 text-xs text-blue-600">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#2166D1]" />
-                  <span>TU-8000 Steel Shields are rated to withstand up to <strong>1,450 PSF</strong> lateral force.</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#2166D1]" />
-                  <span>100% Stamped PE calculation packets provided for municipal inspector approval.</span>
-                </div>
-              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
-      {/* 4. What "EVERYTHING TRENCH" Means to Trench Unlimited */}
-      <section className="py-24 bg-white border-b border-blue-200">
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 3: THE SOLUTION — "How Trench Protection Works"
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-white">
         <div className="container-custom">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F0F7FF] border border-blue-200">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#C00000]" />
-              <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-                OUR BRAND MISSION
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#F4F8FF] border border-[#0085F4]/30 mx-auto">
+              <ShieldCheck className="w-4 h-4 text-[#0085F4]" />
+              <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#004AAD]">
+                THE PROTECTIVE SYSTEMS
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-              WHAT <span className="text-[#2166D1]">“EVERYTHING TRENCH”</span> MEANS
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] font-heading uppercase leading-tight">
+              HOW WE PROTECT <span className="text-[#0085F4]">EVERY CREW</span>
             </h2>
-            <p className="text-blue-600 font-medium text-base">
-              Supporting the complete lifecycle of underground infrastructure from surface castings to deep flow.
+            <p className="text-base text-blue-600 font-medium leading-relaxed">
+              OSHA mandates one of four methods for any trench 5 feet or deeper. Here's what they look like in the field.
             </p>
           </div>
 
-          {/* 4 Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                num: '01',
-                title: 'PROTECTION & SAFETY',
-                desc: 'OSHA-compliant steel trench shields, aluminum shores, and safety ramps that protect crew lives on the jobsite.',
-                icon: ShieldCheck
-              },
-              {
-                num: '02',
-                title: 'CONVEYANCE & FLOW',
-                desc: 'High-density corrugated storm pipe, C900 pressure water mains, and pre-sloped polymer channel drainage systems.',
-                icon: Layers
-              },
-              {
-                num: '03',
-                title: 'ACCESS & CONTAINMENT',
-                desc: 'Precast concrete utility vaults, access shafts, valve structures, and heavy-duty AASHTO H-20 street castings.',
-                icon: HardHat
-              },
-              {
-                num: '04',
-                title: 'ENCLOSURE & PROTECTION',
-                desc: 'Snap-lock duct spacers, electrical conduit enclosures, and custom PE-stamped underground fittings.',
-                icon: Compass
-              }
-            ].map((pillar) => {
-              const IconComponent = pillar.icon;
-              return (
-                <div 
-                  key={pillar.num}
-                  className="bg-[#F0F7FF] border-2 border-blue-200 rounded-xl p-6 shadow-md hover:border-[#2166D1] transition-all space-y-4 flex flex-col justify-between"
-                >
-                  <div className="flex justify-between items-center border-b border-blue-200 pb-3">
-                    <span className="font-mono text-2xl font-black text-[#C00000]">
-                      {pillar.num}
-                    </span>
-                    <IconComponent className="w-6 h-6 text-[#0754AE]" />
-                  </div>
+          {/* 4 Protection Methods — Visual Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                  <div>
-                    <h3 className="text-lg font-bold text-[#0754AE] font-heading uppercase">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs text-blue-600 font-medium leading-relaxed mt-2">
-                      {pillar.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 text-[10px] font-mono text-[#2166D1] font-bold uppercase">
-                    SYSTEM PILLAR {pillar.num}
-                  </div>
+            {/* Method 1: Shielding */}
+            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+              <img
+                src="/images/assets/gettyimages-1479422287-1024x1024.jpg"
+                alt="Steel trench shield box protecting workers"
+                className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold">01</span>
+                  <h3 className="text-lg font-extrabold text-[#004AAD] font-heading uppercase">SHIELDING</h3>
                 </div>
-              );
-            })}
-          </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  Heavy steel trench boxes (trench shields) are lowered into the excavation to create a protective cage around workers. They don't prevent the collapse — they absorb the force and protect the crew inside. The most common method on U.S. jobsites.
+                </p>
+                <div className="text-xs font-mono font-bold text-[#0085F4]">EQUIPMENT: Steel Trench Boxes, Aluminum Shields</div>
+              </div>
+            </div>
 
-          {/* CTA Banner */}
-          <div className="mt-16 text-center">
-            <button 
-              onClick={onExploreProducts}
-              className="btn-primary text-sm py-4 px-8 shadow-xl"
-            >
-              EXPLORE OUR COMPLETE SYSTEM CATALOGUE
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+            {/* Method 2: Shoring */}
+            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+              <img
+                src="/images/assets/gettyimages-2167164749-1024x1024.jpg"
+                alt="Hydraulic shoring rails bracing trench walls"
+                className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold">02</span>
+                  <h3 className="text-lg font-extrabold text-[#004AAD] font-heading uppercase">SHORING</h3>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  Hydraulic or pneumatic systems are installed to actively push against the trench walls, preventing soil from moving. Aluminum hydraulic shores can be installed entirely from above ground — the crew never enters an unprotected trench.
+                </p>
+                <div className="text-xs font-mono font-bold text-[#0085F4]">EQUIPMENT: Hydraulic Shores, Pneumatic Struts</div>
+              </div>
+            </div>
 
+            {/* Method 3: Slide Rail */}
+            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+              <img
+                src="/images/assets/gettyimages-2223963188-1024x1024.jpg"
+                alt="Modular slide rail system in deep excavation"
+                className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold">03</span>
+                  <h3 className="text-lg font-extrabold text-[#004AAD] font-heading uppercase">SLIDE RAIL SYSTEMS</h3>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  For deeper excavations (15–30+ feet), modular slide rail panels are pushed into the ground as the excavator digs. No vibration, no ground disturbance to neighboring structures. The modern replacement for driven sheet piling.
+                </p>
+                <div className="text-xs font-mono font-bold text-[#0085F4]">EQUIPMENT: Modular Slide Rail Panels & Posts</div>
+              </div>
+            </div>
+
+            {/* Method 4: Access & Egress */}
+            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+              <img
+                src="/images/assets/gettyimages-2158727734-1024x1024.jpg"
+                alt="Trench access ladders and road plates"
+                className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold">04</span>
+                  <h3 className="text-lg font-extrabold text-[#004AAD] font-heading uppercase">ACCESS & ROAD PLATES</h3>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  OSHA requires a safe exit within 25 feet of every worker. Trench ladders with walk-through handrails provide compliant access. Steel road plates bridge open trenches so traffic can safely pass over active excavations.
+                </p>
+                <div className="text-xs font-mono font-bold text-[#0085F4]">EQUIPMENT: Trench Ladders, AASHTO H-20 Road Plates</div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
+
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 4: SOIL CLASSIFICATION — "Know Your Ground"
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-[#F8FAFC] border-y-2 border-slate-200">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* Left: Explanation */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30">
+                <Ruler className="w-4 h-4 text-[#0085F4]" />
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#004AAD]">
+                  OSHA SOIL CLASSIFICATION
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] font-heading uppercase leading-tight">
+                EVERY TRENCH STARTS <br /><span className="text-[#0085F4]">WITH THE SOIL.</span>
+              </h2>
+
+              <p className="text-base text-blue-600 font-medium leading-relaxed">
+                Before a single piece of shoring equipment is selected, a competent person must classify the soil. OSHA defines three soil types — each requiring different levels of protection:
+              </p>
+
+              <img
+                src="/images/assets/gettyimages-1152010565-1024x1024.jpg"
+                alt="Soil layers in excavation"
+                className="w-full h-64 object-cover shadow-md border-2 border-slate-200"
+              />
+            </div>
+
+            {/* Right: 3 Soil Types */}
+            <div className="space-y-4">
+              {/* Type A */}
+              <div className="p-6 bg-white border-2 border-emerald-200 hover:border-emerald-400 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-10 h-10 flex items-center justify-center bg-emerald-100 text-emerald-700 font-extrabold text-sm font-mono">A</span>
+                  <div>
+                    <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE A — STABLE</h3>
+                    <span className="text-xs font-mono text-emerald-600 font-bold">&gt; 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
+                  </div>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  Clay, silty clay, and hardpan. The most stable soil type. Trenches in Type A soil may use simpler protection systems like sloping at 3/4:1 ratio. Hydraulic shores are commonly used.
+                </p>
+              </div>
+
+              {/* Type B */}
+              <div className="p-6 bg-white border-2 border-amber-200 hover:border-amber-400 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-700 font-extrabold text-sm font-mono">B</span>
+                  <div>
+                    <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE B — MODERATE</h3>
+                    <span className="text-xs font-mono text-amber-600 font-bold">0.5 – 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
+                  </div>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  Silt, sandy loam, and medium clay. Requires steeper sloping (1:1) or active shoring systems. Previously disturbed soil, even if originally Type A, is automatically classified as Type B.
+                </p>
+              </div>
+
+              {/* Type C */}
+              <div className="p-6 bg-white border-2 border-red-200 hover:border-red-400 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-10 h-10 flex items-center justify-center bg-red-100 text-red-700 font-extrabold text-sm font-mono">C</span>
+                  <div>
+                    <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE C — UNSTABLE</h3>
+                    <span className="text-xs font-mono text-red-600 font-bold">&lt; 0.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
+                  </div>
+                </div>
+                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                  Gravel, sand, submerged soil, and any soil from which water is freely seeping. The most dangerous classification. Requires maximum protection — heavy steel trench boxes or slide rail systems are mandatory. Benching is not allowed.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 5: WHAT WE DO — "Trench Unlimited"
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left: Image */}
+            <div className="relative">
+              <img
+                src="/images/assets/gettyimages-1431428704-1024x1024.jpg"
+                alt="Trench shoring equipment on American construction site"
+                className="w-full h-[440px] object-cover shadow-lg border-2 border-slate-200"
+              />
+            </div>
+
+            {/* Right: Our role */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#F4F8FF] border border-[#0085F4]/30">
+                <HardHat className="w-4 h-4 text-[#0085F4]" />
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#004AAD]">
+                  ABOUT TRENCH UNLIMITED™
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] font-heading uppercase leading-tight">
+                WE SUPPLY <span className="text-[#0085F4]">EVERYTHING TRENCH.</span>
+              </h2>
+
+              <p className="text-base text-blue-600 font-medium leading-relaxed">
+                Trench Unlimited is a U.S.-based supplier of trench shoring, shielding, and safety equipment for contractors, municipalities, and utility authorities building America's underground infrastructure.
+              </p>
+
+              <div className="space-y-3">
+                {[
+                  'OSHA 1926 Subpart P certified steel trench shields & boxes',
+                  '6061-T6 aluminum hydraulic shoring systems',
+                  'Modular slide rail systems for deep excavation',
+                  'OSHA compliant trench access ladders & platforms',
+                  'AASHTO H-20 rated steel road plates for trench bridging',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#0085F4] shrink-0 mt-0.5" />
+                    <span className="text-sm text-[#004AAD] font-bold">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button
+                  onClick={onExploreProducts}
+                  className="btn-primary py-4 px-8 text-sm"
+                >
+                  VIEW ALL EQUIPMENT
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={onRequestQuote}
+                  className="btn-secondary py-4 px-8 text-sm"
+                >
+                  REQUEST A QUOTE
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

@@ -125,6 +125,18 @@ export function App() {
             onSelectRelatedProduct={handleOpenProductPage}
           />
         </main>
+      ) : activePage === 'story' ? (
+        <main>
+          <TrenchStory
+            onExploreProducts={() => handleOpenProductsPage('all')}
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          <FinalCTA
+            onRequestQuote={() => setQuoteModalOpen(true)}
+            onTalkToTeam={() => setQuoteModalOpen(true)}
+          />
+        </main>
       ) : (
         <main>
           {/* 1. Hero Section */}
