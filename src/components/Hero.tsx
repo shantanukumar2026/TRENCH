@@ -39,12 +39,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
           {/* LEFT CONTENT (44% on Desktop - 5 columns) */}
           <div className="lg:col-span-5 space-y-6 text-left order-1">
             
-            {/* Small Outlined Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#0085F4] animate-ping"></span>
-              <span className="text-xs font-mono font-bold text-[#004AAD] tracking-widest uppercase">
-                TRENCH &amp; UNDERGROUND INFRASTRUCTURE
-              </span>
+            {/* Small Outlined Eyebrow with American Infrastructure Badge */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm rounded-full">
+                <span className="w-2 h-2 rounded-full bg-[#0085F4] animate-ping"></span>
+                <span className="text-xs font-mono font-bold text-[#004AAD] tracking-widest uppercase">
+                  TRENCH &amp; UNDERGROUND INFRASTRUCTURE
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#0085F4]/20 shadow-sm text-xs font-mono font-bold text-[#004AAD]">
+                <span>🇺🇸</span>
+                <span>U.S. INFRASTRUCTURE CERTIFIED</span>
+              </div>
             </div>
 
             {/* Large Typography Headline */}
