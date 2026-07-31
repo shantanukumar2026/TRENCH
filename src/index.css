@@ -3,70 +3,63 @@
 @tailwind utilities;
 
 /* 
-  TRENCH UNLIMITED™ — PROPRIETARY ENGINEERING DESIGN SYSTEM
-  SQUARE CAD INDUSTRIAL GEOMETRY (0px ROUNDED CORNERS)
-  GEIST & SYSTEM UI TYPOGRAPHY
-  STRICT ZERO-BLACK BLUE PALETTE (#0754AE, #2166D1, #0085F4, #C00000)
+  TRENCH UNLIMITED™ — WORLD-CLASS U.S. ENTERPRISE ENGINEERING DESIGN SYSTEM
+  CREATIVE BESPOKE UI/UX (AIRY WHITE SPACE, CRISP SQUARE CAD GEOMETRY, ELECTRIC ACCENTS)
+  ZERO-BLACK COLOR PALETTE: Deep Navy (#0A2540), Electric Blue (#0066FF), Crimson Accent (#D90429)
 */
 
 :root {
   /* Brand Core Palette */
-  --trench-blue: #2166D1;
-  --deep-logo-blue: #0754AE;
+  --trench-blue: #0066FF;
+  --deep-logo-blue: #0A2540;
   --accent-blue: #0085F4;
   --cyan-flow: #00BBFF;
-  --red-accent: #C00000;
+  --red-accent: #D90429;
   
   /* Supporting Blues & Slates */
-  --powder-blue: #DBEAFE;
-  --ice-blue: #F0F7FF;
-  --steel-blue: #4682B4;
+  --powder-blue: #EBF3FF;
+  --ice-blue: #F4F8FF;
+  --steel-blue: #475569;
   --light-slate-blue: #64748B;
   --cool-slate-gray: #94A3B8;
-  --off-white: #F8FAFC;
+  --off-white: #FAFCFF;
   --white: #FFFFFF;
   
   /* Strict Text Colors */
-  --text-primary: #0754AE;
-  --text-body: #163B66;
-  --text-muted: #1E4E8C;
+  --text-primary: #0A2540;
+  --text-body: #1E293B;
+  --text-muted: #475569;
   --text-white: #FFFFFF;
   --text-light-blue: #DBEAFE;
   
   /* Borders & Dividers */
   --border-light: #E2E8F0;
-  --border-blue: #BFDBFE;
-  --border-active: #2166D1;
+  --border-blue: #CBD5E1;
+  --border-active: #0066FF;
   
   /* Elevation Shadows */
-  --shadow-sm: 0 2px 8px rgba(7, 84, 174, 0.08);
-  --shadow-md: 0 8px 24px rgba(7, 84, 174, 0.12);
-  --shadow-lg: 0 16px 40px rgba(7, 84, 174, 0.16);
-  --shadow-glow: 0 0 20px rgba(33, 102, 209, 0.25);
+  --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.04);
+  --shadow-md: 0 8px 24px rgba(10, 37, 64, 0.08);
+  --shadow-lg: 0 16px 40px rgba(10, 37, 64, 0.12);
+  --shadow-glow: 0 0 24px rgba(0, 102, 255, 0.2);
   
-  /* Geist & System UI Ultra-Clean Font Tokens */
+  /* Typography Tokens */
   --font-heading: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
-  
-  /* STRICT SQUARE RADIUS */
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-full: 0px;
 }
 
-/* Reset & Base Styles — ALL CARDS & BUTTONS ARE SQUARE */
+/* Reset & Base Styles — ALL CARDS & BUTTONS ARE CRISP SQUARE CAD */
 * {
   box-sizing: border-box;
-  border-radius: 0px !important; /* Force crisp sharp industrial square corners */
+  border-radius: 0px !important;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-body) !important;
   background-color: var(--off-white);
-  color: #163B66;
+  color: #1E293B;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,7 +72,7 @@ body, p, div, span, label, input, select, textarea, li, a, button {
 body {
   overflow-x: hidden;
   background: var(--off-white);
-  color: #163B66;
+  color: #1E293B;
 }
 
 button, a {
@@ -95,6 +88,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.15;
+  color: var(--deep-logo-blue);
   text-decoration: none !important;
 }
 
@@ -116,35 +110,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #BFDBFE !important;
 }
 
-.text-yellow-400, .text-amber-400 {
-  color: #FFD700 !important;
-}
-
 /* Blueprint Grid Background Pattern */
 .bg-blueprint-grid {
   background-color: var(--ice-blue);
   background-image: 
-    linear-gradient(rgba(33, 102, 209, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 102, 209, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(0, 102, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 255, 0.06) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .bg-blueprint-dense {
   background-color: #EBF3FF;
   background-image: 
-    linear-gradient(rgba(7, 84, 174, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 84, 174, 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(10, 37, 64, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
-/* Trench Blue Gradient Container */
-.bg-trench-gradient {
-  background: linear-gradient(135deg, var(--deep-logo-blue) 0%, var(--trench-blue) 100%);
-  color: #FFFFFF !important;
-}
-
-/* Custom Square Buttons */
-.btn-primary, .btn-red {
+/* Primary Enterprise Buttons */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -153,25 +137,19 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: var(--deep-logo-blue);
   color: #FFFFFF !important;
   font-family: var(--font-heading) !important;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border: 2px solid var(--deep-logo-blue);
   border-radius: 0px !important;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(7, 84, 174, 0.15);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(10, 37, 64, 0.12);
   text-decoration: none !important;
 }
 
-button.bg-red-600, button.bg-red-700, .bg-red-corporate {
-  background-color: #C00000 !important;
-  color: #FFFFFF !important;
-  border-radius: 0px !important;
-}
-
-.btn-primary:hover, .btn-red:hover {
+.btn-primary:hover {
   background-color: var(--trench-blue);
   border-color: var(--trench-blue);
   box-shadow: var(--shadow-glow);
@@ -187,36 +165,37 @@ button.bg-red-600, button.bg-red-700, .bg-red-corporate {
   background-color: #FFFFFF;
   color: var(--deep-logo-blue);
   font-family: var(--font-heading) !important;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border: 2px solid var(--border-blue);
   border-radius: 0px !important;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   text-decoration: none !important;
 }
 
 .btn-secondary:hover {
   border-color: var(--trench-blue);
   background-color: var(--ice-blue);
+  color: var(--trench-blue);
   transform: translateY(-2px);
 }
 
-/* Custom Industrial Square Product Card Styling */
+/* Custom Square Product Card Styling */
 .product-card-square {
   background-color: #FFFFFF;
-  border: 2px solid #BFDBFE;
+  border: 2px solid #E2E8F0;
   border-radius: 0px !important;
-  box-shadow: 0 4px 16px rgba(7, 84, 174, 0.08);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card-square:hover {
-  border-color: #2166D1;
-  box-shadow: 0 12px 32px rgba(7, 84, 174, 0.18);
-  transform: translateY(-3px);
+  border-color: #0066FF;
+  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.12);
+  transform: translateY(-4px);
 }
 
 /* Custom Scrollbar */
@@ -235,12 +214,12 @@ button.bg-red-600, button.bg-red-700, .bg-red-corporate {
   background: var(--trench-blue);
 }
 
-/* 100% FULL-WIDTH ENTERPRISE CONTAINER */
+/* 100% FULL-WIDTH ENTERPRISE CONTAINER WITH GENEROUS WHITE SPACE */
 .container-custom {
   width: 100% !important;
   max-width: 100% !important;
-  padding-left: 3rem !important;
-  padding-right: 3rem !important;
+  padding-left: 3.5rem !important;
+  padding-right: 3.5rem !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -252,7 +231,7 @@ button.bg-red-600, button.bg-red-700, .bg-red-corporate {
   }
 }
 
-/* Dark Blue Container Text Rules */
+/* Dark Footer Text Rule Overrides */
 footer,
 footer p, 
 footer span, 

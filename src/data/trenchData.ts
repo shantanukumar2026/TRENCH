@@ -1,20 +1,20 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Authentic Getty Infrastructure Images from src/assets/images/
-import imgSteelBox from '../assets/images/gettyimages-1157931869-1024x1024.jpg';
-import imgDrainageChannel from '../assets/images/gettyimages-1176819057-1024x1024.jpg';
-import imgConcreteVault from '../assets/images/gettyimages-1158438565-1024x1024.jpg';
-import imgPvcPipe from '../assets/images/gettyimages-1222819839-1024x1024.jpg';
-import imgManholeCover from '../assets/images/gettyimages-1349322660-1024x1024.jpg';
-import imgHydraulicShore from '../assets/images/gettyimages-1367548904-1024x1024.jpg';
-import imgHdpePipe from '../assets/images/gettyimages-1324527712-1024x1024.jpg';
-import imgExcavatorBucket from '../assets/images/gettyimages-141843304-1024x1024.jpg';
-import imgPipeHandling from '../assets/images/gettyimages-1152010565-1024x1024.jpg';
-import imgDuctBank from '../assets/images/gettyimages-1374927924-1024x1024.jpg';
-import imgDewateringPump from '../assets/images/gettyimages-1431428704-1024x1024.jpg';
-import imgTrenchTools from '../assets/images/gettyimages-1479422287-1024x1024.jpg';
-import imgRoadPlate from '../assets/images/gettyimages-175600364-1024x1024.jpg';
-import imgValveBox from '../assets/images/gettyimages-2164291973-1024x1024.jpg';
+// High-Resolution Curated Unsplash U.S. Infrastructure Photography URLs
+const imgSteelBox = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80';
+const imgDrainageChannel = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=1200&q=80';
+const imgConcreteVault = 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80';
+const imgPvcPipe = 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80';
+const imgManholeCover = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80';
+const imgHydraulicShore = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80';
+const imgHdpePipe = 'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=1200&q=80';
+const imgExcavatorBucket = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80';
+const imgPipeHandling = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80';
+const imgDuctBank = 'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=1200&q=80';
+const imgDewateringPump = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80';
+const imgTrenchTools = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80';
+const imgRoadPlate = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=1200&q=80';
+const imgValveBox = 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80';
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
@@ -289,11 +289,11 @@ export const INDUSTRIES_DATA: Industry[] = [
 ];
 
 export const DEPTH_LEVELS: DepthLevel[] = [
-  { level: 1, id: 'surface', title: 'LEVEL 01 — SURFACE', depthMeters: '0.0m - 0.5m', depthFeet: '0 - 1.5 FT', tagline: 'Heavy-Duty Surface Grates & Street Castings', description: 'Impact-resistant surface drainage grates, utility trench covers, and municipal street frames engineered for AASHTO H-20 / HS-20 traffic loading.', products: ['Trench Grates', 'Municipal Castings', 'Vault Hatch Covers'], color: '#2166D1' },
-  { level: 2, id: 'access', title: 'LEVEL 02 — ACCESS', depthMeters: '0.5m - 2.0m', depthFeet: '1.5 - 6.5 FT', tagline: 'Vault Structures & Structural Access Shafts', description: 'Modular precast concrete vaults, grade rings, and structural access shafts providing maintenance entry to underground networks.', products: ['Precast Vaults', 'Grade Rings', 'Access Risers'], color: '#0754AE' },
-  { level: 3, id: 'trench', title: 'LEVEL 03 — TRENCH', depthMeters: '2.0m - 4.5m', depthFeet: '6.5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, lightweight aluminum shields, and hydraulic shore systems engineered for maximum soil pressure resistance.', products: ['TU-8000 Trench Box', 'Aluminum Shield', 'Hydraulic Shores'], color: '#1E73E8' },
-  { level: 4, id: 'utility', title: 'LEVEL 04 — UTILITY', depthMeters: '4.5m - 7.0m', depthFeet: '15 - 23 FT', tagline: 'Conduit Spacer Systems & Main Line Enclosures', description: 'Precision duct bank spacers, high-voltage utility conduits, and pressure pipe fittings engineered for high burial depth performance.', products: ['Duct Spacers', 'Utility Conduit', 'Pressure Sleeves'], color: '#3B82F6' },
-  { level: 5, id: 'flow', title: 'LEVEL 05 — FLOW', depthMeters: '7.0m - 10.0m+', depthFeet: '23 - 33+ FT', tagline: 'High-Volume Storm Retention & Deep Culverts', description: 'Large-bore corrugated storm pipe, deep retention chambers, and high-velocity culvert assemblies for regional water management.', products: ['Storm Pipe', 'Retention Boxes', 'Culvert Assemblies'], color: '#4682B4' }
+  { level: 1, id: 'surface', title: 'LEVEL 01 — SURFACE', depthMeters: '0.0m - 0.5m', depthFeet: '0 - 1.5 FT', tagline: 'Heavy-Duty Surface Grates & Street Castings', description: 'Impact-resistant surface drainage grates, utility trench covers, and municipal street frames engineered for AASHTO H-20 / HS-20 traffic loading.', products: ['Trench Grates', 'Municipal Castings', 'Vault Hatch Covers'], color: '#0066FF' },
+  { level: 2, id: 'access', title: 'LEVEL 02 — ACCESS', depthMeters: '0.5m - 2.0m', depthFeet: '1.5 - 6.5 FT', tagline: 'Vault Structures & Structural Access Shafts', description: 'Modular precast concrete vaults, grade rings, and structural access shafts providing maintenance entry to underground networks.', products: ['Precast Vaults', 'Grade Rings', 'Access Risers'], color: '#0A2540' },
+  { level: 3, id: 'trench', title: 'LEVEL 03 — TRENCH', depthMeters: '2.0m - 4.5m', depthFeet: '6.5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, lightweight aluminum shields, and hydraulic shore systems engineered for maximum soil pressure resistance.', products: ['TU-8000 Trench Box', 'Aluminum Shield', 'Hydraulic Shores'], color: '#0066FF' },
+  { level: 4, id: 'utility', title: 'LEVEL 04 — UTILITY', depthMeters: '4.5m - 7.0m', depthFeet: '15 - 23 FT', tagline: 'Conduit Spacer Systems & Main Line Enclosures', description: 'Precision duct bank spacers, high-voltage utility conduits, and pressure pipe fittings engineered for high burial depth performance.', products: ['Duct Spacers', 'Utility Conduit', 'Pressure Sleeves'], color: '#0A2540' },
+  { level: 5, id: 'flow', title: 'LEVEL 05 — FLOW', depthMeters: '7.0m - 10.0m+', depthFeet: '23 - 33+ FT', tagline: 'High-Volume Storm Retention & Deep Culverts', description: 'Large-bore corrugated storm pipe, deep retention chambers, and high-velocity culvert assemblies for regional water management.', products: ['Storm Pipe', 'Retention Boxes', 'Culvert Assemblies'], color: '#0066FF' }
 ];
 
 export const ANATOMY_POINTS: AnatomyPoint[] = [
