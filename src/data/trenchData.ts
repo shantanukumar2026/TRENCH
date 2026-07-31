@@ -1,11 +1,11 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// 100% Verified Bright Civil Trenching & Shoring Equipment Photography (Zero Code Monitors, Zero Office Desks)
-const imgSteelShield = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80';
-const imgHydraulicShore = 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80';
-const imgSlideRail = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';
-const imgTrenchLadder = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';
-const imgSteelRoadPlate = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=800&q=80';
+// 100% High-Resolution Local U.S. Infrastructure Assets from src/assets/images
+const imgSteelShield = '/images/assets/gettyimages-1349322660-1024x1024.jpg';
+const imgHydraulicShore = '/images/assets/gettyimages-1158438565-1024x1024.jpg';
+const imgSlideRail = '/images/assets/gettyimages-1157931869-1024x1024.jpg';
+const imgTrenchLadder = '/images/assets/gettyimages-1324527712-1024x1024.jpg';
+const imgSteelRoadPlate = '/images/assets/gettyimages-141843304-1024x1024.jpg';
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
@@ -112,7 +112,7 @@ export const ANATOMY_POINTS: AnatomyPoint[] = [
   { id: 'hydraulic', title: 'HYDRAULIC SHORING CYLINDER', depth: '-10.0 FT', role: 'Hand-pumped hydraulic cylinder expanding against trench walls.', spec: '3,500 PSI Hydraulic Rating', x: 65, y: 62 }
 ];
 
-// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH 100% VERIFIED EQUIPMENT PHOTOGRAPHY
+// 5 CORE TRENCH SHORING & SAFETY PRODUCTS USING LOCAL G:\bens sir team\trench-everything\src\assets\images
 export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-8000-shield',

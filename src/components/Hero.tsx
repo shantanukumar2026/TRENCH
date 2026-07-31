@@ -101,9 +101,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
               onMouseLeave={() => setIsPhotoHovered(false)}
               className="relative h-[380px] sm:h-[480px] lg:h-[540px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#0085F4]/15 border-2 border-[#0085F4]/20 transition-all duration-700"
             >
-              {/* High-Quality Real Bright Outdoor Trench Excavation & Pipeline Site Photograph (Human-Free) */}
+              {/* High-Quality Real Local U.S. Underground Trench Construction Photograph */}
               <img
-                src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1600&q=80"
+                src="/images/assets/gettyimages-1374927924-1024x1024.jpg"
                 alt="American Outdoor Underground Trench Excavation Site"
                 className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
                   isPhotoHovered ? 'scale-[1.03]' : 'scale-100'
