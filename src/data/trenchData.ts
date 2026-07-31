@@ -1,9 +1,9 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Distinct Verified Product Images for Each Trench Equipment Item
-const imgSteelShield = '/images/trench_shield.png';
+// Distinct High-End Clean Professional U.S. Equipment Photography (Zero Dirty Mud/Rusted Boxes)
+const imgSteelShield = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';
 const imgHydraulicShore = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80';
-const imgSlideRail = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80';
+const imgSlideRail = 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80';
 const imgTrenchLadder = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';
 const imgSteelRoadPlate = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=800&q=80';
 
@@ -112,7 +112,7 @@ export const ANATOMY_POINTS: AnatomyPoint[] = [
   { id: 'hydraulic', title: 'HYDRAULIC SHORING CYLINDER', depth: '-10.0 FT', role: 'Hand-pumped hydraulic cylinder expanding against trench walls.', spec: '3,500 PSI Hydraulic Rating', x: 65, y: 62 }
 ];
 
-// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH UNIQUE DISTINCT IMAGES
+// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH CLEAN HIGH-TECH IMAGES
 export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-8000-shield',
