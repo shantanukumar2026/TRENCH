@@ -250,83 +250,95 @@ export const Navbar: React.FC<NavbarProps> = ({
               
               {/* PRODUCTS MEGAMENU */}
               {activeMegaMenu === 'products' && (
-                <div className="grid grid-cols-12 gap-8 items-start">
-                  
-                  {/* Left Technical Card */}
-                  <div className="col-span-4 bg-[#F0F7FF] border-2 border-blue-200 p-6 rounded-lg space-y-4">
-                    <span className="px-2 py-0.5 bg-[#C00000] text-white font-mono text-[10px] font-bold uppercase rounded-none">
-                      FLAGSHIP SYSTEM
-                    </span>
-                    <h4 className="text-xl font-extrabold text-[#0754AE] font-heading uppercase">
-                      TU-8000 STEEL TRENCH SHIELD
-                    </h4>
-                    <p className="text-xs text-slate-600 font-sans leading-relaxed">
-                      Double-walled A572 steel trench box engineered for extreme soil lateral earth pressure.
-                    </p>
-                    <button 
-                      onClick={() => handleNavClick('stage')}
-                      className="btn-primary text-xs py-2 px-4 w-full justify-center font-mono rounded-none"
-                    >
-                      INSPECT 3D EXPLODED STAGE
-                    </button>
-                  </div>
-
-                  {/* Center Column 1 */}
-                  <div className="col-span-4 space-y-3 font-mono">
-                    <div className="text-xs font-bold text-[#0754AE] uppercase pb-2 border-b-2 border-blue-200 flex items-center gap-2">
-                      <Box className="w-4 h-4 text-[#C00000]" />
-                      CORE SHORING &amp; DRAINAGE
+                <div className="space-y-6 font-mono">
+                  <div className="grid grid-cols-12 gap-6 items-start">
+                    
+                    {/* Left Column: 01 to 05 */}
+                    <div className="col-span-5 space-y-2">
+                      <div className="text-xs font-bold text-[#0754AE] uppercase pb-2 border-b-2 border-blue-200 flex items-center gap-2">
+                        <Box className="w-4 h-4 text-[#C00000]" />
+                        PRIMARY CATEGORIES 01 — 05
+                      </div>
+                      <div className="grid grid-cols-1 gap-1 text-xs">
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>01 SAFETY &amp; TRENCH PROTECTION</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>02 EXCAVATION EQUIPMENT</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>03 PIPE &amp; UTILITY INSTALLATION</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>04 WATER &amp; SEWER INFRASTRUCTURE</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>05 DRAINAGE &amp; STORMWATER</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                      </div>
                     </div>
-                    <ul className="space-y-2 text-xs font-semibold text-slate-700">
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>TU-8000 Heavy Steel Shields</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>TU-HydroLite Aluminum Shores</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>TU-HydroDrain 200 Channels</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
 
-                  {/* Center Column 2 */}
-                  <div className="col-span-4 space-y-3 font-mono">
-                    <div className="text-xs font-bold text-[#0754AE] uppercase pb-2 border-b-2 border-blue-200 flex items-center gap-2">
-                      <Layers className="w-4 h-4 text-[#2166D1]" />
-                      VAULTS &amp; UTILITY PIPING
+                    {/* Right Column: 06 to 10 */}
+                    <div className="col-span-5 space-y-2">
+                      <div className="text-xs font-bold text-[#0754AE] uppercase pb-2 border-b-2 border-blue-200 flex items-center gap-2">
+                        <Layers className="w-4 h-4 text-[#2166D1]" />
+                        PRIMARY CATEGORIES 06 — 10
+                      </div>
+                      <div className="grid grid-cols-1 gap-1 text-xs">
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>06 MANHOLES &amp; UNDERGROUND ACCESS</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>07 UTILITY CONDUIT &amp; ELECTRICAL</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>08 DEWATERING &amp; GROUNDWATER</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>09 TRENCH TOOLS &amp; JOBSITE EQUIPMENT</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                        <button onClick={() => handleNavClick('catalogue')} className="hover:bg-[#F0F7FF] p-2 rounded text-left flex items-center justify-between text-[#0754AE] font-bold border border-transparent hover:border-blue-200">
+                          <span>10 BACKFILL &amp; SURFACE RESTORATION</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
+                        </button>
+                      </div>
                     </div>
-                    <ul className="space-y-2 text-xs font-semibold text-slate-700">
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>Modular Precast Access Vaults</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>ANSI/AWWA C900 PVC Pressure Pipe</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleNavClick('catalogue')} className="hover:text-[#2166D1] text-left flex items-center justify-between w-full py-1.5 border-b border-slate-100">
-                          <span>High-Density HDPE Storm Culverts</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#2166D1]" />
-                        </button>
-                      </li>
-                    </ul>
+
+                    {/* Quick Access Action Card */}
+                    <div className="col-span-2 bg-[#F0F7FF] border-2 border-blue-200 p-4 rounded-xl space-y-3">
+                      <span className="text-[10px] font-bold text-[#C00000] uppercase block">SYSTEM DISCOVERY</span>
+                      <h4 className="text-sm font-bold text-[#0754AE]">PRODUCT FINDER</h4>
+                      <p className="text-[11px] text-[#163B66]">Search 10 categories by part number, material, size, or AWWA/OSHA standard.</p>
+                      <button 
+                        onClick={() => handleNavClick('catalogue')}
+                        className="btn-primary w-full py-2 text-[11px] font-mono justify-center"
+                      >
+                        OPEN FINDER →
+                      </button>
+                    </div>
                   </div>
 
+                  {/* Mega Menu Footer */}
+                  <div className="pt-3 border-t border-blue-200 flex items-center justify-between text-xs">
+                    <span className="text-[#163B66] font-bold">TRENCH UNLIMITED™ — EVERYTHING TRENCH FOR AMERICAN CONTRACTORS</span>
+                    <div className="flex gap-4">
+                      <button onClick={() => handleNavClick('catalogue')} className="text-[#0754AE] font-bold hover:underline">
+                        VIEW ALL PRODUCTS →
+                      </button>
+                      <button onClick={() => handleNavClick('resources')} className="text-[#0754AE] font-bold hover:underline">
+                        TECHNICAL LIBRARY →
+                      </button>
+                    </div>
+                  </div>
                 </div>
               )}
 

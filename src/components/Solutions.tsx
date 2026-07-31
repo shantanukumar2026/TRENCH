@@ -1,5 +1,6 @@
 import React from 'react';
-import { SOLUTIONS_APPS } from '../data/trenchData';
+import { SOLUTION_APPS } from '../data/trenchData';
+import { SolutionApp } from '../types';
 import { Layers, ArrowRight, ShieldCheck, FileText } from 'lucide-react';
 
 interface SolutionsProps {
@@ -24,8 +25,8 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
             SOLUTIONS BY <span className="text-[#2166D1]">APPLICATION</span>
           </h2>
           <div className="flex justify-center items-center gap-2">
-            <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+            <span className="blue-accent-bar"></span>
+            <p className="text-[#163B66] font-medium text-base">
               End-to-end engineered infrastructure packages optimized for contractors, municipalities, and utility authorities.
             </p>
           </div>
@@ -33,7 +34,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
 
         {/* Cinematic Horizontal Modules */}
         <div className="space-y-12">
-          {SOLUTIONS_APPS.map((sol, index) => {
+          {SOLUTION_APPS.map((sol: SolutionApp, index: number) => {
             const isEven = index % 2 === 0;
             return (
               <div 
@@ -86,7 +87,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
                         RECOMMENDED SYSTEM COMPONENTS:
                       </span>
                       <div className="flex flex-wrap gap-2">
-                        {sol.recommendedProducts.map((prod, pIdx) => (
+                        {sol.recommendedProducts.map((prod: string, pIdx: number) => (
                           <span 
                             key={pIdx}
                             className="px-3 py-1 bg-white border border-blue-200 rounded text-xs font-mono font-bold text-[#0754AE] shadow-sm"
@@ -99,7 +100,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
 
                     {/* Technical Parameters Matrix */}
                     <div className="mt-6 grid grid-cols-3 gap-3 bg-white p-4 rounded border border-blue-200">
-                      {sol.specs.map((sp, sIdx) => (
+                      {sol.specs.map((sp: { label: string; value: string }, sIdx: number) => (
                         <div key={sIdx} className="text-left font-mono">
                           <div className="text-[10px] text-slate-400 uppercase">{sp.label}</div>
                           <div className="text-xs font-bold text-[#0754AE] mt-0.5">{sp.value}</div>

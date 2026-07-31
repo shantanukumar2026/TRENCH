@@ -3,9 +3,12 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { DepthNav } from './components/DepthNav';
 import { SystemExplorer } from './components/SystemExplorer';
+import { CategoryRail } from './components/CategoryRail';
+import { CategoryDetail } from './components/CategoryDetail';
 import { ProductStage } from './components/ProductStage';
 import { Anatomy } from './components/Anatomy';
 import { Solutions } from './components/Solutions';
+import { IndustriesView } from './components/IndustriesView';
 import { TechnicalStandards } from './components/TechnicalStandards';
 import { ManufacturingCapabilities } from './components/ManufacturingCapabilities';
 import { EngineeringWorkspace } from './components/EngineeringWorkspace';
@@ -20,6 +23,7 @@ import { Footer } from './components/Footer';
 import { SubmittalDrawer } from './components/SubmittalDrawer';
 import { RequestQuoteModal } from './components/RequestQuoteModal';
 import { ProductModal } from './components/ProductModal';
+import { ProductComparisonModal } from './components/ProductComparisonModal';
 import { Product } from './types';
 import { PRODUCTS_CATALOGUE } from './data/trenchData';
 
@@ -28,6 +32,15 @@ export function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
   const [submittalDrawerOpen, setSubmittalDrawerOpen] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [quoteInitialProduct, setQuoteInitialProduct] = useState<Product | null>(null);
+
+  // Category & Filter States
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('all');
+  const [activeCategoryDetailId, setActiveCategoryDetailId] = useState<string | null>(null);
+
+  // Product Comparison States (up to 4 products)
+  const [comparedProductIds, setComparedProductIds] = useState<string[]>([]);
+  const [comparisonModalOpen, setComparisonModalOpen] = useState<boolean>(false);
 
   const scrollToSection = (sectionId: string) => {
     setActivePage('home');
@@ -41,6 +54,31 @@ export function App() {
     }, 50);
   };
 
+  const handleToggleCompare = (product: Product) => {
+    if (comparedProductIds.includes(product.id)) {
+      setComparedProductIds(comparedProductIds.filter(id => id !== product.id));
+    } else {
+      if (comparedProductIds.length >= 4) {
+        alert('You can compare up to 4 products at a time.');
+        return;
+      }
+      setComparedProductIds([...comparedProductIds, product.id]);
+    }
+  };
+
+  const handleRequestQuoteForProduct = (product: Product) => {
+    setQuoteInitialProduct(product);
+    setQuoteModalOpen(true);
+  };
+
+  const handleSelectHotspotCategory = (catId: string) => {
+    setSelectedCategoryFilter(catId);
+    setActiveCategoryDetailId(catId);
+    scrollToSection('category-view');
+  };
+
+  const comparedProducts = PRODUCTS_CATALOGUE.filter(p => comparedProductIds.includes(p.id));
+
   return (
     <div className="min-h-screen bg-slate-50 text-[#163B66] font-body selection:bg-[#2166D1] selection:text-white">
       {/* Primary Fixed Navbar */}
@@ -50,7 +88,7 @@ export function App() {
           setActivePage(page);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        onOpenQuoteModal={() => setQuoteModalOpen(true)}
+        onOpenQuoteModal={() => { setQuoteInitialProduct(null); setQuoteModalOpen(true); }}
         onOpenSubmittalDrawer={() => setSubmittalDrawerOpen(true)}
         onNavigateToSection={scrollToSection}
       />
@@ -66,66 +104,105 @@ export function App() {
 
           {/* 2. "Choose Your Depth" Navigation */}
           <DepthNav 
-            onSelectProduct={(depthId) => scrollToSection('catalogue')}
+            onSelectProduct={() => scrollToSection('catalogue')}
           />
 
-          {/* 3. Product System Explorer ("Everything Trench. One System") */}
+          {/* 3. Product System Explorer ("Everything Trench. 10 Systems Below Ground") */}
           <SystemExplorer 
-            onSelectHotspot={(category) => scrollToSection('catalogue')}
+            onSelectHotspot={handleSelectHotspotCategory}
           />
 
-          {/* 4. Featured Engineering Product 3D Stage */}
+          {/* 4. Compact 10-Category Navigation Rail */}
+          <CategoryRail 
+            selectedCategoryId={selectedCategoryFilter}
+            onSelectCategory={(catId) => {
+              setSelectedCategoryFilter(catId);
+              if (catId !== 'all') {
+                setActiveCategoryDetailId(catId);
+              } else {
+                setActiveCategoryDetailId(null);
+              }
+              scrollToSection('catalogue');
+            }}
+          />
+
+          {/* 5. Deep Category Detail Landing View (when active) */}
+          {activeCategoryDetailId && (
+            <div id="category-view">
+              <CategoryDetail 
+                categoryId={activeCategoryDetailId}
+                onBackToAll={() => { setActiveCategoryDetailId(null); setSelectedCategoryFilter('all'); }}
+                onSelectSubcategory={(subId) => scrollToSection('catalogue')}
+                onSelectProduct={(p) => setSelectedProduct(p)}
+                onRequestQuote={handleRequestQuoteForProduct}
+              />
+            </div>
+          )}
+
+          {/* 6. Featured Engineering Product 3D Stage */}
           <ProductStage 
             onRequestSpecSheet={() => setSelectedProduct(PRODUCTS_CATALOGUE[0])}
           />
 
-          {/* 5. The Trench Anatomy (Educational Cutaway) */}
+          {/* 7. The Trench Anatomy (Educational Cutaway) */}
           <Anatomy />
 
-          {/* 6. Solutions by Application */}
+          {/* 8. Solutions & Industry Sectors */}
           <Solutions 
-            onSelectSolution={(solId) => scrollToSection('catalogue')}
+            onSelectSolution={() => scrollToSection('catalogue')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 7. Engineering Quality & Standards Compliance */}
+          <IndustriesView 
+            onSelectCategory={handleSelectHotspotCategory}
+          />
+
+          {/* 9. Engineering Quality & Standards Compliance */}
           <TechnicalStandards 
             onOpenDocLibrary={() => scrollToSection('resources')}
           />
 
-          {/* 8. Industrial Manufacturing Capabilities */}
+          {/* 10. Industrial Manufacturing Capabilities */}
           <ManufacturingCapabilities />
 
-          {/* 9. Engineering & Technical Support Workspace */}
+          {/* 11. Engineering & Technical Support Workspace */}
           <EngineeringWorkspace 
             onOpenDocLibrary={() => scrollToSection('resources')}
             onOpenEngineeringForm={() => setQuoteModalOpen(true)}
           />
 
-          {/* 10. How It Works (Project Sequence Timeline) */}
+          {/* 12. How It Works (Project Sequence Timeline) */}
           <HowItWorks 
             onExploreSolutions={() => scrollToSection('solutions')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
-          {/* 11. Project Case Study (Project 042) */}
+          {/* 13. Project Case Study (Project 042) */}
           <CaseStudy />
 
-          {/* 12. Product Catalogue Engine */}
+          {/* 14. Product Catalogue Engine */}
           <Catalogue 
-            onSelectProductModal={(p) => setSelectedProduct(p)}
-            onOpenSpecDownload={(p) => setSelectedProduct(p)}
+            onSelectProduct={(p) => setSelectedProduct(p)}
+            onRequestQuote={handleRequestQuoteForProduct}
+            onToggleCompare={handleToggleCompare}
+            comparedProductIds={comparedProductIds}
+            onOpenComparisonModal={() => setComparisonModalOpen(true)}
+            selectedCategoryFilter={selectedCategoryFilter}
+            onCategoryFilterChange={(catId) => {
+              setSelectedCategoryFilter(catId);
+              if (catId !== 'all') setActiveCategoryDetailId(catId);
+            }}
           />
 
-          {/* 13. Technical Resources Hub */}
+          {/* 15. Technical Resources Hub */}
           <ResourcesHub 
-            onDownloadResource={(title) => setSubmittalDrawerOpen(true)}
+            onDownloadResource={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 14. Company Profile ("Built Around the Jobsite") */}
+          {/* 16. Company Profile ("Built Around the Jobsite") */}
           <CompanyProfile />
 
-          {/* 15. Architectural Final CTA */}
+          {/* 17. Architectural Final CTA */}
           <FinalCTA 
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
@@ -161,13 +238,22 @@ export function App() {
 
       <RequestQuoteModal 
         isOpen={quoteModalOpen}
-        onClose={() => setQuoteModalOpen(false)}
+        onClose={() => { setQuoteModalOpen(false); setQuoteInitialProduct(null); }}
+        initialProduct={quoteInitialProduct}
       />
 
       <ProductModal 
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
-        onRequestQuote={() => setQuoteModalOpen(true)}
+        onRequestQuote={handleRequestQuoteForProduct}
+      />
+
+      <ProductComparisonModal
+        isOpen={comparisonModalOpen}
+        onClose={() => setComparisonModalOpen(false)}
+        comparedProducts={comparedProducts}
+        onRemoveProduct={(id) => setComparedProductIds(comparedProductIds.filter(pId => pId !== id))}
+        onRequestQuoteForProduct={handleRequestQuoteForProduct}
       />
     </div>
   );
