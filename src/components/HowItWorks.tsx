@@ -108,7 +108,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       copy: 'Open the ground to the required depth and dimensions for underground infrastructure installation while profiling soil stability.',
       points: [
         'Dashed blue excavation boundary alignment',
-        'Continuous depth measurement ruler (-6.00m)',
+        'Continuous depth measurement ruler (-20.0 FT)',
         'Strata profiling: Surface, Base, Subgrade & Soil'
       ]
     },
@@ -440,7 +440,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
                 <line x1="0" y1="0" x2="0" y2={trenchDepthY - 120} stroke="#0754AE" strokeWidth="2.5" strokeDasharray="6,4" />
                 <circle cx="0" cy={trenchDepthY - 120} r="6" fill="#C00000" />
                 <text x="15" y={Math.max(30, (trenchDepthY - 120) / 2)} fill="#0754AE" fontFamily="JetBrains Mono, monospace" fontSize="16" fontWeight="bold">
-                  DEPTH: -{((excavateProgress * 6.0)).toFixed(1)}m
+                  DEPTH: -{((excavateProgress * 20.0)).toFixed(1)} FT
                 </text>
               </g>
 
@@ -603,7 +603,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
                       <circle cx="1020" cy="0" r="5" fill="#00BBFF" />
                       <rect x="1210" y="-20" width="220" height="40" fill="#0754AE" rx="4" />
                       <text x="1225" y="5" fill="#FFFFFF" fontFamily="JetBrains Mono, monospace" fontSize="12" fontWeight="bold">
-                        INSTALLED UTILITY (-5.20m)
+                        INSTALLED UTILITY (-17.0 FT)
                       </text>
                     </g>
                   )}
