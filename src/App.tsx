@@ -138,17 +138,12 @@ export function App() {
             onSelectProduct={() => handleOpenProductsPage('all')}
           />
 
-          {/* 3. Product System Explorer ("Everything Trench. 10 Systems Below Ground") */}
+          {/* 3. Product System Explorer */}
           <SystemExplorer 
             onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 4. Featured Engineering Product 3D Stage */}
-          <ProductStage 
-            onRequestSpecSheet={() => handleOpenProductPage(PRODUCTS_CATALOGUE[0])}
-          />
-
-          {/* 5. The Trench Anatomy (Educational Cutaway) */}
+          {/* 4. The Trench Anatomy (Educational Breakdown) */}
           <Anatomy />
 
           {/* 6. Solutions & Industry Sectors */}

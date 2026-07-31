@@ -1,82 +1,84 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Direct Verified Core Trench Equipment Product Image
-const imgTrenchEquipment = '/images/trench_shield.png';
+// Distinct Verified Product Images for Each Trench Equipment Item
+const imgSteelShield = '/images/trench_shield.png';
+const imgHydraulicShore = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80';
+const imgSlideRail = 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80';
+const imgTrenchLadder = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';
+const imgSteelRoadPlate = 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=800&q=80';
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
     number: '01',
     id: 'safety-protection',
-    title: 'TRENCH SAFETY & SHORING',
-    shortName: 'Safety & Shoring',
-    tagline: 'OSHA 1926 Subpart P Certified Trench Shielding & Shoring Systems',
-    description: 'Heavy steel trench boxes, lightweight aluminum shields, hydraulic shores, and modular slide rail systems engineered for maximum trench soil pressure resistance.',
-    image: imgTrenchEquipment,
+    title: 'STEEL TRENCH SHIELDS',
+    shortName: 'Steel Shields',
+    tagline: 'OSHA 1926 Subpart P Certified Double-Wall Steel Boxes',
+    description: 'Heavy steel trench boxes engineered for high-depth soil pressure resistance and worker safety.',
+    image: imgSteelShield,
     hotspotIndex: 1,
     subcategories: [
-      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: imgTrenchEquipment, productFamilies: ['Steel Trench Box'] },
-      { id: 'hydraulic-shoring', name: 'Hydraulic Shoring', description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground.', image: imgTrenchEquipment, productFamilies: ['Hydraulic Shore'] },
-      { id: 'slide-rail', name: 'Slide Rail Systems', description: 'Modular dig-and-push shoring systems replacing traditional sheet piling.', image: imgTrenchEquipment, productFamilies: ['Slide Rail System'] }
+      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: imgSteelShield, productFamilies: ['Steel Trench Box'] }
     ]
   },
   {
     number: '02',
-    id: 'excavation-equipment',
-    title: 'EXCAVATION & TRENCH BUCKETS',
-    shortName: 'Trench Excavation',
-    tagline: 'Heavy-Duty Trenching Buckets & Ground Breaking Attachments',
-    description: 'Engineered excavator trenching buckets, compaction wheels, and material handling attachments for trench digging.',
-    image: imgTrenchEquipment,
+    id: 'hydraulic-shoring',
+    title: 'HYDRAULIC TRENCH SHORING',
+    shortName: 'Hydraulic Shores',
+    tagline: 'Hand-Pumped 6061-T6 Aluminum Hydraulic Rails',
+    description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground for crew protection.',
+    image: imgHydraulicShore,
     hotspotIndex: 2,
     subcategories: [
-      { id: 'trenching-buckets', name: 'Trenching Buckets', description: 'Narrow-profile high-taper buckets for clean trench wall digging.', image: imgTrenchEquipment, productFamilies: ['Trenching Bucket'] }
+      { id: 'hydraulic-shores', name: 'Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: imgHydraulicShore, productFamilies: ['Hydraulic Shore'] }
     ]
   },
   {
     number: '03',
-    id: 'trench-access-safety',
-    title: 'TRENCH ACCESS & SAFETY RAMP',
-    shortName: 'Access & Safety',
-    tagline: 'OSHA Trench Access Ladders, Walk-Thru Platforms & Guard Rails',
-    description: 'OSHA compliant access ladders, walk-through entry gates, davit arm retrieval, and trench crossing bridges.',
-    image: imgTrenchEquipment,
+    id: 'slide-rail',
+    title: 'MODULAR SLIDE RAIL SYSTEMS',
+    shortName: 'Slide Rail',
+    tagline: 'Dig-and-Push Modular Trench Shoring Panels',
+    description: 'Modular dig-and-push trench shoring systems replacing traditional driven sheet piling.',
+    image: imgSlideRail,
     hotspotIndex: 3,
     subcategories: [
-      { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Heavy-duty extendable aluminum trench ladders.', image: imgTrenchEquipment, productFamilies: ['Trench Ladder'] }
+      { id: 'slide-rail-panels', name: 'Slide Rail Panels', description: 'Modular slide rail panels.', image: imgSlideRail, productFamilies: ['Slide Rail System'] }
     ]
   },
   {
     number: '04',
-    id: 'trench-road-plates',
-    title: 'TRENCH ROAD PLATES & COVERING',
-    shortName: 'Road Plates',
-    tagline: 'AASHTO H-20 Structural Steel Road Plates & Anti-Skid Decking',
-    description: 'Heavy structural steel road plates engineered with center lifting nut holes for temporary trench crossing.',
-    image: imgTrenchEquipment,
+    id: 'trench-access-safety',
+    title: 'TRENCH ACCESS & SAFETY LADDERS',
+    shortName: 'Access Ladders',
+    tagline: 'OSHA Compliant Extendable Aluminum Trench Ladders',
+    description: 'OSHA compliant extendable access ladders with 36" walk-through handrails.',
+    image: imgTrenchLadder,
     hotspotIndex: 4,
     subcategories: [
-      { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 traffic-rated steel road plates.', image: imgTrenchEquipment, productFamilies: ['Road Plate'] }
+      { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Extendable aluminum trench ladders.', image: imgTrenchLadder, productFamilies: ['Trench Ladder'] }
     ]
   },
   {
     number: '05',
-    id: 'trench-backfill-compaction',
-    title: 'TRENCH COMPACTION & BACKFILL',
-    shortName: 'Compaction',
-    tagline: 'Vibratory Rammers, Compaction Wheels & Bedding Placement',
-    description: 'Excavator-mounted compaction wheels, vibratory trench rammers, and trench bedding stone placement boxes.',
-    image: imgTrenchEquipment,
+    id: 'trench-road-plates',
+    title: 'STEEL TRENCH ROAD PLATES',
+    shortName: 'Road Plates',
+    tagline: 'AASHTO H-20 Traffic-Rated Steel Crossing Plates',
+    description: 'Heavy structural steel road plates with center flush-mount lifting nut holes and anti-skid coating.',
+    image: imgSteelRoadPlate,
     hotspotIndex: 5,
     subcategories: [
-      { id: 'compaction-rammers', name: 'Vibratory Rammers', description: 'High-impact trench compaction rammers.', image: imgTrenchEquipment, productFamilies: ['Vibratory Rammer'] }
+      { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 steel road plates.', image: imgSteelRoadPlate, productFamilies: ['Road Plate'] }
     ]
   }
 ];
 
 export const HOTSPOTS: Hotspot[] = [
-  { id: 1, number: '01', title: 'Trench Safety & Protection', category: 'Shoring & Shielding', categoryId: 'safety-protection', xPercent: 32, yPercent: 48, shortDesc: 'OSHA 1926 Subpart P double-walled steel trench boxes.', application: 'Deep Trench Excavation', partNumber: 'TU-SB-824-HD', loadRating: 'OSHA Subpart P Certified', sampleProducts: ['TU-8000 Steel Trench Box'] },
-  { id: 2, number: '02', title: 'Hydraulic Trench Shoring', category: 'Aluminum Shoring', categoryId: 'safety-protection', xPercent: 20, yPercent: 28, shortDesc: 'Hand-pumped aluminum hydraulic shores for trench walls.', application: 'Spot Repairs & Trench Taps', partNumber: 'TU-HS-8FT-AL', loadRating: '3,500 PSI Max Rating', sampleProducts: ['TU-HydroLite Hydraulic Shore'] },
-  { id: 3, number: '03', title: 'Slide Rail Trench System', category: 'Modular Shoring', categoryId: 'safety-protection', xPercent: 44, yPercent: 68, shortDesc: 'Modular dig-and-push shoring panels for deep trench work.', application: 'Deep Trench Shoring', partNumber: 'TU-SR-1620-HD', loadRating: 'Type C Soil Certified', sampleProducts: ['Modular Slide Rail Panel'] },
+  { id: 1, number: '01', title: 'Steel Trench Shields', category: 'Shoring & Shielding', categoryId: 'safety-protection', xPercent: 32, yPercent: 48, shortDesc: 'OSHA 1926 Subpart P double-walled steel trench boxes.', application: 'Deep Trench Excavation', partNumber: 'TU-SB-824-HD', loadRating: 'OSHA Subpart P Certified', sampleProducts: ['TU-8000 Steel Trench Box'] },
+  { id: 2, number: '02', title: 'Hydraulic Trench Shoring', category: 'Aluminum Shoring', categoryId: 'hydraulic-shoring', xPercent: 20, yPercent: 28, shortDesc: 'Hand-pumped aluminum hydraulic shores for trench walls.', application: 'Spot Repairs & Trench Taps', partNumber: 'TU-HS-8FT-AL', loadRating: '3,500 PSI Max Rating', sampleProducts: ['TU-HydroLite Hydraulic Shore'] },
+  { id: 3, number: '03', title: 'Slide Rail Trench System', category: 'Modular Shoring', categoryId: 'slide-rail', xPercent: 44, yPercent: 68, shortDesc: 'Modular dig-and-push shoring panels for deep trench work.', application: 'Deep Trench Shoring', partNumber: 'TU-SR-1620-HD', loadRating: 'Type C Soil Certified', sampleProducts: ['Modular Slide Rail Panel'] },
   { id: 4, number: '04', title: 'Trench Access & Safety', category: 'OSHA Ladders', categoryId: 'trench-access-safety', xPercent: 54, yPercent: 62, shortDesc: 'OSHA compliant trench access ladders and walk-thru gates.', application: 'Trench Entry & Exit', partNumber: 'TU-TL-16FT-AL', loadRating: 'OSHA Subpart P Compliant', sampleProducts: ['OSHA Trench Ladder'] },
   { id: 5, number: '05', title: 'Trench Road Plates', category: 'Steel Decking', categoryId: 'trench-road-plates', xPercent: 65, yPercent: 42, shortDesc: 'AASHTO H-20 traffic-rated steel road plates for trench crossing.', application: 'Street Trench Bridging', partNumber: 'TU-RP-812-H20', loadRating: 'AASHTO H-20 Rated', sampleProducts: ['Steel Road Plate'] }
 ];
@@ -84,11 +86,11 @@ export const HOTSPOTS: Hotspot[] = [
 export const INDUSTRIES_DATA: Industry[] = [
   {
     id: 'trench-excavation',
-    title: 'CIVIL EXCAVATION & TRENCHING',
+    title: 'CIVIL TRENCH EXCAVATION & SHORING',
     tagline: 'Deep Trench Protection & Soil Pressure Shielding',
     description: 'Heavy steel trench boxes, hydraulic shoring systems, and slide rail equipment engineered for crew safety in high-depth excavations.',
-    image: imgTrenchEquipment,
-    relevantCategories: ['safety-protection', 'excavation-equipment', 'trench-road-plates'],
+    image: imgSteelShield,
+    relevantCategories: ['safety-protection', 'hydraulic-shoring', 'trench-road-plates'],
     specs: [
       { label: 'SOIL RATING', value: 'OSHA Type A, B, C Soil' },
       { label: 'COMPLIANCE', value: 'OSHA 1926 Subpart P' },
@@ -110,12 +112,12 @@ export const ANATOMY_POINTS: AnatomyPoint[] = [
   { id: 'hydraulic', title: 'HYDRAULIC SHORING CYLINDER', depth: '-10.0 FT', role: 'Hand-pumped hydraulic cylinder expanding against trench walls.', spec: '3,500 PSI Hydraulic Rating', x: 65, y: 62 }
 ];
 
-// STRICTLY 5 CORE TRENCH & SHORING EQUIPMENT PRODUCTS ONLY
+// 5 CORE TRENCH SHORING & SAFETY PRODUCTS ONLY WITH UNIQUE DISTINCT IMAGES
 export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-8000-shield',
     name: 'TU-8000 Heavy-Duty Steel Trench Shield Box',
-    category: 'Trench Safety & Shoring',
+    category: 'Steel Trench Shields',
     subcategory: 'Steel Trench Boxes',
     productFamily: 'Steel Trench Box',
     partNumber: 'TU-SB-824-HD',
@@ -133,7 +135,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy four-point lifting lugs rated for 24,000 lbs WLL',
       'Stackable design with heavy pin-lock sockets'
     ],
-    image: imgTrenchEquipment,
+    image: imgSteelShield,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Industrial Safety Blue Powder Coat',
@@ -144,8 +146,8 @@ export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-hydraulic-shore',
     name: 'TU-HydroLite Aluminum Hydraulic Shoring Rail',
-    category: 'Trench Safety & Shoring',
-    subcategory: 'Hydraulic Shoring',
+    category: 'Hydraulic Trench Shoring',
+    subcategory: 'Hydraulic Shores',
     productFamily: 'Hydraulic Shore',
     partNumber: 'TU-HS-8FT-AL',
     depthLevel: 2,
@@ -162,7 +164,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy-duty dual-action hydraulic cylinders',
       'Includes safety lock pins and release hook assembly'
     ],
-    image: imgTrenchEquipment,
+    image: imgHydraulicShore,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Anodized Aircraft Aluminum',
@@ -173,8 +175,8 @@ export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-slide-rail',
     name: 'TU-Modular Slide Rail Trench Shoring System',
-    category: 'Trench Safety & Shoring',
-    subcategory: 'Slide Rail Systems',
+    category: 'Modular Slide Rail Systems',
+    subcategory: 'Slide Rail Panels',
     productFamily: 'Slide Rail System',
     partNumber: 'TU-SR-1620-HD',
     depthLevel: 3,
@@ -191,7 +193,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Modular panel heights for variable trench depths',
       'Heavy-duty corner posts for multi-bay trench configurations'
     ],
-    image: imgTrenchEquipment,
+    image: imgSlideRail,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Heavy Industrial Blue Epoxy',
@@ -202,7 +204,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-trench-ladder',
     name: 'TU-OSHA Compliant Trench Access Ladder & Platform',
-    category: 'Trench Access & Safety Ramp',
+    category: 'Trench Access & Safety Ladders',
     subcategory: 'Trench Access Ladders',
     productFamily: 'Trench Ladder',
     partNumber: 'TU-TL-16FT-AL',
@@ -220,7 +222,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Swivel safety feet with mud-cleat spikes',
       'Trench shield mounting bracket attachment'
     ],
-    image: imgTrenchEquipment,
+    image: imgTrenchLadder,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Natural Structural Aluminum',
@@ -231,7 +233,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
   {
     id: 'tu-road-plate',
     name: 'AASHTO H-20 Heavy Structural Steel Trench Road Plate',
-    category: 'Trench Road Plates & Covering',
+    category: 'Steel Trench Road Plates',
     subcategory: 'Steel Road Plates',
     productFamily: 'Road Plate',
     partNumber: 'TU-RP-812-H20',
@@ -248,7 +250,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Center flush-mount lifting pin for rapid crane handling',
       'High-traction aggregate epoxy skid-resistant coating'
     ],
-    image: imgTrenchEquipment,
+    image: imgSteelRoadPlate,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'High-Traction Anti-Skid Coating',
@@ -264,7 +266,7 @@ export const SOLUTION_APPS: SolutionApp[] = [
     title: 'TRENCH SAFETY & SHORING SOLUTIONS',
     tagline: 'OSHA 1926 Subpart P Certified Excavation Protection',
     description: 'Heavy steel trench boxes, hydraulic shoring rails, and modular slide rail systems engineered for complete trench crew protection.',
-    image: imgTrenchEquipment,
+    image: imgSteelShield,
     cadOverlay: 'OSHA SUBPART P • ASTM A572 • TYPE C SOIL RATED',
     recommendedProducts: ['TU-8000 Heavy-Duty Steel Trench Shield Box', 'TU-HydroLite Aluminum Hydraulic Shoring Rail', 'TU-Modular Slide Rail Trench Shoring System'],
     specs: [
@@ -288,9 +290,9 @@ export const CASE_STUDY_DATA: CaseStudyData = {
   scale: '4,200 Linear Feet of Trench Excavation',
   installationTime: '18 Days Ahead of Schedule',
   result: '100% OSHA Subpart P Compliance with Zero Trench Wall Incidents',
-  beforeImg: imgTrenchEquipment,
-  duringImg: imgTrenchEquipment,
-  afterImg: imgTrenchEquipment,
+  beforeImg: imgSteelShield,
+  duringImg: imgHydraulicShore,
+  afterImg: imgSteelRoadPlate,
   metrics: [
     { label: 'TOTAL TRENCH EXCAVATED', value: '4,200 LF' },
     { label: 'EXCAVATION DEPTH', value: '18.5 FT Avg' },

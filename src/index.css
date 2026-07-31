@@ -4,7 +4,7 @@
 
 /* 
   TRENCH UNLIMITED™ — WORLD-CLASS U.S. ENTERPRISE ENGINEERING DESIGN SYSTEM
-  CREATIVE BESPOKE UI/UX (AIRY WHITE SPACE, CRISP SQUARE CAD GEOMETRY, ELECTRIC ACCENTS)
+  PURE WHITE & SMOKE WHITE CLEAN BACKGROUNDS (NO BLUEPRINT GRIDS)
   ZERO-BLACK COLOR PALETTE: Deep Navy (#0A2540), Electric Blue (#0066FF), Crimson Accent (#D90429)
 */
 
@@ -22,7 +22,7 @@
   --steel-blue: #475569;
   --light-slate-blue: #64748B;
   --cool-slate-gray: #94A3B8;
-  --off-white: #FAFCFF;
+  --off-white: #F8FAFC;
   --white: #FFFFFF;
   
   /* Strict Text Colors */
@@ -58,7 +58,7 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-body) !important;
-  background-color: var(--off-white);
+  background-color: var(--white);
   color: #1E293B;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -71,7 +71,7 @@ body, p, div, span, label, input, select, textarea, li, a, button {
 
 body {
   overflow-x: hidden;
-  background: var(--off-white);
+  background: var(--white);
   color: #1E293B;
 }
 
@@ -110,21 +110,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #BFDBFE !important;
 }
 
-/* Blueprint Grid Background Pattern */
-.bg-blueprint-grid {
-  background-color: var(--ice-blue);
-  background-image: 
-    linear-gradient(rgba(0, 102, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 102, 255, 0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.bg-blueprint-dense {
-  background-color: #EBF3FF;
-  background-image: 
-    linear-gradient(rgba(10, 37, 64, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 37, 64, 0.08) 1px, transparent 1px);
-  background-size: 16px 16px;
+/* PURE CLEAN BACKGROUNDS (NO GRIDS OR PATTERNS) */
+.bg-blueprint-grid, .bg-blueprint-dense {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
 }
 
 /* Primary Enterprise Buttons */
@@ -204,7 +193,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--ice-blue);
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--steel-blue);

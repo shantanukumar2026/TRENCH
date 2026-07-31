@@ -345,22 +345,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* SOLUTIONS MEGAMENU */}
               {activeMegaMenu === 'solutions' && (
                 <div className="grid grid-cols-3 gap-8 font-mono">
-                  <div className="p-5 bg-[#F0F7FF] rounded-lg border border-blue-200 space-y-2 cursor-pointer hover:border-[#2166D1]" onClick={() => handleNavClick('solutions')}>
-                    <div className="text-xs font-bold text-[#C00000] uppercase">MUNICIPAL WATER</div>
-                    <div className="text-sm font-bold text-[#0754AE]">AWWA C900 Water Main Modernization</div>
-                    <p className="text-xs text-slate-600 font-sans">High-pressure distribution mains, valve vaults, and OSHA shielding.</p>
+                  <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
+                    <div className="text-xs font-bold text-[#D90429] uppercase">OSHA SUBPART P</div>
+                    <div className="text-sm font-bold text-[#0A2540]">Steel Trench Shielding Systems</div>
+                    <p className="text-xs text-slate-600 font-sans">Double-wall steel trench boxes engineered for high-depth excavation worker protection.</p>
                   </div>
 
-                  <div className="p-5 bg-[#F0F7FF] rounded-lg border border-blue-200 space-y-2 cursor-pointer hover:border-[#2166D1]" onClick={() => handleNavClick('solutions')}>
-                    <div className="text-xs font-bold text-[#C00000] uppercase">POWER &amp; TELECOM</div>
-                    <div className="text-sm font-bold text-[#0754AE]">Structured Electrical Duct Banks</div>
-                    <p className="text-xs text-slate-600 font-sans">High-voltage conduit spacers, precast pull boxes, and access covers.</p>
+                  <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
+                    <div className="text-xs font-bold text-[#D90429] uppercase">ALUMINUM SHORING</div>
+                    <div className="text-sm font-bold text-[#0A2540]">Hydraulic Trench Shoring Rails</div>
+                    <p className="text-xs text-slate-600 font-sans">Hand-pumped aluminum hydraulic shores installed 100% from above ground.</p>
                   </div>
 
-                  <div className="p-5 bg-[#F0F7FF] rounded-lg border border-blue-200 space-y-2 cursor-pointer hover:border-[#2166D1]" onClick={() => handleNavClick('solutions')}>
-                    <div className="text-xs font-bold text-[#C00000] uppercase">HIGHWAY &amp; STORMWATER</div>
-                    <div className="text-sm font-bold text-[#0754AE]">AASHTO H-20 Heavy Traffic Systems</div>
-                    <p className="text-xs text-slate-600 font-sans">Heavy ductile iron castings, polymer channels, and HDPE culverts.</p>
+                  <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
+                    <div className="text-xs font-bold text-[#D90429] uppercase">DEEP EXCAVATION</div>
+                    <div className="text-sm font-bold text-[#0A2540]">Modular Slide Rail Shoring</div>
+                    <p className="text-xs text-slate-600 font-sans">Dig-and-push modular shoring panels replacing traditional driven steel sheet piling.</p>
                   </div>
                 </div>
               )}
