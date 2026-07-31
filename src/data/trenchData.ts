@@ -107,7 +107,7 @@ export const INDUSTRIES_DATA: Industry[] = [
 
 export const DEPTH_LEVELS: DepthLevel[] = [
   { level: 1, id: 'surface', title: 'LEVEL 01 — SURFACE', depthMeters: '0.0m - 0.5m', depthFeet: '0 - 1.5 FT', tagline: 'AASHTO H-20 Steel Road Plates & Trench Decking', description: 'Impact-resistant steel trench plates engineered for traffic bridging over active excavation trenches.', products: ['Steel Road Plates'], color: '#0066FF' },
-  { level: 2, id: 'trench', title: 'LEVEL 02 — SHORING', depthMeters: '1.5m - 4.5m', depthFeet: '5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, aluminum shields, and hydraulic shores engineered for maximum soil pressure resistance.', products: ['TU-8000 Steel Trench Box'], color: '#0A2540' },
+  { level: 2, id: 'trench', title: 'LEVEL 02 — SHORING', depthMeters: '1.5m - 4.5m', depthFeet: '5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, aluminum shields, and hydraulic shores engineered for maximum soil pressure resistance.', products: ['TU-8000 Steel Trench Box'], color: '#004AAD' },
   { level: 3, id: 'deep-trench', title: 'LEVEL 03 — DEEP SHORING', depthMeters: '4.5m - 9.0m+', depthFeet: '15 - 30+ FT', tagline: 'Modular Slide Rail & Sheet Piling Systems', description: 'Deep excavation dig-and-push modular slide rail systems replacing traditional driven sheet piling.', products: ['Slide Rail Shoring'], color: '#0066FF' }
 ];
 

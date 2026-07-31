@@ -219,15 +219,15 @@ export const Catalogue: React.FC<CatalogueProps> = ({
                     {/* Quick Specs Table — Sharp Industrial Grid */}
                     <div className="space-y-1.5 font-mono text-xs bg-[#F0F7FF] p-3 border-2 border-blue-200 rounded-none">
                       <div className="flex justify-between text-[#163B66]">
-                        <span className="text-slate-500">MATERIAL:</span>
+                        <span className="text-blue-400">MATERIAL:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[170px]">{product.material || '[VERIFIED MATERIAL]'}</span>
                       </div>
                       <div className="flex justify-between text-[#163B66]">
-                        <span className="text-slate-500">LOAD RATING:</span>
+                        <span className="text-blue-400">LOAD RATING:</span>
                         <span className="font-bold text-[#C00000] truncate max-w-[170px]">{product.loadRating || '[VERIFIED RATING]'}</span>
                       </div>
                       <div className="flex justify-between text-[#163B66]">
-                        <span className="text-slate-500">STANDARD:</span>
+                        <span className="text-blue-400">STANDARD:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[170px]">{product.standard || '[APPLICABLE STANDARD]'}</span>
                       </div>
                     </div>

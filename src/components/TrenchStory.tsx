@@ -102,7 +102,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
               THE EVOLUTION OF <span className="text-[#2166D1]">TRENCH SAFETY</span>
             </h2>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               From dangerous unreinforced earth cuts to modern high-tensile steel shoring box engineering.
             </p>
           </div>
@@ -142,7 +142,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
               </div>
             </div>
 
-            <div className="lg:col-span-6 space-y-4 text-slate-700">
+            <div className="lg:col-span-6 space-y-4 text-blue-600">
               <div className="text-xs font-mono text-[#C00000] font-bold uppercase tracking-wider">
                 ERA {timelineEras[activeTimelineIdx].year} • {timelineEras[activeTimelineIdx].subtitle}
               </div>
@@ -154,7 +154,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
               </p>
 
               <div className="p-4 bg-white rounded-lg border border-blue-200 font-mono text-xs space-y-1">
-                <span className="text-slate-500 uppercase font-bold">KEY TECHNOLOGY & EQUIPMENT:</span>
+                <span className="text-blue-400 uppercase font-bold">KEY TECHNOLOGY & EQUIPMENT:</span>
                 <div className="text-[#0754AE] font-bold text-sm">
                   {timelineEras[activeTimelineIdx].tech}
                 </div>
@@ -183,7 +183,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                 <span className="text-[#2166D1]">SOIL PRESSURE</span>
               </h2>
 
-              <p className="text-slate-700 font-medium text-base leading-relaxed">
+              <p className="text-blue-600 font-medium text-base leading-relaxed">
                 One cubic yard of soil can weigh as much as an automobile (2,700 to 3,000 lbs). When an un-shored trench wall is cut, lateral earth pressure creates intense sheer stress. Without engineered shoring panels, a cave-in occurs in less than a second.
               </p>
 
@@ -191,7 +191,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                 <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center">
                   <div>
                     <div className="font-bold text-[#0754AE]">TYPE A SOIL (Cohesive Clay)</div>
-                    <div className="text-slate-500 text-[11px]">Unconfined compressive strength &gt; 1.5 tons/sq ft</div>
+                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength &gt; 1.5 tons/sq ft</div>
                   </div>
                   <span className="px-2 py-1 bg-blue-100 text-[#0754AE] font-bold rounded">25° Angle</span>
                 </div>
@@ -199,7 +199,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                 <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center">
                   <div>
                     <div className="font-bold text-[#0754AE]">TYPE B SOIL (Granular Silt / Loam)</div>
-                    <div className="text-slate-500 text-[11px]">Unconfined compressive strength 0.5 to 1.5 tons/sq ft</div>
+                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength 0.5 to 1.5 tons/sq ft</div>
                   </div>
                   <span className="px-2 py-1 bg-amber-100 text-amber-800 font-bold rounded">45° Angle</span>
                 </div>
@@ -207,7 +207,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                 <div className="p-4 bg-white rounded-lg border border-blue-200 flex justify-between items-center border-l-4 border-l-[#C00000]">
                   <div>
                     <div className="font-bold text-[#C00000]">TYPE C SOIL (Submerged Sand / Gravel)</div>
-                    <div className="text-slate-500 text-[11px]">Unconfined compressive strength &lt; 0.5 tons/sq ft</div>
+                    <div className="text-blue-400 text-[11px]">Unconfined compressive strength &lt; 0.5 tons/sq ft</div>
                   </div>
                   <span className="px-2 py-1 bg-red-100 text-[#C00000] font-bold rounded">34° Angle</span>
                 </div>
@@ -225,12 +225,12 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                 <div className="text-2xl font-extrabold text-[#0754AE]">
                   P<sub>a</sub> = ½ · γ · H² · K<sub>a</sub>
                 </div>
-                <p className="text-xs text-slate-600 font-sans">
+                <p className="text-xs text-blue-500 font-sans">
                   Where <strong>γ</strong> = soil density, <strong>H</strong> = excavation depth, and <strong>K<sub>a</sub></strong> = active earth pressure coefficient.
                 </p>
               </div>
 
-              <div className="space-y-3 text-xs text-slate-700">
+              <div className="space-y-3 text-xs text-blue-600">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#2166D1]" />
                   <span>TU-8000 Steel Shields are rated to withstand up to <strong>1,450 PSF</strong> lateral force.</span>
@@ -260,7 +260,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
               WHAT <span className="text-[#2166D1]">“EVERYTHING TRENCH”</span> MEANS
             </h2>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               Supporting the complete lifecycle of underground infrastructure from surface castings to deep flow.
             </p>
           </div>
@@ -310,7 +310,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
                     <h3 className="text-lg font-bold text-[#0754AE] font-heading uppercase">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-slate-700 font-medium leading-relaxed mt-2">
+                    <p className="text-xs text-blue-600 font-medium leading-relaxed mt-2">
                       {pillar.desc}
                     </p>
                   </div>

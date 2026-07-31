@@ -24,7 +24,7 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
               TRENCH SAFETY &amp; <span className="text-[#0085F4]">SHORING SYSTEMS</span>
             </h2>
-            <p className="text-sm text-[#475569] font-medium max-w-2xl">
+            <p className="text-sm text-[#5B7FA5] font-medium max-w-2xl">
               Clean engineering overview of standardized trench protection, shoring shields, road plates, and access equipment.
             </p>
           </div>
@@ -57,7 +57,7 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
                   <h3 className="text-lg font-bold text-[#004AAD] font-heading group-hover:text-[#0085F4] transition-colors">
                     {cat.title}
                   </h3>
-                  <p className="text-xs text-[#475569] font-medium line-clamp-2">
+                  <p className="text-xs text-[#5B7FA5] font-medium line-clamp-2">
                     {cat.description}
                   </p>
                 </div>

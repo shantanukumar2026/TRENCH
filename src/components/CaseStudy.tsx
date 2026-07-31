@@ -32,7 +32,7 @@ export const CaseStudy: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
               PROJECT <span className="text-[#0085F4]">042</span>
             </h2>
-            <p className="text-sm text-[#475569] font-medium max-w-2xl">
+            <p className="text-sm text-[#5B7FA5] font-medium max-w-2xl">
               Municipal Utility Infrastructure Corridor Expansion — Real project performance metrics.
             </p>
           </div>
@@ -93,7 +93,7 @@ export const CaseStudy: React.FC = () => {
               <div className="grid grid-cols-2 gap-3">
                 {CASE_STUDY_DATA.metrics.map((metric, i) => (
                   <div key={i} className="p-3 bg-[#F8FAFC] border border-slate-200">
-                    <div className="text-[10px] text-slate-500 font-bold uppercase">{metric.label}</div>
+                    <div className="text-[10px] text-blue-400 font-bold uppercase">{metric.label}</div>
                     <div className="text-lg font-extrabold text-[#004AAD] mt-0.5">{metric.value}</div>
                   </div>
                 ))}
@@ -102,7 +102,7 @@ export const CaseStudy: React.FC = () => {
               {/* Supplied Products List */}
               <div className="space-y-2 pt-2">
                 <span className="text-xs font-bold text-[#004AAD] uppercase block">PRODUCTS SUPPLIED FOR PROJECT:</span>
-                <ul className="space-y-1.5 text-xs text-slate-700">
+                <ul className="space-y-1.5 text-xs text-blue-600">
                   {CASE_STUDY_DATA.productsUsed.map((prod, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#0085F4] shrink-0" />

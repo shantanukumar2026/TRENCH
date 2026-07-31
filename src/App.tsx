@@ -92,7 +92,7 @@ export function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-[#163B66] font-body selection:bg-[#2166D1] selection:text-white">
       {/* Primary Fixed Navbar */}
-      <Navbar 
+      <Navbar
         activePage={activePage === 'story' ? 'story' : activePage === 'products' ? 'products' : 'home'}
         onSelectPage={(page) => {
           setActivePage(page as any);
@@ -106,7 +106,7 @@ export function App() {
       {/* Dynamic View Rendering */}
       {activePage === 'products' ? (
         <main>
-          <ProductsPage 
+          <ProductsPage
             selectedCategoryFilter={selectedCategoryFilter}
             onCategoryFilterChange={(catId) => setSelectedCategoryFilter(catId)}
             onSelectProduct={handleOpenProductPage}
@@ -118,59 +118,45 @@ export function App() {
         </main>
       ) : activePage === 'product' && activeProductPage ? (
         <main className="pt-24">
-          <ProductPage 
+          <ProductPage
             product={activeProductPage}
             onBackToCatalogue={() => handleOpenProductsPage(selectedCategoryFilter)}
             onRequestQuote={handleRequestQuoteForProduct}
             onSelectRelatedProduct={handleOpenProductPage}
           />
         </main>
-      ) : activePage === 'home' ? (
+      ) : (
         <main>
           {/* 1. Hero Section */}
-          <Hero 
+          <Hero
             onExploreProducts={() => handleOpenProductsPage('all')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
           {/* 2. Product Equipment Categories */}
-          <SystemExplorer 
+          <SystemExplorer
             onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
           {/* 3. Core Trench Safety & Shoring Solutions */}
-          <Solutions 
+          <Solutions
             onSelectSolution={() => handleOpenProductsPage('all')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
           {/* 4. Engineering Quality & OSHA Standards Compliance */}
-          <TechnicalStandards 
+          <TechnicalStandards
             onOpenDocLibrary={() => scrollToSection('resources')}
           />
 
           {/* 5. How It Works (Project Sequence Timeline) */}
-          <HowItWorks 
+          <HowItWorks
             onExploreSolutions={() => scrollToSection('solutions')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
           {/* 6. Architectural Final CTA */}
-          <FinalCTA 
-            onRequestQuote={() => setQuoteModalOpen(true)}
-            onTalkToTeam={() => setQuoteModalOpen(true)}
-          />
-        </main>
-      ) : (
-        <main>
-          {/* Dedicated Story Page: "WHAT IS TRENCH?" */}
-          <TrenchStory 
-            onExploreProducts={() => handleOpenProductsPage('all')}
-            onRequestQuote={() => setQuoteModalOpen(true)}
-          />
-
-          {/* Architectural Final CTA */}
-          <FinalCTA 
+          <FinalCTA
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
           />
@@ -178,24 +164,24 @@ export function App() {
       )}
 
       {/* Zero-Black Compliant Blue Gradient Footer */}
-      <Footer 
+      <Footer
         onNavigateToSection={scrollToSection}
         onOpenQuoteModal={() => setQuoteModalOpen(true)}
       />
 
       {/* Modals & Drawers */}
-      <SubmittalDrawer 
+      <SubmittalDrawer
         isOpen={submittalDrawerOpen}
         onClose={() => setSubmittalDrawerOpen(false)}
       />
 
-      <RequestQuoteModal 
+      <RequestQuoteModal
         isOpen={quoteModalOpen}
         onClose={() => { setQuoteModalOpen(false); setQuoteInitialProduct(null); }}
         initialProduct={quoteInitialProduct}
       />
 
-      <ProductModal 
+      <ProductModal
         product={selectedProductModal}
         onClose={() => setSelectedProductModal(null)}
         onRequestQuote={handleRequestQuoteForProduct}

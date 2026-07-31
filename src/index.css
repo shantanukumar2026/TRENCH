@@ -4,31 +4,31 @@
 
 /* 
   TRENCH UNLIMITED™ — WORLD-CLASS U.S. ENTERPRISE ENGINEERING DESIGN SYSTEM
-  PURE WHITE & SMOKE WHITE CLEAN BACKGROUNDS (NO BLUEPRINT GRIDS)
-  ZERO-BLACK COLOR PALETTE: Deep Navy (#0A2540), Electric Blue (#0066FF), Crimson Accent (#D90429)
+  PURE WHITE & SMOKE WHITE CLEAN BACKGROUNDS (NO DARK COLORS)
+  BRIGHT COLOR PALETTE: Electric Blue (#0066FF), Accent Blue (#0085F4), Crimson Accent (#D90429)
 */
 
 :root {
-  /* Brand Core Palette */
+  /* Brand Core Palette — NO BLACK, NO DARK, NO GRAY */
   --trench-blue: #0066FF;
-  --deep-logo-blue: #0A2540;
+  --deep-logo-blue: #004AAD;
   --accent-blue: #0085F4;
   --cyan-flow: #00BBFF;
   --red-accent: #D90429;
   
-  /* Supporting Blues & Slates */
+  /* Supporting Blues & Light Tones */
   --powder-blue: #EBF3FF;
   --ice-blue: #F4F8FF;
-  --steel-blue: #475569;
-  --light-slate-blue: #64748B;
+  --steel-blue: #5B7FA5;
+  --light-slate-blue: #7A9CC6;
   --cool-slate-gray: #94A3B8;
   --off-white: #F8FAFC;
   --white: #FFFFFF;
   
-  /* Strict Text Colors */
-  --text-primary: #0A2540;
-  --text-body: #1E293B;
-  --text-muted: #475569;
+  /* Strict Text Colors — NO BLACK OR DARK */
+  --text-primary: #004AAD;
+  --text-body: #2563EB;
+  --text-muted: #5B7FA5;
   --text-white: #FFFFFF;
   --text-light-blue: #DBEAFE;
   
@@ -37,10 +37,10 @@
   --border-blue: #CBD5E1;
   --border-active: #0066FF;
   
-  /* Elevation Shadows */
-  --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.04);
-  --shadow-md: 0 8px 24px rgba(10, 37, 64, 0.08);
-  --shadow-lg: 0 16px 40px rgba(10, 37, 64, 0.12);
+  /* Elevation Shadows — Blue-Tinted Only */
+  --shadow-sm: 0 2px 8px rgba(0, 102, 255, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 102, 255, 0.10);
+  --shadow-lg: 0 16px 40px rgba(0, 102, 255, 0.14);
   --shadow-glow: 0 0 24px rgba(0, 102, 255, 0.2);
   
   /* Typography Tokens */
@@ -59,7 +59,7 @@ html {
   scroll-behavior: smooth;
   font-family: var(--font-body) !important;
   background-color: var(--white);
-  color: #1E293B;
+  color: #004AAD;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,7 +72,7 @@ body, p, div, span, label, input, select, textarea, li, a, button {
 body {
   overflow-x: hidden;
   background: var(--white);
-  color: #1E293B;
+  color: #004AAD;
 }
 
 button, a {
@@ -116,31 +116,31 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-image: none !important;
 }
 
-/* Primary Enterprise Buttons */
+/* Primary Enterprise Buttons — BRIGHT BLUE, NO DARK */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 14px 28px;
-  background-color: var(--deep-logo-blue);
+  background-color: var(--trench-blue);
   color: #FFFFFF !important;
   font-family: var(--font-heading) !important;
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: 2px solid var(--deep-logo-blue);
+  border: 2px solid var(--trench-blue);
   border-radius: 0px !important;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(10, 37, 64, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.18);
   text-decoration: none !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--trench-blue);
-  border-color: var(--trench-blue);
+  background-color: #0052CC;
+  border-color: #0052CC;
   box-shadow: var(--shadow-glow);
   transform: translateY(-2px);
 }
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: #FFFFFF;
   border: 2px solid #E2E8F0;
   border-radius: 0px !important;
-  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.06);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transform: translateY(-4px);
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar — BRIGHT */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--steel-blue);
+  background: #93C5FD;
   border-radius: 0px !important;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   }
 }
 
-/* Dark Footer Text Rule Overrides */
+/* Footer Text Rule Overrides */
 footer,
 footer p, 
 footer span, 

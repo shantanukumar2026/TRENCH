@@ -146,27 +146,27 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                 </h4>
                 <div className="bg-[#F0F7FF] border border-blue-200 rounded-lg overflow-hidden font-mono text-xs">
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
-                    <span className="text-slate-500">MATERIAL:</span>
+                    <span className="text-blue-400">MATERIAL:</span>
                     <span className="font-bold text-[#0754AE]">{product.material || '[VERIFIED MATERIAL]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
-                    <span className="text-slate-500">LOAD RATING:</span>
+                    <span className="text-blue-400">LOAD RATING:</span>
                     <span className="font-bold text-[#C00000]">{product.loadRating || '[VERIFIED LOAD RATING]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
-                    <span className="text-slate-500">AVAILABLE SIZES:</span>
+                    <span className="text-blue-400">AVAILABLE SIZES:</span>
                     <span className="font-bold text-[#0754AE]">{product.sizeRange || '[AVAILABLE SIZES]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
-                    <span className="text-slate-500">GOVERNING STANDARD:</span>
+                    <span className="text-blue-400">GOVERNING STANDARD:</span>
                     <span className="font-bold text-[#0754AE]">{product.standard || '[APPLICABLE STANDARD]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
-                    <span className="text-slate-500">APPLICATION:</span>
+                    <span className="text-blue-400">APPLICATION:</span>
                     <span className="font-bold text-[#163B66]">{product.application || '[PRIMARY APPLICATION]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5">
-                    <span className="text-slate-500">SYSTEM WEIGHT:</span>
+                    <span className="text-blue-400">SYSTEM WEIGHT:</span>
                     <span className="font-bold text-[#163B66]">{product.weight || '[VERIFIED WEIGHT]'}</span>
                   </div>
                 </div>
@@ -186,19 +186,19 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
               <div className="p-3 bg-white border border-blue-200 rounded-lg">
-                <div className="text-[10px] text-slate-500">CALLOUT [A] OVERALL HEIGHT</div>
+                <div className="text-[10px] text-blue-400">CALLOUT [A] OVERALL HEIGHT</div>
                 <div className="font-bold text-[#0754AE] mt-1">{product.sizes ? product.sizes[0] : '8.0 FT Nominal'}</div>
               </div>
               <div className="p-3 bg-white border border-blue-200 rounded-lg">
-                <div className="text-[10px] text-slate-500">CALLOUT [B] WALL THICKNESS</div>
+                <div className="text-[10px] text-blue-400">CALLOUT [B] WALL THICKNESS</div>
                 <div className="font-bold text-[#0754AE] mt-1">4.0 IN Solid Steel</div>
               </div>
               <div className="p-3 bg-white border border-blue-200 rounded-lg">
-                <div className="text-[10px] text-slate-500">CALLOUT [C] SPREADER PIN OPENING</div>
+                <div className="text-[10px] text-blue-400">CALLOUT [C] SPREADER PIN OPENING</div>
                 <div className="font-bold text-[#0754AE] mt-1">8.0 IN Schedule 80</div>
               </div>
               <div className="p-3 bg-white border border-blue-200 rounded-lg">
-                <div className="text-[10px] text-slate-500">CALLOUT [D] STRUCTURAL WEIGHT</div>
+                <div className="text-[10px] text-blue-400">CALLOUT [D] STRUCTURAL WEIGHT</div>
                 <div className="font-bold text-[#C00000] mt-1">{product.weight || '12,400 LBS'}</div>
               </div>
             </div>

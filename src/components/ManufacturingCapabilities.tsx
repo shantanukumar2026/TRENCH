@@ -42,7 +42,7 @@ export const ManufacturingCapabilities: React.FC = () => {
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               State-of-the-art North American manufacturing facilities engineered for high-volume infrastructure production.
             </p>
           </div>
@@ -64,7 +64,7 @@ export const ManufacturingCapabilities: React.FC = () => {
                 <h3 className="text-base font-bold text-[#0754AE] font-heading uppercase group-hover:text-[#2166D1] transition-colors">
                   {cap.title}
                 </h3>
-                <p className="text-xs text-slate-700 font-sans font-medium leading-relaxed mt-2">
+                <p className="text-xs text-blue-600 font-sans font-medium leading-relaxed mt-2">
                   {cap.desc}
                 </p>
               </div>

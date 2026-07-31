@@ -27,7 +27,7 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="blue-accent-bar"></span>
-            <p className="text-slate-600 font-medium text-base">
+            <p className="text-blue-500 font-medium text-base">
               Select a depth strata level to inspect engineered infrastructure products across every underground layer.
             </p>
           </div>
@@ -69,7 +69,7 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
                           {level.title}
                         </h3>
                       </div>
-                      <p className={`text-xs font-medium ${isSelected ? 'text-blue-100' : 'text-slate-600'}`}>
+                      <p className={`text-xs font-medium ${isSelected ? 'text-blue-100' : 'text-blue-500'}`}>
                         {level.tagline}
                       </p>
                     </div>
@@ -94,14 +94,14 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
                   </h3>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs font-mono text-slate-500 uppercase">BURIAL ZONE</div>
+                  <div className="text-xs font-mono text-blue-400 uppercase">BURIAL ZONE</div>
                   <div className="text-xl font-bold font-mono text-[#2166D1]">
                     {activeLevel.depthMeters}
                   </div>
                 </div>
               </div>
 
-              <p className="mt-6 text-slate-700 font-medium text-base leading-relaxed">
+              <p className="mt-6 text-blue-600 font-medium text-base leading-relaxed">
                 {activeLevel.description}
               </p>
 
@@ -122,7 +122,7 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
                   </div>
                 </div>
 
-                <div className="flex justify-between text-[11px] font-mono text-slate-600">
+                <div className="flex justify-between text-[11px] font-mono text-blue-500">
                   <span>LEVEL 01</span>
                   <span>LEVEL 02</span>
                   <span>LEVEL 03</span>
@@ -153,7 +153,7 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
 
             {/* Bottom Action Footer */}
             <div className="mt-10 pt-6 border-t border-blue-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <span className="text-xs font-mono text-slate-500">
+              <span className="text-xs font-mono text-blue-400">
                 100% Structural Load Ratings &amp; Submittal Ready
               </span>
               <button 

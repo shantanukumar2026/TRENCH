@@ -49,7 +49,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
 
           <div className="mt-4 space-y-4">
             <div>
-              <label className="text-xs font-mono text-slate-500 uppercase font-bold block mb-1">
+              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
                 PROJECT IDENTIFICATION NAME:
               </label>
               <input 
@@ -61,7 +61,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
             </div>
 
             <div>
-              <label className="text-xs font-mono text-slate-500 uppercase font-bold block mb-1">
+              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
                 ENGINEER / CONTRACTOR OF RECORD:
               </label>
               <input 
@@ -87,7 +87,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
                   >
                     <div>
                       <div className="font-bold text-[#0754AE]">{item.name}</div>
-                      <div className="text-[10px] text-slate-500">{item.partNumber} • {item.loadRating}</div>
+                      <div className="text-[10px] text-blue-400">{item.partNumber} • {item.loadRating}</div>
                     </div>
                     <button 
                       onClick={() => handleRemoveItem(item.id)}
@@ -102,7 +102,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
 
             {/* Add More Items Dropdown */}
             <div>
-              <label className="text-xs font-mono text-slate-500 uppercase font-bold block mb-1">
+              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
                 ADD CATALOGUE ITEM TO SUBMITTAL:
               </label>
               <select 

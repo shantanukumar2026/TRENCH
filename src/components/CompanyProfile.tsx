@@ -19,7 +19,7 @@ export const CompanyProfile: React.FC = () => {
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               Dependable American engineering & supply for underground infrastructure professionals.
             </p>
           </div>
@@ -53,7 +53,7 @@ export const CompanyProfile: React.FC = () => {
           </div>
 
           {/* Right Column: Narrative Content */}
-          <div className="lg:col-span-6 space-y-6 text-slate-700">
+          <div className="lg:col-span-6 space-y-6 text-blue-600">
             <h3 className="text-2xl font-extrabold text-[#0754AE] font-heading uppercase">
               WHO WE ARE & WHAT WE SUPPLY
             </h3>
@@ -73,7 +73,7 @@ export const CompanyProfile: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-[#C00000]" />
                   OSHA SUBPART P
                 </div>
-                <div className="text-slate-500 text-[11px]">100% Certified Trench Shielding</div>
+                <div className="text-blue-400 text-[11px]">100% Certified Trench Shielding</div>
               </div>
 
               <div className="p-3 bg-[#F0F7FF] rounded border border-blue-200 space-y-1">
@@ -81,7 +81,7 @@ export const CompanyProfile: React.FC = () => {
                   <Award className="w-4 h-4 text-[#2166D1]" />
                   PE CALCULATIONS
                 </div>
-                <div className="text-slate-500 text-[11px]">Stamped Submittal Packages</div>
+                <div className="text-blue-400 text-[11px]">Stamped Submittal Packages</div>
               </div>
             </div>
 

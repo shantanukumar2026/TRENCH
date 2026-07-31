@@ -148,8 +148,8 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
 
             {/* Road Surface Asphalt Texture */}
             <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#334155" />
-              <stop offset="100%" stopColor="#1E293B" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#2563EB" />
             </linearGradient>
 
             {/* Earth Soil Layer Strata */}
@@ -177,7 +177,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
               <rect width="12" height="12" fill="#E2E8F0" />
               <circle cx="3" cy="3" r="1.5" fill="#94A3B8" />
               <circle cx="9" cy="7" r="2" fill="#64748B" />
-              <circle cx="4" cy="10" r="1.2" fill="#475569" />
+              <circle cx="4" cy="10" r="1.2" fill="#5B7FA5" />
             </pattern>
           </defs>
 
@@ -416,7 +416,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
                       {hs.title}
                     </span>
                   </div>
-                  <p className="text-[10px] text-[#475569] font-medium leading-tight">
+                  <p className="text-[10px] text-[#5B7FA5] font-medium leading-tight">
                     {hs.subtitle}
                   </p>
                 </div>
@@ -436,7 +436,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
                 <span className="font-bold text-[#004AAD] text-xs uppercase block">
                   {installSteps[installStep - 1].title}
                 </span>
-                <span className="text-[10px] text-[#475569] block truncate max-w-sm">
+                <span className="text-[10px] text-[#5B7FA5] block truncate max-w-sm">
                   {installSteps[installStep - 1].desc}
                 </span>
               </div>
@@ -466,7 +466,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
         <div className="flex items-center gap-2">
           <span className="text-[#0085F4]">TRENCH PROTECTION SYSTEM</span>
           <span className="text-slate-300">•</span>
-          <span className="text-[#475569]">Shield • Pipe • Bedding • Access</span>
+          <span className="text-[#5B7FA5]">Shield • Pipe • Bedding • Access</span>
         </div>
 
         <div className="flex items-center gap-2 text-[#0085F4]">

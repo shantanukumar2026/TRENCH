@@ -25,7 +25,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
               SOLUTIONS BY <span className="text-[#0085F4]">APPLICATION</span>
             </h2>
-            <p className="text-sm text-[#475569] font-medium max-w-2xl">
+            <p className="text-sm text-[#5B7FA5] font-medium max-w-2xl">
               End-to-end engineered infrastructure packages optimized for contractors, municipalities, and utility authorities.
             </p>
           </div>
@@ -76,13 +76,13 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
                     <span className="text-xs font-mono text-[#2166D1] font-bold uppercase tracking-wider">
                       {sol.tagline}
                     </span>
-                    <p className="text-slate-700 font-medium text-base mt-2 leading-relaxed">
+                    <p className="text-blue-600 font-medium text-base mt-2 leading-relaxed">
                       {sol.description}
                     </p>
 
                     {/* Recommended Products Chips */}
                     <div className="mt-6">
-                      <span className="text-xs font-mono text-slate-500 uppercase block mb-2 font-bold">
+                      <span className="text-xs font-mono text-blue-400 uppercase block mb-2 font-bold">
                         RECOMMENDED SYSTEM COMPONENTS:
                       </span>
                       <div className="flex flex-wrap gap-2">

@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
             </div>
 
             {/* Description (2-3 Lines on Desktop) */}
-            <p className="text-base sm:text-lg text-[#475569] font-medium leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-[#5B7FA5] font-medium leading-relaxed max-w-xl">
               Trench protection, underground utility, waterworks and excavation solutions engineered for demanding infrastructure projects.
             </p>
 
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
                 <h4 className="text-sm font-bold text-[#004AAD] font-heading uppercase leading-snug">
                   BUILT FOR THE REAL WORLD.
                 </h4>
-                <p className="text-xs text-[#475569] font-mono">
+                <p className="text-xs text-[#5B7FA5] font-mono">
                   Trench protection • Utility • Waterworks
                 </p>
                 <button

@@ -77,7 +77,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({ onSelectCategory
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
               {selectedIndustry.specs.map((spec, i) => (
                 <div key={i} className="p-3 bg-white border border-blue-200 rounded-lg shadow-sm">
-                  <div className="text-[10px] text-slate-500 font-bold uppercase">{spec.label}</div>
+                  <div className="text-[10px] text-blue-400 font-bold uppercase">{spec.label}</div>
                   <div className="font-bold text-[#0754AE] mt-0.5">{spec.value}</div>
                 </div>
               ))}

@@ -171,11 +171,11 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
 
                     <div className="space-y-1.5 font-mono text-xs bg-[#F0F7FF] p-3 rounded-none border border-blue-200">
                       <div className="flex justify-between text-[#163B66]">
-                        <span className="text-slate-500">MATERIAL:</span>
+                        <span className="text-blue-400">MATERIAL:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[160px]">{product.material}</span>
                       </div>
                       <div className="flex justify-between text-[#163B66]">
-                        <span className="text-slate-500">RATING:</span>
+                        <span className="text-blue-400">RATING:</span>
                         <span className="font-bold text-[#C00000] truncate max-w-[160px]">{product.loadRating}</span>
                       </div>
                     </div>

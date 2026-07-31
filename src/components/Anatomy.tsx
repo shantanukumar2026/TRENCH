@@ -49,7 +49,7 @@ export const Anatomy: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#004AAD] tracking-tight font-heading uppercase">
               UNDERGROUND TRENCH <span className="text-[#0085F4]">INFRASTRUCTURE LAYERS</span>
             </h2>
-            <p className="text-sm text-[#475569] font-medium max-w-2xl">
+            <p className="text-sm text-[#5B7FA5] font-medium max-w-2xl">
               Clean engineering breakdown of the structural components forming a safe subterranean trench excavation.
             </p>
           </div>
@@ -80,7 +80,7 @@ export const Anatomy: React.FC = () => {
                 <h3 className="text-base font-bold text-[#004AAD] font-heading line-clamp-1">
                   {layer.title}
                 </h3>
-                <p className="text-xs text-[#475569] font-medium leading-relaxed">
+                <p className="text-xs text-[#5B7FA5] font-medium leading-relaxed">
                   {layer.desc}
                 </p>
               </div>

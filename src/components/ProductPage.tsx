@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Product } from '../types';
 import { PRODUCTS_CATALOGUE } from '../data/trenchData';
-import { ArrowLeft, Download, ShieldCheck, CheckCircle2, FileText, Share2, Printer, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Download, ShieldCheck, CheckCircle2, FileText, Share2, ChevronRight } from 'lucide-react';
 
 interface ProductPageProps {
   product: Product;
@@ -26,16 +26,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({
         
         {/* Top Breadcrumb Rail */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-slate-200 pb-4 font-mono text-xs">
-          <div className="flex items-center gap-2 text-[#0A2540]">
+          <div className="flex items-center gap-2 text-[#004AAD]">
             <button
               onClick={onBackToCatalogue}
               className="font-bold hover:text-[#0066FF] flex items-center gap-1.5"
             >
-              <ArrowLeft className="w-4 h-4 text-[#0A2540]" />
+              <ArrowLeft className="w-4 h-4 text-[#004AAD]" />
               <span>PRODUCTS</span>
             </button>
             <span>/</span>
-            <span className="uppercase text-slate-500">{product.category}</span>
+            <span className="uppercase text-blue-400">{product.category}</span>
             <span>/</span>
             <span className="font-bold text-[#0066FF] uppercase">{product.name}</span>
           </div>
@@ -43,18 +43,12 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           <div className="flex items-center gap-3">
             <button 
               onClick={() => alert(`Share link for ${product.name} copied to clipboard!`)}
-              className="p-2 bg-white border border-slate-200 text-[#0A2540] hover:bg-[#F4F8FF]"
+              className="p-2 bg-white border border-slate-200 text-[#004AAD] hover:bg-[#F4F8FF]"
               title="Share product link"
             >
               <Share2 className="w-4 h-4" />
             </button>
-            <button 
-              onClick={() => window.print()}
-              className="p-2 bg-white border border-slate-200 text-[#0A2540] hover:bg-[#F4F8FF]"
-              title="Print spec sheet"
-            >
-              <Printer className="w-4 h-4" />
-            </button>
+
           </div>
         </div>
 
@@ -66,7 +60,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
             <div className="relative h-[420px] sm:h-[480px] border-2 border-slate-200 bg-white shadow-xl flex items-center justify-center p-4">
               
               <div className="absolute top-4 left-4 z-10 flex gap-2">
-                <span className="px-2.5 py-1 bg-[#0A2540] text-white text-[10px] font-mono font-bold uppercase">
+                <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold uppercase">
                   PART #{product.partNumber}
                 </span>
                 <span className="px-2.5 py-1 bg-[#0066FF] text-white text-[10px] font-mono font-bold uppercase">
@@ -97,11 +91,11 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] font-heading uppercase leading-tight">
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-[#004AAD] font-heading uppercase leading-tight">
                 {product.name}
               </h1>
 
-              <p className="text-xs sm:text-sm text-[#475569] font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#5B7FA5] font-medium leading-relaxed">
                 {product.description}
               </p>
             </div>
@@ -109,23 +103,23 @@ export const ProductPage: React.FC<ProductPageProps> = ({
             {/* Core Technical Specifications Grid */}
             <div className="grid grid-cols-2 gap-4 font-mono text-xs">
               <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
-                <span className="text-[10px] text-slate-500 font-bold block">MATERIAL GRADE</span>
-                <span className="font-extrabold text-[#0A2540] truncate block">{product.material}</span>
+                <span className="text-[10px] text-blue-400 font-bold block">MATERIAL GRADE</span>
+                <span className="font-extrabold text-[#004AAD] truncate block">{product.material}</span>
               </div>
 
               <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
-                <span className="text-[10px] text-slate-500 font-bold block">LOAD RATING</span>
+                <span className="text-[10px] text-blue-400 font-bold block">LOAD RATING</span>
                 <span className="font-extrabold text-[#0066FF] truncate block">{product.loadRating}</span>
               </div>
 
               <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
-                <span className="text-[10px] text-slate-500 font-bold block">STANDARD DIMENSIONS</span>
-                <span className="font-extrabold text-[#0A2540] truncate block">{product.sizeRange}</span>
+                <span className="text-[10px] text-blue-400 font-bold block">STANDARD DIMENSIONS</span>
+                <span className="font-extrabold text-[#004AAD] truncate block">{product.sizeRange}</span>
               </div>
 
               <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
-                <span className="text-[10px] text-slate-500 font-bold block">TOTAL SYSTEM WEIGHT</span>
-                <span className="font-extrabold text-[#0A2540] truncate block">{product.weight || 'VARIES'}</span>
+                <span className="text-[10px] text-blue-400 font-bold block">TOTAL SYSTEM WEIGHT</span>
+                <span className="font-extrabold text-[#004AAD] truncate block">{product.weight || 'VARIES'}</span>
               </div>
             </div>
 
@@ -142,7 +136,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 onClick={() => alert(`Downloading PE structural calculation packet for ${product.name}...`)}
                 className="btn-secondary py-4 px-6 text-sm font-bold flex items-center justify-center gap-2"
               >
-                <Download className="w-4 h-4 text-[#0A2540]" />
+                <Download className="w-4 h-4 text-[#004AAD]" />
                 <span>DOWNLOAD DWG / PE PACKET</span>
               </button>
             </div>

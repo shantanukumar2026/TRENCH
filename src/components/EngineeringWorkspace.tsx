@@ -31,7 +31,7 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               Instant access to CAD models, submittal generators, and PE-stamped load calculation data.
             </p>
           </div>
@@ -50,7 +50,7 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
 
               {/* Depth Selector */}
               <div>
-                <label className="text-xs font-mono text-slate-500 uppercase block mb-1.5 font-bold">
+                <label className="text-xs font-mono text-blue-400 uppercase block mb-1.5 font-bold">
                   TARGET EXCAVATION DEPTH:
                 </label>
                 <div className="grid grid-cols-3 gap-2 font-mono text-xs">
@@ -72,7 +72,7 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
 
               {/* Soil Classification Selector */}
               <div>
-                <label className="text-xs font-mono text-slate-500 uppercase block mb-1.5 font-bold">
+                <label className="text-xs font-mono text-blue-400 uppercase block mb-1.5 font-bold">
                   OSHA SOIL CLASSIFICATION:
                 </label>
                 <div className="grid grid-cols-3 gap-2 font-mono text-xs">
@@ -98,7 +98,7 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
 
               {/* File Format Format */}
               <div>
-                <label className="text-xs font-mono text-slate-500 uppercase block mb-1.5 font-bold">
+                <label className="text-xs font-mono text-blue-400 uppercase block mb-1.5 font-bold">
                   DESIRED CAD / BIM SPEC FILE FORMAT:
                 </label>
                 <div className="grid grid-cols-3 gap-2 font-mono text-xs">
@@ -171,13 +171,13 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
                     <div className="text-xs font-bold text-[#0754AE]">
                       AUTOCAD / REVIT MODEL GENERATED
                     </div>
-                    <div className="text-[10px] text-slate-500">
+                    <div className="text-[10px] text-blue-400">
                       TU-SB-824-HD • OSHA SUBPART P COMPLIANT
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600">
+                <div className="grid grid-cols-2 gap-2 text-[11px] text-blue-500">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#2166D1]" />
                     Stamped PE Calculations
@@ -189,7 +189,7 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
                 </div>
               </div>
 
-              <div className="mt-4 text-center text-[10px] text-slate-500">
+              <div className="mt-4 text-center text-[10px] text-blue-400">
                 100% Stamped Engineering Docs Issued within 24 Hours
               </div>
             </div>

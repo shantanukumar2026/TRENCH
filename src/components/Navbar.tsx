@@ -245,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* FULL-WIDTH CORPORATE MEGAMENU DROPDOWN */}
         {activeMegaMenu && (
-          <div className="absolute top-full left-0 right-0 bg-white border-b-4 border-[#0754AE] shadow-2xl p-8 text-slate-800 animate-in fade-in slide-in-from-top-2 duration-200 z-50 bg-blueprint-dense">
+          <div className="absolute top-full left-0 right-0 bg-white border-b-4 border-[#0754AE] shadow-2xl p-8 text-blue-700 animate-in fade-in slide-in-from-top-2 duration-200 z-50 bg-blueprint-dense">
             <div className="w-full px-4 sm:px-8 lg:px-12">
               
               {/* PRODUCTS MEGAMENU */}
@@ -347,20 +347,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div className="grid grid-cols-3 gap-8 font-mono">
                   <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
                     <div className="text-xs font-bold text-[#D90429] uppercase">OSHA SUBPART P</div>
-                    <div className="text-sm font-bold text-[#0A2540]">Steel Trench Shielding Systems</div>
-                    <p className="text-xs text-slate-600 font-sans">Double-wall steel trench boxes engineered for high-depth excavation worker protection.</p>
+                    <div className="text-sm font-bold text-[#004AAD]">Steel Trench Shielding Systems</div>
+                    <p className="text-xs text-blue-500 font-sans">Double-wall steel trench boxes engineered for high-depth excavation worker protection.</p>
                   </div>
 
                   <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
                     <div className="text-xs font-bold text-[#D90429] uppercase">ALUMINUM SHORING</div>
-                    <div className="text-sm font-bold text-[#0A2540]">Hydraulic Trench Shoring Rails</div>
-                    <p className="text-xs text-slate-600 font-sans">Hand-pumped aluminum hydraulic shores installed 100% from above ground.</p>
+                    <div className="text-sm font-bold text-[#004AAD]">Hydraulic Trench Shoring Rails</div>
+                    <p className="text-xs text-blue-500 font-sans">Hand-pumped aluminum hydraulic shores installed 100% from above ground.</p>
                   </div>
 
                   <div className="p-5 bg-white rounded-none border-2 border-blue-200 space-y-2 cursor-pointer hover:border-[#0066FF]" onClick={() => handleNavClick('solutions')}>
                     <div className="text-xs font-bold text-[#D90429] uppercase">DEEP EXCAVATION</div>
-                    <div className="text-sm font-bold text-[#0A2540]">Modular Slide Rail Shoring</div>
-                    <p className="text-xs text-slate-600 font-sans">Dig-and-push modular shoring panels replacing traditional driven steel sheet piling.</p>
+                    <div className="text-sm font-bold text-[#004AAD]">Modular Slide Rail Shoring</div>
+                    <p className="text-xs text-blue-500 font-sans">Dig-and-push modular shoring panels replacing traditional driven steel sheet piling.</p>
                   </div>
                 </div>
               )}
@@ -375,11 +375,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <div className="grid grid-cols-2 gap-4 text-xs">
                       <div className="p-3 bg-[#F0F7FF] rounded border border-blue-200">
                         <div className="font-bold text-[#0754AE]">PE Structural Calculation Packets</div>
-                        <div className="text-[11px] text-slate-500">PE-stamped engineering for municipal plan approval.</div>
+                        <div className="text-[11px] text-blue-400">PE-stamped engineering for municipal plan approval.</div>
                       </div>
                       <div className="p-3 bg-[#F0F7FF] rounded border border-blue-200">
                         <div className="font-bold text-[#0754AE]">AutoCAD (.DWG) &amp; Revit (.RVT) Library</div>
-                        <div className="text-[11px] text-slate-500">Instant download CAD geometry models.</div>
+                        <div className="text-[11px] text-blue-400">Instant download CAD geometry models.</div>
                       </div>
                     </div>
                   </div>
@@ -420,7 +420,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <ChevronRight className="w-3 h-3 text-slate-400" />
 
-              <span className="text-slate-500 uppercase font-semibold">
+              <span className="text-blue-400 uppercase font-semibold">
                 UNDERGROUND INFRASTRUCTURE
               </span>
 
@@ -432,7 +432,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* Right Breadcrumb System Code Badge */}
-            <div className="hidden sm:flex items-center gap-3 text-[10px] text-slate-500 font-bold">
+            <div className="hidden sm:flex items-center gap-3 text-[10px] text-blue-400 font-bold">
               <span>SYS ID: <strong className="text-[#0754AE]">TU-INFRA-2026</strong></span>
               <span>|</span>
               <span>STATUS: <strong className="text-[#2166D1]">PE VERIFIED</strong></span>

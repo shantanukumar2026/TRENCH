@@ -41,7 +41,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
     <div className="pt-20 bg-[#F8FAFC] min-h-screen space-y-8">
       
       {/* Products Page Clean Banner */}
-      <div className="bg-[#0A2540] text-white py-16 px-4 border-b-4 border-[#0066FF]">
+      <div className="bg-[#004AAD] text-white py-16 px-4 border-b-4 border-[#0066FF]">
         <div className="container-custom space-y-4 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest">
             <ShieldCheck className="w-4 h-4 text-[#00BBFF]" />

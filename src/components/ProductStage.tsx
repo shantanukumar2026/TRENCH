@@ -26,7 +26,7 @@ export const ProductStage: React.FC<ProductStageProps> = ({ onRequestSpecSheet }
             <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
               TU-8000 <span className="text-[#2166D1]">STEEL TRENCH SHIELD</span>
             </h2>
-            <p className="text-slate-600 font-medium text-base mt-2">
+            <p className="text-blue-500 font-medium text-base mt-2">
               Double-walled high-tensile steel shoring box for heavy utility excavations.
             </p>
           </div>
@@ -110,13 +110,13 @@ export const ProductStage: React.FC<ProductStageProps> = ({ onRequestSpecSheet }
                 <span className="text-[#0754AE] font-bold">Deep Utility &amp; Water Main Excavation</span>
               </div>
               <div className="p-3 bg-white rounded border border-blue-100 flex justify-between">
-                <span className="text-slate-500">STANDARD:</span>
+                <span className="text-blue-400">STANDARD:</span>
                 <span className="text-[#0754AE] font-bold">ASTM A572 / OSHA Certified</span>
               </div>
             </div>
 
             {/* Feature Checklist */}
-            <div className="space-y-2 text-xs font-medium text-slate-700">
+            <div className="space-y-2 text-xs font-medium text-blue-600">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#2166D1]" />
                 Concrete-filled cutting edge knife shoe for ground penetration

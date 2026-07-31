@@ -56,7 +56,7 @@ export const TechnicalStandards: React.FC<TechnicalStandardsProps> = ({ onOpenDo
               <span className="text-[#2166D1]">STANDARDS COMPLIANCE</span>
             </h2>
 
-            <p className="text-slate-700 font-medium text-base leading-relaxed">
+            <p className="text-blue-600 font-medium text-base leading-relaxed">
               Every Trench Unlimited product is manufactured and tested under rigid North American infrastructure specifications, ensuring complete compliance for municipal submittals.
             </p>
 
@@ -90,7 +90,7 @@ export const TechnicalStandards: React.FC<TechnicalStandardsProps> = ({ onOpenDo
                 className="bg-[#F0F7FF] border-2 border-blue-200 rounded-xl p-6 shadow-md hover:border-[#2166D1] transition-all flex flex-col justify-between space-y-4 font-mono group"
               >
                 <div className="space-y-1">
-                  <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase">
+                  <div className="flex justify-between items-center text-[10px] text-blue-400 font-bold uppercase">
                     <span>{std.authority}</span>
                     <span className="text-[#C00000]">{std.code}</span>
                   </div>
@@ -99,7 +99,7 @@ export const TechnicalStandards: React.FC<TechnicalStandardsProps> = ({ onOpenDo
                   </h3>
                 </div>
 
-                <p className="text-xs text-slate-700 font-sans font-medium leading-relaxed">
+                <p className="text-xs text-blue-600 font-sans font-medium leading-relaxed">
                   {std.desc}
                 </p>
 

@@ -54,7 +54,7 @@ export const ResourcesHub: React.FC<ResourcesHubProps> = ({ onDownloadResource }
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="red-accent-bar"></span>
-            <p className="text-slate-700 font-medium text-base">
+            <p className="text-blue-600 font-medium text-base">
               PE stamped submittals, CAD models, installation manuals, and specification sheets.
             </p>
           </div>
@@ -78,7 +78,7 @@ export const ResourcesHub: React.FC<ResourcesHubProps> = ({ onDownloadResource }
                 <h3 className="text-lg font-bold text-[#0754AE] font-heading uppercase">
                   {doc.title}
                 </h3>
-                <div className="mt-2 flex gap-4 text-xs text-slate-500">
+                <div className="mt-2 flex gap-4 text-xs text-blue-400">
                   <span>FORMAT: <strong className="text-[#C00000]">{doc.format}</strong></span>
                   <span>FILE SIZE: {doc.size}</span>
                 </div>
