@@ -1,11 +1,17 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// 100% High-Resolution Local U.S. Infrastructure Assets from src/assets/images
-const imgSteelShield = '/images/assets/gettyimages-1349322660-1024x1024.jpg';
-const imgHydraulicShore = '/images/assets/gettyimages-1158438565-1024x1024.jpg';
-const imgSlideRail = '/images/assets/gettyimages-1157931869-1024x1024.jpg';
-const imgTrenchLadder = '/images/assets/gettyimages-1324527712-1024x1024.jpg';
-const imgSteelRoadPlate = '/images/assets/gettyimages-141843304-1024x1024.jpg';
+// Distinct Local U.S. Photography Assets from G:\bens sir team\trench-everything\src\assets\images
+const img01 = '/images/assets/gettyimages-1479422287-1024x1024.jpg';
+const img02 = '/images/assets/gettyimages-2167164749-1024x1024.jpg';
+const img03 = '/images/assets/gettyimages-2223963188-1024x1024.jpg';
+const img04 = '/images/assets/gettyimages-2269261031-1024x1024.jpg';
+const img05 = '/images/assets/gettyimages-2158727734-1024x1024.jpg';
+
+const imgProd1 = '/images/assets/gettyimages-1479422287-1024x1024.jpg';
+const imgProd2 = '/images/assets/gettyimages-2167164749-1024x1024.jpg';
+const imgProd3 = '/images/assets/gettyimages-2223963188-1024x1024.jpg';
+const imgProd4 = '/images/assets/gettyimages-2269261031-1024x1024.jpg';
+const imgProd5 = '/images/assets/gettyimages-2158727734-1024x1024.jpg';
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
@@ -15,10 +21,10 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Steel Shields',
     tagline: 'OSHA 1926 Subpart P Certified Double-Wall Steel Boxes',
     description: 'Heavy steel trench boxes engineered for high-depth soil pressure resistance and worker safety.',
-    image: imgSteelShield,
+    image: img01,
     hotspotIndex: 1,
     subcategories: [
-      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: imgSteelShield, productFamilies: ['Steel Trench Box'] }
+      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: img01, productFamilies: ['Steel Trench Box'] }
     ]
   },
   {
@@ -28,10 +34,10 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Hydraulic Shores',
     tagline: 'Hand-Pumped 6061-T6 Aluminum Hydraulic Rails',
     description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground for crew protection.',
-    image: imgHydraulicShore,
+    image: img02,
     hotspotIndex: 2,
     subcategories: [
-      { id: 'hydraulic-shores', name: 'Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: imgHydraulicShore, productFamilies: ['Hydraulic Shore'] }
+      { id: 'hydraulic-shores', name: 'Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: img02, productFamilies: ['Hydraulic Shore'] }
     ]
   },
   {
@@ -41,10 +47,10 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Slide Rail',
     tagline: 'Dig-and-Push Modular Trench Shoring Panels',
     description: 'Modular dig-and-push trench shoring systems replacing traditional driven sheet piling.',
-    image: imgSlideRail,
+    image: img03,
     hotspotIndex: 3,
     subcategories: [
-      { id: 'slide-rail-panels', name: 'Slide Rail Panels', description: 'Modular slide rail panels.', image: imgSlideRail, productFamilies: ['Slide Rail System'] }
+      { id: 'slide-rail-panels', name: 'Slide Rail Panels', description: 'Modular slide rail panels.', image: img03, productFamilies: ['Slide Rail System'] }
     ]
   },
   {
@@ -54,10 +60,10 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Access Ladders',
     tagline: 'OSHA Compliant Extendable Aluminum Trench Ladders',
     description: 'OSHA compliant extendable access ladders with 36" walk-through handrails.',
-    image: imgTrenchLadder,
+    image: img04,
     hotspotIndex: 4,
     subcategories: [
-      { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Extendable aluminum trench ladders.', image: imgTrenchLadder, productFamilies: ['Trench Ladder'] }
+      { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Extendable aluminum trench ladders.', image: img04, productFamilies: ['Trench Ladder'] }
     ]
   },
   {
@@ -67,10 +73,10 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Road Plates',
     tagline: 'AASHTO H-20 Traffic-Rated Steel Crossing Plates',
     description: 'Heavy structural steel road plates with center flush-mount lifting nut holes and anti-skid coating.',
-    image: imgSteelRoadPlate,
+    image: img05,
     hotspotIndex: 5,
     subcategories: [
-      { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 steel road plates.', image: imgSteelRoadPlate, productFamilies: ['Road Plate'] }
+      { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 steel road plates.', image: img05, productFamilies: ['Road Plate'] }
     ]
   }
 ];
@@ -89,7 +95,7 @@ export const INDUSTRIES_DATA: Industry[] = [
     title: 'CIVIL TRENCH EXCAVATION & SHORING',
     tagline: 'Deep Trench Protection & Soil Pressure Shielding',
     description: 'Heavy steel trench boxes, hydraulic shoring systems, and slide rail equipment engineered for crew safety in high-depth excavations.',
-    image: imgSteelShield,
+    image: img01,
     relevantCategories: ['safety-protection', 'hydraulic-shoring', 'trench-road-plates'],
     specs: [
       { label: 'SOIL RATING', value: 'OSHA Type A, B, C Soil' },
@@ -135,7 +141,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy four-point lifting lugs rated for 24,000 lbs WLL',
       'Stackable design with heavy pin-lock sockets'
     ],
-    image: imgSteelShield,
+    image: imgProd1,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Industrial Safety Blue Powder Coat',
@@ -164,7 +170,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Heavy-duty dual-action hydraulic cylinders',
       'Includes safety lock pins and release hook assembly'
     ],
-    image: imgHydraulicShore,
+    image: imgProd2,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Anodized Aircraft Aluminum',
@@ -193,7 +199,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Modular panel heights for variable trench depths',
       'Heavy-duty corner posts for multi-bay trench configurations'
     ],
-    image: imgSlideRail,
+    image: imgProd3,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Heavy Industrial Blue Epoxy',
@@ -222,7 +228,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Swivel safety feet with mud-cleat spikes',
       'Trench shield mounting bracket attachment'
     ],
-    image: imgTrenchLadder,
+    image: imgProd4,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'Natural Structural Aluminum',
@@ -250,7 +256,7 @@ export const PRODUCTS_CATALOGUE: Product[] = [
       'Center flush-mount lifting pin for rapid crane handling',
       'High-traction aggregate epoxy skid-resistant coating'
     ],
-    image: imgSteelRoadPlate,
+    image: imgProd5,
     cadFileAvailable: true,
     specSheetUrl: '#',
     finish: 'High-Traction Anti-Skid Coating',
@@ -266,7 +272,7 @@ export const SOLUTION_APPS: SolutionApp[] = [
     title: 'TRENCH SAFETY & SHORING SOLUTIONS',
     tagline: 'OSHA 1926 Subpart P Certified Excavation Protection',
     description: 'Heavy steel trench boxes, hydraulic shoring rails, and modular slide rail systems engineered for complete trench crew protection.',
-    image: imgSteelShield,
+    image: '/images/assets/gettyimages-2164291973-1024x1024.jpg',
     cadOverlay: 'OSHA SUBPART P • ASTM A572 • TYPE C SOIL RATED',
     recommendedProducts: ['TU-8000 Heavy-Duty Steel Trench Shield Box', 'TU-HydroLite Aluminum Hydraulic Shoring Rail', 'TU-Modular Slide Rail Trench Shoring System'],
     specs: [
@@ -290,9 +296,9 @@ export const CASE_STUDY_DATA: CaseStudyData = {
   scale: '4,200 Linear Feet of Trench Excavation',
   installationTime: '18 Days Ahead of Schedule',
   result: '100% OSHA Subpart P Compliance with Zero Trench Wall Incidents',
-  beforeImg: imgSteelShield,
-  duringImg: imgHydraulicShore,
-  afterImg: imgSteelRoadPlate,
+  beforeImg: '/images/assets/gettyimages-2182302224-640_adpp.mp4',
+  duringImg: '/images/assets/gettyimages-1870509248-1024x1024.jpg',
+  afterImg: '/images/assets/gettyimages-1431428704-1024x1024.jpg',
   metrics: [
     { label: 'TOTAL TRENCH EXCAVATED', value: '4,200 LF' },
     { label: 'EXCAVATION DEPTH', value: '18.5 FT Avg' },

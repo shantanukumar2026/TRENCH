@@ -8,28 +8,28 @@ export const Anatomy: React.FC = () => {
       title: 'SURFACE & SUB-BASE DECK',
       spec: 'AASHTO H-20 / HS-20 Traffic Rated',
       desc: 'Finished pavement sub-base layer bridged by heavy structural steel road plates during excavation.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'
+      image: '/images/assets/gettyimages-1152010565-1024x1024.jpg'
     },
     {
       step: '02',
       title: 'TRENCH SHORING & SHIELDING',
       spec: 'OSHA 1926 Subpart P Certified',
       desc: 'Double-walled steel trench boxes and hydraulic shores bearing lateral earth soil pressure to protect crew members.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80'
+      image: '/images/assets/gettyimages-1222819839-1024x1024.jpg'
     },
     {
       step: '03',
       title: 'UTILITY MAIN INVERT',
       spec: 'AWWA C900 / ASTM Standards',
       desc: 'Enclosed main utility pipeline positioned at invert depth within the protected excavation envelope.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80'
+      image: '/images/assets/gettyimages-1367548904-1024x1024.jpg'
     },
     {
       step: '04',
       title: 'ENGINEERED BEDDING GRAVEL',
       spec: 'ASTM C33 Washed Aggregate',
       desc: 'Washed aggregate bedding envelope supporting uniform pipe invert elevation and load distribution.',
-      image: 'https://images.unsplash.com/photo-1574689231351-850029b4e339?auto=format&fit=crop&w=800&q=80'
+      image: '/images/assets/gettyimages-1392546887-1024x1024.jpg'
     }
   ];
 
