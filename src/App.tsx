@@ -127,67 +127,35 @@ export function App() {
         </main>
       ) : activePage === 'home' ? (
         <main>
-          {/* 1. Hero Section — "Below The Surface" 3D Cutaway */}
+          {/* 1. Hero Section */}
           <Hero 
             onExploreProducts={() => handleOpenProductsPage('all')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
-          {/* 2. "Choose Your Depth" Navigation */}
-          <DepthNav 
-            onSelectProduct={() => handleOpenProductsPage('all')}
-          />
-
-          {/* 3. Product System Explorer */}
+          {/* 2. Product Equipment Categories */}
           <SystemExplorer 
             onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 4. The Trench Anatomy (Educational Breakdown) */}
-          <Anatomy />
-
-          {/* 6. Solutions & Industry Sectors */}
+          {/* 3. Core Trench Safety & Shoring Solutions */}
           <Solutions 
             onSelectSolution={() => handleOpenProductsPage('all')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
-          <IndustriesView 
-            onSelectCategory={(catId) => handleOpenProductsPage(catId)}
-          />
-
-          {/* 7. Engineering Quality & Standards Compliance */}
+          {/* 4. Engineering Quality & OSHA Standards Compliance */}
           <TechnicalStandards 
             onOpenDocLibrary={() => scrollToSection('resources')}
           />
 
-          {/* 8. Industrial Manufacturing Capabilities */}
-          <ManufacturingCapabilities />
-
-          {/* 9. Engineering & Technical Support Workspace */}
-          <EngineeringWorkspace 
-            onOpenDocLibrary={() => scrollToSection('resources')}
-            onOpenEngineeringForm={() => setQuoteModalOpen(true)}
-          />
-
-          {/* 10. How It Works (Project Sequence Timeline) */}
+          {/* 5. How It Works (Project Sequence Timeline) */}
           <HowItWorks 
             onExploreSolutions={() => scrollToSection('solutions')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
-          {/* 11. Project Case Study (Project 042) */}
-          <CaseStudy />
-
-          {/* 12. Technical Resources Hub */}
-          <ResourcesHub 
-            onDownloadResource={() => setSubmittalDrawerOpen(true)}
-          />
-
-          {/* 13. Company Profile ("Built Around the Jobsite") */}
-          <CompanyProfile />
-
-          {/* 14. Architectural Final CTA */}
+          {/* 6. Architectural Final CTA */}
           <FinalCTA 
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
