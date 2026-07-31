@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Phone, ShieldCheck } from 'lucide-react';
-import { Hero3DCanvas } from './Hero3DCanvas';
+import { ArrowRight, Phone, ChevronRight, Plus } from 'lucide-react';
 
 interface HeroProps {
   onExploreProducts: () => void;
@@ -8,53 +7,70 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert }) => {
-  const [selectedMobileCallout, setSelectedMobileCallout] = useState<number>(1);
+  const [isPhotoHovered, setIsPhotoHovered] = useState(false);
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState<number | null>(null);
 
-  const mobileCallouts = [
-    { id: 1, number: '01', title: 'TRENCH SHIELD', desc: 'Worker protection system' },
-    { id: 2, number: '02', title: 'PIPE SYSTEM', desc: 'Underground water / sewer infrastructure' },
-    { id: 3, number: '03', title: 'UTILITY BEDDING', desc: 'Engineered pipe support' },
-    { id: 4, number: '04', title: 'EXCAVATION ZONE', desc: 'Controlled underground workspace' },
-    { id: 5, number: '05', title: 'ROAD SURFACE', desc: 'Surface infrastructure' }
+  const heroCategories = [
+    { number: '01', name: 'TRENCH PROTECTION', catId: 'safety-protection' },
+    { number: '02', name: 'EXCAVATION', catId: 'excavation-equipment' },
+    { number: '03', name: 'WATER & SEWER', catId: 'water-sewer' },
+    { number: '04', name: 'DRAINAGE', catId: 'drainage-stormwater' },
+    { number: '05', name: 'UTILITY', catId: 'utility-conduit-electrical' },
+    { number: '06', name: 'TOOLS & EQUIPMENT', catId: 'trench-tools-jobsite-equipment' }
   ];
 
   return (
-    <section id="hero" className="relative pt-32 pb-16 bg-[#F7FAFE] overflow-hidden border-b-2 border-[#0085F4]/20 selection:bg-[#0085F4] selection:text-white">
+    <section id="hero" className="relative pt-32 pb-12 bg-[#F7FAFE] overflow-hidden min-h-[760px] lg:min-h-[850px] flex flex-col justify-between border-b-2 border-[#0085F4]/20 selection:bg-[#0085F4] selection:text-white">
       
-      {/* Background Subtle Blueprint Grid (5-8% Opacity) & Soft Blue Radial Glow */}
-      <div className="absolute inset-0 bg-blueprint-grid opacity-8 pointer-events-none"></div>
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#0085F4]/10 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Background Subtle 4-6% Blue Blueprint Grid & Soft Blue Radial Glow */}
+      <div className="absolute inset-0 bg-blueprint-grid opacity-5 pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#0085F4]/8 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Decorative Technical Crosshairs & Coordinate Marks */}
+      <div className="absolute top-28 left-8 text-[#0085F4]/20 font-mono text-xs flex items-center gap-1 pointer-events-none hidden sm:flex">
+        <Plus className="w-3.5 h-3.5 text-[#0085F4]/30" />
+        <span>SYS.REF // 41.8781° N, 87.6298° W</span>
+      </div>
+
+      <div className="container-custom relative z-10 my-auto">
+        {/* Desktop 44% Left / 56% Right Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Technical Industrial Introduction */}
+          {/* LEFT CONTENT (44% on Desktop - 5 columns) */}
           <div className="lg:col-span-5 space-y-6 text-left order-1">
             
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm">
+            {/* Small Outlined Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm rounded-full">
               <span className="w-2 h-2 rounded-full bg-[#0085F4] animate-ping"></span>
               <span className="text-xs font-mono font-bold text-[#004AAD] tracking-widest uppercase">
                 TRENCH &amp; UNDERGROUND INFRASTRUCTURE
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight leading-none uppercase font-heading">
-              <span className="text-[#004AAD] block">EVERYTHING</span>
-              <span className="text-[#0085F4] block">TRENCH.</span>
-            </h1>
+            {/* Large Typography Headline */}
+            <div className="space-y-1">
+              <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight leading-none uppercase font-heading">
+                <span className="text-[#004AAD] block">EVERYTHING</span>
+                <span className="text-[#0085F4] block">TRENCH.</span>
+              </h1>
+              <div className="flex items-center gap-2 pt-1">
+                <span className="w-12 h-1 bg-[#00BBFF]"></span>
+                <span className="text-xs font-mono font-bold text-[#004AAD] tracking-wider uppercase">
+                  ENGINEERED INFRASTRUCTURE SOLUTIONS
+                </span>
+              </div>
+            </div>
 
-            {/* Description */}
-            <p className="text-base sm:text-lg text-[#475569] font-medium leading-relaxed">
-              Engineered products, equipment and infrastructure solutions for the systems that keep America moving. Standardized &amp; custom underground trench protection, access, drainage, and utility networks.
+            {/* Description (2-3 Lines on Desktop) */}
+            <p className="text-base sm:text-lg text-[#475569] font-medium leading-relaxed max-w-xl">
+              Trench protection, underground utility, waterworks and excavation solutions engineered for demanding infrastructure projects.
             </p>
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-4">
+            <div className="pt-3 flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={onExploreProducts} 
-                className="btn-primary text-sm py-4 px-7 shadow-lg flex items-center justify-center gap-2"
+                className="btn-primary text-sm py-4 px-8 shadow-lg shadow-[#0085F4]/20 flex items-center justify-center gap-2.5 rounded-none"
               >
                 <span>EXPLORE PRODUCTS</span>
                 <ArrowRight className="w-4 h-4 text-white" />
@@ -62,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
 
               <button 
                 onClick={onTalkToExpert} 
-                className="btn-secondary text-sm py-4 px-7 flex items-center justify-center gap-2"
+                className="btn-secondary text-sm py-4 px-8 flex items-center justify-center gap-2.5 rounded-none"
               >
                 <Phone className="w-4 h-4 text-[#004AAD]" />
                 <span>TALK TO AN EXPERT</span>
@@ -70,41 +86,96 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
             </div>
           </div>
 
-          {/* Right Column: 3D Underground Infrastructure Cutaway */}
-          <div className="lg:col-span-7 order-2 w-full overflow-hidden">
-            <Hero3DCanvas />
+          {/* RIGHT PHOTOGRAPHY (56% on Desktop - 7 columns) */}
+          <div className="lg:col-span-7 order-2 relative group">
+            
+            {/* Main Photo Container with 24px Rounded Corners & Object Fit Cover */}
+            <div 
+              onMouseEnter={() => setIsPhotoHovered(true)}
+              onMouseLeave={() => setIsPhotoHovered(false)}
+              className="relative h-[380px] sm:h-[480px] lg:h-[540px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-[#0085F4]/15 border-2 border-[#0085F4]/20 transition-all duration-700"
+            >
+              {/* High-Quality Real U.S. Underground Utility Construction Photograph */}
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1600&q=80"
+                alt="American Underground Trench Construction Project"
+                className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
+                  isPhotoHovered ? 'scale-[1.03]' : 'scale-100'
+                }`}
+              />
 
-            {/* Mobile Callouts Horizontal 01–05 Selector (<=768px) */}
-            <div className="block sm:hidden mt-4 space-y-3 font-mono">
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
-                {mobileCallouts.map((mc) => (
-                  <button
-                    key={mc.id}
-                    onClick={() => setSelectedMobileCallout(mc.id)}
-                    className={`px-3 py-2 text-xs font-bold shrink-0 border transition-all ${
-                      selectedMobileCallout === mc.id
-                        ? 'bg-[#004AAD] text-white border-[#004AAD]'
-                        : 'bg-white text-[#004AAD] border-[#0085F4]/30'
-                    }`}
-                  >
-                    {mc.number} {mc.title}
-                  </button>
-                ))}
+              {/* Subtle Light-Blue Gradient Transition Between Content & Photo (White -> Transparent) */}
+              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#F7FAFE] to-transparent pointer-events-none"></div>
+
+              {/* FLOATING PHOTO CALLOUT (Lower-Left Over Image) */}
+              <div className="absolute bottom-6 left-6 max-w-xs sm:max-w-sm bg-white/95 backdrop-blur-md p-5 rounded-2xl border-2 border-[#0085F4]/20 shadow-xl shadow-[#0085F4]/10 space-y-2 z-20 text-left">
+                <div className="flex items-center gap-2 font-mono text-[11px] font-bold text-[#0085F4]">
+                  <span>01 / FIELD SOLUTIONS</span>
+                </div>
+                <h4 className="text-sm font-bold text-[#004AAD] font-heading uppercase leading-snug">
+                  BUILT FOR THE REAL WORLD.
+                </h4>
+                <p className="text-xs text-[#475569] font-mono">
+                  Trench protection • Utility • Waterworks
+                </p>
+                <button
+                  onClick={onExploreProducts}
+                  className="pt-1 flex items-center gap-1.5 text-xs font-mono font-bold text-[#0085F4] hover:text-[#004AAD] transition-colors"
+                >
+                  <span>EXPLORE SOLUTIONS</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#0085F4]" />
+                </button>
               </div>
 
-              <div className="p-3 bg-white border border-[#0085F4]/30">
-                <span className="font-bold text-[#004AAD] text-xs uppercase block">
-                  {mobileCallouts[selectedMobileCallout - 1].number} {mobileCallouts[selectedMobileCallout - 1].title}
-                </span>
-                <span className="text-xs text-[#475569] block mt-0.5">
-                  {mobileCallouts[selectedMobileCallout - 1].desc}
-                </span>
-              </div>
+            </div>
+
+            {/* Decorative Corner Coordinate Mark */}
+            <div className="absolute -top-3 -right-3 text-[#0085F4]/30 font-mono text-[10px] hidden sm:block">
+              + REF 04-B
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* BOTTOM CATEGORY RAIL */}
+      <div className="container-custom pt-8 relative z-20">
+        <div className="border-t-2 border-[#0085F4]/20 pt-6">
+          <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-none justify-between">
+            {heroCategories.map((cat, idx) => {
+              const isHovered = activeCategoryIndex === idx;
+              return (
+                <div
+                  key={cat.catId}
+                  onClick={onExploreProducts}
+                  onMouseEnter={() => setActiveCategoryIndex(idx)}
+                  onMouseLeave={() => setActiveCategoryIndex(null)}
+                  className="shrink-0 cursor-pointer group space-y-1.5 py-1 px-2 transition-colors min-w-[140px] text-left"
+                >
+                  <div className="flex items-center gap-2 font-mono text-xs font-bold">
+                    <span className={`transition-colors ${isHovered ? 'text-[#00BBFF]' : 'text-[#004AAD]'}`}>
+                      {cat.number}
+                    </span>
+                    <span className={`transition-colors uppercase font-heading text-xs font-extrabold ${
+                      isHovered ? 'text-[#0085F4]' : 'text-[#004AAD]'
+                    }`}>
+                      {cat.name}
+                    </span>
+                  </div>
+
+                  {/* Thin Cyan Line Expands On Hover */}
+                  <div className="h-[2px] w-full bg-[#0085F4]/20 relative overflow-hidden">
+                    <div className={`absolute inset-0 bg-[#00BBFF] transition-transform duration-300 ${
+                      isHovered ? 'translate-x-0' : '-translate-x-full'
+                    }`}></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 };
