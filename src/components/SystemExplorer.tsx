@@ -9,11 +9,11 @@ interface SystemExplorerProps {
 
 export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot }) => {
   return (
-    <section id="explorer" className="py-10 bg-[#F7FAFE] border-b-2 border-slate-200">
+    <section id="explorer" className="py-10 bg-[#F7FAFE] border-b-2 border-blue-200">
       <div className="container-custom space-y-6">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-blue-200 pb-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm">
               <ShieldCheck className="w-4 h-4 text-[#0085F4]" />
@@ -36,10 +36,10 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
             <div
               key={cat.id}
               onClick={() => onSelectHotspot(cat.id)}
-              className="bg-white border-2 border-slate-200 p-6 hover:border-[#0085F4] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+              className="bg-white border-2 border-blue-200 p-6 hover:border-[#0085F4] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <div className="h-48 overflow-hidden border border-slate-200 bg-[#F4F8FF] relative">
+                <div className="h-48 overflow-hidden border border-blue-200 bg-[#F4F8FF] relative">
                   <img
                     src={cat.image}
                     alt={cat.title}
@@ -63,7 +63,7 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between mt-4 text-xs font-mono font-bold text-[#004AAD]">
+              <div className="pt-4 border-t border-blue-200 flex items-center justify-between mt-4 text-xs font-mono font-bold text-[#004AAD]">
                 <span>VIEW CATEGORY PRODUCTS</span>
                 <ChevronRight className="w-4 h-4 text-[#0085F4] group-hover:translate-x-1 transition-transform" />
               </div>

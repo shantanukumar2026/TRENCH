@@ -27,7 +27,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({ onSelectCategory
           </h2>
           <div className="flex justify-center items-center gap-2">
             <span className="blue-accent-bar"></span>
-            <p className="text-[#163B66] font-medium text-base">
+            <p className="text-[#004AAD] font-medium text-base">
               Engineered trench, shoring, utility, and municipal infrastructure systems tailored for U.S. contractors and engineering firms.
             </p>
           </div>
@@ -69,7 +69,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({ onSelectCategory
               </p>
             </div>
 
-            <p className="text-sm text-[#163B66] font-medium leading-relaxed">
+            <p className="text-sm text-[#004AAD] font-medium leading-relaxed">
               {selectedIndustry.description}
             </p>
 

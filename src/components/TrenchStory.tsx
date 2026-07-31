@@ -134,7 +134,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Method 1: Shielding */}
-            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+            <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
                 src="/images/assets/gettyimages-1479422287-1024x1024.jpg"
                 alt="Steel trench shield box protecting workers"
@@ -153,7 +153,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             </div>
 
             {/* Method 2: Shoring */}
-            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+            <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
                 src="/images/assets/gettyimages-2167164749-1024x1024.jpg"
                 alt="Hydraulic shoring rails bracing trench walls"
@@ -172,7 +172,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             </div>
 
             {/* Method 3: Slide Rail */}
-            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+            <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
                 src="/images/assets/gettyimages-2223963188-1024x1024.jpg"
                 alt="Modular slide rail system in deep excavation"
@@ -191,7 +191,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             </div>
 
             {/* Method 4: Access & Egress */}
-            <div className="group border-2 border-slate-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
+            <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
                 src="/images/assets/gettyimages-2158727734-1024x1024.jpg"
                 alt="Trench access ladders and road plates"
@@ -217,7 +217,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
       {/* ═══════════════════════════════════════════════════════════════
           SECTION 4: SOIL CLASSIFICATION — "Know Your Ground"
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 bg-[#F8FAFC] border-y-2 border-slate-200">
+      <section className="py-16 bg-[#F8FAFC] border-y-2 border-blue-200">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
@@ -241,7 +241,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
               <img
                 src="/images/assets/gettyimages-1152010565-1024x1024.jpg"
                 alt="Soil layers in excavation"
-                className="w-full h-64 object-cover shadow-md border-2 border-slate-200"
+                className="w-full h-64 object-cover shadow-md border-2 border-blue-200"
               />
             </div>
 
@@ -307,7 +307,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
               <img
                 src="/images/assets/gettyimages-1431428704-1024x1024.jpg"
                 alt="Trench shoring equipment on American construction site"
-                className="w-full h-[440px] object-cover shadow-lg border-2 border-slate-200"
+                className="w-full h-[440px] object-cover shadow-lg border-2 border-blue-200"
               />
             </div>
 

@@ -119,7 +119,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                     {product.workflowStep || 'INSTALL'} STEP
                   </span>
                 </div>
-                <p className="text-sm text-[#163B66] font-medium leading-relaxed">
+                <p className="text-sm text-[#004AAD] font-medium leading-relaxed">
                   {product.description}
                 </p>
               </div>
@@ -129,7 +129,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                 <h4 className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-wider">
                   ENGINEERING &amp; STRUCTURAL HIGHLIGHTS:
                 </h4>
-                <ul className="space-y-1.5 font-mono text-xs text-[#163B66]">
+                <ul className="space-y-1.5 font-mono text-xs text-[#004AAD]">
                   {product.features.map((feat, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -163,11 +163,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                   </div>
                   <div className="grid grid-cols-2 p-2.5 border-b border-blue-200">
                     <span className="text-blue-400">APPLICATION:</span>
-                    <span className="font-bold text-[#163B66]">{product.application || '[PRIMARY APPLICATION]'}</span>
+                    <span className="font-bold text-[#004AAD]">{product.application || '[PRIMARY APPLICATION]'}</span>
                   </div>
                   <div className="grid grid-cols-2 p-2.5">
                     <span className="text-blue-400">SYSTEM WEIGHT:</span>
-                    <span className="font-bold text-[#163B66]">{product.weight || '[VERIFIED WEIGHT]'}</span>
+                    <span className="font-bold text-[#004AAD]">{product.weight || '[VERIFIED WEIGHT]'}</span>
                   </div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
 
         {/* Modal Footer */}
         <div className="bg-[#F0F7FF] border-t border-blue-200 p-4 flex items-center justify-between shrink-0">
-          <span className="text-xs font-mono text-[#163B66]">
+          <span className="text-xs font-mono text-[#004AAD]">
             System ID: {product.id} • PE Stamped Submittal Available
           </span>
           <button

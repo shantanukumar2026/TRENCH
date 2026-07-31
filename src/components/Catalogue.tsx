@@ -63,7 +63,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
               FIND WHAT YOUR <span className="text-[#2166D1]">PROJECT NEEDS.</span>
             </h2>
-            <p className="text-sm text-[#163B66] font-medium max-w-xl">
+            <p className="text-sm text-[#004AAD] font-medium max-w-xl">
               Engineered products, shoring systems, access structures, and utility piping. Filter by category, material, or standard.
             </p>
           </div>
@@ -128,7 +128,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-blue-100 text-[#163B66]">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-blue-100 text-[#004AAD]">
             <div className="flex items-center gap-2">
               <SlidersHorizontal className="w-3.5 h-3.5 text-[#0754AE]" />
               <span className="font-bold text-[#0754AE]">ACTIVE FILTERS:</span>
@@ -156,7 +156,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({
         {filteredProducts.length === 0 ? (
           <div className="bg-white border-2 border-blue-300 p-16 text-center space-y-4 font-mono rounded-none">
             <p className="text-lg font-heading text-[#0754AE]">NO PRODUCTS FOUND MATCHING YOUR FILTERS</p>
-            <p className="text-xs text-[#163B66]">Try searching for AWWA, OSHA, Steel, PVC, or clear search filters.</p>
+            <p className="text-xs text-[#004AAD]">Try searching for AWWA, OSHA, Steel, PVC, or clear search filters.</p>
             <button
               onClick={() => { setSearchTerm(''); onCategoryFilterChange('all'); setSelectedWorkflowStep('all'); }}
               className="btn-primary py-2.5 px-6 text-xs"
@@ -211,22 +211,22 @@ export const Catalogue: React.FC<CatalogueProps> = ({
                       >
                         {product.name}
                       </h3>
-                      <p className="text-xs text-[#163B66] font-medium line-clamp-2">
+                      <p className="text-xs text-[#004AAD] font-medium line-clamp-2">
                         {product.description}
                       </p>
                     </div>
 
                     {/* Quick Specs Table — Sharp Industrial Grid */}
                     <div className="space-y-1.5 font-mono text-xs bg-[#F0F7FF] p-3 border-2 border-blue-200 rounded-none">
-                      <div className="flex justify-between text-[#163B66]">
+                      <div className="flex justify-between text-[#004AAD]">
                         <span className="text-blue-400">MATERIAL:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[170px]">{product.material || '[VERIFIED MATERIAL]'}</span>
                       </div>
-                      <div className="flex justify-between text-[#163B66]">
+                      <div className="flex justify-between text-[#004AAD]">
                         <span className="text-blue-400">LOAD RATING:</span>
                         <span className="font-bold text-[#C00000] truncate max-w-[170px]">{product.loadRating || '[VERIFIED RATING]'}</span>
                       </div>
-                      <div className="flex justify-between text-[#163B66]">
+                      <div className="flex justify-between text-[#004AAD]">
                         <span className="text-blue-400">STANDARD:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[170px]">{product.standard || '[APPLICABLE STANDARD]'}</span>
                       </div>

@@ -55,7 +55,7 @@ export const ManufacturingCapabilities: React.FC = () => {
               key={idx}
               className="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-md hover:border-[#2166D1] transition-all flex flex-col justify-between space-y-4 font-mono group"
             >
-              <div className="flex justify-between items-center border-b border-slate-100 pb-3">
+              <div className="flex justify-between items-center border-b border-blue-100 pb-3">
                 <span className="text-xs font-bold text-[#C00000]">FACILITY 0{idx + 1}</span>
                 <Wrench className="w-4 h-4 text-[#0754AE]" />
               </div>
@@ -69,7 +69,7 @@ export const ManufacturingCapabilities: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-100 text-[11px] text-[#0754AE] font-bold flex items-center gap-1.5">
+              <div className="pt-2 border-t border-blue-100 text-[11px] text-[#0754AE] font-bold flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#2166D1]" />
                 {cap.spec}
               </div>

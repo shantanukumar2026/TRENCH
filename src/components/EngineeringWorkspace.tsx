@@ -151,15 +151,15 @@ export const EngineeringWorkspace: React.FC<EngineeringWorkspaceProps> = ({
 
               {/* Blueprint Preview Render */}
               <div className="bg-white border border-blue-300 rounded p-6 shadow-inner space-y-4">
-                <div className="flex justify-between border-b border-slate-200 pb-3 text-xs">
+                <div className="flex justify-between border-b border-blue-200 pb-3 text-xs">
                   <div>
-                    <div className="text-[10px] text-slate-400">PROJECT PARAMETERS</div>
+                    <div className="text-[10px] text-blue-400">PROJECT PARAMETERS</div>
                     <div className="font-bold text-[#0754AE]">
                       DEPTH: {selectedDepth.toUpperCase()} | SOIL: {soilType.toUpperCase()}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] text-slate-400">LATERAL PRESSURE</div>
+                    <div className="text-[10px] text-blue-400">LATERAL PRESSURE</div>
                     <div className="font-bold text-[#C00000]">1,450 PSF RATED</div>
                   </div>
                 </div>

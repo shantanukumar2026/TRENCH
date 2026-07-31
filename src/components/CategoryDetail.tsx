@@ -47,7 +47,7 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
               <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0754AE] font-heading uppercase leading-tight">
                 {category.tagline}
               </h1>
-              <p className="text-sm font-medium text-[#163B66] leading-relaxed">
+              <p className="text-sm font-medium text-[#004AAD] leading-relaxed">
                 {category.description}
               </p>
 
@@ -108,7 +108,7 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
                   <h3 className="text-lg font-bold text-[#0754AE] font-heading group-hover:text-[#2166D1] transition-colors">
                     {subcat.name}
                   </h3>
-                  <p className="text-xs text-[#163B66] font-medium line-clamp-2">
+                  <p className="text-xs text-[#004AAD] font-medium line-clamp-2">
                     {subcat.description}
                   </p>
                 </div>
@@ -164,17 +164,17 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
                       >
                         {product.name}
                       </h3>
-                      <p className="text-xs text-[#163B66] font-medium line-clamp-2">
+                      <p className="text-xs text-[#004AAD] font-medium line-clamp-2">
                         {product.description}
                       </p>
                     </div>
 
                     <div className="space-y-1.5 font-mono text-xs bg-[#F0F7FF] p-3 rounded-none border border-blue-200">
-                      <div className="flex justify-between text-[#163B66]">
+                      <div className="flex justify-between text-[#004AAD]">
                         <span className="text-blue-400">MATERIAL:</span>
                         <span className="font-bold text-[#0754AE] truncate max-w-[160px]">{product.material}</span>
                       </div>
-                      <div className="flex justify-between text-[#163B66]">
+                      <div className="flex justify-between text-[#004AAD]">
                         <span className="text-blue-400">RATING:</span>
                         <span className="font-bold text-[#C00000] truncate max-w-[160px]">{product.loadRating}</span>
                       </div>

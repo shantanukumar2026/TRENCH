@@ -32,7 +32,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
         
         {/* Header */}
         <div>
-          <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+          <div className="flex justify-between items-center pb-4 border-b border-blue-200">
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-[#C00000]" />
               <h3 className="text-xl font-bold text-[#0754AE] font-heading uppercase">
@@ -41,7 +41,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
             </div>
             <button 
               onClick={onClose} 
-              className="p-1 text-slate-400 hover:text-[#0754AE]"
+              className="p-1 text-blue-400 hover:text-[#0754AE]"
             >
               <X className="w-6 h-6" />
             </button>
@@ -91,7 +91,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
                     </div>
                     <button 
                       onClick={() => handleRemoveItem(item.id)}
-                      className="text-slate-400 hover:text-[#C00000] p-1"
+                      className="text-blue-400 hover:text-[#C00000] p-1"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -122,7 +122,7 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
         </div>
 
         {/* Action Footer */}
-        <div className="pt-6 border-t border-slate-200 space-y-3">
+        <div className="pt-6 border-t border-blue-200 space-y-3">
           {generated && (
             <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded font-mono text-xs flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />

@@ -90,7 +90,7 @@ export function App() {
   const comparedProducts = PRODUCTS_CATALOGUE.filter(p => comparedProductIds.includes(p.id));
 
   return (
-    <div className="min-h-screen bg-slate-50 text-[#163B66] font-body selection:bg-[#2166D1] selection:text-white">
+    <div className="min-h-screen bg-blue-50 text-[#004AAD] font-body selection:bg-[#2166D1] selection:text-white">
       {/* Primary Fixed Navbar */}
       <Navbar
         activePage={activePage === 'story' ? 'story' : activePage === 'products' ? 'products' : 'home'}

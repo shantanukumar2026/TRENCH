@@ -85,13 +85,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>OSHA SUBPART P COMPLIANT</span>
             </div>
 
-            <div className="text-slate-300">|</div>
+            <div className="text-blue-300">|</div>
 
             <div className="text-[#0754AE] font-bold">
               HOTLINE: <strong className="text-[#C00000] text-sm font-black">1-800-TRENCH-U</strong>
             </div>
 
-            <div className="text-slate-300">|</div>
+            <div className="text-blue-300">|</div>
 
             <button 
               onClick={onOpenSubmittalDrawer} 
@@ -317,7 +317,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <div className="col-span-2 bg-[#F0F7FF] border-2 border-blue-200 p-4 rounded-xl space-y-3">
                       <span className="text-[10px] font-bold text-[#C00000] uppercase block">SYSTEM DISCOVERY</span>
                       <h4 className="text-sm font-bold text-[#0754AE]">PRODUCT FINDER</h4>
-                      <p className="text-[11px] text-[#163B66]">Search 10 categories by part number, material, size, or AWWA/OSHA standard.</p>
+                      <p className="text-[11px] text-[#004AAD]">Search 10 categories by part number, material, size, or AWWA/OSHA standard.</p>
                       <button 
                         onClick={() => handleNavClick('catalogue')}
                         className="btn-primary w-full py-2 text-[11px] font-mono justify-center"
@@ -329,7 +329,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                   {/* Mega Menu Footer */}
                   <div className="pt-3 border-t border-blue-200 flex items-center justify-between text-xs">
-                    <span className="text-[#163B66] font-bold">TRENCH UNLIMITED™ — EVERYTHING TRENCH FOR AMERICAN CONTRACTORS</span>
+                    <span className="text-[#004AAD] font-bold">TRENCH UNLIMITED™ — EVERYTHING TRENCH FOR AMERICAN CONTRACTORS</span>
                     <div className="flex gap-4">
                       <button onClick={() => handleNavClick('catalogue')} className="text-[#0754AE] font-bold hover:underline">
                         VIEW ALL PRODUCTS →
@@ -418,13 +418,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>HOME</span>
               </button>
 
-              <ChevronRight className="w-3 h-3 text-slate-400" />
+              <ChevronRight className="w-3 h-3 text-blue-400" />
 
               <span className="text-blue-400 uppercase font-semibold">
                 UNDERGROUND INFRASTRUCTURE
               </span>
 
-              <ChevronRight className="w-3 h-3 text-slate-400" />
+              <ChevronRight className="w-3 h-3 text-blue-400" />
 
               <span className="font-extrabold text-[#C00000] uppercase tracking-wider">
                 DOCUMENTARY STORY — WHAT IS TRENCH?

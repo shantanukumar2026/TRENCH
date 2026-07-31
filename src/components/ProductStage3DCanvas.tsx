@@ -169,7 +169,7 @@ export const ProductStage3DCanvas: React.FC<ProductStage3DCanvasProps> = ({ isEx
       />
 
       <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded border border-blue-200 text-[11px] font-mono text-[#0754AE] flex items-center gap-2">
-        <span className={`w-2 h-2 rounded-full ${isRotating ? 'bg-[#2166D1] animate-pulse' : 'bg-slate-400'}`}></span>
+        <span className={`w-2 h-2 rounded-full ${isRotating ? 'bg-[#2166D1] animate-pulse' : 'bg-blue-400'}`}></span>
         {isRotating ? '3D AUTO-ROTATE ACTIVE' : 'PAUSED (CLICK CANVAS TO ROTATE)'}
       </div>
     </div>

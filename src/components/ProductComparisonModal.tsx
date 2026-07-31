@@ -47,7 +47,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
           {comparedProducts.length === 0 ? (
             <div className="text-center py-16 space-y-4 font-mono">
               <p className="text-lg font-heading text-[#0754AE]">NO PRODUCTS SELECTED FOR COMPARISON</p>
-              <p className="text-xs text-[#163B66]">Select up to 4 products from the catalogue using the "Compare" button to view side-by-side technical specs.</p>
+              <p className="text-xs text-[#004AAD]">Select up to 4 products from the catalogue using the "Compare" button to view side-by-side technical specs.</p>
               <button
                 onClick={onClose}
                 className="btn-primary py-2.5 px-6 text-xs"
@@ -100,19 +100,19 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                 <tr>
                   <td className="p-3 bg-[#F0F7FF] border-2 border-blue-200 font-bold text-[#0754AE]">CATEGORY</td>
                   {comparedProducts.map((prod) => (
-                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#163B66] font-semibold">{prod.category}</td>
+                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#004AAD] font-semibold">{prod.category}</td>
                   ))}
                 </tr>
                 <tr>
                   <td className="p-3 bg-[#F0F7FF] border-2 border-blue-200 font-bold text-[#0754AE]">SUBCATEGORY</td>
                   {comparedProducts.map((prod) => (
-                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#163B66]">{prod.subcategory || '[VERIFIED SUBCATEGORY]'}</td>
+                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#004AAD]">{prod.subcategory || '[VERIFIED SUBCATEGORY]'}</td>
                   ))}
                 </tr>
                 <tr>
                   <td className="p-3 bg-[#F0F7FF] border-2 border-blue-200 font-bold text-[#0754AE]">MATERIAL</td>
                   {comparedProducts.map((prod) => (
-                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#163B66]">{prod.material || '[VERIFIED MATERIAL]'}</td>
+                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#004AAD]">{prod.material || '[VERIFIED MATERIAL]'}</td>
                   ))}
                 </tr>
                 <tr>
@@ -124,7 +124,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                 <tr>
                   <td className="p-3 bg-[#F0F7FF] border-2 border-blue-200 font-bold text-[#0754AE]">SIZE RANGE</td>
                   {comparedProducts.map((prod) => (
-                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#163B66]">{prod.sizeRange || '[AVAILABLE SIZES]'}</td>
+                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#004AAD]">{prod.sizeRange || '[AVAILABLE SIZES]'}</td>
                   ))}
                 </tr>
                 <tr>
@@ -136,7 +136,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                 <tr>
                   <td className="p-3 bg-[#F0F7FF] border-2 border-blue-200 font-bold text-[#0754AE]">SYSTEM WEIGHT</td>
                   {comparedProducts.map((prod) => (
-                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#163B66]">{prod.weight || '[VERIFIED WEIGHT]'}</td>
+                    <td key={prod.id} className="p-3 border-2 border-blue-200 text-[#004AAD]">{prod.weight || '[VERIFIED WEIGHT]'}</td>
                   ))}
                 </tr>
               </tbody>
@@ -146,7 +146,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
 
         {/* Modal Footer */}
         <div className="bg-[#F0F7FF] border-t-2 border-blue-200 p-4 flex items-center justify-between shrink-0">
-          <span className="text-xs font-mono text-[#163B66]">
+          <span className="text-xs font-mono text-[#004AAD]">
             {comparedProducts.length} of 4 slots filled
           </span>
           <button

@@ -67,11 +67,11 @@ export const ResourcesHub: React.FC<ResourcesHubProps> = ({ onDownloadResource }
               key={idx}
               className="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-md hover:border-[#2166D1] transition-all flex flex-col justify-between font-mono space-y-4"
             >
-              <div className="flex justify-between items-start border-b border-slate-100 pb-3">
+              <div className="flex justify-between items-start border-b border-blue-100 pb-3">
                 <span className="px-2.5 py-0.5 bg-[#F0F7FF] text-[#0754AE] text-[10px] font-bold uppercase rounded border border-blue-200">
                   {doc.type}
                 </span>
-                <span className="text-xs text-slate-400">{doc.code}</span>
+                <span className="text-xs text-blue-400">{doc.code}</span>
               </div>
 
               <div>
@@ -84,8 +84,8 @@ export const ResourcesHub: React.FC<ResourcesHubProps> = ({ onDownloadResource }
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-100 flex justify-between items-center">
-                <span className="text-[10px] text-slate-400">100% VERIFIED TECHNICAL SPEC</span>
+              <div className="pt-2 border-t border-blue-100 flex justify-between items-center">
+                <span className="text-[10px] text-blue-400">100% VERIFIED TECHNICAL SPEC</span>
                 <button 
                   onClick={() => onDownloadResource(doc.title)}
                   className="btn-primary text-xs py-2 px-4 justify-center"

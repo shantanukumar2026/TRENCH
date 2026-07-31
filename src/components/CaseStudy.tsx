@@ -17,11 +17,11 @@ export const CaseStudy: React.FC = () => {
   };
 
   return (
-    <section id="casestudy" className="py-10 bg-[#F8FAFC] border-b-2 border-slate-200 relative overflow-hidden">
+    <section id="casestudy" className="py-10 bg-[#F8FAFC] border-b-2 border-blue-200 relative overflow-hidden">
       <div className="container-custom">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6 mb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-blue-200 pb-6 mb-8">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#0085F4]/30 shadow-sm">
               <FileCheck className="w-4 h-4 text-[#0085F4]" />
@@ -39,7 +39,7 @@ export const CaseStudy: React.FC = () => {
         </div>
 
         {/* Case Study Card */}
-        <div className="bg-white border-2 border-slate-200 overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div className="bg-white border-2 border-blue-200 overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 items-stretch">
           
           {/* Left Column: Interactive Image Viewer */}
           <div className="lg:col-span-7 relative min-h-[380px] bg-[#F4F8FF] flex flex-col justify-between p-6">
@@ -50,7 +50,7 @@ export const CaseStudy: React.FC = () => {
             />
             
             {/* Top Phase Selector Strip */}
-            <div className="relative z-10 flex items-center justify-between bg-white/90 backdrop-blur-md p-2 border border-slate-200 font-mono text-xs">
+            <div className="relative z-10 flex items-center justify-between bg-white/90 backdrop-blur-md p-2 border border-blue-200 font-mono text-xs">
               <span className="font-bold text-[#004AAD]">EXCAVATION PHASE:</span>
               <div className="flex gap-1">
                 {(['before', 'during', 'after'] as const).map((tab, i) => (
@@ -70,7 +70,7 @@ export const CaseStudy: React.FC = () => {
             </div>
 
             {/* Bottom Floating Title */}
-            <div className="relative z-10 bg-white/95 backdrop-blur-md p-4 border border-slate-200 font-mono space-y-1">
+            <div className="relative z-10 bg-white/95 backdrop-blur-md p-4 border border-blue-200 font-mono space-y-1">
               <div className="flex items-center gap-1.5 text-xs text-[#0085F4] font-bold">
                 <MapPin className="w-3.5 h-3.5" />
                 <span>{CASE_STUDY_DATA.location}</span>
@@ -92,7 +92,7 @@ export const CaseStudy: React.FC = () => {
               {/* 4 Performance Metrics */}
               <div className="grid grid-cols-2 gap-3">
                 {CASE_STUDY_DATA.metrics.map((metric, i) => (
-                  <div key={i} className="p-3 bg-[#F8FAFC] border border-slate-200">
+                  <div key={i} className="p-3 bg-[#F8FAFC] border border-blue-200">
                     <div className="text-[10px] text-blue-400 font-bold uppercase">{metric.label}</div>
                     <div className="text-lg font-extrabold text-[#004AAD] mt-0.5">{metric.value}</div>
                   </div>
@@ -114,7 +114,7 @@ export const CaseStudy: React.FC = () => {
             </div>
 
             {/* Bottom Result Box */}
-            <div className="p-4 bg-[#F4F8FF] border-l-4 border-l-[#0085F4] border border-slate-200 space-y-1">
+            <div className="p-4 bg-[#F4F8FF] border-l-4 border-l-[#0085F4] border border-blue-200 space-y-1">
               <span className="text-[10px] font-bold text-[#D90429] uppercase">PROJECT RESULT:</span>
               <p className="text-xs font-bold text-[#004AAD]">{CASE_STUDY_DATA.result}</p>
             </div>

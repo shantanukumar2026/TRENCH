@@ -25,7 +25,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
       <div className="container-custom space-y-8">
         
         {/* Top Breadcrumb Rail */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-slate-200 pb-4 font-mono text-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-blue-200 pb-4 font-mono text-xs">
           <div className="flex items-center gap-2 text-[#004AAD]">
             <button
               onClick={onBackToCatalogue}
@@ -43,7 +43,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           <div className="flex items-center gap-3">
             <button 
               onClick={() => alert(`Share link for ${product.name} copied to clipboard!`)}
-              className="p-2 bg-white border border-slate-200 text-[#004AAD] hover:bg-[#F4F8FF]"
+              className="p-2 bg-white border border-blue-200 text-[#004AAD] hover:bg-[#F4F8FF]"
               title="Share product link"
             >
               <Share2 className="w-4 h-4" />
@@ -57,7 +57,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           
           {/* Left Column: High-Resolution Product Image Presentation */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative h-[420px] sm:h-[480px] border-2 border-slate-200 bg-white shadow-xl flex items-center justify-center p-4">
+            <div className="relative h-[420px] sm:h-[480px] border-2 border-blue-200 bg-white shadow-xl flex items-center justify-center p-4">
               
               <div className="absolute top-4 left-4 z-10 flex gap-2">
                 <span className="px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold uppercase">
@@ -78,9 +78,9 @@ export const ProductPage: React.FC<ProductPageProps> = ({
           </div>
 
           {/* Right Column: Key Details & Purchasing Actions */}
-          <div className="lg:col-span-6 space-y-6 bg-white border-2 border-slate-200 p-8 shadow-sm">
+          <div className="lg:col-span-6 space-y-6 bg-white border-2 border-blue-200 p-8 shadow-sm">
             
-            <div className="space-y-2 border-b-2 border-slate-200 pb-6">
+            <div className="space-y-2 border-b-2 border-blue-200 pb-6">
               <div className="flex items-center gap-2">
                 <span className="px-2 py-0.5 bg-[#F4F8FF] border border-[#0066FF]/30 text-[#0066FF] font-mono text-[10px] font-bold uppercase">
                   {product.subcategory}
@@ -102,22 +102,22 @@ export const ProductPage: React.FC<ProductPageProps> = ({
 
             {/* Core Technical Specifications Grid */}
             <div className="grid grid-cols-2 gap-4 font-mono text-xs">
-              <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
+              <div className="p-3 bg-[#F8FAFC] border border-blue-200 space-y-0.5">
                 <span className="text-[10px] text-blue-400 font-bold block">MATERIAL GRADE</span>
                 <span className="font-extrabold text-[#004AAD] truncate block">{product.material}</span>
               </div>
 
-              <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
+              <div className="p-3 bg-[#F8FAFC] border border-blue-200 space-y-0.5">
                 <span className="text-[10px] text-blue-400 font-bold block">LOAD RATING</span>
                 <span className="font-extrabold text-[#0066FF] truncate block">{product.loadRating}</span>
               </div>
 
-              <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
+              <div className="p-3 bg-[#F8FAFC] border border-blue-200 space-y-0.5">
                 <span className="text-[10px] text-blue-400 font-bold block">STANDARD DIMENSIONS</span>
                 <span className="font-extrabold text-[#004AAD] truncate block">{product.sizeRange}</span>
               </div>
 
-              <div className="p-3 bg-[#F8FAFC] border border-slate-200 space-y-0.5">
+              <div className="p-3 bg-[#F8FAFC] border border-blue-200 space-y-0.5">
                 <span className="text-[10px] text-blue-400 font-bold block">TOTAL SYSTEM WEIGHT</span>
                 <span className="font-extrabold text-[#004AAD] truncate block">{product.weight || 'VARIES'}</span>
               </div>

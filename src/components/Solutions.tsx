@@ -10,11 +10,11 @@ interface SolutionsProps {
 
 export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDocLink }) => {
   return (
-    <section id="solutions" className="py-10 bg-white border-b-2 border-slate-200 relative">
+    <section id="solutions" className="py-10 bg-white border-b-2 border-blue-200 relative">
       <div className="container-custom space-y-6">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-blue-200 pb-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#F4F8FF] border border-[#0085F4]/30">
               <Layers className="w-4 h-4 text-[#0085F4]" />
@@ -101,7 +101,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
                     <div className="mt-6 grid grid-cols-3 gap-3 bg-white p-4 rounded border border-blue-200">
                       {sol.specs.map((sp: { label: string; value: string }, sIdx: number) => (
                         <div key={sIdx} className="text-left font-mono">
-                          <div className="text-[10px] text-slate-400 uppercase">{sp.label}</div>
+                          <div className="text-[10px] text-blue-400 uppercase">{sp.label}</div>
                           <div className="text-xs font-bold text-[#0754AE] mt-0.5">{sp.value}</div>
                         </div>
                       ))}

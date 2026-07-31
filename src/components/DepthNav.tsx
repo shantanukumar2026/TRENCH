@@ -73,7 +73,7 @@ export const DepthNav: React.FC<DepthNavProps> = ({ onSelectProduct }) => {
                         {level.tagline}
                       </p>
                     </div>
-                    <ChevronRight className={`w-5 h-5 transition-transform ${isSelected ? 'rotate-90 text-[#DBEAFE]' : 'text-slate-400'}`} />
+                    <ChevronRight className={`w-5 h-5 transition-transform ${isSelected ? 'rotate-90 text-[#DBEAFE]' : 'text-blue-400'}`} />
                   </div>
                 </div>
               );

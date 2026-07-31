@@ -110,7 +110,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
             <BuildingIcon className="w-4 h-4 text-[#C00000] shrink-0 mt-0.5" />
             <div>
               <div className="font-bold text-[11px] uppercase text-[#0754AE]">CORPORATE HEADQUARTERS</div>
-              <div className="text-[10px] text-[#163B66]">100 Industrial Parkway, Suite 400</div>
+              <div className="text-[10px] text-[#004AAD]">100 Industrial Parkway, Suite 400</div>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
             <MapPinIcon className="w-4 h-4 text-[#2166D1] shrink-0 mt-0.5" />
             <div>
               <div className="font-bold text-[11px] uppercase text-[#0754AE]">LOGISTICS & WAREHOUSE</div>
-              <div className="text-[10px] text-[#163B66]">4850 Infrastructure Blvd, Sector B</div>
+              <div className="text-[10px] text-[#004AAD]">4850 Infrastructure Blvd, Sector B</div>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
             <PhoneIcon className="w-4 h-4 text-[#C00000] shrink-0 mt-0.5" />
             <div>
               <div className="font-bold text-[11px] uppercase text-[#0754AE]">HOTLINE & PE DESK</div>
-              <div className="text-[10px] text-[#163B66]">1-800-TRENCH-U | pe-desk@company.com</div>
+              <div className="text-[10px] text-[#004AAD]">1-800-TRENCH-U | pe-desk@company.com</div>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
               <h4 className="text-2xl font-bold text-[#0754AE] uppercase font-heading">
                 QUOTE REQUEST TRANSMITTED
               </h4>
-              <p className="text-xs text-[#163B66] max-w-md mx-auto">
+              <p className="text-xs text-[#004AAD] max-w-md mx-auto">
                 Thank you. Our engineering & estimating team will review your project specifications for the requested {items.length} item(s) and issue submittal pricing within 2 hours.
               </p>
               <button 
@@ -185,7 +185,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                         type="text"
                         value={item.sizeConfig}
                         onChange={(e) => handleItemChange(idx, 'sizeConfig', e.target.value)}
-                        className="w-full p-2 rounded bg-white border border-blue-200 text-[#163B66]"
+                        className="w-full p-2 rounded bg-white border border-blue-200 text-[#004AAD]"
                       />
                     </div>
 

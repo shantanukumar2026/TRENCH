@@ -465,7 +465,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = () => {
       <div className="bg-white px-4 py-3 border-t-2 border-[#0085F4]/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono font-bold text-[#004AAD] z-20 relative">
         <div className="flex items-center gap-2">
           <span className="text-[#0085F4]">TRENCH PROTECTION SYSTEM</span>
-          <span className="text-slate-300">•</span>
+          <span className="text-blue-300">•</span>
           <span className="text-[#5B7FA5]">Shield • Pipe • Bedding • Access</span>
         </div>
 

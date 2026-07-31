@@ -34,11 +34,11 @@ export const Anatomy: React.FC = () => {
   ];
 
   return (
-    <section id="anatomy" className="py-10 bg-white border-b-2 border-slate-200">
+    <section id="anatomy" className="py-10 bg-white border-b-2 border-blue-200">
       <div className="container-custom space-y-6">
         
         {/* Section Header — Neat & Clean Typography */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-blue-200 pb-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#F4F8FF] border border-[#0085F4]/30">
               <ShieldCheck className="w-4 h-4 text-[#0085F4]" />
@@ -60,9 +60,9 @@ export const Anatomy: React.FC = () => {
           {trenchLayers.map((layer) => (
             <div
               key={layer.step}
-              className="bg-[#F8FAFC] border-2 border-slate-200 p-6 space-y-4 hover:border-[#0085F4] transition-all duration-300 shadow-sm group"
+              className="bg-[#F8FAFC] border-2 border-blue-200 p-6 space-y-4 hover:border-[#0085F4] transition-all duration-300 shadow-sm group"
             >
-              <div className="h-44 overflow-hidden border border-slate-200 bg-white relative">
+              <div className="h-44 overflow-hidden border border-blue-200 bg-white relative">
                 <img
                   src={layer.image}
                   alt={layer.title}
@@ -85,7 +85,7 @@ export const Anatomy: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-200 flex items-center gap-1.5 text-xs font-mono font-bold text-[#004AAD]">
+              <div className="pt-3 border-t border-blue-200 flex items-center gap-1.5 text-xs font-mono font-bold text-[#004AAD]">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>OSHA VERIFIED ASSEMBLY</span>
               </div>
