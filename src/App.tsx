@@ -14,7 +14,7 @@ import { ManufacturingCapabilities } from './components/ManufacturingCapabilitie
 import { EngineeringWorkspace } from './components/EngineeringWorkspace';
 import { HowItWorks } from './components/HowItWorks';
 import { CaseStudy } from './components/CaseStudy';
-import { Catalogue } from './components/Catalogue';
+import { ProductsPage } from './components/ProductsPage';
 import { ProductPage } from './components/ProductPage';
 import { ResourcesHub } from './components/ResourcesHub';
 import { CompanyProfile } from './components/CompanyProfile';
@@ -29,7 +29,7 @@ import { Product } from './types';
 import { PRODUCTS_CATALOGUE } from './data/trenchData';
 
 export function App() {
-  const [activePage, setActivePage] = useState<'home' | 'story' | 'product'>('home');
+  const [activePage, setActivePage] = useState<'home' | 'products' | 'product' | 'story'>('home');
   const [activeProductPage, setActiveProductPage] = useState<Product | null>(null);
 
   const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
@@ -39,14 +39,15 @@ export function App() {
 
   // Category & Filter States
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('all');
-  const [activeCategoryDetailId, setActiveCategoryDetailId] = useState<string | null>(null);
 
   // Product Comparison States (up to 4 products)
   const [comparedProductIds, setComparedProductIds] = useState<string[]>([]);
   const [comparisonModalOpen, setComparisonModalOpen] = useState<boolean>(false);
 
   const scrollToSection = (sectionId: string) => {
-    setActivePage('home');
+    if (activePage !== 'home') {
+      setActivePage('home');
+    }
     setTimeout(() => {
       const el = document.getElementById(sectionId);
       if (el) {
@@ -55,6 +56,12 @@ export function App() {
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }, 50);
+  };
+
+  const handleOpenProductsPage = (catId: string = 'all') => {
+    setSelectedCategoryFilter(catId);
+    setActivePage('products');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenProductPage = (product: Product) => {
@@ -80,21 +87,15 @@ export function App() {
     setQuoteModalOpen(true);
   };
 
-  const handleSelectHotspotCategory = (catId: string) => {
-    setSelectedCategoryFilter(catId);
-    setActiveCategoryDetailId(catId);
-    scrollToSection('category-view');
-  };
-
   const comparedProducts = PRODUCTS_CATALOGUE.filter(p => comparedProductIds.includes(p.id));
 
   return (
     <div className="min-h-screen bg-slate-50 text-[#163B66] font-body selection:bg-[#2166D1] selection:text-white">
       {/* Primary Fixed Navbar */}
       <Navbar 
-        activePage={activePage === 'story' ? 'story' : 'home'}
+        activePage={activePage === 'story' ? 'story' : activePage === 'products' ? 'products' : 'home'}
         onSelectPage={(page) => {
-          setActivePage(page);
+          setActivePage(page as any);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onOpenQuoteModal={() => { setQuoteInitialProduct(null); setQuoteModalOpen(true); }}
@@ -103,11 +104,23 @@ export function App() {
       />
 
       {/* Dynamic View Rendering */}
-      {activePage === 'product' && activeProductPage ? (
+      {activePage === 'products' ? (
+        <main>
+          <ProductsPage 
+            selectedCategoryFilter={selectedCategoryFilter}
+            onCategoryFilterChange={(catId) => setSelectedCategoryFilter(catId)}
+            onSelectProduct={handleOpenProductPage}
+            onRequestQuote={handleRequestQuoteForProduct}
+            onToggleCompare={handleToggleCompare}
+            comparedProductIds={comparedProductIds}
+            onOpenComparisonModal={() => setComparisonModalOpen(true)}
+          />
+        </main>
+      ) : activePage === 'product' && activeProductPage ? (
         <main className="pt-24">
           <ProductPage 
             product={activeProductPage}
-            onBackToCatalogue={() => { setActivePage('home'); scrollToSection('catalogue'); }}
+            onBackToCatalogue={() => handleOpenProductsPage(selectedCategoryFilter)}
             onRequestQuote={handleRequestQuoteForProduct}
             onSelectRelatedProduct={handleOpenProductPage}
           />
@@ -116,111 +129,70 @@ export function App() {
         <main>
           {/* 1. Hero Section — "Below The Surface" 3D Cutaway */}
           <Hero 
-            onExploreProducts={() => scrollToSection('catalogue')}
+            onExploreProducts={() => handleOpenProductsPage('all')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
           {/* 2. "Choose Your Depth" Navigation */}
           <DepthNav 
-            onSelectProduct={() => scrollToSection('catalogue')}
+            onSelectProduct={() => handleOpenProductsPage('all')}
           />
 
           {/* 3. Product System Explorer ("Everything Trench. 10 Systems Below Ground") */}
           <SystemExplorer 
-            onSelectHotspot={handleSelectHotspotCategory}
+            onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 4. Compact 10-Category Navigation Rail */}
-          <CategoryRail 
-            selectedCategoryId={selectedCategoryFilter}
-            onSelectCategory={(catId) => {
-              setSelectedCategoryFilter(catId);
-              if (catId !== 'all') {
-                setActiveCategoryDetailId(catId);
-              } else {
-                setActiveCategoryDetailId(null);
-              }
-              scrollToSection('catalogue');
-            }}
-          />
-
-          {/* 5. Deep Category Detail Landing View (when active) */}
-          {activeCategoryDetailId && (
-            <div id="category-view">
-              <CategoryDetail 
-                categoryId={activeCategoryDetailId}
-                onBackToAll={() => { setActiveCategoryDetailId(null); setSelectedCategoryFilter('all'); }}
-                onSelectSubcategory={() => scrollToSection('catalogue')}
-                onSelectProduct={handleOpenProductPage}
-                onRequestQuote={handleRequestQuoteForProduct}
-              />
-            </div>
-          )}
-
-          {/* 6. Featured Engineering Product 3D Stage */}
+          {/* 4. Featured Engineering Product 3D Stage */}
           <ProductStage 
             onRequestSpecSheet={() => handleOpenProductPage(PRODUCTS_CATALOGUE[0])}
           />
 
-          {/* 7. The Trench Anatomy (Educational Cutaway) */}
+          {/* 5. The Trench Anatomy (Educational Cutaway) */}
           <Anatomy />
 
-          {/* 8. Solutions & Industry Sectors */}
+          {/* 6. Solutions & Industry Sectors */}
           <Solutions 
-            onSelectSolution={() => scrollToSection('catalogue')}
+            onSelectSolution={() => handleOpenProductsPage('all')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
           <IndustriesView 
-            onSelectCategory={handleSelectHotspotCategory}
+            onSelectCategory={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 9. Engineering Quality & Standards Compliance */}
+          {/* 7. Engineering Quality & Standards Compliance */}
           <TechnicalStandards 
             onOpenDocLibrary={() => scrollToSection('resources')}
           />
 
-          {/* 10. Industrial Manufacturing Capabilities */}
+          {/* 8. Industrial Manufacturing Capabilities */}
           <ManufacturingCapabilities />
 
-          {/* 11. Engineering & Technical Support Workspace */}
+          {/* 9. Engineering & Technical Support Workspace */}
           <EngineeringWorkspace 
             onOpenDocLibrary={() => scrollToSection('resources')}
             onOpenEngineeringForm={() => setQuoteModalOpen(true)}
           />
 
-          {/* 12. How It Works (Project Sequence Timeline) */}
+          {/* 10. How It Works (Project Sequence Timeline) */}
           <HowItWorks 
             onExploreSolutions={() => scrollToSection('solutions')}
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
-          {/* 13. Project Case Study (Project 042) */}
+          {/* 11. Project Case Study (Project 042) */}
           <CaseStudy />
 
-          {/* 14. Product Catalogue Engine */}
-          <Catalogue 
-            onSelectProduct={handleOpenProductPage}
-            onRequestQuote={handleRequestQuoteForProduct}
-            onToggleCompare={handleToggleCompare}
-            comparedProductIds={comparedProductIds}
-            onOpenComparisonModal={() => setComparisonModalOpen(true)}
-            selectedCategoryFilter={selectedCategoryFilter}
-            onCategoryFilterChange={(catId) => {
-              setSelectedCategoryFilter(catId);
-              if (catId !== 'all') setActiveCategoryDetailId(catId);
-            }}
-          />
-
-          {/* 15. Technical Resources Hub */}
+          {/* 12. Technical Resources Hub */}
           <ResourcesHub 
             onDownloadResource={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 16. Company Profile ("Built Around the Jobsite") */}
+          {/* 13. Company Profile ("Built Around the Jobsite") */}
           <CompanyProfile />
 
-          {/* 17. Architectural Final CTA */}
+          {/* 14. Architectural Final CTA */}
           <FinalCTA 
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
@@ -230,7 +202,7 @@ export function App() {
         <main>
           {/* Dedicated Story Page: "WHAT IS TRENCH?" */}
           <TrenchStory 
-            onExploreProducts={() => { setActivePage('home'); scrollToSection('catalogue'); }}
+            onExploreProducts={() => handleOpenProductsPage('all')}
             onRequestQuote={() => setQuoteModalOpen(true)}
           />
 

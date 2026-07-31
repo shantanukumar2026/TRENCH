@@ -6,8 +6,8 @@ import {
 } from 'lucide-react';
 
 interface NavbarProps {
-  activePage: 'home' | 'story';
-  onSelectPage: (page: 'home' | 'story') => void;
+  activePage: 'home' | 'products' | 'story';
+  onSelectPage: (page: 'home' | 'products' | 'story') => void;
   onOpenQuoteModal: () => void;
   onOpenSubmittalDrawer: () => void;
   onNavigateToSection: (sectionId: string) => void;
@@ -149,13 +149,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               onMouseEnter={() => setActiveMegaMenu('products')}
             >
               <button 
-                onClick={() => handleNavClick('catalogue')}
+                onClick={() => { onSelectPage('products'); setActiveMegaMenu(null); }}
                 className="h-full px-1 relative transition-colors flex items-center gap-1.5 text-white hover:text-blue-100 group"
               >
                 <span>PRODUCTS</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === 'products' ? 'rotate-180 text-white' : 'text-blue-200'}`} />
                 <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                  activeMegaMenu === 'products' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  activePage === 'products' || activeMegaMenu === 'products' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                 }`}></span>
               </button>
             </div>
