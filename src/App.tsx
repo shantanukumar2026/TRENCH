@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { DepthNav } from './components/DepthNav';
+import { ProductFinderSection } from './components/ProductFinderSection';
 import { SystemExplorer } from './components/SystemExplorer';
-import { CategoryRail } from './components/CategoryRail';
-import { CategoryDetail } from './components/CategoryDetail';
-import { ProductStage } from './components/ProductStage';
-import { Anatomy } from './components/Anatomy';
+import { WaterManagementSection } from './components/WaterManagementSection';
+import { IndustrialGratingsSection } from './components/IndustrialGratingsSection';
 import { Solutions } from './components/Solutions';
-import { IndustriesView } from './components/IndustriesView';
+import { GlobalProjectsSection } from './components/GlobalProjectsSection';
+import { LoadClassMatrixSection } from './components/LoadClassMatrixSection';
 import { TechnicalStandards } from './components/TechnicalStandards';
 import { ManufacturingCapabilities } from './components/ManufacturingCapabilities';
-import { EngineeringWorkspace } from './components/EngineeringWorkspace';
-import { HowItWorks } from './components/HowItWorks';
+import { ContractorTestimonialsSection } from './components/ContractorTestimonialsSection';
+import { IndustriesView } from './components/IndustriesView';
 import { CaseStudy } from './components/CaseStudy';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductPage } from './components/ProductPage';
-import { ResourcesHub } from './components/ResourcesHub';
-import { CompanyProfile } from './components/CompanyProfile';
 import { TrenchStory } from './components/TrenchStory';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
@@ -90,7 +87,7 @@ export function App() {
   const comparedProducts = PRODUCTS_CATALOGUE.filter(p => comparedProductIds.includes(p.id));
 
   return (
-    <div className="min-h-screen bg-blue-50 text-[#004AAD] font-body selection:bg-[#2166D1] selection:text-white">
+    <div className="min-h-screen bg-white text-[#004AAD] font-body selection:bg-[#0085F4] selection:text-white">
       {/* Primary Fixed Navbar */}
       <Navbar
         activePage={activePage === 'story' ? 'story' : activePage === 'products' ? 'products' : 'home'}
@@ -145,29 +142,54 @@ export function App() {
             onTalkToExpert={() => setQuoteModalOpen(true)}
           />
 
-          {/* 2. Product Equipment Categories */}
+          {/* 2. Interactive 3-Step Equipment & Shoring Configurator */}
+          <ProductFinderSection
+            onSelectCategory={(catId) => handleOpenProductsPage(catId)}
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 3. Primary Equipment & Shoring Categories Grid */}
           <SystemExplorer
             onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 3. Core Trench Safety & Shoring Solutions */}
+          {/* 4. Underground Water & Linear Drainage Systems (Inspired by ACO & MEA) */}
+          <WaterManagementSection
+            onExploreDrainage={() => handleOpenProductsPage('safety-protection')}
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 5. Industrial Gratings & AASHTO Road Decking (Inspired by Lichtgitter & Richard Brink) */}
+          <IndustrialGratingsSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 6. Core Trench Safety & Shoring Solutions */}
           <Solutions
             onSelectSolution={() => handleOpenProductsPage('all')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 4. Engineering Quality & OSHA Standards Compliance */}
+          {/* 7. Load Class & Material Science Comparison Matrix */}
+          <LoadClassMatrixSection />
+
+          {/* 8. Engineering Quality & OSHA Standards Compliance */}
           <TechnicalStandards
-            onOpenDocLibrary={() => scrollToSection('resources')}
+            onOpenDocLibrary={() => scrollToSection('solutions')}
           />
 
-          {/* 5. How It Works (Project Sequence Timeline) */}
-          <HowItWorks
-            onExploreSolutions={() => scrollToSection('solutions')}
-            onTalkToExpert={() => setQuoteModalOpen(true)}
+          {/* 9. Industrial Manufacturing & Robotic Steel Fabrication */}
+          <ManufacturingCapabilities />
+
+          {/* 10. Civil Sectors Showcase */}
+          <IndustriesView
+            onSelectCategory={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 6. Architectural Final CTA */}
+          {/* 13. Field Engineering Case Study */}
+          <CaseStudy />
+
+          {/* 14. Architectural Final Enterprise CTA */}
           <FinalCTA
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
@@ -175,7 +197,7 @@ export function App() {
         </main>
       )}
 
-      {/* Zero-Black Compliant Blue Gradient Footer */}
+      {/* Corporate Blue Footer */}
       <Footer
         onNavigateToSection={scrollToSection}
         onOpenQuoteModal={() => setQuoteModalOpen(true)}

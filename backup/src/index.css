@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  TRENCH UNLIMITED™ — WORLD-CLASS U.S. ENTERPRISE ENGINEERING DESIGN SYSTEM
+  PURE WHITE & SMOKE WHITE CLEAN BACKGROUNDS (NO DARK COLORS)
+  BRIGHT COLOR PALETTE: Electric Blue (#0066FF), Accent Blue (#0085F4), Crimson Accent (#D90429)
+*/
+
+:root {
+  /* Brand Core Palette — NO BLACK, NO DARK, NO GRAY */
+  --trench-blue: #0066FF;
+  --deep-logo-blue: #004AAD;
+  --accent-blue: #0085F4;
+  --cyan-flow: #00BBFF;
+  --red-accent: #D90429;
+  
+  /* Supporting Blues & Light Tones */
+  --powder-blue: #EBF3FF;
+  --ice-blue: #F4F8FF;
+  --steel-blue: #5B7FA5;
+  --light-blue-tone: #7A9CC6;
+  --cool-blue-tone: #94A3B8;
+  --off-white: #F8FAFC;
+  --white: #FFFFFF;
+  
+  /* Strict Text Colors — NO BLACK OR DARK */
+  --text-primary: #004AAD;
+  --text-body: #2563EB;
+  --text-muted: #5B7FA5;
+  --text-white: #FFFFFF;
+  --text-light-blue: #DBEAFE;
+  
+  /* Borders & Dividers */
+  --border-light: #E2E8F0;
+  --border-blue: #CBD5E1;
+  --border-active: #0066FF;
+  
+  /* Elevation Shadows — Blue-Tinted Only */
+  --shadow-sm: 0 2px 8px rgba(0, 102, 255, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 102, 255, 0.10);
+  --shadow-lg: 0 16px 40px rgba(0, 102, 255, 0.14);
+  --shadow-glow: 0 0 24px rgba(0, 102, 255, 0.2);
+  
+  /* Typography Tokens */
+  --font-heading: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
+}
+
+/* Reset & Base Styles — ALL CARDS & BUTTONS ARE CRISP SQUARE CAD */
+* {
+  box-sizing: border-box;
+  border-radius: 0px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body) !important;
+  background-color: var(--white);
+  color: #004AAD;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, p, div, span, label, input, select, textarea, li, a, button {
+  font-family: var(--font-body) !important;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--white);
+  color: #004AAD;
+}
+
+button, a {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none !important;
+  border-radius: 0px !important;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  color: var(--deep-logo-blue);
+  text-decoration: none !important;
+}
+
+.font-mono, .mono-tech {
+  font-family: var(--font-mono) !important;
+  letter-spacing: -0.01em;
+}
+
+/* High Contrast Color Overrides */
+.text-white, [class*="text-white"] {
+  color: #FFFFFF !important;
+}
+
+.text-blue-100 {
+  color: #E0F2FE !important;
+}
+
+.text-blue-200 {
+  color: #BFDBFE !important;
+}
+
+/* PURE CLEAN BACKGROUNDS (NO GRIDS OR PATTERNS) */
+.bg-blueprint-grid, .bg-blueprint-dense {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+}
+
+/* Primary Enterprise Buttons — BRIGHT BLUE, NO DARK */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--trench-blue);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading) !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--trench-blue);
+  border-radius: 0px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.18);
+  text-decoration: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #0052CC;
+  border-color: #0052CC;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: #FFFFFF;
+  color: var(--deep-logo-blue);
+  font-family: var(--font-heading) !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--border-blue);
+  border-radius: 0px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+
+.btn-secondary:hover {
+  border-color: var(--trench-blue);
+  background-color: var(--ice-blue);
+  color: var(--trench-blue);
+  transform: translateY(-2px);
+}
+
+/* Custom Square Product Card Styling */
+.product-card-square {
+  background-color: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 0px !important;
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-square:hover {
+  border-color: #0066FF;
+  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Custom Scrollbar — BRIGHT */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #93C5FD;
+  border-radius: 0px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--trench-blue);
+}
+
+/* 100% FULL-WIDTH ENTERPRISE CONTAINER WITH GENEROUS WHITE SPACE */
+.container-custom {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 3.5rem !important;
+  padding-right: 3.5rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Footer Text Rule Overrides */
+footer,
+footer p, 
+footer span, 
+footer div, 
+footer a, 
+footer h1, 
+footer h2, 
+footer h3, 
+footer h4, 
+footer h5, 
+footer h6,
+footer button,
+footer label {
+  color: #FFFFFF !important;
+}
+
+footer .text-blue-100,
+footer .text-blue-200,
+footer .text-blue-300 {
+  color: #DBEAFE !important;
+}

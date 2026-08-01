@@ -27,21 +27,21 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-[#0754AE]/40 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="w-full max-w-xl bg-white h-full shadow-2xl flex flex-col justify-between p-6 border-l-4 border-[#2166D1] animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-0 z-50 flex justify-end bg-[#004AAD]/50 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="w-full max-w-xl bg-white h-full shadow-2xl flex flex-col justify-between p-6 border-l-4 border-[#004AAD] animate-in slide-in-from-right duration-300">
         
         {/* Header */}
         <div>
-          <div className="flex justify-between items-center pb-4 border-b border-blue-200">
+          <div className="flex justify-between items-center pb-4 border-b border-[#E2E8F0]">
             <div className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-[#C00000]" />
-              <h3 className="text-xl font-bold text-[#0754AE] font-heading uppercase">
-                ENGINEERING SUBMITTAL PACKAGE BUILDER
+              <FileText className="w-5 h-5 text-[#0085F4]" />
+              <h3 className="text-xl font-bold text-[#004AAD] font-heading uppercase">
+                SUBMITTAL PACKAGE BUILDER
               </h3>
             </div>
             <button 
               onClick={onClose} 
-              className="p-1 text-blue-400 hover:text-[#0754AE]"
+              className="p-1 text-[#475569] hover:text-[#004AAD]"
             >
               <X className="w-6 h-6" />
             </button>
@@ -49,49 +49,49 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
 
           <div className="mt-4 space-y-4">
             <div>
-              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
+              <label className="text-xs font-mono text-[#004AAD] uppercase font-bold block mb-1">
                 PROJECT IDENTIFICATION NAME:
               </label>
               <input 
                 type="text"
                 value={projectName}
                 onChange={(e) => setProjectName(e.target.value)}
-                className="w-full py-2 px-3 text-xs font-mono bg-[#F0F7FF] border border-blue-200 rounded text-[#0754AE] font-bold"
+                className="w-full py-2 px-3 text-xs font-mono bg-[#F0F7FF] border border-[#0085F4] text-[#004AAD] font-bold"
               />
             </div>
 
             <div>
-              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
+              <label className="text-xs font-mono text-[#004AAD] uppercase font-bold block mb-1">
                 ENGINEER / CONTRACTOR OF RECORD:
               </label>
               <input 
                 type="text"
                 value={engineerName}
                 onChange={(e) => setEngineerName(e.target.value)}
-                className="w-full py-2 px-3 text-xs font-mono bg-[#F0F7FF] border border-blue-200 rounded text-[#0754AE]"
+                className="w-full py-2 px-3 text-xs font-mono bg-[#F0F7FF] border border-[#0085F4] text-[#004AAD]"
               />
             </div>
 
             {/* Selected Items List */}
             <div>
-              <div className="flex justify-between items-center text-xs font-mono text-[#0754AE] font-bold uppercase mb-2">
+              <div className="flex justify-between items-center text-xs font-mono text-[#004AAD] font-bold uppercase mb-2">
                 <span>SUBMITTAL ITEMS ({selectedItems.length})</span>
-                <span className="text-[#C00000]">OSHA & AWWA COMPLIANT</span>
+                <span className="text-[#0085F4]">OSHA 1926 COMPLIANT</span>
               </div>
 
               <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
                 {selectedItems.map((item) => (
                   <div 
                     key={item.id}
-                    className="p-3 bg-[#F0F7FF] border border-blue-200 rounded flex justify-between items-center font-mono text-xs"
+                    className="p-3 bg-[#F0F7FF] border border-[#E2E8F0] flex justify-between items-center font-mono text-xs"
                   >
                     <div>
-                      <div className="font-bold text-[#0754AE]">{item.name}</div>
-                      <div className="text-[10px] text-blue-400">{item.partNumber} • {item.loadRating}</div>
+                      <div className="font-bold text-[#004AAD]">{item.name}</div>
+                      <div className="text-[10px] text-[#475569]">{item.partNumber} • {item.loadRating}</div>
                     </div>
                     <button 
                       onClick={() => handleRemoveItem(item.id)}
-                      className="text-blue-400 hover:text-[#C00000] p-1"
+                      className="text-[#475569] hover:text-[#0085F4] p-1"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -102,47 +102,53 @@ export const SubmittalDrawer: React.FC<SubmittalDrawerProps> = ({ isOpen, onClos
 
             {/* Add More Items Dropdown */}
             <div>
-              <label className="text-xs font-mono text-blue-400 uppercase font-bold block mb-1">
-                ADD CATALOGUE ITEM TO SUBMITTAL:
+              <label className="text-xs font-mono text-[#004AAD] uppercase font-bold block mb-1">
+                ADD PRODUCT TO SUBMITTAL:
               </label>
-              <select 
+              <select
                 onChange={(e) => {
-                  const found = PRODUCTS_CATALOGUE.find(p => p.id === e.target.value);
-                  if (found) handleAddItem(found);
+                  const p = PRODUCTS_CATALOGUE.find(prod => prod.id === e.target.value);
+                  if (p) handleAddItem(p);
                 }}
-                className="w-full py-2 px-3 text-xs font-mono bg-white border border-blue-200 rounded text-[#0754AE]"
+                className="w-full p-2.5 bg-[#F8F8F8] border border-[#0085F4] text-xs font-mono text-[#004AAD] font-bold"
               >
-                <option value="">-- Select Product to Add --</option>
+                <option value="">+ SELECT PRODUCT TO ADD TO PACKAGE</option>
                 {PRODUCTS_CATALOGUE.map(p => (
-                  <option key={p.id} value={p.id}>{p.partNumber} — {p.name}</option>
+                  <option key={p.id} value={p.id}>{p.name} ({p.partNumber})</option>
                 ))}
               </select>
             </div>
           </div>
         </div>
 
-        {/* Action Footer */}
-        <div className="pt-6 border-t border-blue-200 space-y-3">
-          {generated && (
-            <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded font-mono text-xs flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              PE-Stamped Submittal Document Generated Successfully!
+        {/* Footer Actions */}
+        <div className="pt-4 border-t border-[#E2E8F0] space-y-3 font-mono">
+          {generated ? (
+            <div className="p-4 bg-[#F0F7FF] border border-[#0085F4] text-center space-y-2">
+              <CheckCircle2 className="w-6 h-6 text-[#0085F4] mx-auto" />
+              <div className="text-xs font-bold text-[#004AAD]">SUBMITTAL PDF GENERATED SUCCESSFULLY</div>
+              <button
+                onClick={() => alert(`Downloading PE-stamped submittal packet for ${projectName}`)}
+                className="btn-brand-primary w-full py-3 text-xs"
+              >
+                <Download className="w-4 h-4" />
+                <span>DOWNLOAD COMPREHENSIVE SUBMITTAL PACKET</span>
+              </button>
             </div>
+          ) : (
+            <button
+              onClick={() => setGenerated(true)}
+              className="btn-brand-primary w-full py-3.5 text-xs"
+            >
+              <span>GENERATE SUBMITTAL PDF PACKET</span>
+            </button>
           )}
 
-          <button 
-            onClick={() => setGenerated(true)}
-            className="btn-red w-full text-xs py-3.5 justify-center"
-          >
-            <Download className="w-4 h-4" />
-            GENERATE PE-STAMPED SUBMITTAL BUNDLE (.PDF)
-          </button>
-
-          <button 
+          <button
             onClick={onClose}
-            className="btn-secondary w-full text-xs py-2.5 justify-center"
+            className="w-full py-2 text-xs font-bold text-[#475569] hover:text-[#004AAD]"
           >
-            CLOSE SUBMITTAL BUILDER
+            CANCEL &amp; CLOSE DRAWER
           </button>
         </div>
 

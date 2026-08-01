@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, ShieldCheck, Wrench, Factory, CheckCircle2 } from 'lucide-react';
+import { Factory, CheckCircle2, Wrench } from 'lucide-react';
 
 export const ManufacturingCapabilities: React.FC = () => {
   const capabilities = [
@@ -9,43 +9,38 @@ export const ManufacturingCapabilities: React.FC = () => {
       spec: 'Submerged Arc Welding / ISO Certified'
     },
     {
-      title: 'MONOLITHIC PRECAST CONCRETE POURING',
-      desc: 'High-density 5,000 PSI fiber-reinforced concrete casting with pre-formed knockouts and butyl rubber gasket joints.',
-      spec: 'ASTM C478 & C858 Batch Testing'
+      title: 'PRECISION ALUMINUM HYDRAULIC ASSEMBLY',
+      desc: 'Aircraft-grade 6061-T6 structural aluminum hydraulic shoring rail extrusion with dual-action hydraulic cylinders.',
+      spec: '3,500 PSI Max Pressure Rating'
     },
     {
-      title: 'POLYMER CONCRETE & INJECTION MOLDING',
-      desc: 'Chemical-resistant polymer concrete channel drain casting with integrated ductile iron edge rails.',
-      spec: 'Class E 600 kN Impact Rating'
+      title: 'MODULAR SLIDE RAIL MANUFACTURING',
+      desc: 'Heavy structural steel slide rail posts and dig-and-push panels designed to withstand Type C soil forces without soil vibration.',
+      spec: 'ASTM A36 Heavy Steel Fabrication'
     },
     {
-      title: 'HYDROSTATIC PRESSURE TESTING LAB',
-      desc: 'Full-scale hydrostatic testing of AWWA C900 PVC pressure pipe and precast access vault seals prior to shipping.',
-      spec: '100% Factory Pressure Inspected'
+      title: 'HIGH-TRACTION ANTI-SKID COATING PLANT',
+      desc: 'Full-surface aggregate epoxy anti-skid coating line for AASHTO H-20 traffic-rated steel road plates.',
+      spec: 'AASHTO H-20 Full Axle Proof Loaded'
     }
   ];
 
   return (
-    <section id="manufacturing" className="py-24 bg-blueprint-dense border-b border-blue-200 relative overflow-hidden">
-      <div className="container-custom">
+    <section id="manufacturing" className="py-20 bg-[#F8F8F8] border-b border-[#E2E8F0]">
+      <div className="container-industrial space-y-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-blue-200 shadow-sm">
-            <Factory className="w-3.5 h-3.5 text-[#C00000]" />
-            <span className="text-xs font-mono font-bold text-[#0754AE] uppercase tracking-widest">
-              INDUSTRIAL MANUFACTURING EXCELLENCE
-            </span>
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#0085F4] text-xs font-mono font-bold text-[#004AAD]">
+            <Factory className="w-4 h-4 text-[#0085F4]" />
+            <span>INDUSTRIAL MANUFACTURING EXCELLENCE</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0754AE] tracking-tight font-heading uppercase">
-            MANUFACTURING &amp; <span className="text-[#2166D1]">FABRICATION</span>
+          <h2 className="text-section-title text-[#004AAD] uppercase">
+            MANUFACTURING &amp; <span className="text-[#0085F4]">STEEL FABRICATION</span>
           </h2>
-          <div className="flex justify-center items-center gap-2">
-            <span className="red-accent-bar"></span>
-            <p className="text-blue-600 font-medium text-base">
-              State-of-the-art North American manufacturing facilities engineered for high-volume infrastructure production.
-            </p>
-          </div>
+          <p className="text-body-large text-[#475569] font-medium">
+            State-of-the-art North American manufacturing facilities engineered for heavy steel trench safety production.
+          </p>
         </div>
 
         {/* Capabilities Grid */}
@@ -53,25 +48,25 @@ export const ManufacturingCapabilities: React.FC = () => {
           {capabilities.map((cap, idx) => (
             <div 
               key={idx}
-              className="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-md hover:border-[#2166D1] transition-all flex flex-col justify-between space-y-4 font-mono group"
+              className="bg-white border-2 border-[#E2E8F0] p-6 hover:border-[#0085F4] transition-all flex flex-col justify-between space-y-4 font-mono group"
             >
-              <div className="flex justify-between items-center border-b border-blue-100 pb-3">
-                <span className="text-xs font-bold text-[#C00000]">FACILITY 0{idx + 1}</span>
-                <Wrench className="w-4 h-4 text-[#0754AE]" />
+              <div className="flex justify-between items-center border-b border-[#E2E8F0] pb-3">
+                <span className="text-xs font-bold text-[#0085F4]">PLANT 0{idx + 1}</span>
+                <Wrench className="w-4 h-4 text-[#004AAD]" />
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-[#0754AE] font-heading uppercase group-hover:text-[#2166D1] transition-colors">
+                <h3 className="text-card-title text-[#004AAD] group-hover:text-[#0085F4] transition-colors uppercase">
                   {cap.title}
                 </h3>
-                <p className="text-xs text-blue-600 font-sans font-medium leading-relaxed mt-2">
+                <p className="text-xs text-[#475569] font-sans font-medium leading-relaxed mt-2">
                   {cap.desc}
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-blue-100 text-[11px] text-[#0754AE] font-bold flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#2166D1]" />
-                {cap.spec}
+              <div className="pt-3 border-t border-[#E2E8F0] text-xs text-[#004AAD] font-bold flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#0085F4]" />
+                <span>{cap.spec}</span>
               </div>
             </div>
           ))}

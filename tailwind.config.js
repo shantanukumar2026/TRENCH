@@ -7,20 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'trench-blue': '#2166D1',
-        'deep-logo-blue': '#0754AE',
-        'logo-red': '#C00000',
-        'bright-blue': '#1E73E8',
-        'sky-blue': '#3B82F6',
-        'powder-blue': '#DBEAFE',
-        'ice-blue': '#F0F7FF',
-        'steel-blue': '#4682B4',
-        'light-slate-blue': '#64748B',
-        'cool-slate-gray': '#94A3B8',
-        'off-white': '#F8FAFC',
+        'brand-primary': '#004AAD',
+        'brand-secondary': '#0085F4',
+        'brand-accent': '#00BBFF',
+        'brand-smoke': '#F8F8F8',
+        'brand-light': '#F0F7FF',
+        'brand-ice': '#E6F2FF',
+        'brand-darkblue': '#003380',
+        'brand-deep': '#002259',
       },
       fontFamily: {
-        heading: ['Oswald', 'Chakra Petch', 'sans-serif'],
+        heading: ['Inter', 'Outfit', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       }
