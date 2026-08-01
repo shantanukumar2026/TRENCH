@@ -436,6 +436,62 @@ export const PRODUCTS_CATALOGUE: Product[] = [
     weight: '3,400 LBS',
     industry: 'Wastewater',
     workflowStep: 'CONTROL'
+  },
+  {
+    id: 'tu-brink-hydra-hd',
+    name: 'TU-Hydra Heavy-Duty Stainless Steel Channel System',
+    category: 'STAINLESS STEEL SLOT DRAINS',
+    subcategory: 'Architectural Slot Drains',
+    productFamily: 'Slot Drain',
+    partNumber: 'TU-BR-HYDRA-HD',
+    depthLevel: 1,
+    material: 'AISI 316L Stainless Steel with 4mm Edge Angles',
+    loadRating: 'Class D 400 kN / AASHTO H-20 Heavy Traffic',
+    sizeRange: '100mm to 300mm Nominal Widths',
+    sizes: ['100mm Channel', '150mm Channel', '200mm Channel'],
+    standard: 'EN 1433 / DIN 19580 Certified',
+    application: 'Heavy Commercial Traffic Plazas, Terminals & Architectural Facades',
+    description: 'Heavy-duty stainless steel linear drainage channel system with reinforced edge profiles and integrated wall anchor tabs designed for extreme wheel loads.',
+    features: [
+      '4mm solid stainless steel reinforced edge angle angles',
+      'Integrated anchoring lugs for direct concrete encasement',
+      'Seamless interlocking tongue-and-groove jointing'
+    ],
+    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Pickled & Passivated Stainless Steel',
+    weight: '82 LBS / Meter',
+    industry: 'Architectural & Heavy Civil',
+    workflowStep: 'CONTROL'
+  },
+  {
+    id: 'tu-brink-subcut-slot',
+    name: 'TU-Subcut Heavy-Duty Architectural Slot Drain',
+    category: 'STAINLESS STEEL SLOT DRAINS',
+    subcategory: 'Architectural Slot Drains',
+    productFamily: 'Slot Drain',
+    partNumber: 'TU-BR-SUBCUT-18',
+    depthLevel: 1,
+    material: 'AISI 304 / 316L Structural Stainless Steel',
+    loadRating: 'Class D 400 kN Heavy Load Rated',
+    sizeRange: '18mm Slot Neck / Custom Invert Depths',
+    sizes: ['18mm Slot x 100mm Invert', '18mm Slot x 150mm Invert'],
+    standard: 'EN 1433 Class D400',
+    application: 'Discreet High-Load Plaza Drainage & Paver Integration',
+    description: 'Heavy-duty architectural slot drain channel featuring a narrow 18mm slot intake neck, reinforced double-wall neck spacers, and clean paver line aesthetics.',
+    features: [
+      'Discreet 18mm slot opening blends invisibly into paver joints',
+      'Heavy neck spacers prevent slot deflection under truck wheel loads',
+      'Integrated cleanout inspection boxes with lift-out covers'
+    ],
+    image: '/images/drainage_channel.png',
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Satin Brushed Stainless Steel',
+    weight: '64 LBS / Meter',
+    industry: 'Architectural & Heavy Civil',
+    workflowStep: 'CONTROL'
   }
 ];
 
