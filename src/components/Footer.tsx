@@ -75,10 +75,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToSection, onOpenQuote
 
         </div>
 
-        {/* Main Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[#0085F4]/40">
+        {/* Main Organized Footer Links (4 Structured Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-16 border-b border-[#0085F4]/40">
           
-          {/* Brand Info */}
+          {/* Brand Info & Core Certifications */}
           <div className="lg:col-span-4 space-y-6">
             <div 
               onClick={() => onNavigateToSection('hero')}
@@ -92,56 +92,86 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToSection, onOpenQuote
             </div>
 
             <p className="text-sm text-blue-100 font-medium leading-relaxed">
-              Trench Unlimited™ is America's trusted manufacturer and supplier of OSHA 1926 certified trench safety boxes, hydraulic shoring, slide rail systems, and heavy civil underground infrastructure equipment.
+              Trench Unlimited™ is America's leading manufacturer of OSHA 1926 Subpart P certified trench safety boxes, aluminum hydraulic shoring, slide rail systems, Richard Brink slot drains, and ACO polymer concrete drainage infrastructure.
             </p>
 
-            <div className="pt-2 font-mono text-xs text-[#00BBFF] font-bold space-y-1">
-              <div>OSHA 1926 SUBPART P CERTIFIED</div>
-              <div>AASHTO H-20 HIGHWAY TRAFFIC LOAD RATED</div>
+            <div className="pt-2 font-mono text-xs text-[#00BBFF] font-bold space-y-1.5 border-t border-[#0085F4]/40 pt-4">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#00BBFF]" />
+                <span>OSHA 1926 SUBPART P CERTIFIED</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileText className="w-4 h-4 text-[#00BBFF]" />
+                <span>AASHTO H-20 HIGHWAY TRAFFIC LOAD RATED</span>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links Column 1 */}
-          <div className="lg:col-span-3 space-y-4 font-mono text-xs">
-            <h4 className="text-sm font-bold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2">
-              EQUIPMENT CATEGORIES
+          {/* Menu Column 1: Shoring & Safety Systems */}
+          <div className="lg:col-span-2 space-y-3 font-mono text-xs">
+            <h4 className="text-xs font-extrabold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2 flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-[#00BBFF]"></span>
+              <span>SHORING &amp; SAFETY</span>
             </h4>
-            <ul className="space-y-2.5 text-blue-100 font-medium">
-              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors">Steel Trench Shields</button></li>
-              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors">Hydraulic Trench Shores</button></li>
-              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors">Modular Slide Rail Systems</button></li>
-              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors">Trench Access Ladders</button></li>
-              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors">AASHTO H-20 Steel Road Plates</button></li>
+            <ul className="space-y-2 text-blue-100 font-medium">
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Steel Trench Shield Boxes</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Aluminum Hydraulic Shores</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Modular Slide Rail Panels</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Trench Walk-Through Ladders</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">AASHTO H-20 Steel Road Plates</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Manhole Protection Shields</button></li>
             </ul>
           </div>
 
-          {/* Quick Links Column 2 */}
-          <div className="lg:col-span-2 space-y-4 font-mono text-xs">
-            <h4 className="text-sm font-bold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2">
-              CIVIL SECTORS
+          {/* Menu Column 2: Heavy Drainage & Trench Covers */}
+          <div className="lg:col-span-2 space-y-3 font-mono text-xs">
+            <h4 className="text-xs font-extrabold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2 flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-[#00BBFF]"></span>
+              <span>DRAINAGE &amp; COVERS</span>
             </h4>
-            <ul className="space-y-2.5 text-blue-100 font-medium">
-              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors">Municipal Waterworks</button></li>
-              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors">Stormwater &amp; Drainage</button></li>
-              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors">Wastewater Main Lines</button></li>
-              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors">Highway Civil Excavation</button></li>
-              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors">Underground Utilities</button></li>
+            <ul className="space-y-2 text-blue-100 font-medium">
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Richard Brink Slot Drains</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">ACO Polymer Concrete Channels</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Lichtgitter Steel Mesh Gratings</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Class D400-F900 Cast Iron Gratings</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">HDPE Modular Drainage Channels</button></li>
+              <li><button onClick={() => onNavigateToSection('explorer')} className="hover:text-[#00BBFF] transition-colors text-left">Cleanout Pit Catch Basins</button></li>
             </ul>
           </div>
 
-          {/* Call to Action Column */}
-          <div className="lg:col-span-3 space-y-4 font-mono text-xs">
-            <h4 className="text-sm font-bold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2">
-              COMMERCIAL INQUIRIES
+          {/* Menu Column 3: Engineering & Tab Data */}
+          <div className="lg:col-span-2 space-y-3 font-mono text-xs">
+            <h4 className="text-xs font-extrabold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2 flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-[#00BBFF]"></span>
+              <span>ENGINEERING DATA</span>
             </h4>
-            <p className="text-blue-100">
-              Need immediate jobsite shoring equipment or PE-stamped tabulated data?
-            </p>
+            <ul className="space-y-2 text-blue-100 font-medium">
+              <li><button onClick={() => onNavigateToSection('tech-standards')} className="hover:text-[#00BBFF] transition-colors text-left">PE Tabulated Data Sheets</button></li>
+              <li><button onClick={() => onNavigateToSection('tech-standards')} className="hover:text-[#00BBFF] transition-colors text-left">OSHA 1926 Soil Class Matrix</button></li>
+              <li><button onClick={() => onNavigateToSection('tech-standards')} className="hover:text-[#00BBFF] transition-colors text-left">Load Class EN 1433 Standard</button></li>
+              <li><button onClick={() => onNavigateToSection('tech-standards')} className="hover:text-[#00BBFF] transition-colors text-left">Submittal Drawing Packages</button></li>
+              <li><button onClick={() => onNavigateToSection('tech-standards')} className="hover:text-[#00BBFF] transition-colors text-left">CAD &amp; BIM Specification Files</button></li>
+            </ul>
+          </div>
+
+          {/* Menu Column 4: Civil Sectors & RFQ */}
+          <div className="lg:col-span-2 space-y-3 font-mono text-xs">
+            <h4 className="text-xs font-extrabold text-white uppercase font-heading tracking-wider border-b border-[#0085F4] pb-2 flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-[#00BBFF]"></span>
+              <span>CIVIL SECTORS &amp; RFQ</span>
+            </h4>
+            <ul className="space-y-2 text-blue-100 font-medium mb-4">
+              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors text-left">Municipal Waterworks</button></li>
+              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors text-left">Highway Infrastructure</button></li>
+              <li><button onClick={() => onNavigateToSection('solutions')} className="hover:text-[#00BBFF] transition-colors text-left">Stormwater Management</button></li>
+              <li><button onClick={() => onNavigateToSection('story')} className="hover:text-[#00BBFF] transition-colors text-left">Company Story &amp; Tech</button></li>
+            </ul>
+            
             <button 
               onClick={onOpenQuoteModal} 
-              className="btn-brand-primary w-full py-3 text-xs"
+              className="btn-brand-primary w-full py-2.5 text-[11px] font-bold"
             >
-              REQUEST COMMERCIAL QUOTE
+              REQUEST RFQ &amp; QUOTE
             </button>
           </div>
 
