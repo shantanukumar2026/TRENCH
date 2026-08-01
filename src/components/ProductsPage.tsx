@@ -41,7 +41,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
     <div className="pt-20 bg-[#F8FAFC] min-h-screen space-y-8">
       
       {/* Products Page Rich Industrial Banner */}
-      <div className="bg-[#004AAD] text-white py-14 px-4 border-b-4 border-[#0085F4] bg-industrial-grid">
+      <div className="bg-industrial-grid-dark text-white py-14 px-4 border-b-4 border-[#0085F4]">
         <div className="container-custom space-y-6">
           <div className="text-center space-y-3 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
