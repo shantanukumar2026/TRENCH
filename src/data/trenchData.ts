@@ -50,7 +50,7 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     shortName: 'Drainage & Trench Covers',
     tagline: 'Richard Brink Stainless Slot Drains, ACO Channels & Gratings',
     description: 'Richard Brink style stainless steel slot channels, ACO polymer concrete trench drains, Lichtgitter steel mesh gratings, and Class D400-F900 cast iron covers.',
-    image: '/images/drainage_channel.png',
+    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
     hotspotIndex: 3,
     subcategories: [
       { id: 'brink-slot-drains', name: 'Stainless Steel Slot Drains', description: 'Richard Brink heavy-duty slot channels.', image: '/images/assets/gettyimages-1158438565-1024x1024.jpg', productFamilies: ['Slot Drain'] },

@@ -28,7 +28,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
       title: 'PIPE & UTILITY INSTALLATION',
       tagline: 'High-Clearance Spreader Pipe Systems',
       description: 'Engineered spreader pipe configurations providing up to 9ft of vertical pipe clearance for large-diameter municipal water main & sewer installations.',
-      image: '/images/assets/gettyimages-2167164749-1024x1024.jpg',
+      image: '/images/assets/gettyimages-2223963188-1024x1024.jpg',
       recommendedProducts: ['High-Clearance Spreader Pipe Assembly', 'TU-8000 Heavy-Duty Steel Trench Shield Box', 'Trench Safety Ladders'],
       specs: [
         { label: 'PIPE CLEARANCE', value: 'Up to 108 Inches' },
@@ -41,7 +41,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
       title: 'ROAD CROSSING & STREET DECKING',
       tagline: 'AASHTO H-20 Heavy Traffic Steel Road Plates',
       description: 'Heavy structural steel road plates with center flush-mount lifting nuts and skid-resistant coatings for active traffic bridging over utility trenches.',
-      image: '/images/assets/gettyimages-2158727734-1024x1024.jpg',
+      image: '/images/assets/gettyimages-1431428704-1024x1024.jpg',
       recommendedProducts: ['AASHTO H-20 Heavy Structural Steel Trench Road Plate', 'Center Flush Lifting Nut Pin', 'Anti-Skid Epoxy Decking'],
       specs: [
         { label: 'TRAFFIC RATING', value: 'AASHTO H-20 Axle Rated' },

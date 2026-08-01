@@ -27,46 +27,57 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
           </div>
         </div>
 
-        {/* Product Category Cards Grid (Unified 3-Column Section) */}
+        {/* Product Category Cards Grid (Unified 3-Column Premium Section) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PRIMARY_CATEGORIES.map((cat) => (
             <div
               key={cat.id}
               onClick={() => onSelectHotspot(cat.id)}
-              className="bg-[#F8F8F8] border-2 border-[#E2E8F0] p-6 hover:border-[#0085F4] hover:bg-white hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+              className="glass-card-light glow-border-blue p-6 transition-all duration-300 group cursor-pointer flex flex-col justify-between border-2 border-[#0085F4]/20 hover:border-[#0085F4]"
             >
               <div className="space-y-4">
-                {/* Category Image */}
-                <div className="h-52 overflow-hidden border border-[#E2E8F0] relative bg-[#F0F7FF]">
+                {/* Category Image with Badge */}
+                <div className="h-56 overflow-hidden border border-[#0085F4]/20 relative bg-[#F0F7FF]">
                   <img
                     src={cat.image}
                     alt={cat.title}
                     onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/logo.png'; }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-[#004AAD] text-white text-xs font-mono font-bold uppercase">
+                  <div className="absolute top-3 left-3 px-3 py-1 bg-gradient-to-r from-[#004AAD] to-[#0085F4] text-white text-xs font-mono font-extrabold uppercase shadow-md">
                     CATEGORY {cat.number}
                   </div>
                 </div>
 
                 {/* Info */}
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold text-[#0085F4] uppercase block">
+                <div className="space-y-2.5">
+                  <span className="text-xs font-mono font-bold text-[#0085F4] uppercase block tracking-wide">
                     {cat.tagline}
                   </span>
-                  <h3 className="text-card-title text-[#004AAD] group-hover:text-[#0085F4] transition-colors uppercase">
+                  <h3 className="text-card-title text-[#004AAD] group-hover:text-[#0085F4] transition-colors uppercase font-extrabold">
                     {cat.title}
                   </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
                     {cat.description}
                   </p>
+
+                  {/* Subcategories Badges */}
+                  <div className="flex flex-wrap gap-1.5 pt-2 font-mono text-[11px]">
+                    {cat.subcategories.map(s => (
+                      <span key={s.id} className="px-2 py-0.5 bg-[#F0F7FF] border border-[#0085F4]/30 text-[#004AAD] font-semibold">
+                        {s.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Bottom Trigger */}
-              <div className="pt-4 border-t border-[#E2E8F0] flex items-center justify-between mt-6 text-xs font-mono font-bold text-[#004AAD]">
-                <span>VIEW SPECIFICATIONS &amp; PRODUCTS</span>
-                <ArrowRight className="w-4 h-4 text-[#0085F4] group-hover:translate-x-1 transition-transform" />
+              {/* Bottom Action Trigger */}
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between mt-6 text-xs font-mono font-bold text-[#004AAD] group-hover:text-[#0085F4] transition-colors">
+                <span>INSPECT EQUIPMENT &amp; SPECS</span>
+                <div className="p-1.5 bg-[#F0F7FF] group-hover:bg-[#0085F4] group-hover:text-white transition-colors">
+                  <ArrowRight className="w-4 h-4 text-[#0085F4] group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                </div>
               </div>
             </div>
           ))}
