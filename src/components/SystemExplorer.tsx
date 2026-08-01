@@ -27,8 +27,8 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
           </div>
         </div>
 
-        {/* Product Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Product Category Cards Grid (10 items = 2 full rows of 5 on XL screens) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {PRIMARY_CATEGORIES.map((cat) => (
             <div
               key={cat.id}

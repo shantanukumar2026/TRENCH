@@ -40,19 +40,41 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
   return (
     <div className="pt-20 bg-[#F8FAFC] min-h-screen space-y-8">
       
-      {/* Products Page Clean Banner */}
-      <div className="bg-[#004AAD] text-white py-16 px-4 border-b-4 border-[#0066FF]">
-        <div className="container-custom space-y-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest">
-            <ShieldCheck className="w-4 h-4 text-[#00BBFF]" />
-            <span>OSHA 1926 SUBPART P CERTIFIED CATALOGUE</span>
+      {/* Products Page Rich Industrial Banner */}
+      <div className="bg-[#004AAD] text-white py-14 px-4 border-b-4 border-[#0085F4] bg-industrial-grid">
+        <div className="container-custom space-y-6">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+              <ShieldCheck className="w-4 h-4 text-[#00BBFF]" />
+              <span>OSHA 1926 SUBPART P CERTIFIED CATALOGUE</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold font-heading uppercase tracking-tight text-white">
+              TRENCH SHORING &amp; <span className="text-[#00BBFF]">SAFETY EQUIPMENT</span>
+            </h1>
+            <p className="text-base sm:text-lg font-body text-blue-100 font-medium">
+              Heavy steel trench shields, aluminum hydraulic shores, modular slide rail systems, access ladders, and AASHTO H-20 road plates engineered for excavation safety.
+            </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold font-heading uppercase tracking-tight text-white">
-            TRENCH SHORING &amp; <span className="text-[#0085F4]">SAFETY EQUIPMENT</span>
-          </h1>
-          <p className="text-base sm:text-lg font-mono text-blue-100 max-w-2xl mx-auto">
-            Heavy steel trench shields, aluminum hydraulic shores, slide rail systems, access ladders, and structural road plates.
-          </p>
+
+          {/* Banner Key Specs Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-white/15 max-w-5xl mx-auto font-mono text-xs text-center">
+            <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
+              <span className="text-[#00BBFF] block font-extrabold text-sm">10 CATEGORIES</span>
+              <span className="text-blue-100">Full Infrastructure Line</span>
+            </div>
+            <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
+              <span className="text-[#00BBFF] block font-extrabold text-sm">OSHA 1926</span>
+              <span className="text-blue-100">Subpart P Compliant</span>
+            </div>
+            <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
+              <span className="text-[#00BBFF] block font-extrabold text-sm">PE TAB DATA</span>
+              <span className="text-blue-100">Stamped Engineering</span>
+            </div>
+            <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
+              <span className="text-[#00BBFF] block font-extrabold text-sm">AASHTO H-20</span>
+              <span className="text-blue-100">Heavy Traffic Rated</span>
+            </div>
+          </div>
         </div>
       </div>
 

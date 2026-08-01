@@ -25,24 +25,24 @@ export const CategoryRail: React.FC<CategoryRailProps> = ({ selectedCategoryId, 
   };
 
   return (
-    <section className="bg-white border-y-2 border-blue-300 py-6 sticky top-20 z-30 shadow-md">
+    <section className="bg-white border-y-2 border-[#0085F4]/30 py-5 sticky top-20 z-30 shadow-md">
       <div className="container-custom">
-        <div className="flex items-center justify-between gap-4 mb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold text-[#2166D1] uppercase tracking-widest">PRODUCT ARCHITECTURE</span>
-            <span className="text-xs text-[#004AAD] font-bold">• 10 PRIMARY CATEGORIES (SQUARE CAD RAIL)</span>
+            <span className="text-xs font-mono font-bold text-[#0085F4] uppercase tracking-widest">PRODUCT ARCHITECTURE</span>
+            <span className="text-xs text-[#004AAD] font-bold">• 10 PRIMARY CATEGORIES (FULL SPECTRUM)</span>
           </div>
-          <span className="text-xs font-mono text-[#1E4E8C] hidden md:inline-block">Click any category to filter catalogue</span>
+          <span className="text-xs font-mono text-[#0085F4] font-medium hidden sm:inline-block">Select category to filter equipment catalogue</span>
         </div>
 
-        {/* Scrollable Compact Square Category Rail */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        {/* Full Container Width Category Rail */}
+        <div className="flex flex-wrap items-center gap-2 w-full">
           <button
             onClick={() => onSelectCategory('all')}
-            className={`shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-none font-mono text-xs font-bold transition-all duration-200 border-2 ${
+            className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 px-3.5 py-2.5 font-mono text-xs font-bold transition-all duration-200 border-2 ${
               selectedCategoryId === 'all'
-                ? 'bg-[#0754AE] text-white border-[#0754AE] shadow-md'
-                : 'bg-[#F0F7FF] text-[#0754AE] border-blue-200 hover:border-[#2166D1] hover:bg-white'
+                ? 'bg-[#004AAD] text-white border-[#004AAD] shadow-md scale-[1.02]'
+                : 'bg-[#F0F7FF] text-[#004AAD] border-[#0085F4]/30 hover:border-[#0085F4] hover:bg-white'
             }`}
           >
             <span>ALL PRODUCTS</span>
@@ -54,17 +54,19 @@ export const CategoryRail: React.FC<CategoryRailProps> = ({ selectedCategoryId, 
               <button
                 key={cat.id}
                 onClick={() => onSelectCategory(cat.id)}
-                className={`shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-none font-mono text-xs font-bold transition-all duration-200 border-2 whitespace-nowrap ${
+                className={`flex-1 min-w-[150px] flex items-center justify-between gap-2 px-3 py-2.5 font-mono text-xs font-bold transition-all duration-200 border-2 ${
                   isSelected
-                    ? 'bg-[#0754AE] text-white border-[#0754AE] shadow-md scale-[1.02]'
-                    : 'bg-[#F0F7FF] text-[#0754AE] border-blue-200 hover:border-[#2166D1] hover:bg-white'
+                    ? 'bg-[#004AAD] text-white border-[#004AAD] shadow-md scale-[1.02]'
+                    : 'bg-[#F0F7FF] text-[#004AAD] border-[#0085F4]/30 hover:border-[#0085F4] hover:bg-white'
                 }`}
               >
-                <span className={`p-1 rounded-none ${isSelected ? 'bg-white/20 text-white' : 'bg-blue-100 text-[#0754AE]'}`}>
-                  {getCategoryIcon(cat.id)}
-                </span>
-                <span className="text-xs">{cat.number} {cat.shortName}</span>
-                <ChevronRight className={`w-3.5 h-3.5 opacity-60 ${isSelected ? 'text-white' : 'text-[#0754AE]'}`} />
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className={`p-1 shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'bg-blue-100 text-[#0085F4]'}`}>
+                    {getCategoryIcon(cat.id)}
+                  </span>
+                  <span className="text-xs truncate">{cat.number} {cat.shortName}</span>
+                </div>
+                <ChevronRight className={`w-3.5 h-3.5 shrink-0 opacity-70 ${isSelected ? 'text-white' : 'text-[#0085F4]'}`} />
               </button>
             );
           })}
