@@ -177,6 +177,7 @@ export const Catalogue: React.FC<CatalogueProps> = ({
                       <img
                         src={product.image}
                         alt={product.name}
+                        onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/logo.png'; }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-3 left-3 px-2.5 py-1 bg-[#004AAD] text-white text-[10px] font-mono font-bold uppercase">

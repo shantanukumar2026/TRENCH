@@ -78,6 +78,71 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
     subcategories: [
       { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 steel road plates.', image: img05, productFamilies: ['Road Plate'] }
     ]
+  },
+  {
+    number: '06',
+    id: 'polymer-channels',
+    title: 'POLYMER CONCRETE CHANNELS',
+    shortName: 'Polymer Channels',
+    tagline: 'ACO & MEA Style High-Capacity Polymer Trench Drains',
+    description: 'High-strength mineral polymer concrete linear drainage channels with integrated cast iron edge rails.',
+    image: '/images/drainage_channel.png',
+    hotspotIndex: 6,
+    subcategories: [
+      { id: 'polymer-drains', name: 'Polymer Concrete Channels', description: 'Polymer channels with cast iron gratings.', image: '/images/drainage_channel.png', productFamilies: ['Polymer Channel'] }
+    ]
+  },
+  {
+    number: '07',
+    id: 'slot-channels',
+    title: 'STAINLESS STEEL SLOT DRAINS',
+    shortName: 'Slot Drains',
+    tagline: 'Richard Brink Style Architectural Slot Channels',
+    description: 'Sleek narrow line slot drainage channels in AISI 316L stainless steel for plazas, pedestrian areas & facades.',
+    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+    hotspotIndex: 7,
+    subcategories: [
+      { id: 'slot-drains-sub', name: 'Architectural Slot Drains', description: 'Linear slot drainage channels.', image: '/images/assets/gettyimages-1158438565-1024x1024.jpg', productFamilies: ['Slot Drain'] }
+    ]
+  },
+  {
+    number: '08',
+    id: 'steel-gratings',
+    title: 'INDUSTRIAL BAR & MESH GRATINGS',
+    shortName: 'Mesh Gratings',
+    tagline: 'Lichtgitter Style Press-Locked Galvanized Mesh Panels',
+    description: 'Heavy welded and press-locked steel bar gratings for trench covers, industrial walkways and platforms.',
+    image: '/images/assets/gettyimages-1349322660-1024x1024.jpg',
+    hotspotIndex: 8,
+    subcategories: [
+      { id: 'mesh-gratings-sub', name: 'Industrial Mesh Gratings', description: 'Press-locked steel bar gratings.', image: '/images/assets/gettyimages-1349322660-1024x1024.jpg', productFamilies: ['Steel Grating'] }
+    ]
+  },
+  {
+    number: '09',
+    id: 'hdpe-plastic-channels',
+    title: 'HDPE MODULAR PLASTIC DRAINS',
+    shortName: 'HDPE Drains',
+    tagline: 'Dakota Style Modular Polypropylene Trench Channels',
+    description: 'Lightweight UV-stabilized HDPE plastic drainage channels with interlocking tongue-and-groove connectors.',
+    image: '/images/pvc_pipe.png',
+    hotspotIndex: 9,
+    subcategories: [
+      { id: 'hdpe-drains-sub', name: 'HDPE Modular Channels', description: 'Plastic trench drainage channels.', image: '/images/pvc_pipe.png', productFamilies: ['HDPE Channel'] }
+    ]
+  },
+  {
+    number: '10',
+    id: 'ductile-covers',
+    title: 'DUCTILE IRON TRENCH COVERS',
+    shortName: 'Iron Covers',
+    tagline: 'Class D400 to F900 Heavy Duty Cast Iron Covers',
+    description: 'Heavy duty ductile iron trench covers and frames engineered for airport runways, ports, and highways.',
+    image: '/images/assets/gettyimages-1222819839-1024x1024.jpg',
+    hotspotIndex: 10,
+    subcategories: [
+      { id: 'iron-covers-sub', name: 'Ductile Iron Frames', description: 'Heavy traffic iron covers and frames.', image: '/images/assets/gettyimages-1222819839-1024x1024.jpg', productFamilies: ['Iron Cover'] }
+    ]
   }
 ];
 

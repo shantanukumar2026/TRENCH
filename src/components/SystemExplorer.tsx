@@ -41,6 +41,7 @@ export const SystemExplorer: React.FC<SystemExplorerProps> = ({ onSelectHotspot 
                   <img
                     src={cat.image}
                     alt={cat.title}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/logo.png'; }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-[#004AAD] text-white text-xs font-mono font-bold uppercase">

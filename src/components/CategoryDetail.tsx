@@ -98,7 +98,7 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
                     <img
                       src={subcat.image || category.image}
                       alt={subcat.name}
-                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/trench_shield.png'; }}
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/logo.png'; }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-2 right-2 px-2 py-0.5 bg-[#0754AE] text-white text-[10px] font-mono font-bold rounded-none">
