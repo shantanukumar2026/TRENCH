@@ -17,131 +17,45 @@ export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
     number: '01',
     id: 'safety-protection',
-    title: 'STEEL TRENCH SHIELDS',
-    shortName: 'Steel Shields',
-    tagline: 'OSHA 1926 Subpart P Certified Double-Wall Steel Boxes',
-    description: 'Heavy steel trench boxes engineered for high-depth soil pressure resistance and worker safety.',
+    title: 'STEEL TRENCH SHIELDS & SHORING',
+    shortName: 'Steel Trench Shields',
+    tagline: 'OSHA 1926 Subpart P Certified Heavy Steel Boxes & Slide Rails',
+    description: 'Heavy steel trench boxes, modular slide rail panels, and AASHTO H-20 road plates engineered for deep excavation soil pressure and worker protection.',
     image: img01,
     hotspotIndex: 1,
     subcategories: [
-      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: img01, productFamilies: ['Steel Trench Box'] }
+      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: img01, productFamilies: ['Steel Trench Box'] },
+      { id: 'slide-rail-panels', name: 'Modular Slide Rail Systems', description: 'Modular dig-and-push trench shoring panels.', image: img03, productFamilies: ['Slide Rail System'] },
+      { id: 'road-plates', name: 'AASHTO H-20 Steel Road Plates', description: 'Heavy structural steel road plates.', image: img05, productFamilies: ['Road Plate'] }
     ]
   },
   {
     number: '02',
     id: 'hydraulic-shoring',
-    title: 'HYDRAULIC TRENCH SHORING',
-    shortName: 'Hydraulic Shores',
-    tagline: 'Hand-Pumped 6061-T6 Aluminum Hydraulic Rails',
-    description: 'Hand-pumped aluminum hydraulic shores installed 100% from above ground for crew protection.',
+    title: 'HYDRAULIC TRENCH SHORING & ACCESS',
+    shortName: 'Hydraulic Shores & Access',
+    tagline: 'Hand-Pumped Aluminum Hydraulic Rails & OSHA Access Ladders',
+    description: 'Hand-pumped 6061-T6 aluminum hydraulic shores installed 100% from above ground, paired with extendable OSHA-compliant walk-through access ladders.',
     image: img02,
     hotspotIndex: 2,
     subcategories: [
-      { id: 'hydraulic-shores', name: 'Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: img02, productFamilies: ['Hydraulic Shore'] }
-    ]
-  },
-  {
-    number: '03',
-    id: 'slide-rail',
-    title: 'MODULAR SLIDE RAIL SYSTEMS',
-    shortName: 'Slide Rail',
-    tagline: 'Dig-and-Push Modular Trench Shoring Panels',
-    description: 'Modular dig-and-push trench shoring systems replacing traditional driven sheet piling.',
-    image: img03,
-    hotspotIndex: 3,
-    subcategories: [
-      { id: 'slide-rail-panels', name: 'Slide Rail Panels', description: 'Modular slide rail panels.', image: img03, productFamilies: ['Slide Rail System'] }
-    ]
-  },
-  {
-    number: '04',
-    id: 'trench-access-safety',
-    title: 'TRENCH ACCESS & SAFETY LADDERS',
-    shortName: 'Access Ladders',
-    tagline: 'OSHA Compliant Extendable Aluminum Trench Ladders',
-    description: 'OSHA compliant extendable access ladders with 36" walk-through handrails.',
-    image: img04,
-    hotspotIndex: 4,
-    subcategories: [
+      { id: 'hydraulic-shores', name: 'Aluminum Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: img02, productFamilies: ['Hydraulic Shore'] },
       { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Extendable aluminum trench ladders.', image: img04, productFamilies: ['Trench Ladder'] }
     ]
   },
   {
-    number: '05',
-    id: 'trench-road-plates',
-    title: 'STEEL TRENCH ROAD PLATES',
-    shortName: 'Road Plates',
-    tagline: 'AASHTO H-20 Traffic-Rated Steel Crossing Plates',
-    description: 'Heavy structural steel road plates with center flush-mount lifting nut holes and anti-skid coating.',
-    image: img05,
-    hotspotIndex: 5,
-    subcategories: [
-      { id: 'road-plates', name: 'Steel Road Plates', description: 'AASHTO H-20 steel road plates.', image: img05, productFamilies: ['Road Plate'] }
-    ]
-  },
-  {
-    number: '06',
-    id: 'polymer-channels',
-    title: 'POLYMER CONCRETE CHANNELS',
-    shortName: 'Polymer Channels',
-    tagline: 'ACO & MEA Style High-Capacity Polymer Trench Drains',
-    description: 'High-strength mineral polymer concrete linear drainage channels with integrated cast iron edge rails.',
+    number: '03',
+    id: 'heavy-drainage-covers',
+    title: 'HEAVY DRAINAGE & TRENCH COVERS',
+    shortName: 'Drainage & Trench Covers',
+    tagline: 'Richard Brink Stainless Slot Drains, ACO Channels & Gratings',
+    description: 'Richard Brink style stainless steel slot channels, ACO polymer concrete trench drains, Lichtgitter steel mesh gratings, and Class D400-F900 cast iron covers.',
     image: '/images/drainage_channel.png',
-    hotspotIndex: 6,
+    hotspotIndex: 3,
     subcategories: [
-      { id: 'polymer-drains', name: 'Polymer Concrete Channels', description: 'Polymer channels with cast iron gratings.', image: '/images/drainage_channel.png', productFamilies: ['Polymer Channel'] }
-    ]
-  },
-  {
-    number: '07',
-    id: 'slot-channels',
-    title: 'STAINLESS STEEL SLOT DRAINS',
-    shortName: 'Slot Drains',
-    tagline: 'Richard Brink Style Architectural Slot Channels',
-    description: 'Sleek narrow line slot drainage channels in AISI 316L stainless steel for plazas, pedestrian areas & facades.',
-    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
-    hotspotIndex: 7,
-    subcategories: [
-      { id: 'slot-drains-sub', name: 'Architectural Slot Drains', description: 'Linear slot drainage channels.', image: '/images/assets/gettyimages-1158438565-1024x1024.jpg', productFamilies: ['Slot Drain'] }
-    ]
-  },
-  {
-    number: '08',
-    id: 'steel-gratings',
-    title: 'INDUSTRIAL BAR & MESH GRATINGS',
-    shortName: 'Mesh Gratings',
-    tagline: 'Lichtgitter Style Press-Locked Galvanized Mesh Panels',
-    description: 'Heavy welded and press-locked steel bar gratings for trench covers, industrial walkways and platforms.',
-    image: '/images/assets/gettyimages-1349322660-1024x1024.jpg',
-    hotspotIndex: 8,
-    subcategories: [
-      { id: 'mesh-gratings-sub', name: 'Industrial Mesh Gratings', description: 'Press-locked steel bar gratings.', image: '/images/assets/gettyimages-1349322660-1024x1024.jpg', productFamilies: ['Steel Grating'] }
-    ]
-  },
-  {
-    number: '09',
-    id: 'hdpe-plastic-channels',
-    title: 'HDPE MODULAR PLASTIC DRAINS',
-    shortName: 'HDPE Drains',
-    tagline: 'Dakota Style Modular Polypropylene Trench Channels',
-    description: 'Lightweight UV-stabilized HDPE plastic drainage channels with interlocking tongue-and-groove connectors.',
-    image: '/images/pvc_pipe.png',
-    hotspotIndex: 9,
-    subcategories: [
-      { id: 'hdpe-drains-sub', name: 'HDPE Modular Channels', description: 'Plastic trench drainage channels.', image: '/images/pvc_pipe.png', productFamilies: ['HDPE Channel'] }
-    ]
-  },
-  {
-    number: '10',
-    id: 'ductile-covers',
-    title: 'DUCTILE IRON TRENCH COVERS',
-    shortName: 'Iron Covers',
-    tagline: 'Class D400 to F900 Heavy Duty Cast Iron Covers',
-    description: 'Heavy duty ductile iron trench covers and frames engineered for airport runways, ports, and highways.',
-    image: '/images/assets/gettyimages-1222819839-1024x1024.jpg',
-    hotspotIndex: 10,
-    subcategories: [
-      { id: 'iron-covers-sub', name: 'Ductile Iron Frames', description: 'Heavy traffic iron covers and frames.', image: '/images/assets/gettyimages-1222819839-1024x1024.jpg', productFamilies: ['Iron Cover'] }
+      { id: 'brink-slot-drains', name: 'Stainless Steel Slot Drains', description: 'Richard Brink heavy-duty slot channels.', image: '/images/assets/gettyimages-1158438565-1024x1024.jpg', productFamilies: ['Slot Drain'] },
+      { id: 'polymer-drains', name: 'Polymer Concrete Channels', description: 'ACO & MEA polymer concrete trench drains.', image: '/images/drainage_channel.png', productFamilies: ['Polymer Channel'] },
+      { id: 'mesh-gratings', name: 'Industrial Steel Gratings', description: 'Lichtgitter press-locked mesh bar gratings.', image: '/images/assets/gettyimages-1349322660-1024x1024.jpg', productFamilies: ['Steel Grating'] }
     ]
   }
 ];
