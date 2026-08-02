@@ -4,24 +4,24 @@ import { Factory, CheckCircle2, Wrench } from 'lucide-react';
 export const ManufacturingCapabilities: React.FC = () => {
   const capabilities = [
     {
-      title: 'ROBOTIC STRUCTURAL STEEL FABRICATION',
-      desc: 'High-precision automated welding and plasma cutting for A572 Grade 50 steel trench box side panels and spreader collars.',
-      spec: 'Submerged Arc Welding / ISO Certified'
+      title: 'INDUCTION FURNACE MELTING & SPECTROMETRY',
+      desc: 'Medium-frequency electric induction melting furnaces with real-time optical emission spectrometry for precise metallurgical chemical composition.',
+      spec: 'ASTM A536 Nodular Ductile Control'
     },
     {
-      title: 'PRECISION ALUMINUM HYDRAULIC ASSEMBLY',
-      desc: 'Aircraft-grade 6061-T6 structural aluminum hydraulic shoring rail extrusion with dual-action hydraulic cylinders.',
-      spec: '3,500 PSI Max Pressure Rating'
+      title: 'DISAMATIC AUTOMATED GREEN SAND MOLDING',
+      desc: 'High-speed Disamatic vertical green sand molding lines delivering high dimensional precision and uniform surface finishes for tree grates.',
+      spec: 'High Precision Pattern Molding'
     },
     {
-      title: 'MODULAR SLIDE RAIL MANUFACTURING',
-      desc: 'Heavy structural steel slide rail posts and dig-and-push panels designed to withstand Type C soil forces without soil vibration.',
-      spec: 'ASTM A36 Heavy Steel Fabrication'
+      title: 'CNC MACHINED SEATING & 3D PATTERN SHOP',
+      desc: 'Multi-axis CNC milling centers machining non-rocking frame seats and custom architectural city logo patterns.',
+      spec: 'Non-Rocking Gasketed Frame Fit'
     },
     {
-      title: 'HIGH-TRACTION ANTI-SKID COATING PLANT',
-      desc: 'Full-surface aggregate epoxy anti-skid coating line for AASHTO H-20 traffic-rated steel road plates.',
-      spec: 'AASHTO H-20 Full Axle Proof Loaded'
+      title: 'KTL CATHODIC E-COATING & FINISHING LINE',
+      desc: 'Full immersion electrophoretic dip coating and black asphaltic dipping providing 1,000+ hour salt spray anti-corrosion protection.',
+      spec: '1,000+ Hr Salt Spray E-Coat'
     }
   ];
 
@@ -33,13 +33,13 @@ export const ManufacturingCapabilities: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#0085F4] text-xs font-mono font-bold text-[#004AAD]">
             <Factory className="w-4 h-4 text-[#0085F4]" />
-            <span>INDUSTRIAL MANUFACTURING EXCELLENCE</span>
+            <span>FOUNDRY CASTING MANUFACTURING EXCELLENCE</span>
           </div>
           <h2 className="text-section-title text-[#004AAD] uppercase">
-            MANUFACTURING &amp; <span className="text-[#0085F4]">STEEL FABRICATION</span>
+            FOUNDRY MELTING &amp; <span className="text-[#0085F4]">IRON CASTING PLANT</span>
           </h2>
           <p className="text-body-large text-[#475569] font-medium">
-            State-of-the-art North American manufacturing facilities engineered for heavy steel trench safety production.
+            State-of-the-art ductile iron foundry facilities engineered for architectural tree grates and heavy civil trench covers.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export const ManufacturingCapabilities: React.FC = () => {
               className="bg-white border-2 border-[#E2E8F0] p-6 hover:border-[#0085F4] transition-all flex flex-col justify-between space-y-4 font-mono group"
             >
               <div className="flex justify-between items-center border-b border-[#E2E8F0] pb-3">
-                <span className="text-xs font-bold text-[#0085F4]">PLANT 0{idx + 1}</span>
+                <span className="text-xs font-bold text-[#0085F4]">FOUNDRY 0{idx + 1}</span>
                 <Wrench className="w-4 h-4 text-[#004AAD]" />
               </div>
 

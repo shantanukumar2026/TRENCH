@@ -1,5 +1,5 @@
 import React from 'react';
-import { Truck, Clock, Shield, MapPin, PhoneCall, ArrowRight } from 'lucide-react';
+import { Truck, Clock, Shield, MapPin, PhoneCall, ArrowRight, Factory } from 'lucide-react';
 
 interface RentalFleetSectionProps {
   onRequestQuote: () => void;
@@ -7,10 +7,10 @@ interface RentalFleetSectionProps {
 
 export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onRequestQuote }) => {
   const yards = [
-    { region: 'EAST COAST LOGISTICS HUB', city: 'Philadelphia, PA', status: 'In Stock', fleet: '180+ Steel Boxes & Slide Rails' },
-    { region: 'MIDWEST CENTRAL YARD', city: 'Chicago, IL', status: 'In Stock', fleet: '240+ Hydraulic Shores & Trench Shields' },
-    { region: 'SOUTHERN ENERGY CORRIDOR', city: 'Houston, TX', status: 'In Stock', fleet: '150+ Modular Aluminum Shields' },
-    { region: 'WEST COAST METRO FLEET', city: 'Sacramento, CA', status: 'In Stock', fleet: '210+ Heavy Road Plates & Gratings' }
+    { region: 'EAST COAST FOUNDRY HUB', city: 'Philadelphia, PA', status: 'In Stock', fleet: '4,500+ Cast Iron Tree Grates & Covers' },
+    { region: 'MIDWEST CENTRAL DISTRIBUTION', city: 'Chicago, IL', status: 'In Stock', fleet: '6,200+ Ductile Iron H-20 Gratings' },
+    { region: 'SOUTHERN REGIONAL METALS', city: 'Houston, TX', status: 'In Stock', fleet: '3,800+ ADA Architectural Trench Covers' },
+    { region: 'WEST COAST METRO WAREHOUSE', city: 'Sacramento, CA', status: 'In Stock', fleet: '2,900+ Class F900 Airport Channels' }
   ];
 
   return (
@@ -23,14 +23,14 @@ export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onReques
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-[#0085F4] pb-6">
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0085F4] text-xs font-mono font-bold text-white uppercase tracking-wider">
-              <Truck className="w-4 h-4 text-[#00BBFF]" />
-              <span>NATIONWIDE RENTAL FLEET &amp; SAME-DAY DISPATCH</span>
+              <Factory className="w-4 h-4 text-[#00BBFF]" />
+              <span>NATIONWIDE FOUNDRY STOCK &amp; DIRECT LOGISTICS</span>
             </div>
             <h2 className="text-section-title text-white uppercase">
-              24/7 EMERGENCY <span className="text-[#00BBFF]">JOB-SITE DELIVERIES</span>
+              FASTEST MUNICIPAL &amp; SITE <span className="text-[#00BBFF]">FOUNDRY DISPATCH</span>
             </h2>
             <p className="text-body-large text-blue-100 font-medium">
-              Over 48 regional equipment yards stocked with OSHA-compliant Trench Safety Boxes, Hydraulic Shores, Slide Rail Systems, and AASHTO Road Plates ready for immediate transport.
+              Over 48 regional stocking warehouses filled with ready-to-ship Designer Cast Iron Tree Grates, ADA Heel-Proof Trench Covers, and Ductile Iron Highway Frames.
             </p>
           </div>
 
@@ -38,7 +38,7 @@ export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onReques
             onClick={onRequestQuote}
             className="inline-flex items-center justify-center gap-2 bg-[#0085F4] hover:bg-[#00BBFF] text-white font-mono font-bold text-sm px-6 py-3 uppercase transition-all shadow-md hover:scale-[1.02] shrink-0"
           >
-            <span>RESERVE RENTAL FLEET</span>
+            <span>RESERVE FOUNDRY SHIPMENT</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -62,7 +62,7 @@ export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onReques
               </div>
               <div className="pt-3 border-t border-[#0085F4]/40 flex items-center gap-2 text-xs font-mono text-blue-100">
                 <Clock className="w-3.5 h-3.5 text-[#00BBFF]" />
-                <span>Same-Day Site Delivery</span>
+                <span>Same-Day Freight Dispatch</span>
               </div>
             </div>
           ))}
@@ -75,7 +75,7 @@ export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onReques
               <PhoneCall className="w-7 h-7 text-white" />
             </div>
             <div>
-              <div className="text-xs font-mono font-bold text-[#00BBFF] uppercase">IMMEDIATE CAVE-IN EMERGENCY DISPATCH</div>
+              <div className="text-xs font-mono font-bold text-[#00BBFF] uppercase">DIRECT FOUNDRY ORDER &amp; CUSTOM CASTING HOTLINE</div>
               <div className="text-xl md:text-2xl font-black text-white font-mono uppercase tracking-wide">
                 1-800-TRENCH-U <span className="text-xs text-blue-200 font-normal font-sans">(1-800-873-6248)</span>
               </div>
@@ -83,7 +83,7 @@ export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onReques
           </div>
           <div className="flex items-center gap-3 text-xs font-mono font-bold text-blue-100 bg-[#002B66] px-4 py-2 border border-[#0085F4]">
             <Shield className="w-4 h-4 text-[#00BBFF]" />
-            <span>24/7/365 On-Call Professional Engineers</span>
+            <span>On-Call Metallurgical &amp; CAD Engineers</span>
           </div>
         </div>
 

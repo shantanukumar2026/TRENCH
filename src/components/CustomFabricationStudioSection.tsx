@@ -8,24 +8,24 @@ interface CustomFabricationStudioSectionProps {
 export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSectionProps> = ({ onRequestQuote }) => {
   const customCapabilities = [
     {
-      title: 'BESPOKE PIPE CLEARANCE ARCH SPREADERS',
-      spec: 'Up to 16 FT Vertical Clearance',
-      desc: 'Custom engineered spreader arch collars designed for large-diameter municipal water mains, storm culverts, and utility vault tie-ins without structural deflection.'
+      title: 'BESPOKE CITY CREST & LOGO TREE GRATES',
+      spec: 'Custom Municipal Foundry Patterns',
+      desc: 'In-house pattern shop carving custom municipal logos, city seals, historic motifs, and streetscape crests directly into ductile iron tree grates.'
     },
     {
-      title: 'HIGH-TENSILE 100 KSI ALLOY STEEL SHIELDS',
-      spec: 'Ultra-Deep Trenching Grade',
-      desc: 'Robotic seam-welded double-wall shields fabricated from high-yield 100,000 PSI structural steel alloy for extreme ground conditions and high hydrostatic pressure.'
+      title: 'NON-STANDARD TRENCH GRATE WIDTHS (6" TO 48")',
+      spec: 'Custom Trench Opening Fitments',
+      desc: 'Precision 3D sand molding for non-standard trench drain widths, angular corner miters, and curved radius trench runs in architectural plazas.'
     },
     {
-      title: 'SLOTTED ACOUSTIC & AASHTO HEAVY ROAD GRATINGS',
-      spec: 'Class F900 Airport & Freight Load',
-      desc: 'Custom laser-cut steel & ductile iron trench grates designed for heavy freight terminals, airport runways, and industrial chemical processing plants.'
+      title: 'ADA HEEL-PROOF NARROW SLOT PATTERNS',
+      spec: 'Wheelchair & High-Heel Safe',
+      desc: 'Custom engineered slot geometries with 1/4" maximum openings providing maximum water capture while maintaining 100% ADA pedestrian safety.'
     },
     {
-      title: 'ALUMINUM HYDRAULIC WALER & SHORE MANIFOLDS',
-      spec: 'Custom Manifold & Cylinder Extensions',
-      desc: 'Heavy-duty hydraulic cylinder assemblies custom sized for irregular excavation footprints, T-intersections, and utility vault tie-in chambers.'
+      title: 'SPECIALTY KTL & POLYURETHANE COATING FINISHES',
+      spec: '1,000+ Hr Salt Spray Resistance',
+      desc: 'Custom electrophoretic cathodic dip coatings, architectural bronze patinas, and durable black polyurethane finishes for coastal marine environments.'
     }
   ];
 
@@ -38,13 +38,13 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F1F5F9] border border-[#004AAD] text-xs font-mono font-bold text-[#004AAD] uppercase">
               <Wrench className="w-4 h-4 text-[#0085F4]" />
-              <span>BESPOKE ENGINEERING &amp; ROBOTIC FABRICATION</span>
+              <span>CUSTOM ARCHITECTURAL PATTERN &amp; FOUNDRY CASTING STUDIO</span>
             </div>
             <h2 className="text-section-title text-[#004AAD] uppercase">
-              CUSTOM INDUSTRIAL <span className="text-[#0085F4]">SHORING FABRICATION</span>
+              CUSTOM IRON <span className="text-[#0085F4]">PATTERN &amp; CASTING STUDIO</span>
             </h2>
             <p className="text-body-large text-[#475569] font-medium">
-              Need custom box dimensions, high-clearance pipe spreader arches, or specialized load-class drain gratings? Our in-house robotic steel fabrication studio builds tailored civil engineering equipment to exact jobsite blueprints.
+              Need custom city crest tree grates, non-standard trench grate widths, or unique decorative geometric patterns? Our 3D pattern shop and ductile iron foundry build custom castings to exact architectural CAD drawings.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
             onClick={onRequestQuote}
             className="inline-flex items-center justify-center gap-2 bg-[#004AAD] hover:bg-[#0085F4] text-white font-mono font-bold text-sm px-6 py-3 uppercase transition-all shadow-md shrink-0"
           >
-            <span>SUBMIT BLUEPRINT SPECIFICATIONS</span>
+            <span>SUBMIT ARCHITECTURAL CAD BLUEPRINTS</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -77,9 +77,9 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
               <div className="pt-4 border-t border-[#E2E8F0] flex items-center justify-between font-mono text-xs text-[#004AAD]">
                 <span className="flex items-center gap-1.5 font-bold">
                   <CheckCircle2 className="w-4 h-4 text-[#0085F4]" />
-                  PE Stamped CAD Blueprints Included
+                  PE Stamped CAD Submittals Included
                 </span>
-                <span className="text-[#0085F4] font-bold">3-5 Day Turnaround</span>
+                <span className="text-[#0085F4] font-bold">3-5 Day Pattern Setup</span>
               </div>
             </div>
           ))}
@@ -92,9 +92,9 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
               <Compass className="w-7 h-7 text-white" />
             </div>
             <div>
-              <div className="text-xs font-mono font-bold text-[#00BBFF] uppercase">HAVE NON-STANDARD TRENCH BLUEPRINTS?</div>
+              <div className="text-xs font-mono font-bold text-[#00BBFF] uppercase">HAVE NON-STANDARD ARCHITECTURAL BLUEPRINTS?</div>
               <div className="text-lg md:text-xl font-bold text-white font-mono uppercase">
-                Consult With Our Chief Structural Welding &amp; Geotechnical Engineers
+                Consult With Our Chief Foundry Metallurgical &amp; CAD Design Team
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
             onClick={onRequestQuote}
             className="bg-[#0085F4] hover:bg-[#00BBFF] text-white font-mono font-bold text-xs px-6 py-3 uppercase transition-colors shrink-0"
           >
-            REQUEST BESPOKE BLUEPRINT QUOTE
+            REQUEST BESPOKE FOUNDRY QUOTE
           </button>
         </div>
 

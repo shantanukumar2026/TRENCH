@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { INDUSTRIES_DATA, PRIMARY_CATEGORIES } from '../data/trenchData';
+import { INDUSTRIES, PRIMARY_CATEGORIES } from '../data/trenchData';
 import { Industry } from '../types';
 import { Building2, ArrowRight } from 'lucide-react';
 
@@ -8,7 +8,7 @@ interface IndustriesViewProps {
 }
 
 export const IndustriesView: React.FC<IndustriesViewProps> = ({ onSelectCategory }) => {
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry>(INDUSTRIES_DATA[0]);
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry>(INDUSTRIES[0]);
 
   return (
     <section id="industries" className="py-20 bg-white border-b border-[#E2E8F0]">
@@ -30,7 +30,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({ onSelectCategory
 
         {/* Industry Tabs */}
         <div className="flex items-center gap-3 overflow-x-auto pb-2 justify-start lg:justify-center">
-          {INDUSTRIES_DATA.map((ind) => {
+          {INDUSTRIES.map((ind) => {
             const isSelected = selectedIndustry.id === ind.id;
             return (
               <button

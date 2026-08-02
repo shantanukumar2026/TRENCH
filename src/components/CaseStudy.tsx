@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { CASE_STUDY_DATA } from '../data/trenchData';
+import { CASE_STUDIES } from '../data/trenchData';
 import { FileCheck, MapPin, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const CaseStudy: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'before' | 'during' | 'after'>('during');
+  const study = CASE_STUDIES[0];
 
   const getImageForTab = () => {
     switch (activeTab) {
       case 'before':
-        return CASE_STUDY_DATA.duringImg;
+        return study.duringImg;
       case 'during':
-        return CASE_STUDY_DATA.duringImg;
+        return study.duringImg;
       case 'after':
-        return CASE_STUDY_DATA.afterImg;
+        return study.afterImg;
     }
   };
 
@@ -71,10 +72,10 @@ export const CaseStudy: React.FC = () => {
             <div className="relative z-10 bg-white/95 backdrop-blur-md p-4 border border-[#0085F4] font-mono space-y-1">
               <div className="flex items-center gap-1.5 text-xs text-[#0085F4] font-bold">
                 <MapPin className="w-4 h-4" />
-                <span>{CASE_STUDY_DATA.location}</span>
+                <span>{study.location}</span>
               </div>
               <h3 className="text-card-title text-[#004AAD] uppercase">
-                {CASE_STUDY_DATA.title}
+                {study.title}
               </h3>
             </div>
           </div>
@@ -86,12 +87,12 @@ export const CaseStudy: React.FC = () => {
                 <span className="text-xs font-bold text-[#0085F4] uppercase tracking-wider block mb-1">
                   APPLICATION &amp; SCOPE
                 </span>
-                <h4 className="text-card-title text-[#004AAD] uppercase">{CASE_STUDY_DATA.application}</h4>
+                <h4 className="text-card-title text-[#004AAD] uppercase">{study.application}</h4>
               </div>
 
               {/* Performance Metrics */}
               <div className="grid grid-cols-2 gap-4">
-                {CASE_STUDY_DATA.metrics.map((metric, i) => (
+                {study.metrics.map((metric, i) => (
                   <div key={i} className="p-3.5 bg-[#F8F8F8] border border-[#E2E8F0]">
                     <div className="text-xs text-[#475569] font-bold uppercase">{metric.label}</div>
                     <div className="text-lg font-extrabold text-[#004AAD] mt-1">{metric.value}</div>
@@ -101,9 +102,9 @@ export const CaseStudy: React.FC = () => {
 
               {/* Products Used List */}
               <div className="pt-2">
-                <span className="text-xs font-bold text-[#004AAD] uppercase block mb-2">EQUIPMENT DEPLOYED:</span>
+                <span className="text-xs font-bold text-[#004AAD] uppercase block mb-2 font-bold">CASTINGS DEPLOYED:</span>
                 <ul className="space-y-1 text-xs text-[#475569]">
-                  {CASE_STUDY_DATA.productsUsed.map((p, idx) => (
+                  {study.productsUsed.map((p, idx) => (
                     <li key={idx} className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#0085F4]" />
                       <span>{p}</span>
@@ -115,7 +116,7 @@ export const CaseStudy: React.FC = () => {
 
             <div className="pt-4 border-t border-[#E2E8F0]">
               <div className="p-3.5 bg-[#F0F7FF] border border-[#0085F4] text-xs font-bold text-[#004AAD]">
-                RESULT: <span className="text-[#0085F4]">{CASE_STUDY_DATA.result}</span>
+                RESULT: <span className="text-[#0085F4]">{study.result}</span>
               </div>
             </div>
           </div>

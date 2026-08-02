@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ShieldCheck, Cpu, AlertTriangle, ArrowRight } from 'lucide-react';
+import { Trees, ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface SubsurfaceUtilitySectionProps {
   onRequestQuote: () => void;
@@ -7,10 +7,10 @@ interface SubsurfaceUtilitySectionProps {
 
 export const SubsurfaceUtilitySection: React.FC<SubsurfaceUtilitySectionProps> = ({ onRequestQuote }) => {
   const capabilities = [
-    { title: '811 CALL-BEFORE-YOU-DIG INTEGRATION', desc: 'Pre-certified trench shields for high-risk utility corridors including gas mains, electrical conduits, and fiber optic trunks.' },
-    { title: 'HYDRO-EXCAVATION VACUUM SHIELDS', desc: 'Ultra-lightweight aluminum utility shields engineered for non-destructive vacuum excavation around live underground infrastructure.' },
-    { title: 'DIELECTRIC ELECTRICAL INSULATION', desc: 'Specialized non-conductive trench box spreader bars for active electrical substation and high-voltage transmission trenching.' },
-    { title: 'ZERO-COLLAPSE GAS PIPELINE SHORING', desc: 'Pneumatic and hydraulic shoring systems designed for rapid deployment around high-pressure natural gas distribution lines.' }
+    { title: 'ROOT ZONE AERATION & WATER INFILTRATION', desc: 'Over 65% open surface area allowing rainwater percolation and root oxygenation while preventing soil compaction in high-pedestrian streetscapes.' },
+    { title: 'EXPANDABLE TREE OPENING KNOCKOUT RINGS', desc: 'Concentric cast iron removable inner rings accommodating tree trunk diameter growth over 10 to 30 years without root girdling.' },
+    { title: 'ADA HEEL-PROOF PEDESTRIAN SAFETY', desc: 'Strict 1/4" maximum slot width geometry preventing high-heel entrapment, cane tips, and stroller wheels from binding.' },
+    { title: 'HEAVY DUCTILE IRON TREE GUARD BOLTING', desc: 'Integrated underside bolt lugs allowing heavy vertical ductile iron tree guards to bolt directly to the tree grate frame.' }
   ];
 
   return (
@@ -21,14 +21,14 @@ export const SubsurfaceUtilitySection: React.FC<SubsurfaceUtilitySectionProps> =
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-[#004AAD] pb-6">
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#004AAD] text-xs font-mono font-bold text-[#004AAD] uppercase">
-              <Zap className="w-4 h-4 text-[#0085F4]" />
-              <span>SUE CLASS A &amp; B UTILITY PROTECTION</span>
+              <Trees className="w-4 h-4 text-[#0085F4]" />
+              <span>URBAN FORESTRY &amp; STREETSCAPE LANDSCAPE SPECIFICATIONS</span>
             </div>
             <h2 className="text-section-title text-[#004AAD] uppercase">
-              SUBSURFACE UTILITY <span className="text-[#0085F4]">ENGINEERING (SUE)</span>
+              DESIGNER CAST IRON <span className="text-[#0085F4]">TREE GRATE ARCHITECTURE</span>
             </h2>
             <p className="text-body-large text-[#475569] font-medium">
-              Protect critical urban infrastructure during excavation with zero-contact hydro-vac trench shields, dielectric non-conductive shoring, and 811 utility corridor protection.
+              Protect urban tree canopies and enhance pedestrian plazas with expandable cast iron tree grates, ADA heel-proof slot geometries, and root aeration frames.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export const SubsurfaceUtilitySection: React.FC<SubsurfaceUtilitySectionProps> =
             onClick={onRequestQuote}
             className="inline-flex items-center justify-center gap-2 bg-[#004AAD] hover:bg-[#0085F4] text-white font-mono font-bold text-sm px-6 py-3 uppercase transition-all shadow-md shrink-0"
           >
-            <span>SUE SHORING CONSULTATION</span>
+            <span>TREE GRATE CAD CONSULTATION</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -59,7 +59,7 @@ export const SubsurfaceUtilitySection: React.FC<SubsurfaceUtilitySectionProps> =
 
               <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-2 text-xs font-mono font-bold text-[#0085F4]">
                 <ShieldCheck className="w-4 h-4 text-[#0085F4]" />
-                <span>ASCE 38-02 Subsurface Utility Standard Compliant</span>
+                <span>ADA Accessibility Guidelines &amp; Municipal Forestry Approved</span>
               </div>
             </div>
           ))}

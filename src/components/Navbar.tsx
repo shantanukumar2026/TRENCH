@@ -126,22 +126,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               {activeMegaMenu === 'products' && (
                 <div className="absolute top-full left-0 w-[640px] bg-white border-2 border-[#004AAD] shadow-2xl p-6 grid grid-cols-2 gap-4 z-50">
                   <div className="col-span-2 pb-2 border-b border-[#E2E8F0] flex justify-between items-center">
-                    <span className="text-xs font-mono font-bold text-[#0085F4] uppercase">Trench Equipment & Shoring Systems</span>
+                    <span className="text-xs font-mono font-bold text-[#0085F4] uppercase">Designer Cast Iron &amp; Trench Covers</span>
                     <button onClick={() => handleCategorySelect('all')} className="text-xs text-[#004AAD] hover:underline font-bold flex items-center gap-1">
                       VIEW FULL CATALOGUE <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                   {[
-                    { title: 'Trench Safety', desc: 'OSHA Subpart P shields & protection', id: 'safety-protection' },
-                    { title: 'Steel Trench Shields', desc: 'Double-walled A572 steel trench boxes', id: 'safety-protection' },
-                    { title: 'Hydraulic Shores', desc: 'Hand-pumped aluminum shoring rails', id: 'hydraulic-shoring' },
-                    { title: 'Slide Rail Systems', desc: 'Modular dig-and-push trench panels', id: 'slide-rail' },
-                    { title: 'Road Plates', desc: 'AASHTO H-20 heavy traffic crossing plates', id: 'trench-road-plates' },
-                    { title: 'Manhole Boxes', desc: '4-sided modular utility vault boxes', id: 'safety-protection' },
-                    { title: 'Utility Boxes', desc: 'Lightweight municipal trench shields', id: 'hydraulic-shoring' },
-                    { title: 'Access Systems', desc: 'Extendable ladders & walk-thru safety gates', id: 'trench-access-safety' },
-                    { title: 'Ground Mats', desc: 'Heavy vehicle site protection mats', id: 'trench-road-plates' },
-                    { title: 'Accessories', desc: 'Spreaders, pins, lifting chains & pumps', id: 'hydraulic-shoring' },
+                    { title: 'Tree Grates (Square)', desc: '4x4ft & 5x5ft expandable cast iron tree grates', id: 'tree-grates-guards' },
+                    { title: 'Tree Grates (Round)', desc: 'Radial sunburst circular cast iron tree grates', id: 'tree-grates-guards' },
+                    { title: 'Iron Tree Guards', desc: 'Heavy vertical ductile iron trunk guards', id: 'tree-grates-guards' },
+                    { title: 'ADA Wave Gratings', desc: '1/4" slot heel-proof decorative trench covers', id: 'designer-trench-gratings' },
+                    { title: 'AASHTO H-20 Grates', desc: 'Heavy vehicular ductile iron trench covers & frames', id: 'heavy-civil-drainage' },
+                    { title: 'Airport F900 Channels', desc: '900 kN proof load airport runway iron channels', id: 'heavy-civil-drainage' },
+                    { title: 'Ductile Iron Covers', desc: 'ASTM A536 80-55-06 nodular iron castings', id: 'designer-trench-gratings' },
+                    { title: 'Catch Basin Inlets', desc: 'Municipal curb inlets & manhole iron frames', id: 'heavy-civil-drainage' },
+                    { title: 'Slot Channels', desc: 'Linear slot drainage iron & stainless channels', id: 'designer-trench-gratings' },
+                    { title: 'Custom Foundry Castings', desc: 'Bespoke city crest logos & architectural patterns', id: 'designer-trench-gratings' },
                   ].map((item, idx) => (
                     <div
                       key={idx}

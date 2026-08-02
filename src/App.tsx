@@ -6,7 +6,7 @@ import { SystemExplorer } from './components/SystemExplorer';
 import { WaterManagementSection } from './components/WaterManagementSection';
 import { IndustrialGratingsSection } from './components/IndustrialGratingsSection';
 import { Solutions } from './components/Solutions';
-import { TrenchFailurePreventionInteractive } from './components/TrenchFailurePreventionInteractive';
+import { DuctileIronLoadCalculatorInteractive } from './components/DuctileIronLoadCalculatorInteractive';
 import { LoadClassMatrixSection } from './components/LoadClassMatrixSection';
 import { TechnicalStandards } from './components/TechnicalStandards';
 import { ManufacturingCapabilities } from './components/ManufacturingCapabilities';
@@ -17,8 +17,8 @@ import { PECalculatorSection } from './components/PECalculatorSection';
 import { SubsurfaceUtilitySection } from './components/SubsurfaceUtilitySection';
 import { FeaturedProductsSection } from './components/FeaturedProductsSection';
 import { TabulatedDataLibrarySection } from './components/TabulatedDataLibrarySection';
-import { SoilTypeReferenceGuide } from './components/SoilTypeReferenceGuide';
-import { JobsiteSafetyChecklistSection } from './components/JobsiteSafetyChecklistSection';
+import { CastIronGradeGuide } from './components/CastIronGradeGuide';
+import { IronCastingQualityChecklist } from './components/IronCastingQualityChecklist';
 import { EquipmentComparisonPreviewSection } from './components/EquipmentComparisonPreviewSection';
 import { CertificationsAndComplianceSection } from './components/CertificationsAndComplianceSection';
 import { CaseStudy } from './components/CaseStudy';
@@ -211,11 +211,11 @@ export function App() {
             onOpenDrawer={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 13. OSHA Soil Classification & Slope Benches Guide */}
-          <SoilTypeReferenceGuide />
+          {/* 13. Ductile Iron & Cast Iron Metallurgy Guide */}
+          <CastIronGradeGuide />
 
-          {/* 14. OSHA Competent Person Daily Inspection Checklist */}
-          <JobsiteSafetyChecklistSection />
+          {/* 14. Ductile Iron Casting Quality Control & Inspection Checklist */}
+          <IronCastingQualityChecklist />
 
           {/* 15. Load Class & Material Science Comparison Matrix */}
           <LoadClassMatrixSection />
@@ -244,8 +244,8 @@ export function App() {
           {/* 21. Field Engineering Case Study */}
           <CaseStudy />
 
-          {/* 22. Interactive Trench Cave-in Safety Engine & Soil Pressure Calculator */}
-          <TrenchFailurePreventionInteractive
+          {/* 22. Interactive Ductile Iron Wheel Load Engine & Proof Load Simulator */}
+          <DuctileIronLoadCalculatorInteractive
             onRequestQuote={() => setQuoteModalOpen(true)}
           />
 

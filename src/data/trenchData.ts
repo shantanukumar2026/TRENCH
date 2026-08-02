@@ -1,451 +1,398 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Distinct Local U.S. Photography Assets from G:\bens sir team\trench-everything\src\assets\images
-const img01 = '/images/assets/gettyimages-1479422287-1024x1024.jpg';
-const img02 = '/images/assets/gettyimages-2167164749-1024x1024.jpg';
-const img03 = '/images/assets/gettyimages-2223963188-1024x1024.jpg';
-const img04 = '/images/assets/gettyimages-2269261031-1024x1024.jpg';
-const img05 = '/images/assets/gettyimages-2158727734-1024x1024.jpg';
-
-const imgProd1 = '/images/assets/gettyimages-1479422287-1024x1024.jpg';
-const imgProd2 = '/images/assets/gettyimages-2167164749-1024x1024.jpg';
-const imgProd3 = '/images/assets/gettyimages-2223963188-1024x1024.jpg';
-const imgProd4 = '/images/assets/gettyimages-2269261031-1024x1024.jpg';
-const imgProd5 = '/images/assets/gettyimages-2158727734-1024x1024.jpg';
+// Image assets for iron castings, designer tree grates, and trench drainage
+const img01 = '/images/assets/gettyimages-1158438565-1024x1024.jpg'; // Architectural Slot/Tree Grate
+const img02 = '/images/assets/gettyimages-1349322660-1024x1024.jpg'; // Cast Iron Grating
+const img03 = '/images/assets/gettyimages-1479422287-1024x1024.jpg'; // Foundry Iron Processing
+const img04 = '/images/assets/gettyimages-2158727734-1024x1024.jpg'; // Heavy Ductile Iron Cover
+const img05 = '/images/assets/gettyimages-2223963188-1024x1024.jpg'; // Industrial Metal Casting
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
     number: '01',
-    id: 'safety-protection',
-    title: 'STEEL TRENCH SHIELDS & SHORING',
-    shortName: 'Steel Trench Shields',
-    tagline: 'OSHA 1926 Subpart P Certified Heavy Steel Boxes & Slide Rails',
-    description: 'Heavy steel trench boxes, modular slide rail panels, and AASHTO H-20 road plates engineered for deep excavation soil pressure and worker protection.',
+    id: 'designer-trench-gratings',
+    title: 'DESIGNER & ARCHITECTURAL TRENCH GRATINGS',
+    shortName: 'Architectural Trench Gratings',
+    tagline: 'Decorative Cast Iron & Ductile Iron ADA Heel-Proof Trench Covers',
+    description: 'Custom decorative cast iron trench gratings featuring ADA-compliant heel-proof slot geometry, wave patterns, and anti-slip textures for urban streetscapes, plazas, and commercial hardscapes.',
     image: img01,
     hotspotIndex: 1,
     subcategories: [
-      { id: 'trench-boxes', name: 'Steel Trench Boxes', description: 'Double-walled steel trench boxes for high-depth trench protection.', image: img01, productFamilies: ['Steel Trench Box'] },
-      { id: 'slide-rail-panels', name: 'Modular Slide Rail Systems', description: 'Modular dig-and-push trench shoring panels.', image: img03, productFamilies: ['Slide Rail System'] },
-      { id: 'road-plates', name: 'AASHTO H-20 Steel Road Plates', description: 'Heavy structural steel road plates.', image: img05, productFamilies: ['Road Plate'] }
+      { id: 'ada-heel-proof', name: 'ADA Heel-Proof Iron Gratings', description: 'ADA 1/4" slot width heel-proof cast iron grates for pedestrian plazas.', image: img01, productFamilies: ['ADA Trench Grate'] },
+      { id: 'decorative-patterns', name: 'Designer Geometric Patterns', description: 'Interlocking wave, radial, and decorative motif trench covers.', image: img02, productFamilies: ['Decorative Grate'] },
+      { id: 'longitudinal-slots', name: 'Longitudinal Slotted Iron Grates', description: 'High-flow longitudinal slot ductile iron gratings for urban avenues.', image: img04, productFamilies: ['Slot Grate'] }
     ]
   },
   {
     number: '02',
-    id: 'hydraulic-shoring',
-    title: 'HYDRAULIC TRENCH SHORING & ACCESS',
-    shortName: 'Hydraulic Shores & Access',
-    tagline: 'Hand-Pumped Aluminum Hydraulic Rails & OSHA Access Ladders',
-    description: 'Hand-pumped 6061-T6 aluminum hydraulic shores installed 100% from above ground, paired with extendable OSHA-compliant walk-through access ladders.',
+    id: 'tree-grates-guards',
+    title: 'DESIGNER CAST IRON TREE GRATES & GUARDS',
+    shortName: 'Tree Grates & Guards',
+    tagline: 'Urban Landscape Architecture Tree Grates & Root Aeration Systems',
+    description: 'EJ-inspired designer cast iron tree grates (square, round, expandable tree openings) and heavy iron tree guards providing root zone aeration and urban streetscape protection.',
     image: img02,
     hotspotIndex: 2,
     subcategories: [
-      { id: 'hydraulic-shores', name: 'Aluminum Hydraulic Shores', description: 'Aluminum hydraulic shores.', image: img02, productFamilies: ['Hydraulic Shore'] },
-      { id: 'trench-ladders', name: 'Trench Access Ladders', description: 'Extendable aluminum trench ladders.', image: img04, productFamilies: ['Trench Ladder'] }
+      { id: 'square-tree-grates', name: 'Square & Rectangular Tree Grates', description: '4x4 ft, 5x5 ft, and 6x6 ft expandable cast iron tree grates.', image: img02, productFamilies: ['Square Tree Grate'] },
+      { id: 'round-tree-grates', name: 'Circular & Radial Tree Grates', description: 'Radial slot circular cast iron tree grates with inner knockout rings.', image: img01, productFamilies: ['Round Tree Grate'] },
+      { id: 'tree-guards', name: 'Heavy Ductile Iron Tree Guards', description: 'Vertical iron tree guards protecting trunk bark in high-traffic plazas.', image: img03, productFamilies: ['Iron Tree Guard'] }
     ]
   },
   {
     number: '03',
-    id: 'heavy-drainage-covers',
-    title: 'HEAVY DRAINAGE & TRENCH COVERS',
-    shortName: 'Drainage & Trench Covers',
-    tagline: 'Richard Brink Stainless Slot Drains, ACO Channels & Gratings',
-    description: 'Richard Brink style stainless steel slot channels, ACO polymer concrete trench drains, Lichtgitter steel mesh gratings, and Class D400-F900 cast iron covers.',
-    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+    id: 'heavy-civil-drainage',
+    title: 'DUCTILE IRON HEAVY CIVIL DRAINAGE CHANNELS',
+    shortName: 'Heavy Civil Iron Channels',
+    tagline: 'AASHTO H-20 & EN 1433 Class D400 to F900 900kN Airport Iron Castings',
+    description: 'Heavy duty ductile iron trench frames, continuous linear drainage channels, and 900 kN proof load covers engineered for airport taxiways, sea ports, and highway freight corridors.',
+    image: img04,
     hotspotIndex: 3,
     subcategories: [
-      { id: 'brink-slot-drains', name: 'Stainless Steel Slot Drains', description: 'Richard Brink heavy-duty slot channels.', image: '/images/assets/gettyimages-1158438565-1024x1024.jpg', productFamilies: ['Slot Drain'] },
-      { id: 'polymer-drains', name: 'Polymer Concrete Channels', description: 'ACO & MEA polymer concrete trench drains.', image: '/images/drainage_channel.png', productFamilies: ['Polymer Channel'] },
-      { id: 'mesh-gratings', name: 'Industrial Steel Gratings', description: 'Lichtgitter press-locked mesh bar gratings.', image: '/images/assets/gettyimages-1349322660-1024x1024.jpg', productFamilies: ['Steel Grating'] }
+      { id: 'h20-highway-gratings', name: 'AASHTO H-20 Highway Trench Covers', description: 'Heavy vehicular ductile iron grates for highway crossings.', image: img04, productFamilies: ['H20 Iron Cover'] },
+      { id: 'f900-airport-drains', name: 'Class F900 Airport Runways', description: '900 kN heavy airport runway ductile iron trench channel frames.', image: img05, productFamilies: ['Airport Channel'] },
+      { id: 'bolted-locking-covers', name: '4-Point Mechanical Lock Grates', description: 'Vibrationless bolted locking ductile iron trench grates.', image: img03, productFamilies: ['Locking Grate'] }
     ]
   }
 ];
 
-export const HOTSPOTS: Hotspot[] = [
-  { id: 1, number: '01', title: 'Steel Trench Shields', category: 'Shoring & Shielding', categoryId: 'safety-protection', xPercent: 32, yPercent: 48, shortDesc: 'OSHA 1926 Subpart P double-walled steel trench boxes.', application: 'Deep Trench Excavation', partNumber: 'TU-SB-824-HD', loadRating: 'OSHA Subpart P Certified', sampleProducts: ['TU-8000 Steel Trench Box'] },
-  { id: 2, number: '02', title: 'Hydraulic Trench Shoring', category: 'Aluminum Shoring', categoryId: 'hydraulic-shoring', xPercent: 20, yPercent: 28, shortDesc: 'Hand-pumped aluminum hydraulic shores for trench walls.', application: 'Spot Repairs & Trench Taps', partNumber: 'TU-HS-8FT-AL', loadRating: '3,500 PSI Max Rating', sampleProducts: ['TU-HydroLite Hydraulic Shore'] },
-  { id: 3, number: '03', title: 'Slide Rail Trench System', category: 'Modular Shoring', categoryId: 'slide-rail', xPercent: 44, yPercent: 68, shortDesc: 'Modular dig-and-push shoring panels for deep trench work.', application: 'Deep Trench Shoring', partNumber: 'TU-SR-1620-HD', loadRating: 'Type C Soil Certified', sampleProducts: ['Modular Slide Rail Panel'] },
-  { id: 4, number: '04', title: 'Trench Access & Safety', category: 'OSHA Ladders', categoryId: 'trench-access-safety', xPercent: 54, yPercent: 62, shortDesc: 'OSHA compliant trench access ladders and walk-thru gates.', application: 'Trench Entry & Exit', partNumber: 'TU-TL-16FT-AL', loadRating: 'OSHA Subpart P Compliant', sampleProducts: ['OSHA Trench Ladder'] },
-  { id: 5, number: '05', title: 'Trench Road Plates', category: 'Steel Decking', categoryId: 'trench-road-plates', xPercent: 65, yPercent: 42, shortDesc: 'AASHTO H-20 traffic-rated steel road plates for trench crossing.', application: 'Street Trench Bridging', partNumber: 'TU-RP-812-H20', loadRating: 'AASHTO H-20 Rated', sampleProducts: ['Steel Road Plate'] }
+export const PRODUCTS_CATALOGUE: Product[] = [
+  {
+    id: 'prod-tree-grate-sq-44',
+    name: 'Metropolitan Square Cast Iron Tree Grate (4x4 Ft)',
+    category: 'Tree Grates & Guards',
+    subcategory: 'Square & Rectangular Tree Grates',
+    productFamily: 'Square Tree Grate',
+    partNumber: 'TU-TG-SQ44-ADA',
+    depthLevel: 1,
+    material: 'ASTM A48 Class 35B Grey Iron / ASTM A536 Ductile Iron',
+    loadRating: 'Pedestrian & AASHTO H-20 Light Vehicle Rated',
+    sizeRange: '48" x 48" (12" to 18" Expandable Tree Opening)',
+    sizes: ['48" x 48"', '60" x 60"', '72" x 72"'],
+    standard: 'ADA Compliant 1/4" Max Slot Opening',
+    application: 'Urban Streetscapes, Commercial Sidewalks, City Centers',
+    description: 'Designer square cast iron tree grate with expandable inner knockout rings for tree growth. Features ADA-compliant narrow slot geometry, anti-slip surface texturing, and optional root watering access ports.',
+    features: ['Expandable Tree Opening', 'ADA Heel-Proof Slot Spacing', 'Anti-Slip Cast Texture', 'KTL Cathodic E-Coat Finish'],
+    image: img02,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Black Asphaltic Coating / Natural Uncoated Rust Patina / KTL E-Coat',
+    weight: '240 lbs / set (2 halves)',
+    industry: 'Landscape Architecture',
+    workflowStep: 'PROTECT'
+  },
+  {
+    id: 'prod-tree-grate-rd-5',
+    name: 'Radial Sunburst Circular Cast Iron Tree Grate (5 Ft Dia)',
+    category: 'Tree Grates & Guards',
+    subcategory: 'Circular & Radial Tree Grates',
+    productFamily: 'Round Tree Grate',
+    partNumber: 'TU-TG-RD60-SUN',
+    depthLevel: 1,
+    material: 'ASTM A536 Grade 80-55-06 Ductile Iron',
+    loadRating: 'AASHTO H-20 Vehicular Overrun Certified',
+    sizeRange: '60" Diameter (16" Center Tree Opening)',
+    sizes: ['48" Dia', '60" Dia', '72" Dia'],
+    standard: 'ADA Compliant & Wheelchair Safe',
+    application: 'Corporate Plazas, Municipal Parks, Historic Districts',
+    description: 'Decorative circular sunburst pattern cast iron tree grate. Engineered with high-strength ductile iron to withstand heavy maintenance vehicle overruns while providing maximum soil aeration and water infiltration.',
+    features: ['Radial Sunburst Aesthetic', 'High Ductile Strength', 'Sub-Frame Support Angle Included', 'Wheelchair Safe Slots'],
+    image: img01,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Raw Cast Iron Patina / Polyurethane Black Coating',
+    weight: '310 lbs / set',
+    industry: 'Landscape Architecture',
+    workflowStep: 'PROTECT'
+  },
+  {
+    id: 'prod-trench-grate-ada-wave',
+    name: 'Architectural Wave Pattern ADA Ductile Iron Trench Grate',
+    category: 'Designer & Architectural Trench Gratings',
+    subcategory: 'Designer Geometric Patterns',
+    productFamily: 'Decorative Grate',
+    partNumber: 'TU-TG-WAVE-12',
+    depthLevel: 2,
+    material: 'ASTM A536 Grade 65-45-12 Ductile Iron',
+    loadRating: 'EN 1433 Class C250 to D400 (400 kN)',
+    sizeRange: '12" Width x 24" Length x 1.5" Thickness',
+    sizes: ['8" Width', '12" Width', '18" Width', '24" Width'],
+    standard: 'ADA Compliant 1/4" Slot Geometry',
+    application: 'Pedestrian Promenades, Resort Hardscapes, Municipal Plazas',
+    description: 'Architectural wave-motif trench cover cast in high-tensile ductile iron. Combines elegant visual geometry with heavy C250-D400 load ratings for vehicular traffic crossing.',
+    features: ['Interlocking Wave Geometry', 'ADA Heel-Proof Certified', '4-Point Bolted Locking Option', 'High Flow Water Capture'],
+    image: img01,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'KTL Black Cathodic Dip / Raw Weathering Iron',
+    weight: '42 lbs / linear section',
+    industry: 'Urban Architecture',
+    workflowStep: 'CONTROL'
+  },
+  {
+    id: 'prod-trench-grate-h20-heavy',
+    name: 'AASHTO H-20 Heavy Duty Ductile Iron Trench Grate & Frame',
+    category: 'Ductile Iron Heavy Civil Drainage Channels',
+    subcategory: 'AASHTO H-20 Highway Trench Covers',
+    productFamily: 'H20 Iron Cover',
+    partNumber: 'TU-TG-H20-18',
+    depthLevel: 3,
+    material: 'ASTM A536 Grade 80-55-06 Nodular Ductile Iron',
+    loadRating: 'AASHTO H-20 / HS-20 (40,000 lbs Axle Load) / EN 1433 Class D400',
+    sizeRange: '18" Clear Width x 36" Length x 2" Heavy Flange Frame',
+    sizes: ['12" Clear', '18" Clear', '24" Clear', '30" Clear'],
+    standard: 'AASHTO M306 & M105 Highway Specifications',
+    application: 'State Highway Corridors, Freight Terminals, Gas Stations',
+    description: 'Heavy duty highway trench grate and frame assembly cast in nodular ductile iron. Proof tested to 40,000 lbs axle loading with zero permanent deformation.',
+    features: ['AASHTO M306 Proof Load Tested', 'Ductile Iron Non-Brittle Matrix', 'Submerged Anchor Flange Frame', 'Anti-Rattle Gasketed Seating'],
+    image: img04,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Heavy Duty Asphaltic Dip',
+    weight: '115 lbs / assembly',
+    industry: 'Heavy Highway & Transportation',
+    workflowStep: 'INSTALL'
+  },
+  {
+    id: 'prod-trench-f900-airport',
+    name: 'Class F900 Airport Runway Extreme Load Iron Channel System',
+    category: 'Ductile Iron Heavy Civil Drainage Channels',
+    subcategory: 'Class F900 Airport Runways',
+    productFamily: 'Airport Channel',
+    partNumber: 'TU-AIRPORT-F900',
+    depthLevel: 4,
+    material: 'ASTM A536 Ductile Iron & Galvanized Steel Edge Rail',
+    loadRating: 'EN 1433 Class F900 (900 kN / 202,300 lbs Test Load)',
+    sizeRange: '20" Clear Width x 39.4" (1 Meter) Section',
+    sizes: ['12" Width', '20" Width', '30" Width'],
+    standard: 'FAA AC 150 Airport Drainage Standards',
+    application: 'Commercial Airport Runways, Container Ports, Military Airfields',
+    description: 'Extreme-load airport trench channel with integrated ductile iron grates and 8-point heavy locking bolts designed to absorb 90-ton Boeing 777 landing gear impact forces.',
+    features: ['900 kN Proof Load Certified', '8-Point Stainless Steel Locking Bar', 'Monolithic Iron Edge Protection', 'FAA Airport Approved'],
+    image: img05,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Ductile Iron Epoxy E-Coat',
+    weight: '285 lbs / meter unit',
+    industry: 'Aviation & Marine Ports',
+    workflowStep: 'INSTALL'
+  },
+  {
+    id: 'prod-tree-guard-iron-6',
+    name: 'Architectural Vertical Iron Tree Guard (6 Ft Height)',
+    category: 'Tree Grates & Guards',
+    subcategory: 'Heavy Ductile Iron Tree Guards',
+    productFamily: 'Iron Tree Guard',
+    partNumber: 'TU-TG-GUARD-72',
+    depthLevel: 1,
+    material: 'Ductile Iron & Wrought Iron Structural Steel Rods',
+    loadRating: 'Impact Resistant Heavy Urban Grade',
+    sizeRange: '18" Base Diameter x 72" Height',
+    sizes: ['60" Height', '72" Height', '84" Height'],
+    standard: 'Municipal Urban Forestry Certified',
+    application: 'City Main Streets, Historic Avenues, Shopping Malls',
+    description: 'Vertical architectural iron tree guard that bolts directly onto Trench Unlimited cast iron tree grates. Protects young urban tree trunks from vandalism, bicycles, and street traffic.',
+    features: ['Direct Grate Bolt Attachment', 'Architectural Scroll Geometry', 'Weather-Resistant Powder Coat', 'Hinged Access Door'],
+    image: img03,
+    cadFileAvailable: true,
+    specSheetUrl: '#',
+    finish: 'Architectural Black Gloss Powder Coat',
+    weight: '145 lbs',
+    industry: 'Landscape Architecture',
+    workflowStep: 'PROTECT'
+  }
 ];
 
-export const INDUSTRIES_DATA: Industry[] = [
+export const INDUSTRIES: Industry[] = [
   {
-    id: 'trench-excavation',
-    title: 'CIVIL TRENCH EXCAVATION & SHORING',
-    tagline: 'Deep Trench Protection & Soil Pressure Shielding',
-    description: 'Heavy steel trench boxes, hydraulic shoring systems, and slide rail equipment engineered for crew safety in high-depth excavations.',
+    id: 'landscape-architecture',
+    title: 'LANDSCAPE ARCHITECTURE & URBAN STREETSCAPES',
+    tagline: 'Decorative Tree Grates & ADA Heel-Proof Architectural Iron Gratings',
+    description: 'Enhancing city streetscapes, pedestrian avenues, public parks, and corporate plazas with decorative cast iron tree grates, root guards, and designer trench covers.',
     image: img01,
-    relevantCategories: ['safety-protection', 'hydraulic-shoring', 'trench-road-plates'],
+    relevantCategories: ['designer-trench-gratings', 'tree-grates-guards'],
     specs: [
-      { label: 'SOIL RATING', value: 'OSHA Type A, B, C Soil' },
-      { label: 'COMPLIANCE', value: 'OSHA 1926 Subpart P' },
-      { label: 'DEPTH CAPABILITY', value: 'Up to 30 FT Trench Excavation' }
+      { label: 'ADA SLOT COMPLIANCE', value: '1/4" Max Heel-Proof' },
+      { label: 'TREE AERATION AREA', value: 'Over 65% Open Area' },
+      { label: 'FINISH OPTIONS', value: 'KTL E-Coat / Natural Patina' }
+    ]
+  },
+  {
+    id: 'heavy-highway-dot',
+    title: 'HEAVY HIGHWAY & MUNICIPAL TRANSPORTATION',
+    tagline: 'AASHTO H-20 / M306 Heavy Vehicular Ductile Iron Drainage',
+    description: 'Providing DOT-certified heavy vehicular ductile iron trench covers, catch basin inlets, and frames engineered for continuous highway freight traffic.',
+    image: img04,
+    relevantCategories: ['heavy-civil-drainage'],
+    specs: [
+      { label: 'PROOF LOAD RATING', value: 'AASHTO H-20 (40,000 lbs)' },
+      { label: 'ASTM SPECIFICATION', value: 'ASTM A536 80-55-06' },
+      { label: 'FRAME LOCKING', value: '4-Point Gasketed Locking' }
+    ]
+  },
+  {
+    id: 'airport-maritime',
+    title: 'AIRPORT RUNWAYS & MARITIME CONTAINER PORTS',
+    tagline: 'EN 1433 Class F900 900kN Extreme Load Ductile Iron Systems',
+    description: 'High-tonnage ductile iron trench channels designed to absorb extreme wheel loads from commercial airliners and heavy container gantry cranes.',
+    image: img05,
+    relevantCategories: ['heavy-civil-drainage'],
+    specs: [
+      { label: 'MAX TEST LOAD', value: '900 kN (202,300 lbs)' },
+      { label: 'AIRPORT STANDARD', value: 'FAA AC 150 / EN 1433' },
+      { label: 'LOCKING SYSTEM', value: '8-Point Stainless Steel' }
     ]
   }
 ];
 
 export const DEPTH_LEVELS: DepthLevel[] = [
-  { level: 1, id: 'surface', title: 'LEVEL 01 — SURFACE', depthMeters: '0.0m - 0.5m', depthFeet: '0 - 1.5 FT', tagline: 'AASHTO H-20 Steel Road Plates & Trench Decking', description: 'Impact-resistant steel trench plates engineered for traffic bridging over active excavation trenches.', products: ['Steel Road Plates'], color: '#0066FF' },
-  { level: 2, id: 'trench', title: 'LEVEL 02 — SHORING', depthMeters: '1.5m - 4.5m', depthFeet: '5 - 15 FT', tagline: 'OSHA-Compliant Steel & Aluminum Shoring', description: 'Heavy steel trench boxes, aluminum shields, and hydraulic shores engineered for maximum soil pressure resistance.', products: ['TU-8000 Steel Trench Box'], color: '#004AAD' },
-  { level: 3, id: 'deep-trench', title: 'LEVEL 03 — DEEP SHORING', depthMeters: '4.5m - 9.0m+', depthFeet: '15 - 30+ FT', tagline: 'Modular Slide Rail & Sheet Piling Systems', description: 'Deep excavation dig-and-push modular slide rail systems replacing traditional driven sheet piling.', products: ['Slide Rail Shoring'], color: '#0066FF' }
-];
-
-export const ANATOMY_POINTS: AnatomyPoint[] = [
-  { id: 'road', title: 'ROAD SURFACE LAYER', depth: '0.0 FT', role: 'Finished roadway pavement bridged by steel road plates.', spec: 'AASHTO H-20 Traffic Compliant', x: 18, y: 18 },
-  { id: 'trenchwall', title: 'UNEXCAVATED TRENCH WALL', depth: '-5.0 FT', role: 'Native soil matrix bearing lateral earth pressure against shoring.', spec: 'Type B / Type C Soil Classification', x: 15, y: 45 },
-  { id: 'shoring', title: 'TU-8000 STEEL SHORING SHIELD', depth: '-7.5 FT', role: 'Double-walled high-strength steel panel protecting excavation workers.', spec: 'OSHA 1926 Subpart P Certified', x: 48, y: 48 },
-  { id: 'hydraulic', title: 'HYDRAULIC SHORING CYLINDER', depth: '-10.0 FT', role: 'Hand-pumped hydraulic cylinder expanding against trench walls.', spec: '3,500 PSI Hydraulic Rating', x: 65, y: 62 }
-];
-
-// 5 CORE TRENCH SHORING & SAFETY PRODUCTS USING LOCAL G:\bens sir team\trench-everything\src\assets\images
-export const PRODUCTS_CATALOGUE: Product[] = [
   {
-    id: 'tu-8000-shield',
-    name: 'TU-8000 Heavy-Duty Steel Trench Shield Box',
-    category: 'Steel Trench Shields',
-    subcategory: 'Steel Trench Boxes',
-    productFamily: 'Steel Trench Box',
-    partNumber: 'TU-SB-824-HD',
-    depthLevel: 3,
-    material: 'High-Tensile A572 Grade 50 Steel',
-    loadRating: 'OSHA 1926 Subpart P / 1,450 PSF Lateral Rating',
-    sizeRange: '8ft H x 24ft L (4in Wall Thickness)',
-    sizes: ['8ft x 20ft', '8ft x 24ft', '10ft x 24ft'],
-    standard: 'ASTM A572 / OSHA 1926 Certified',
-    application: 'Deep Civil Trenching & Excavation Worker Protection',
-    description: 'Rigid double-wall steel trench box engineered with heavy-duty internal structural steel columns, reinforced corner sockets, and collar-locked spreader pipes.',
-    features: [
-      'Poured concrete-filled knife edge shoe for ground cutting',
-      'Solid steel collars for 8-inch schedule 80 spreader pipes',
-      'Heavy four-point lifting lugs rated for 24,000 lbs WLL',
-      'Stackable design with heavy pin-lock sockets'
-    ],
-    image: imgProd1,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Industrial Safety Blue Powder Coat',
-    weight: '12,400 LBS',
-    industry: 'Civil Excavation & Trenching',
-    workflowStep: 'PROTECT'
+    level: 1,
+    id: 'class-a-b',
+    title: 'CLASS A15 - B125 (LIGHT PEDESTRIAN & PARKING)',
+    depthMeters: '15 - 125 kN',
+    depthFeet: 'ADA Heel-Proof',
+    tagline: 'Decorative Architectural Iron & Tree Grates for Pedestrian Areas',
+    description: 'Designed for public plazas, parks, pedestrian walkways, and light vehicle parking lots requiring decorative aesthetics and ADA compliance.',
+    products: ['prod-tree-grate-sq-44', 'prod-tree-grate-rd-5', 'prod-tree-guard-iron-6'],
+    color: '#004AAD'
   },
   {
-    id: 'tu-hydraulic-shore',
-    name: 'TU-HydroLite Aluminum Hydraulic Shoring Rail',
-    category: 'Hydraulic Trench Shoring',
-    subcategory: 'Hydraulic Shores',
-    productFamily: 'Hydraulic Shore',
-    partNumber: 'TU-HS-8FT-AL',
-    depthLevel: 2,
-    material: '6061-T6 High-Strength Aluminum Alloy',
-    loadRating: 'OSHA Type A & Type B Soil Rated (3,500 PSI Max Pressure)',
-    sizeRange: '8ft Rail Length / 2in Hydraulic Cylinders',
-    sizes: ['5ft Rail / 2" Cylinder', '8ft Rail / 2" Cylinder', '12ft Rail / 3" Cylinder'],
-    standard: 'OSHA 1926 Subpart P Compliant',
-    application: 'Spot Repairs, Trench Taps & Tight Urban Excavations',
-    description: 'Lightweight hydraulic shoring system installed completely from above the trench using a hand-operated hydraulic pump and biodegradable fluid.',
-    features: [
-      'Installed 100% from above ground for ultimate crew safety',
-      'High-strength 6061-T6 structural aluminum rails',
-      'Heavy-duty dual-action hydraulic cylinders',
-      'Includes safety lock pins and release hook assembly'
-    ],
-    image: imgProd2,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Anodized Aircraft Aluminum',
-    weight: '78 LBS / Cylinder Assembly',
-    industry: 'Civil Excavation & Trenching',
-    workflowStep: 'PROTECT'
+    level: 2,
+    id: 'class-c-d',
+    title: 'CLASS C250 - D400 (VEHICULAR & AASHTO H-20)',
+    depthMeters: '250 - 400 kN',
+    depthFeet: 'H-20 Highway',
+    tagline: 'Heavy Vehicular Ductile Iron Trench Gratings & Street Decking',
+    description: 'Engineered for municipal avenues, gas stations, fire truck access lanes, and commercial delivery docks subject to heavy pneumatic wheel loads.',
+    products: ['prod-trench-grate-ada-wave', 'prod-trench-grate-h20-heavy'],
+    color: '#0085F4'
   },
   {
-    id: 'tu-slide-rail',
-    name: 'TU-Modular Slide Rail Trench Shoring System',
-    category: 'Modular Slide Rail Systems',
-    subcategory: 'Slide Rail Panels',
-    productFamily: 'Slide Rail System',
-    partNumber: 'TU-SR-1620-HD',
-    depthLevel: 3,
-    material: 'Heavy Structural Steel Slide Panels & Posts',
-    loadRating: 'OSHA Subpart P / Type C Soil Deep Trench Rated',
-    sizeRange: '16ft H x 20ft L Modular Sections',
-    sizes: ['12ft x 16ft', '16ft x 20ft'],
-    standard: 'ASTM A36 / OSHA Subpart P',
-    application: 'Deep Trench Excavation Without Vibration / Ground Movement',
-    description: 'Modular dig-and-push trench shoring system that slides into place as excavation progresses, replacing traditional driven steel sheet piling.',
-    features: [
-      'Dig-and-push installation eliminates soil vibration',
-      'High clearance spreader beams for large pipe clearance',
-      'Modular panel heights for variable trench depths',
-      'Heavy-duty corner posts for multi-bay trench configurations'
-    ],
-    image: imgProd3,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Heavy Industrial Blue Epoxy',
-    weight: '22,000 LBS Complete System',
-    industry: 'Civil Excavation & Trenching',
-    workflowStep: 'PROTECT'
-  },
-  {
-    id: 'tu-trench-ladder',
-    name: 'TU-OSHA Compliant Trench Access Ladder & Platform',
-    category: 'Trench Access & Safety Ladders',
-    subcategory: 'Trench Access Ladders',
-    productFamily: 'Trench Ladder',
-    partNumber: 'TU-TL-16FT-AL',
-    depthLevel: 2,
-    material: 'Heavy-Duty 6061-T6 Aluminum Alloy',
-    loadRating: '375 LBS Type IAA Special Duty Rated',
-    sizeRange: '12ft to 24ft Extendable Lengths',
-    sizes: ['12ft-18ft', '16ft-24ft'],
-    standard: 'OSHA 1926.1053 / ANSI A14.2',
-    application: 'Safe Crew Trench Entry, Exit & Walk-Through Protection',
-    description: 'Heavy-duty extendable aluminum trench ladder featuring non-slip rungs, top attachment hooks, and walk-through handrail extension.',
-    features: [
-      'Walk-through handrail extension rises 36" above trench grade',
-      'Heavy non-slip serrated D-rungs',
-      'Swivel safety feet with mud-cleat spikes',
-      'Trench shield mounting bracket attachment'
-    ],
-    image: imgProd4,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Natural Structural Aluminum',
-    weight: '46 LBS',
-    industry: 'Civil Excavation & Trenching',
-    workflowStep: 'ACCESS'
-  },
-  {
-    id: 'tu-road-plate',
-    name: 'AASHTO H-20 Heavy Structural Steel Trench Road Plate',
-    category: 'Steel Trench Road Plates',
-    subcategory: 'Steel Road Plates',
-    productFamily: 'Road Plate',
-    partNumber: 'TU-RP-812-H20',
-    depthLevel: 1,
-    material: 'ASTM A36 Heavy Structural Steel',
-    loadRating: 'AASHTO H-20 Full Axle Load Rated',
-    sizeRange: '8ft W x 12ft L (1.0in & 1.25in Thickness)',
-    sizes: ['4ft x 8ft x 1"', '8ft x 12ft x 1"', '8ft x 20ft x 1.25"'],
-    standard: 'ASTM A36 / AASHTO Standard',
-    application: 'Temporary Street Excavation Decking & Trench Bridging',
-    description: 'Heavy structural steel road plate engineered with flush-mount center lifting nut holes and anti-skid surface coating for safe traffic bridging over active trenches.',
-    features: [
-      'Beveled edges prevent tire impact damage',
-      'Center flush-mount lifting pin for rapid crane handling',
-      'High-traction aggregate epoxy skid-resistant coating'
-    ],
-    image: imgProd5,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'High-Traction Anti-Skid Coating',
-    weight: '3,920 LBS',
-    industry: 'Civil Excavation & Trenching',
-    workflowStep: 'RESTORE'
-  },
-  {
-    id: 'tu-poly-drain',
-    name: 'TU-PolyDrain E-600 Heavy-Duty Polymer Concrete Channel',
-    category: 'Drainage Systems',
-    subcategory: 'Polymer Concrete Channels',
-    productFamily: 'Drainage Channel',
-    partNumber: 'TU-PD-600-PC',
-    depthLevel: 1,
-    material: 'High-Strength Mineral Polymer Concrete',
-    loadRating: 'Class E 600 kN / AASHTO Heavy Load Certified',
-    sizeRange: '100mm, 200mm, 300mm Internal Widths',
-    standard: 'EN 1433 / ASTM C478',
-    application: 'Airport Runways, Highways & Heavy Industrial Trench Drainage',
-    description: 'Monolithic polymer concrete linear drainage channel with integrated cast iron edge rails for extreme wheel loading.',
-    features: [
-      'Resistant to road salt, petrol, and chemical spills',
-      'Smooth inner V-profile for self-cleaning flow velocity',
-      'Interlocking tongue-and-groove joint profile'
-    ],
-    image: imgProd1,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Ductile Iron Edge Protection',
-    weight: '115 LBS / Meter',
-    industry: 'Stormwater & Drainage',
-    workflowStep: 'CONTROL'
-  },
-  {
-    id: 'tu-maxi-grate',
-    name: 'TU-MaxiGrate Heavy-Duty Galvanized Steel Trench Grating',
-    category: 'Road Plates & Gratings',
-    subcategory: 'Industrial Steel Gratings',
-    productFamily: 'Trench Grating',
-    partNumber: 'TU-MG-HD-SG',
-    depthLevel: 1,
-    material: 'Hot-Dip Galvanized Structural Steel',
-    loadRating: 'Class F 900 kN / AASHTO H-20 Heavy Traffic',
-    sizeRange: '12in W x 36in L / Custom Widths Available',
-    standard: 'ASTM A123 / NAAMM MBG 531',
-    application: 'Industrial Facilities, Wash Bays & Municipal Trench Channels',
-    description: 'Heavy welded steel trench grating designed for maximum hydraulic flow-through and heavy wheel loads.',
-    features: [
-      'Serrated anti-slip bearing bar surface',
-      'Hot-dip galvanized for 50+ year corrosion protection',
-      'Bolted lock-down security anchors'
-    ],
-    image: imgProd3,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Hot-Dip Galvanized ASTM A123',
-    weight: '68 LBS',
-    industry: 'Heavy Civil',
-    workflowStep: 'CONTROL'
-  },
-  {
-    id: 'tu-utility-vault',
-    name: 'TU-Vault Heavy Precast Utility & Transformer Box',
-    category: 'Utility Boxes',
-    subcategory: 'Precast Vaults',
-    productFamily: 'Utility Box',
-    partNumber: 'TU-UB-5000-PC',
-    depthLevel: 2,
-    material: '5,000 PSI Fiber-Reinforced Concrete',
-    loadRating: 'AASHTO H-20 Axle Load Rated',
-    sizeRange: '6ft W x 8ft L x 6ft H Monolithic Base',
-    standard: 'ASTM C858 / ASTM C478',
-    application: 'Underground Electric, Fiber Optic & Municipal Water Control Vaults',
-    description: 'Precast concrete utility vault with pre-formed knockouts, butyl rubber gasket joints, and cast iron access hatch.',
-    features: [
-      'Pre-formed knockouts on all 4 walls for rapid conduit entry',
-      'Water-tight butyl rubber joint seals',
-      'Built-in pulling irons rated for 10,000 LBS'
-    ],
-    image: imgProd2,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Smooth Precast Finish',
-    weight: '8,500 LBS',
-    industry: 'Utilities',
-    workflowStep: 'INSTALL'
-  },
-  {
-    id: 'tu-hydro-catch',
-    name: 'TU-HydroCatch Underground Water Quality Separator',
-    category: 'Waterworks Systems',
-    subcategory: 'Water Management Separators',
-    productFamily: 'Water Separator',
-    partNumber: 'TU-HC-1200-WS',
-    depthLevel: 2,
-    material: 'High-Density Polyethylene & Reinforced Concrete',
-    loadRating: 'OSHA & EPA Compliance Rated',
-    sizeRange: '1,200 GPM Treatment Capacity',
-    standard: 'ASTM D3350 / EPA Water Quality Standard',
-    application: 'Runoff Hydrocarbon & Sediment Filtration in Municipal Storm Drains',
-    description: 'Hydrodynamic underground storm water treatment separator for trapping oil, heavy sediment, and debris.',
-    features: [
-      'Removes over 80% total suspended solids (TSS)',
-      'Integrated oil baffle prevents hydrocarbon release',
-      'Easy access manhole cover for maintenance pump-outs'
-    ],
-    image: imgProd4,
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Structural Polymer Compound',
-    weight: '3,400 LBS',
-    industry: 'Wastewater',
-    workflowStep: 'CONTROL'
-  },
-  {
-    id: 'tu-brink-hydra-hd',
-    name: 'TU-Hydra Heavy-Duty Stainless Steel Channel System',
-    category: 'STAINLESS STEEL SLOT DRAINS',
-    subcategory: 'Architectural Slot Drains',
-    productFamily: 'Slot Drain',
-    partNumber: 'TU-BR-HYDRA-HD',
-    depthLevel: 1,
-    material: 'AISI 316L Stainless Steel with 4mm Edge Angles',
-    loadRating: 'Class D 400 kN / AASHTO H-20 Heavy Traffic',
-    sizeRange: '100mm to 300mm Nominal Widths',
-    sizes: ['100mm Channel', '150mm Channel', '200mm Channel'],
-    standard: 'EN 1433 / DIN 19580 Certified',
-    application: 'Heavy Commercial Traffic Plazas, Terminals & Architectural Facades',
-    description: 'Heavy-duty stainless steel linear drainage channel system with reinforced edge profiles and integrated wall anchor tabs designed for extreme wheel loads.',
-    features: [
-      '4mm solid stainless steel reinforced edge angle angles',
-      'Integrated anchoring lugs for direct concrete encasement',
-      'Seamless interlocking tongue-and-groove jointing'
-    ],
-    image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Pickled & Passivated Stainless Steel',
-    weight: '82 LBS / Meter',
-    industry: 'Architectural & Heavy Civil',
-    workflowStep: 'CONTROL'
-  },
-  {
-    id: 'tu-brink-subcut-slot',
-    name: 'TU-Subcut Heavy-Duty Architectural Slot Drain',
-    category: 'STAINLESS STEEL SLOT DRAINS',
-    subcategory: 'Architectural Slot Drains',
-    productFamily: 'Slot Drain',
-    partNumber: 'TU-BR-SUBCUT-18',
-    depthLevel: 1,
-    material: 'AISI 304 / 316L Structural Stainless Steel',
-    loadRating: 'Class D 400 kN Heavy Load Rated',
-    sizeRange: '18mm Slot Neck / Custom Invert Depths',
-    sizes: ['18mm Slot x 100mm Invert', '18mm Slot x 150mm Invert'],
-    standard: 'EN 1433 Class D400',
-    application: 'Discreet High-Load Plaza Drainage & Paver Integration',
-    description: 'Heavy-duty architectural slot drain channel featuring a narrow 18mm slot intake neck, reinforced double-wall neck spacers, and clean paver line aesthetics.',
-    features: [
-      'Discreet 18mm slot opening blends invisibly into paver joints',
-      'Heavy neck spacers prevent slot deflection under truck wheel loads',
-      'Integrated cleanout inspection boxes with lift-out covers'
-    ],
-    image: '/images/drainage_channel.png',
-    cadFileAvailable: true,
-    specSheetUrl: '#',
-    finish: 'Satin Brushed Stainless Steel',
-    weight: '64 LBS / Meter',
-    industry: 'Architectural & Heavy Civil',
-    workflowStep: 'CONTROL'
+    level: 3,
+    id: 'class-e-f',
+    title: 'CLASS E600 - F900 (AIRPORT RUNWAYS & INDUSTRIAL)',
+    depthMeters: '600 - 900 kN',
+    depthFeet: 'F900 Airport',
+    tagline: 'Extreme 900 kN Proof Load Ductile Iron Channels for Aviation & Ports',
+    description: 'Heavy duty nodular ductile iron castings engineered for commercial airport taxiways, container ports, military bases, and heavy industrial foundries.',
+    products: ['prod-trench-f900-airport'],
+    color: '#003380'
   }
 ];
 
-export const SOLUTION_APPS: SolutionApp[] = [
+export const HOTSPOTS: Hotspot[] = [
   {
-    id: 'trench-safety-shoring',
-    title: 'TRENCH SAFETY & SHORING SOLUTIONS',
-    tagline: 'OSHA 1926 Subpart P Certified Excavation Protection',
-    description: 'Heavy steel trench boxes, hydraulic shoring rails, and modular slide rail systems engineered for complete trench crew protection.',
-    image: '/images/assets/gettyimages-2164291973-1024x1024.jpg',
-    cadOverlay: 'OSHA SUBPART P • ASTM A572 • TYPE C SOIL RATED',
-    recommendedProducts: ['TU-8000 Heavy-Duty Steel Trench Shield Box', 'TU-HydroLite Aluminum Hydraulic Shoring Rail', 'TU-Modular Slide Rail Trench Shoring System'],
+    id: 1,
+    number: '01',
+    title: 'DESIGNER CAST IRON TREE GRATES',
+    category: 'Tree Grates & Guards',
+    categoryId: 'tree-grates-guards',
+    xPercent: 25,
+    yPercent: 35,
+    shortDesc: 'Square & round cast iron tree grates with expandable tree openings.',
+    application: 'Landscape Architecture & Urban Streetscapes',
+    partNumber: 'TU-TG-SQ44-ADA',
+    loadRating: 'Pedestrian / H-20 Light Vehicle',
+    sampleProducts: ['prod-tree-grate-sq-44', 'prod-tree-grate-rd-5']
+  },
+  {
+    id: 2,
+    number: '02',
+    title: 'ARCHITECTURAL ADA TRENCH GRATINGS',
+    category: 'Designer & Architectural Trench Gratings',
+    categoryId: 'designer-trench-gratings',
+    xPercent: 55,
+    yPercent: 50,
+    shortDesc: 'ADA heel-proof wave and geometric decorative iron trench covers.',
+    application: 'Municipal Plazas & Promenade Hardscapes',
+    partNumber: 'TU-TG-WAVE-12',
+    loadRating: 'EN 1433 Class C250 to D400',
+    sampleProducts: ['prod-trench-grate-ada-wave']
+  },
+  {
+    id: 3,
+    number: '03',
+    title: 'DUCTILE IRON HEAVY CIVIL CHANNELS',
+    category: 'Ductile Iron Heavy Civil Drainage Channels',
+    categoryId: 'heavy-civil-drainage',
+    xPercent: 80,
+    yPercent: 65,
+    shortDesc: 'AASHTO H-20 & Class F900 900kN extreme load airport ductile iron covers.',
+    application: 'Highway Corridors & Airport Runways',
+    partNumber: 'TU-AIRPORT-F900',
+    loadRating: 'Class F900 (900 kN / 202,300 lbs)',
+    sampleProducts: ['prod-trench-grate-h20-heavy', 'prod-trench-f900-airport']
+  }
+];
+
+export const SOLUTIONS_APPS: SolutionApp[] = [
+  {
+    id: 'sol-urban-streetscape',
+    title: 'URBAN STREETSCAPE & LANDSCAPE ARCHITECTURE',
+    tagline: 'Decorative Cast Iron Tree Grates & ADA Heel-Proof Trench Gratings',
+    description: 'Custom designer cast iron tree grates and ADA trench covers providing tree root protection, stormwater intake, and architectural beauty for city downtown renewals.',
+    image: img01,
+    cadOverlay: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+    recommendedProducts: ['prod-tree-grate-sq-44', 'prod-tree-grate-rd-5', 'prod-trench-grate-ada-wave'],
     specs: [
-      { label: 'SOIL RATING', value: 'OSHA Type A, B, C Soil' },
-      { label: 'COMPLIANCE', value: 'OSHA 1926 Subpart P' },
-      { label: 'DEPTH RATING', value: 'Up to 30 FT Excavations' }
+      { label: 'FOUNDRY MATERIAL', value: 'ASTM A48 Class 35 & ASTM A536 Ductile Iron' },
+      { label: 'ADA COMPLIANCE', value: '1/4" Max Slot Opening (Heel-Proof)' },
+      { label: 'SURFACE FINISH', value: 'Black KTL E-Coat / Natural Raw Weathering' }
+    ]
+  },
+  {
+    id: 'sol-highway-transportation',
+    title: 'HIGHWAYS, BRIDGES & MUNICIPAL INFRASTRUCTURE',
+    tagline: 'AASHTO H-20 / M306 Heavy Vehicular Ductile Iron Drainage',
+    description: 'Heavy duty ductile iron trench grate and frame assemblies engineered to withstand 40,000 lb axle loads across active highway lanes and arterial intersections.',
+    image: img04,
+    cadOverlay: '/images/assets/gettyimages-2158727734-1024x1024.jpg',
+    recommendedProducts: ['prod-trench-grate-h20-heavy'],
+    specs: [
+      { label: 'HIGHWAY STANDARD', value: 'AASHTO M306 & M105 Certified' },
+      { label: 'PROVING PRESSURE', value: '40,000 LBS Heavy Axle Load' },
+      { label: 'FRAME SEATING', value: 'Precision CNC Machined Gasketed Frame' }
+    ]
+  },
+  {
+    id: 'sol-airport-maritime',
+    title: 'AIRPORTS, CONTAINER PORTS & HEAVY INDUSTRIAL',
+    tagline: 'EN 1433 Class F900 900kN Extreme Duty Ductile Iron Channels',
+    description: 'Monolithic ductile iron trench drainage channels with 8-point stainless steel locking bars engineered for commercial airport taxiways and gantry crane ports.',
+    image: img05,
+    cadOverlay: '/images/assets/gettyimages-2223963188-1024x1024.jpg',
+    recommendedProducts: ['prod-trench-f900-airport'],
+    specs: [
+      { label: 'MAX PROOF LOAD', value: '900 kN (202,300 LBS)' },
+      { label: 'AVIATION COMPLIANCE', value: 'FAA AC 150 / 5320-6E' },
+      { label: 'LOCKING MECHANISM', value: '8-Point Stainless Mechanical Lock' }
     ]
   }
 ];
 
-export const CASE_STUDY_DATA: CaseStudyData = {
-  id: 'project-042',
-  title: 'PROJECT 042 — REGIONAL TRENCH EXCAVATION SAFETY',
-  location: 'Midwest Regional Civil Infrastructure District',
-  application: 'Deep Utility Trench Excavation & Shoring',
-  productsUsed: [
-    'TU-8000 Heavy-Duty Steel Trench Shield Box',
-    'TU-HydroLite Aluminum Hydraulic Shoring Rail',
-    'AASHTO H-20 Heavy Structural Steel Trench Road Plate'
-  ],
-  scale: '4,200 Linear Feet of Trench Excavation',
-  installationTime: '18 Days Ahead of Schedule',
-  result: '100% OSHA Subpart P Compliance with Zero Trench Wall Incidents',
-  beforeImg: '/images/assets/gettyimages-2182302224-640_adpp.mp4',
-  duringImg: '/images/assets/gettyimages-1870509248-1024x1024.jpg',
-  afterImg: '/images/assets/gettyimages-1431428704-1024x1024.jpg',
-  metrics: [
-    { label: 'TOTAL TRENCH EXCAVATED', value: '4,200 LF' },
-    { label: 'EXCAVATION DEPTH', value: '18.5 FT Avg' },
-    { label: 'SAFETY INCIDENTS', value: '0 (Zero Logged)' },
-    { label: 'SCHEDULE SAVINGS', value: '18 Calendar Days' }
-  ]
-};
+export const ANATOMY_POINTS: AnatomyPoint[] = [
+  { id: '1', title: 'Expandable Tree Opening', depth: 'Center Ring', role: 'Aeration', spec: '12" to 18" Knockout Rings', x: 30, y: 35 },
+  { id: '2', title: 'ADA Heel-Proof Slot', depth: 'Surface Slot', role: 'Pedestrian Safety', spec: '1/4" Max Slot Width', x: 50, y: 45 },
+  { id: '3', title: 'Ductile Iron Matrix', depth: 'Structural', role: 'Load Resistance', spec: '80,000 PSI Tensile Strength', x: 70, y: 60 }
+];
+
+export const CASE_STUDIES: CaseStudyData[] = [
+  {
+    id: 'cs-metropolitan-downtown',
+    title: 'DOWNTOWN METROPOLITAN STREETSCAPE RENEWAL',
+    location: 'Chicago, IL — Urban Transit Corridor',
+    application: 'Cast Iron Tree Grates & Architectural Trench Covers',
+    productsUsed: ['prod-tree-grate-sq-44', 'prod-trench-grate-ada-wave'],
+    scale: '1,200 Tree Grates & 4,500 LF Trench Covers Installed',
+    installationTime: 'Completed 3 Weeks Ahead of Schedule',
+    result: '100% ADA Compliant, Zero Root Disturbance, 15+ Year Warranty Maintenance Free',
+    beforeImg: img01,
+    duringImg: img02,
+    afterImg: img03,
+    metrics: [
+      { label: 'TREE GRATES INSTALLED', value: '1,200 UNITS' },
+      { label: 'ADA ACCESSIBILITY', value: '100% VERIFIED' },
+      { label: 'WATER INFILTRATION', value: '+45% IMPROVED' }
+    ]
+  }
+];
