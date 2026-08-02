@@ -248,40 +248,39 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Right: 3 Soil Types */}
             <div className="space-y-4">
               {/* Type A */}
-              <div className="p-6 bg-white border-2 border-emerald-200 hover:border-emerald-400 transition-colors">
+              <div className="p-6 bg-white border-2 border-[#004AAD] hover:border-[#0085F4] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-10 h-10 flex items-center justify-center bg-emerald-100 text-emerald-700 font-extrabold text-sm font-mono">A</span>
+                  <span className="w-10 h-10 flex items-center justify-center bg-[#004AAD] text-white font-extrabold text-sm font-mono">A</span>
                   <div>
                     <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE A — STABLE</h3>
-                    <span className="text-xs font-mono text-emerald-600 font-bold">&gt; 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
+                    <span className="text-xs font-mono text-[#0085F4] font-bold">&gt; 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
                   </div>
                 </div>
-                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                <p className="text-sm text-blue-900 font-medium leading-relaxed">
                   Clay, silty clay, and hardpan. The most stable soil type. Trenches in Type A soil may use simpler protection systems like sloping at 3/4:1 ratio. Hydraulic shores are commonly used.
                 </p>
               </div>
 
               {/* Type B */}
-              <div className="p-6 bg-white border-2 border-amber-200 hover:border-amber-400 transition-colors">
+              <div className="p-6 bg-white border-2 border-[#0085F4] hover:border-[#00BBFF] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-700 font-extrabold text-sm font-mono">B</span>
+                  <span className="w-10 h-10 flex items-center justify-center bg-[#0085F4] text-white font-extrabold text-sm font-mono">B</span>
                   <div>
                     <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE B — MODERATE</h3>
-                    <span className="text-xs font-mono text-amber-600 font-bold">0.5 – 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
+                    <span className="text-xs font-mono text-[#0085F4] font-bold">0.5 – 1.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
                   </div>
                 </div>
-                <p className="text-sm text-blue-600 font-medium leading-relaxed">
+                <p className="text-sm text-blue-900 font-medium leading-relaxed">
                   Silt, sandy loam, and medium clay. Requires steeper sloping (1:1) or active shoring systems. Previously disturbed soil, even if originally Type A, is automatically classified as Type B.
                 </p>
               </div>
 
               {/* Type C */}
-              <div className="p-6 bg-white border-2 border-red-200 hover:border-red-400 transition-colors">
+              <div className="p-6 bg-white border-2 border-[#003380] hover:border-[#0085F4] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-10 h-10 flex items-center justify-center bg-red-100 text-red-700 font-extrabold text-sm font-mono">C</span>
+                  <span className="w-10 h-10 flex items-center justify-center bg-[#003380] text-white font-extrabold text-sm font-mono">C</span>
                   <div>
                     <h3 className="text-base font-extrabold text-[#004AAD] font-heading uppercase">TYPE C — UNSTABLE</h3>
-                    <span className="text-xs font-mono text-red-600 font-bold">&lt; 0.5 TONS/SQ FT COMPRESSIVE STRENGTH</span>
                   </div>
                 </div>
                 <p className="text-sm text-blue-600 font-medium leading-relaxed">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Search, FileText, ChevronDown, Menu, X, ArrowRight, ShieldCheck, 
+import {
+  Search, FileText, ChevronDown, Menu, X, ArrowRight, ShieldCheck,
   BookOpen, Layers, Cpu, Box, MapPin, Download, HardHat, PhoneCall,
   CheckCircle2, Globe, ArrowUpRight, Home, ChevronRight, Building2, Wrench, Shield, FileSpreadsheet
 } from 'lucide-react';
@@ -48,9 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'shadow-xl bg-white/95 backdrop-blur-md' : 'bg-white'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-xl bg-white/95 backdrop-blur-md' : 'bg-white'
+      }`}>
       {/* Top Corporate Strip */}
       <div className="bg-[#004AAD] text-white py-2 text-xs font-mono">
         <div className="container-industrial flex justify-between items-center">
@@ -67,8 +66,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="flex items-center gap-6 font-semibold">
-            <button 
-              onClick={onOpenSubmittalDrawer} 
+            <button
+              onClick={onOpenSubmittalDrawer}
               className="hover:text-[#00BBFF] flex items-center gap-1.5 transition-colors"
             >
               <FileText className="w-3.5 h-3.5" />
@@ -85,49 +84,38 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Main Navigation Bar */}
       <div className="border-b border-[#E2E8F0] bg-white">
-        <div className="container-industrial py-3.5 flex justify-between items-center">
-          
+        <div className="container-industrial py-2 md:py-2.5 flex justify-between items-center">
+
           {/* Logo & Brand Identity */}
-          <div 
-            onClick={() => { onSelectPage('home'); handleNavClick('hero'); }} 
-            className="cursor-pointer flex items-center gap-3 group"
+          <div
+            onClick={() => { onSelectPage('home'); handleNavClick('hero'); }}
+            className="cursor-pointer flex items-center group mr-auto"
           >
-            <div className="h-11 flex items-center">
-              <img 
-                src="/logo.png" 
-                alt="Trench Unlimited Brand Logo" 
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-                className="h-10 w-auto max-w-[260px] object-contain transition-transform duration-200 group-hover:scale-[1.01]"
+            <div className="h-11 sm:h-12 md:h-13.5 flex items-center">
+              <img
+                src="/c1b3988b-7b1c-49dd-a5cb-48c9ee3d3a02.png"
+                alt="Trench Unlimited Brand Logo"
+                className="h-11 sm:h-12 md:h-13.5 w-auto max-w-[340px] sm:max-w-[420px] md:max-w-[490px] object-contain transition-transform duration-200 group-hover:scale-[1.02] logo-img"
               />
-            </div>
-            <div className="hidden xl:block pl-3 border-l-2 border-[#0085F4]">
-              <div className="text-[11px] font-mono text-[#004AAD] font-extrabold tracking-widest uppercase leading-tight">
-                TRENCH UNLIMITED™
-              </div>
-              <div className="text-[12px] font-bold text-[#0085F4] leading-tight">
-                Underground Safety & Shoring
-              </div>
             </div>
           </div>
 
           {/* Desktop Mega Menu Nav */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-bold text-[#004AAD]">
-            <button 
-              onClick={() => { onSelectPage('home'); handleNavClick('hero'); }} 
+            <button
+              onClick={() => { onSelectPage('home'); handleNavClick('hero'); }}
               className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'home' ? 'text-[#0085F4]' : ''}`}
             >
               HOME
             </button>
 
             {/* PRODUCTS Mega Menu */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setActiveMegaMenu('products')}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button 
+              <button
                 onClick={() => handleCategorySelect('all')}
                 className={`px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors ${activePage === 'products' ? 'text-[#0085F4]' : ''}`}
               >
@@ -155,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     { title: 'Ground Mats', desc: 'Heavy vehicle site protection mats', id: 'trench-road-plates' },
                     { title: 'Accessories', desc: 'Spreaders, pins, lifting chains & pumps', id: 'hydraulic-shoring' },
                   ].map((item, idx) => (
-                    <div 
+                    <div
                       key={idx}
                       onClick={() => handleCategorySelect(item.id)}
                       className="p-3 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] cursor-pointer transition-all group"
@@ -172,12 +160,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* INDUSTRIES Mega Menu */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setActiveMegaMenu('industries')}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('industries')}
                 className="px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors"
               >
@@ -202,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     'Industrial Manufacturing',
                     'Energy & Pipeline Projects'
                   ].map((ind, idx) => (
-                    <div 
+                    <div
                       key={idx}
                       onClick={() => handleNavClick('industries')}
                       className="p-2.5 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] text-xs font-bold text-[#004AAD] hover:text-[#0085F4] cursor-pointer transition-colors"
@@ -215,12 +203,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* SOLUTIONS */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setActiveMegaMenu('solutions')}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('solutions')}
                 className="px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors"
               >
@@ -241,7 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     { title: 'Utility Vault Shoring', desc: '4-sided manhole & transformer vault protection' },
                     { title: 'Confined Space Entry', desc: 'OSHA compliant ladders, platforms & retrieval systems' }
                   ].map((sol, idx) => (
-                    <div 
+                    <div
                       key={idx}
                       onClick={() => handleNavClick('solutions')}
                       className="p-2.5 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] cursor-pointer transition-colors"
@@ -255,7 +243,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* ENGINEERING */}
-            <button 
+            <button
               onClick={() => handleNavClick('technical')}
               className="px-3 py-2 hover:text-[#0085F4] transition-colors"
             >
@@ -263,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* RESOURCES */}
-            <button 
+            <button
               onClick={onOpenSubmittalDrawer}
               className="px-3 py-2 hover:text-[#0085F4] transition-colors"
             >
@@ -271,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* COMPANY */}
-            <button 
+            <button
               onClick={() => { onSelectPage('story'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'story' ? 'text-[#0085F4]' : ''}`}
             >
@@ -279,7 +267,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* CONTACT */}
-            <button 
+            <button
               onClick={() => handleNavClick('footer')}
               className="px-3 py-2 hover:text-[#0085F4] transition-colors"
             >
@@ -289,8 +277,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Primary CTA Button */}
           <div className="hidden sm:flex items-center gap-3">
-            <button 
-              onClick={onOpenQuoteModal} 
+            <button
+              onClick={onOpenQuoteModal}
               className="btn-brand-primary py-2.5 px-5 text-xs tracking-wider font-extrabold"
             >
               REQUEST QUOTE
@@ -299,7 +287,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center gap-2">
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#004AAD] border border-[#004AAD]"
             >
@@ -337,14 +325,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
           <div className="pt-4 border-t border-[#E2E8F0] space-y-2">
-            <button 
-              onClick={() => { setMobileMenuOpen(false); onOpenQuoteModal(); }} 
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenQuoteModal(); }}
               className="w-full btn-brand-primary py-3 text-xs"
             >
               REQUEST COMMERCIAL QUOTE
             </button>
-            <button 
-              onClick={() => { setMobileMenuOpen(false); onOpenSubmittalDrawer(); }} 
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenSubmittalDrawer(); }}
               className="w-full btn-brand-secondary py-3 text-xs"
             >
               OPEN SUBMITTAL DRAWER

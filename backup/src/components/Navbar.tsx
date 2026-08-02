@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Search, FileText, ChevronDown, Menu, X, ArrowRight, ShieldCheck, 
+import {
+  Search, FileText, ChevronDown, Menu, X, ArrowRight, ShieldCheck,
   BookOpen, Layers, Cpu, Box, MapPin, Download, HardHat, PhoneCall,
   CheckCircle2, Globe, ArrowUpRight, Home, ChevronRight
 } from 'lucide-react';
@@ -43,25 +43,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'shadow-2xl' : ''
-    }`}>
-      
-      {/* ────── TIER 1: 100% FULL-WIDTH CORPORATE BRAND & HOTLINE HEADER ────── */}
-      <div className={`bg-white border-b border-blue-200 transition-all duration-300 ${
-        scrolled ? 'h-0 overflow-hidden opacity-0 py-0' : 'py-3.5'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-2xl' : ''
       }`}>
+
+      {/* ────── TIER 1: 100% FULL-WIDTH CORPORATE BRAND & HOTLINE HEADER ────── */}
+      <div className={`bg-white border-b border-blue-200 transition-all duration-300 ${scrolled ? 'h-0 overflow-hidden opacity-0 py-0' : 'py-3.5'
+        }`}>
         <div className="w-full px-4 sm:px-8 lg:px-12 flex justify-between items-center">
-          
+
           {/* Corporate Brand Logo */}
-          <div 
-            onClick={() => { onSelectPage('home'); handleNavClick('hero'); }} 
+          <div
+            onClick={() => { onSelectPage('home'); handleNavClick('hero'); }}
             className="cursor-pointer flex items-center gap-4 group"
           >
             <div className="h-12 flex items-center">
-              <img 
-                src="/logo.png" 
-                alt="Trench Unlimited Corporate Logo" 
+              <img
+                src="/logo.png"
+                alt="Trench Unlimited Corporate Logo"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
@@ -93,8 +91,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <div className="text-blue-300">|</div>
 
-            <button 
-              onClick={onOpenSubmittalDrawer} 
+            <button
+              onClick={onOpenSubmittalDrawer}
               className="text-[#0754AE] hover:text-[#2166D1] flex items-center gap-1.5 font-bold transition-colors"
             >
               <FileText className="w-4 h-4 text-[#C00000]" />
@@ -102,8 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* Corporate Quote CTA Button */}
-            <button 
-              onClick={onOpenQuoteModal} 
+            <button
+              onClick={onOpenQuoteModal}
               className="bg-[#C00000] hover:bg-[#A00000] text-white text-xs py-3 px-6 flex items-center gap-2 font-heading tracking-widest shadow-md rounded-none uppercase font-extrabold transition-colors"
             >
               REQUEST A QUOTE
@@ -112,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile Hamburger */}
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-[#0754AE] border border-blue-200 bg-[#F0F7FF]"
             aria-label="Toggle Mobile Menu"
@@ -123,91 +121,86 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* ────── TIER 2: 100% FULL-WIDTH INDUSTRIAL NAVIGATION BAR ────── */}
-      <div 
+      <div
         className="bg-[#0754AE] text-white border-b-2 border-[#2166D1] relative shadow-md"
         onMouseLeave={() => setActiveMegaMenu(null)}
       >
         <div className="w-full px-4 sm:px-8 lg:px-12 flex justify-between items-center h-16">
-          
+
           {/* Main Desktop Links: 100% Full-Width Spacing, 15px font-black */}
           <nav className="hidden lg:flex items-center gap-8 h-full font-heading text-[15px] font-black tracking-widest uppercase">
-            
+
             {/* HOME */}
-            <button 
+            <button
               onClick={() => onSelectPage('home')}
               className="h-full px-1 relative transition-colors flex items-center text-white hover:text-blue-100 group"
             >
               <span>HOME</span>
-              <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                activePage === 'home' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-              }`}></span>
+              <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${activePage === 'home' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                }`}></span>
             </button>
 
             {/* PRODUCTS MEGA */}
-            <div 
+            <div
               className="h-full flex items-center"
               onMouseEnter={() => setActiveMegaMenu('products')}
             >
-              <button 
+              <button
                 onClick={() => { onSelectPage('products'); setActiveMegaMenu(null); }}
                 className="h-full px-1 relative transition-colors flex items-center gap-1.5 text-white hover:text-blue-100 group"
               >
                 <span>PRODUCTS</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === 'products' ? 'rotate-180 text-white' : 'text-blue-200'}`} />
-                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                  activePage === 'products' || activeMegaMenu === 'products' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                }`}></span>
+                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${activePage === 'products' || activeMegaMenu === 'products' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}></span>
               </button>
             </div>
 
             {/* SOLUTIONS MEGA */}
-            <div 
+            <div
               className="h-full flex items-center"
               onMouseEnter={() => setActiveMegaMenu('solutions')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('solutions')}
                 className="h-full px-1 relative transition-colors flex items-center gap-1.5 text-white hover:text-blue-100 group"
               >
                 <span>SOLUTIONS</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === 'solutions' ? 'rotate-180 text-white' : 'text-blue-200'}`} />
-                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                  activeMegaMenu === 'solutions' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                }`}></span>
+                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${activeMegaMenu === 'solutions' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}></span>
               </button>
             </div>
 
             {/* ENGINEERING MEGA */}
-            <div 
+            <div
               className="h-full flex items-center"
               onMouseEnter={() => setActiveMegaMenu('engineering')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('engineering')}
                 className="h-full px-1 relative transition-colors flex items-center gap-1.5 text-white hover:text-blue-100 group"
               >
                 <span>ENGINEERING</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeMegaMenu === 'engineering' ? 'rotate-180 text-white' : 'text-blue-200'}`} />
-                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                  activeMegaMenu === 'engineering' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                }`}></span>
+                <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${activeMegaMenu === 'engineering' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}></span>
               </button>
             </div>
 
             {/* WHAT IS TRENCH? STORY */}
-            <button 
+            <button
               onClick={() => onSelectPage('story')}
               className="h-full px-1 relative transition-colors flex items-center gap-2 text-white hover:text-blue-100 group"
             >
               <BookOpen className="w-4 h-4 text-blue-200" />
               <span>WHAT IS TRENCH?</span>
-              <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${
-                activePage === 'story' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-              }`}></span>
+              <span className={`absolute bottom-0 left-0 right-0 h-[4px] bg-[#C00000] transition-all duration-200 ${activePage === 'story' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                }`}></span>
             </button>
 
             {/* STANDARDS */}
-            <button 
+            <button
               onClick={() => handleNavClick('standards')}
               className="h-full px-1 relative transition-colors flex items-center text-white hover:text-blue-100 group"
             >
@@ -216,7 +209,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* COMPANY */}
-            <button 
+            <button
               onClick={() => handleNavClick('company')}
               className="h-full px-1 relative transition-colors flex items-center text-white hover:text-blue-100 group"
             >
@@ -228,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Corporate Search Field */}
           <div className="hidden md:flex items-center relative py-2">
-            <input 
+            <input
               type="text"
               placeholder="Search part #, specs & catalog..."
               value={searchQuery}
@@ -247,12 +240,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         {activeMegaMenu && (
           <div className="absolute top-full left-0 right-0 bg-white border-b-4 border-[#0754AE] shadow-2xl p-8 text-blue-700 animate-in fade-in slide-in-from-top-2 duration-200 z-50 bg-blueprint-dense">
             <div className="w-full px-4 sm:px-8 lg:px-12">
-              
+
               {/* PRODUCTS MEGAMENU */}
               {activeMegaMenu === 'products' && (
                 <div className="space-y-6 font-mono">
                   <div className="grid grid-cols-12 gap-6 items-start">
-                    
+
                     {/* Left Column: 01 to 05 */}
                     <div className="col-span-5 space-y-2">
                       <div className="text-xs font-bold text-[#0754AE] uppercase pb-2 border-b-2 border-blue-200 flex items-center gap-2">
@@ -318,7 +311,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="text-[10px] font-bold text-[#C00000] uppercase block">SYSTEM DISCOVERY</span>
                       <h4 className="text-sm font-bold text-[#0754AE]">PRODUCT FINDER</h4>
                       <p className="text-[11px] text-[#004AAD]">Search 10 categories by part number, material, size, or AWWA/OSHA standard.</p>
-                      <button 
+                      <button
                         onClick={() => handleNavClick('catalogue')}
                         className="btn-primary w-full py-2 text-[11px] font-mono justify-center"
                       >
@@ -387,7 +380,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className="col-span-4 bg-[#0754AE] text-white p-6 rounded-lg space-y-3">
                     <div className="text-xs font-bold uppercase text-[#FFD700]">ENGINEERING HOTLINE</div>
                     <div className="text-lg font-bold">Need Custom PE Shoring Support?</div>
-                    <button 
+                    <button
                       onClick={onOpenQuoteModal}
                       className="bg-[#C00000] hover:bg-[#A00000] text-white w-full text-xs py-2 px-3 justify-center rounded-none font-mono font-bold transition-colors"
                     >
@@ -407,10 +400,10 @@ export const Navbar: React.FC<NavbarProps> = ({
       {activePage !== 'home' && (
         <div className="bg-[#F0F7FF] border-b border-blue-200 py-2.5 px-4 sm:px-8 lg:px-12 font-mono text-[11px] text-[#0754AE] shadow-inner">
           <div className="w-full flex justify-between items-center">
-            
+
             {/* Breadcrumb Path Links */}
             <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
-              <button 
+              <button
                 onClick={() => onSelectPage('home')}
                 className="flex items-center gap-1 font-bold text-[#0754AE] hover:text-[#2166D1] transition-colors"
               >

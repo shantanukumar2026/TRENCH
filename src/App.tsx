@@ -6,12 +6,21 @@ import { SystemExplorer } from './components/SystemExplorer';
 import { WaterManagementSection } from './components/WaterManagementSection';
 import { IndustrialGratingsSection } from './components/IndustrialGratingsSection';
 import { Solutions } from './components/Solutions';
-import { GlobalProjectsSection } from './components/GlobalProjectsSection';
+import { TrenchFailurePreventionInteractive } from './components/TrenchFailurePreventionInteractive';
 import { LoadClassMatrixSection } from './components/LoadClassMatrixSection';
 import { TechnicalStandards } from './components/TechnicalStandards';
 import { ManufacturingCapabilities } from './components/ManufacturingCapabilities';
-import { ContractorTestimonialsSection } from './components/ContractorTestimonialsSection';
+import { CustomFabricationStudioSection } from './components/CustomFabricationStudioSection';
 import { IndustriesView } from './components/IndustriesView';
+import { RentalFleetSection } from './components/RentalFleetSection';
+import { PECalculatorSection } from './components/PECalculatorSection';
+import { SubsurfaceUtilitySection } from './components/SubsurfaceUtilitySection';
+import { FeaturedProductsSection } from './components/FeaturedProductsSection';
+import { TabulatedDataLibrarySection } from './components/TabulatedDataLibrarySection';
+import { SoilTypeReferenceGuide } from './components/SoilTypeReferenceGuide';
+import { JobsiteSafetyChecklistSection } from './components/JobsiteSafetyChecklistSection';
+import { EquipmentComparisonPreviewSection } from './components/EquipmentComparisonPreviewSection';
+import { CertificationsAndComplianceSection } from './components/CertificationsAndComplianceSection';
 import { CaseStudy } from './components/CaseStudy';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductPage } from './components/ProductPage';
@@ -153,43 +162,94 @@ export function App() {
             onSelectHotspot={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 4. Underground Water & Linear Drainage Systems (Inspired by ACO & MEA) */}
+          {/* 4. Featured Industrial Products Catalogue Showcase */}
+          <FeaturedProductsSection
+            onSelectProduct={(p) => handleOpenProductPage(p)}
+            onRequestQuote={(p) => handleRequestQuoteForProduct(p)}
+            onExploreAll={() => handleOpenProductsPage('all')}
+          />
+
+          {/* 5. Nationwide Rental Fleet & Emergency Jobsite Logistics */}
+          <RentalFleetSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 6. Shoring Equipment Comparison Decision Matrix */}
+          <EquipmentComparisonPreviewSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 7. Underground Water & Linear Drainage Systems */}
           <WaterManagementSection
             onExploreDrainage={() => handleOpenProductsPage('safety-protection')}
             onRequestQuote={() => setQuoteModalOpen(true)}
           />
 
-          {/* 5. Industrial Gratings & AASHTO Road Decking (Inspired by Lichtgitter & Richard Brink) */}
+          {/* 8. Industrial Gratings & AASHTO Road Decking */}
           <IndustrialGratingsSection
             onRequestQuote={() => setQuoteModalOpen(true)}
           />
 
-          {/* 6. Core Trench Safety & Shoring Solutions */}
+          {/* 9. Subsurface Utility Engineering (SUE) & Hydro-Vac Protection */}
+          <SubsurfaceUtilitySection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 10. Core Trench Safety & Shoring Solutions */}
           <Solutions
             onSelectSolution={() => handleOpenProductsPage('all')}
             onOpenDocLink={() => setSubmittalDrawerOpen(true)}
           />
 
-          {/* 7. Load Class & Material Science Comparison Matrix */}
+          {/* 11. PE-Stamped Tabulated Data & Depth Calculator */}
+          <PECalculatorSection
+            onOpenSubmittals={() => setSubmittalDrawerOpen(true)}
+          />
+
+          {/* 12. PE Tabulated Data & Submittal Download Library */}
+          <TabulatedDataLibrarySection
+            onOpenDrawer={() => setSubmittalDrawerOpen(true)}
+          />
+
+          {/* 13. OSHA Soil Classification & Slope Benches Guide */}
+          <SoilTypeReferenceGuide />
+
+          {/* 14. OSHA Competent Person Daily Inspection Checklist */}
+          <JobsiteSafetyChecklistSection />
+
+          {/* 15. Load Class & Material Science Comparison Matrix */}
           <LoadClassMatrixSection />
 
-          {/* 8. Engineering Quality & OSHA Standards Compliance */}
+          {/* 16. Engineering Quality & OSHA Standards Compliance */}
           <TechnicalStandards
             onOpenDocLibrary={() => scrollToSection('solutions')}
           />
 
-          {/* 9. Industrial Manufacturing & Robotic Steel Fabrication */}
+          {/* 17. Industry Quality & Engineering Certifications */}
+          <CertificationsAndComplianceSection />
+
+          {/* 18. Industrial Manufacturing & Robotic Steel Fabrication */}
           <ManufacturingCapabilities />
 
-          {/* 10. Civil Sectors Showcase */}
+          {/* 19. Civil Sectors Showcase */}
           <IndustriesView
             onSelectCategory={(catId) => handleOpenProductsPage(catId)}
           />
 
-          {/* 13. Field Engineering Case Study */}
+          {/* 20. Custom Engineering & Robotic Steel Fabrication Studio */}
+          <CustomFabricationStudioSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 21. Field Engineering Case Study */}
           <CaseStudy />
 
-          {/* 14. Architectural Final Enterprise CTA */}
+          {/* 22. Interactive Trench Cave-in Safety Engine & Soil Pressure Calculator */}
+          <TrenchFailurePreventionInteractive
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+
+          {/* 23. Architectural Final Enterprise CTA */}
           <FinalCTA
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}

@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToSection, onOpenQuote
               className="cursor-pointer flex items-center gap-3 bg-white p-3 w-fit shadow-md"
             >
               <img 
-                src="/logo.png" 
+                src="/c1b3988b-7b1c-49dd-a5cb-48c9ee3d3a02.png" 
                 alt="Trench Unlimited Logo" 
                 className="h-10 w-auto object-contain"
               />
