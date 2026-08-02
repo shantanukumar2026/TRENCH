@@ -8,28 +8,28 @@ export const Anatomy: React.FC = () => {
       title: 'SURFACE & SUB-BASE DECK',
       spec: 'AASHTO H-20 / HS-20 Traffic Rated',
       desc: 'Finished pavement sub-base layer bridged by heavy structural steel road plates during excavation.',
-      image: '/images/assets/gettyimages-1152010565-1024x1024.jpg'
+      image: '/greates/TI-001.jpg'
     },
     {
       step: '02',
       title: 'TRENCH SHORING & SHIELDING',
       spec: 'OSHA 1926 Subpart P Certified',
       desc: 'Double-walled steel trench boxes and hydraulic shores bearing lateral earth soil pressure to protect crew members.',
-      image: '/images/assets/gettyimages-1222819839-1024x1024.jpg'
+      image: '/greates/trench-grate-horizontal-view (19).jpeg'
     },
     {
       step: '03',
       title: 'UTILITY MAIN INVERT',
       spec: 'AWWA C900 / ASTM Standards',
       desc: 'Enclosed main utility pipeline positioned at invert depth within the protected excavation envelope.',
-      image: '/images/assets/gettyimages-1367548904-1024x1024.jpg'
+      image: '/greates/trench-grates-img-diagonal-view (7).jpeg'
     },
     {
       step: '04',
       title: 'ENGINEERED BEDDING GRAVEL',
       spec: 'ASTM C33 Washed Aggregate',
       desc: 'Washed aggregate bedding envelope supporting uniform pipe invert elevation and load distribution.',
-      image: '/images/assets/gettyimages-1392546887-1024x1024.jpg'
+      image: '/greates/pre-trench-01.JPG'
     }
   ];
 

@@ -93,11 +93,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
           <div className="lg:col-span-6 relative">
             <div className="relative border-2 border-[#0085F4]/40 bg-[#0B192C] shadow-[0_25px_60px_rgba(0,74,173,0.4)] overflow-hidden group">
               
-              <img 
-                src="/images/assets/hero_iron_grate.png" 
-                alt="Architectural Cast Iron Tree Grates & Trench Covers" 
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/c1b3988b-7b1c-49dd-a5cb-48c9ee3d3a02.png'; }}
-                className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+              <video 
+                src="/greates/hero-section-video.mp4"
+                poster="/greates/trench-grate-horizontal-view (19).jpeg"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-[420px] object-cover"
               />
 
               {/* Photo Overlay Badge */}

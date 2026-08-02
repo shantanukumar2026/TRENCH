@@ -1,11 +1,11 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
 // Image assets for iron castings, designer tree grates, and trench drainage
-const img01 = '/images/assets/gettyimages-1158438565-1024x1024.jpg'; // Architectural Slot/Tree Grate
-const img02 = '/images/assets/gettyimages-1349322660-1024x1024.jpg'; // Cast Iron Grating
-const img03 = '/images/assets/gettyimages-1479422287-1024x1024.jpg'; // Foundry Iron Processing
-const img04 = '/images/assets/gettyimages-2158727734-1024x1024.jpg'; // Heavy Ductile Iron Cover
-const img05 = '/images/assets/gettyimages-2223963188-1024x1024.jpg'; // Industrial Metal Casting
+const img01 = '/greates/TI-001.jpg'; // Architectural Square Tree Grate
+const img02 = '/greates/TI-002.JPG'; // Cast Iron Circular Sunburst Tree Grate
+const img03 = '/greates/trench-grates-vertical-view (3).jpeg'; // Vertical Iron Tree Guard
+const img04 = '/greates/trench-grate-horizontal-view (19).jpeg'; // Heavy Duty Trench Cover & Frame
+const img05 = '/greates/pre-trench-01.JPG'; // Heavy Precast & Airport Channel System
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
@@ -332,7 +332,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     tagline: 'Decorative Cast Iron Tree Grates & ADA Heel-Proof Trench Gratings',
     description: 'Custom designer cast iron tree grates and ADA trench covers providing tree root protection, stormwater intake, and architectural beauty for city downtown renewals.',
     image: img01,
-    cadOverlay: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+    cadOverlay: '/greates/TI-001.jpg',
     recommendedProducts: ['prod-tree-grate-sq-44', 'prod-tree-grate-rd-5', 'prod-trench-grate-ada-wave'],
     specs: [
       { label: 'FOUNDRY MATERIAL', value: 'ASTM A48 Class 35 & ASTM A536 Ductile Iron' },
@@ -346,7 +346,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     tagline: 'AASHTO H-20 / M306 Heavy Vehicular Ductile Iron Drainage',
     description: 'Heavy duty ductile iron trench grate and frame assemblies engineered to withstand 40,000 lb axle loads across active highway lanes and arterial intersections.',
     image: img04,
-    cadOverlay: '/images/assets/gettyimages-2158727734-1024x1024.jpg',
+    cadOverlay: '/greates/trench-grate-horizontal-view (19).jpeg',
     recommendedProducts: ['prod-trench-grate-h20-heavy'],
     specs: [
       { label: 'HIGHWAY STANDARD', value: 'AASHTO M306 & M105 Certified' },
@@ -360,7 +360,7 @@ export const SOLUTIONS_APPS: SolutionApp[] = [
     tagline: 'EN 1433 Class F900 900kN Extreme Duty Ductile Iron Channels',
     description: 'Monolithic ductile iron trench drainage channels with 8-point stainless steel locking bars engineered for commercial airport taxiways and gantry crane ports.',
     image: img05,
-    cadOverlay: '/images/assets/gettyimages-2223963188-1024x1024.jpg',
+    cadOverlay: '/greates/pre-trench-01.JPG',
     recommendedProducts: ['prod-trench-f900-airport'],
     specs: [
       { label: 'MAX PROOF LOAD', value: '900 kN (202,300 LBS)' },

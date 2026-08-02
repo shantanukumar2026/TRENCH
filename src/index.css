@@ -35,9 +35,9 @@
   --border-brand: #0085F4;
   
   /* Typography Tokens */
-  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', 'Inter', monospace;
 }
 
 * {

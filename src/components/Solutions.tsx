@@ -13,7 +13,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
       title: 'URBAN STREETSCAPES & LANDSCAPE ARCHITECTURE',
       tagline: 'Decorative Cast Iron Tree Grates & ADA Heel-Proof Covers',
       description: 'Expandable square & round cast iron tree grates providing root zone aeration, water infiltration, and ADA-compliant pedestrian safety for city centers and urban avenues.',
-      image: '/images/assets/gettyimages-1158438565-1024x1024.jpg',
+      image: '/greates/TI-001.jpg',
       recommendedProducts: ['Metropolitan Square Tree Grate (4x4 Ft)', 'Sunburst Circular Tree Grate (5 Ft Dia)', 'Vertical Iron Tree Guard (6 Ft)'],
       specs: [
         { label: 'SLOT COMPLIANCE', value: 'ADA 1/4" Max Heel-Proof' },
@@ -26,7 +26,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
       title: 'PEDESTRIAN PROMENADES & COMMERCIAL HARDSCAPES',
       tagline: 'Architectural Geometric Pattern Trench Gratings',
       description: 'High-flow wave pattern and linear slot ductile iron trench covers cast with slip-resistant surface textures for shopping plazas, resorts, and transit hubs.',
-      image: '/images/assets/gettyimages-1349322660-1024x1024.jpg',
+      image: '/greates/trench-grates-img-diagonal-view (7).jpeg',
       recommendedProducts: ['Architectural Wave Pattern ADA Iron Grate', 'Stainless Steel Slot Channel System', 'KTL E-Coated Anti-Rust Frame'],
       specs: [
         { label: 'EN 1433 RATING', value: 'Class C250 to D400' },
@@ -39,7 +39,7 @@ export const Solutions: React.FC<SolutionsProps> = ({ onSelectSolution, onOpenDo
       title: 'HIGHWAYS, AIRPORTS & CONTAINER PORTS',
       tagline: 'Class D400 to F900 900kN Heavy Ductile Iron Channels',
       description: 'Heavy duty ductile iron trench covers and frames proof-tested to 900 kN (202,300 lbs) for Boeing 777 airport taxiways and heavy freight highway corridors.',
-      image: '/images/assets/gettyimages-2158727734-1024x1024.jpg',
+      image: '/greates/trench-grate-horizontal-view (19).jpeg',
       recommendedProducts: ['AASHTO H-20 Heavy Duty Ductile Iron Grate', 'Class F900 Airport Runway Channel', 'Heavy Monolithic Ductile Frame'],
       specs: [
         { label: 'PROOF LOAD RATING', value: '900 kN (202,300 LBS)' },

@@ -31,11 +31,11 @@ export const CompanyProfile: React.FC = () => {
           {/* Left Column: Authentic Jobsite Image */}
           <div className="lg:col-span-6 relative rounded-xl overflow-hidden shadow-2xl border-2 border-blue-200">
             <img 
-              src="/images/trench_shield.png" 
+              src="/greates/trench-grate-horizontal-view (19).jpeg" 
               alt="Trench Unlimited Infrastructure Jobsite" 
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/trench_shield.png';
+                e.currentTarget.src = '/greates/TI-001.jpg';
               }}
               className="w-full h-[440px] object-cover"
             />

@@ -65,7 +65,7 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
               <img
                 src={category.image}
                 alt={category.title}
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/trench_shield.png'; }}
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/greates/TI-001.jpg'; }}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0754AE]/80 to-transparent p-4 flex items-end">
@@ -146,7 +146,7 @@ export const CategoryDetail: React.FC<CategoryDetailProps> = ({
                       <img
                         src={product.image}
                         alt={product.name}
-                        onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/trench_shield.png'; }}
+                        onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/greates/TI-001.jpg'; }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#0754AE] text-white text-[10px] font-mono font-bold uppercase rounded-none">

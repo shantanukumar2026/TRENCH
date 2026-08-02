@@ -17,7 +17,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
         {/* Full-bleed background image */}
         <div className="absolute inset-0">
           <img
-            src="/images/assets/gettyimages-1374927924-1024x1024.jpg"
+            src="/greates/TI-001.jpg"
             alt="Active trench excavation site"
             className="w-full h-full object-cover"
           />
@@ -94,7 +94,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Right: Image */}
             <div className="relative">
               <img
-                src="/images/assets/gettyimages-2269261031-1024x1024.jpg"
+                src="/greates/trench-grate-horizontal-view (10).jpeg"
                 alt="Deep trench excavation requiring cave-in protection"
                 className="w-full h-[440px] object-cover shadow-lg border-2 border-orange-200"
               />
@@ -136,7 +136,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Method 1: Shielding */}
             <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
-                src="/images/assets/gettyimages-1479422287-1024x1024.jpg"
+                src="/greates/pre-trench-01.JPG"
                 alt="Steel trench shield box protecting workers"
                 className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -155,7 +155,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Method 2: Shoring */}
             <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
-                src="/images/assets/gettyimages-2167164749-1024x1024.jpg"
+                src="/greates/trench-grates-img-diagonal-view (7).jpeg"
                 alt="Hydraulic shoring rails bracing trench walls"
                 className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -174,7 +174,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Method 3: Slide Rail */}
             <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
-                src="/images/assets/gettyimages-2223963188-1024x1024.jpg"
+                src="/greates/trench-precast02.JPG"
                 alt="Modular slide rail system in deep excavation"
                 className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -193,7 +193,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Method 4: Access & Egress */}
             <div className="group border-2 border-blue-200 hover:border-[#0066FF] bg-white transition-all overflow-hidden">
               <img
-                src="/images/assets/gettyimages-2158727734-1024x1024.jpg"
+                src="/greates/TI-003.JPG"
                 alt="Trench access ladders and road plates"
                 className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -239,7 +239,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
               </p>
 
               <img
-                src="/images/assets/gettyimages-1152010565-1024x1024.jpg"
+                src="/greates/trench-grates-vertical-view (3).jpeg"
                 alt="Soil layers in excavation"
                 className="w-full h-64 object-cover shadow-md border-2 border-blue-200"
               />
@@ -304,7 +304,7 @@ export const TrenchStory: React.FC<TrenchStoryProps> = ({ onExploreProducts, onR
             {/* Left: Image */}
             <div className="relative">
               <img
-                src="/images/assets/gettyimages-1431428704-1024x1024.jpg"
+                src="/greates/trench-grate-horizontal-view (15).jpeg"
                 alt="Trench shoring equipment on American construction site"
                 className="w-full h-[440px] object-cover shadow-lg border-2 border-blue-200"
               />

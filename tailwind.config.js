@@ -17,9 +17,9 @@ export default {
         'brand-deep': '#002259',
       },
       fontFamily: {
-        heading: ['Inter', 'Outfit', 'system-ui', 'sans-serif'],
+        heading: ['Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono: ['JetBrains Mono', 'Inter', 'monospace'],
       }
     },
   },

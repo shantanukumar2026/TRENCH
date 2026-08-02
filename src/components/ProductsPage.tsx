@@ -46,18 +46,22 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           <div className="text-center space-y-3 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
               <ShieldCheck className="w-4 h-4 text-[#00BBFF]" />
-              <span>OSHA 1926 SUBPART P CERTIFIED CATALOGUE</span>
+              <span>OSHA 1926 SUBPART P CERTIFIED — 1000+ PRODUCTS AVAILABLE</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-heading uppercase tracking-tight text-white">
               TRENCH SHORING &amp; <span className="text-[#00BBFF]">SAFETY EQUIPMENT</span>
             </h1>
             <p className="text-base sm:text-lg font-body text-blue-100 font-medium">
-              Heavy steel trench shields, aluminum hydraulic shores, modular slide rail systems, access ladders, and AASHTO H-20 road plates engineered for excavation safety.
+              Over <strong>1,000+ certified products</strong> available — heavy steel trench shields, aluminum hydraulic shores, modular slide rail systems, access ladders, tree grates, and AASHTO H-20 road plates engineered for excavation safety.
             </p>
           </div>
 
           {/* Banner Key Specs Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-white/15 max-w-5xl mx-auto font-mono text-xs text-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-4 border-t border-white/15 max-w-5xl mx-auto font-mono text-xs text-center">
+            <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
+              <span className="text-[#00BBFF] block font-extrabold text-sm">1000+ PRODUCTS</span>
+              <span className="text-blue-100">In Active Catalog</span>
+            </div>
             <div className="bg-white/10 p-3 border border-white/15 backdrop-blur-sm">
               <span className="text-[#00BBFF] block font-extrabold text-sm">10 CATEGORIES</span>
               <span className="text-blue-100">Full Infrastructure Line</span>

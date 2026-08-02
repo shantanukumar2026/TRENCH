@@ -50,7 +50,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, on
                 <img
                   src={product.image}
                   alt={product.name}
-                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/trench_shield.png'; }}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/greates/TI-001.jpg'; }}
                   style={{ transform: `rotate(${rotationDegree}deg)` }}
                   className="w-full h-full object-cover transition-transform duration-300"
                 />

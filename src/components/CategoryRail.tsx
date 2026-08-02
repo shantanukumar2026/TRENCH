@@ -30,7 +30,7 @@ export const CategoryRail: React.FC<CategoryRailProps> = ({ selectedCategoryId, 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono font-bold text-[#0085F4] uppercase tracking-widest">PRODUCT ARCHITECTURE</span>
-            <span className="text-xs text-[#004AAD] font-bold">• 3 PRIMARY CATEGORY SECTIONS</span>
+            <span className="text-xs text-[#004AAD] font-bold">• 1000+ CERTIFIED PRODUCTS IN ACTIVE CATALOGUE</span>
           </div>
           <span className="text-xs font-mono text-[#0085F4] font-medium hidden sm:inline-block">Select category to filter equipment catalogue</span>
         </div>
