@@ -6,8 +6,8 @@ import {
 } from 'lucide-react';
 
 interface NavbarProps {
-  activePage: 'home' | 'products' | 'story';
-  onSelectPage: (page: 'home' | 'products' | 'story') => void;
+  activePage: 'home' | 'home-two' | 'products' | 'product' | 'solutions' | 'industries' | 'standards' | 'custom-studio' | 'rental-fleet' | 'story' | 'maintenance' | '404';
+  onSelectPage: (page: 'home' | 'home-two' | 'products' | 'product' | 'solutions' | 'industries' | 'standards' | 'custom-studio' | 'rental-fleet' | 'story' | 'maintenance' | '404') => void;
   onOpenQuoteModal: () => void;
   onOpenSubmittalDrawer: () => void;
   onNavigateToSection: (sectionId: string) => void;
@@ -33,6 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const handleNavClick = (sectionId: string) => {
+    window.location.hash = '#/';
     onSelectPage('home');
     setActiveMegaMenu(null);
     setMobileMenuOpen(false);
@@ -42,6 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   const handleCategorySelect = (catId: string) => {
+    window.location.hash = '#/products';
     onSelectPage('products');
     setActiveMegaMenu(null);
     setMobileMenuOpen(false);
@@ -124,37 +126,64 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {activeMegaMenu === 'products' && (
-                <div className="absolute top-full left-0 w-[640px] bg-white border-2 border-[#004AAD] shadow-2xl p-6 grid grid-cols-2 gap-4 z-50">
-                  <div className="col-span-2 pb-2 border-b border-[#E2E8F0] flex justify-between items-center">
-                    <span className="text-xs font-mono font-bold text-[#0085F4] uppercase">Designer Cast Iron &amp; Trench Covers</span>
+                <div className="absolute top-full left-0 w-[720px] bg-white border-2 border-[#004AAD] shadow-2xl p-6 z-50 space-y-4">
+                  {/* Top 3 Core Categories Header Bar */}
+                  <div className="pb-3 border-b border-[#E2E8F0] flex justify-between items-center">
+                    <span className="text-xs font-mono font-bold text-[#0085F4] uppercase tracking-wider">Our Categories</span>
                     <button onClick={() => handleCategorySelect('all')} className="text-xs text-[#004AAD] hover:underline font-bold flex items-center gap-1">
                       VIEW FULL CATALOGUE <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
-                  {[
-                    { title: 'Tree Grates (Square)', desc: '4x4ft & 5x5ft expandable cast iron tree grates', id: 'tree-grates-guards' },
-                    { title: 'Tree Grates (Round)', desc: 'Radial sunburst circular cast iron tree grates', id: 'tree-grates-guards' },
-                    { title: 'Iron Tree Guards', desc: 'Heavy vertical ductile iron trunk guards', id: 'tree-grates-guards' },
-                    { title: 'ADA Wave Gratings', desc: '1/4" slot heel-proof decorative trench covers', id: 'designer-trench-gratings' },
-                    { title: 'AASHTO H-20 Grates', desc: 'Heavy vehicular ductile iron trench covers & frames', id: 'heavy-civil-drainage' },
-                    { title: 'Airport F900 Channels', desc: '900 kN proof load airport runway iron channels', id: 'heavy-civil-drainage' },
-                    { title: 'Ductile Iron Covers', desc: 'ASTM A536 80-55-06 nodular iron castings', id: 'designer-trench-gratings' },
-                    { title: 'Catch Basin Inlets', desc: 'Municipal curb inlets & manhole iron frames', id: 'heavy-civil-drainage' },
-                    { title: 'Slot Channels', desc: 'Linear slot drainage iron & stainless channels', id: 'designer-trench-gratings' },
-                    { title: 'Custom Foundry Castings', desc: 'Bespoke city crest logos & architectural patterns', id: 'designer-trench-gratings' },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => handleCategorySelect(item.id)}
-                      className="p-3 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] cursor-pointer transition-all group"
-                    >
-                      <div className="font-bold text-[#004AAD] group-hover:text-[#0085F4] flex items-center justify-between text-sm">
-                        {item.title}
-                        <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#0085F4]" />
+
+                  {/* 3 Main Featured Categories Cards */}
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { id: 'designer-trench-gratings', title: 'TRENCH GRATINGS', desc: 'ADA Heel-Proof Wave & Heavy Channel Covers' },
+                      { id: 'tree-grates-guards', title: 'TREE GRATES & GUARDS', desc: 'Square, Round & Vertical Iron Trunk Protection' },
+                      { id: 'heavy-civil-drainage', title: 'CATCH BASIN & DRAINAGE', desc: 'Curb Inlets & AASHTO H-20 / F900 Runways' }
+                    ].map((cat) => (
+                      <div
+                        key={cat.id}
+                        onClick={() => handleCategorySelect(cat.id)}
+                        className="p-3 bg-[#004AAD] text-white hover:bg-[#0085F4] cursor-pointer transition-all rounded shadow-sm group"
+                      >
+                        <div className="font-extrabold font-mono text-xs uppercase flex items-center justify-between">
+                          <span>{cat.title}</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#00BBFF]" />
+                        </div>
+                        <div className="text-[11px] text-blue-100 mt-1 leading-snug font-normal">{cat.desc}</div>
                       </div>
-                      <div className="text-xs text-[#475569] mt-0.5">{item.desc}</div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* Product Families & Types Grid */}
+                  {/* <div className="pt-2 border-t border-[#E2E8F0] font-mono text-[11px] font-bold text-[#0085F4] uppercase">
+                    Popular Equipment Lines
+                  </div>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    {[
+                      { title: 'Tree Grates (Square)', desc: '4x4ft & 5x5ft expandable cast iron tree grates', id: 'tree-grates-guards' },
+                      { title: 'Tree Grates (Round)', desc: 'Radial sunburst circular cast iron tree grates', id: 'tree-grates-guards' },
+                      { title: 'Iron Tree Guards', desc: 'Heavy vertical ductile iron trunk guards', id: 'tree-grates-guards' },
+                      { title: 'ADA Wave Gratings', desc: '1/4" slot heel-proof decorative trench covers', id: 'designer-trench-gratings' },
+                      { title: 'AASHTO H-20 Grates', desc: 'Heavy vehicular ductile iron trench covers & frames', id: 'heavy-civil-drainage' },
+                      { title: 'Airport F900 Channels', desc: '900 kN proof load airport runway iron channels', id: 'heavy-civil-drainage' },
+                      { title: 'Ductile Iron Covers', desc: 'ASTM A536 80-55-06 nodular iron castings', id: 'designer-trench-gratings' },
+                      { title: 'Catch Basin Inlets', desc: 'Municipal curb inlets & manhole iron frames', id: 'heavy-civil-drainage' },
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => handleCategorySelect(item.id)}
+                        className="p-2.5 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] cursor-pointer transition-all group"
+                      >
+                        <div className="font-bold text-[#004AAD] group-hover:text-[#0085F4] flex items-center justify-between text-xs">
+                          {item.title}
+                          <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#0085F4]" />
+                        </div>
+                        <div className="text-[11px] text-[#475569] mt-0.5 font-normal">{item.desc}</div>
+                      </div>
+                    ))}
+                  </div> */}
                 </div>
               )}
             </div>
@@ -166,8 +195,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
               <button
-                onClick={() => handleNavClick('industries')}
-                className="px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors"
+                onClick={() => { window.location.hash = '#/industries'; setActiveMegaMenu(null); }}
+                className={`px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors ${activePage === 'industries' ? 'text-[#0085F4]' : ''}`}
               >
                 INDUSTRIES
                 <ChevronDown className="w-4 h-4 text-[#0085F4]" />
@@ -192,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ].map((ind, idx) => (
                     <div
                       key={idx}
-                      onClick={() => handleNavClick('industries')}
+                      onClick={() => { window.location.hash = '#/industries'; setActiveMegaMenu(null); }}
                       className="p-2.5 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] text-xs font-bold text-[#004AAD] hover:text-[#0085F4] cursor-pointer transition-colors"
                     >
                       {ind}
@@ -209,8 +238,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
               <button
-                onClick={() => handleNavClick('solutions')}
-                className="px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors"
+                onClick={() => { window.location.hash = '#/solutions'; setActiveMegaMenu(null); }}
+                className={`px-3 py-2 flex items-center gap-1 hover:text-[#0085F4] transition-colors ${activePage === 'solutions' ? 'text-[#0085F4]' : ''}`}
               >
                 SOLUTIONS
                 <ChevronDown className="w-4 h-4 text-[#0085F4]" />
@@ -231,7 +260,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ].map((sol, idx) => (
                     <div
                       key={idx}
-                      onClick={() => handleNavClick('solutions')}
+                      onClick={() => { window.location.hash = '#/solutions'; setActiveMegaMenu(null); }}
                       className="p-2.5 bg-[#F8F8F8] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085F4] cursor-pointer transition-colors"
                     >
                       <div className="font-bold text-[#004AAD] text-xs">{sol.title}</div>
@@ -242,25 +271,33 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
-            {/* ENGINEERING */}
+            {/* STANDARDS / ENGINEERING */}
             <button
-              onClick={() => handleNavClick('technical')}
-              className="px-3 py-2 hover:text-[#0085F4] transition-colors"
+              onClick={() => { window.location.hash = '#/standards'; }}
+              className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'standards' ? 'text-[#0085F4]' : ''}`}
             >
-              ENGINEERING
+              STANDARDS
             </button>
 
-            {/* RESOURCES */}
-            <button
-              onClick={onOpenSubmittalDrawer}
-              className="px-3 py-2 hover:text-[#0085F4] transition-colors"
+            {/* CUSTOM STUDIO */}
+            {/* <button
+              onClick={() => { window.location.hash = '#/custom-studio'; }}
+              className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'custom-studio' ? 'text-[#0085F4]' : ''}`}
             >
-              RESOURCES
-            </button>
+              CUSTOM STUDIO
+            </button> */}
+
+            {/* RENTAL FLEET */}
+            {/* <button
+              onClick={() => { window.location.hash = '#/rental-fleet'; }}
+              className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'rental-fleet' ? 'text-[#0085F4]' : ''}`}
+            >
+              RENTAL FLEET
+            </button> */}
 
             {/* COMPANY */}
             <button
-              onClick={() => { onSelectPage('story'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              onClick={() => { window.location.hash = '#/story'; }}
               className={`px-3 py-2 hover:text-[#0085F4] transition-colors ${activePage === 'story' ? 'text-[#0085F4]' : ''}`}
             >
               COMPANY
@@ -305,22 +342,28 @@ export const Navbar: React.FC<NavbarProps> = ({
             Trench Unlimited Navigation
           </div>
           <div className="flex flex-col gap-2 font-bold text-[#004AAD]">
-            <button onClick={() => { onSelectPage('home'); handleNavClick('hero'); }} className="text-left py-2 hover:text-[#0085F4]">
+            <button onClick={() => { window.location.hash = '#/'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
               HOME
             </button>
-            <button onClick={() => handleCategorySelect('all')} className="text-left py-2 hover:text-[#0085F4] flex justify-between items-center">
+            <button onClick={() => { window.location.hash = '#/products'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4] flex justify-between items-center">
               PRODUCTS CATALOGUE <ChevronRight className="w-4 h-4" />
             </button>
-            <button onClick={() => handleNavClick('industries')} className="text-left py-2 hover:text-[#0085F4]">
+            <button onClick={() => { window.location.hash = '#/industries'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
               INDUSTRIES
             </button>
-            <button onClick={() => handleNavClick('solutions')} className="text-left py-2 hover:text-[#0085F4]">
+            <button onClick={() => { window.location.hash = '#/solutions'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
               SOLUTIONS
             </button>
-            <button onClick={() => handleNavClick('technical')} className="text-left py-2 hover:text-[#0085F4]">
-              ENGINEERING & STANDARDS
+            <button onClick={() => { window.location.hash = '#/standards'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
+              TECHNICAL STANDARDS
             </button>
-            <button onClick={() => { onSelectPage('story'); setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
+            <button onClick={() => { window.location.hash = '#/custom-studio'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
+              CUSTOM STUDIO
+            </button>
+            <button onClick={() => { window.location.hash = '#/rental-fleet'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
+              RENTAL FLEET
+            </button>
+            <button onClick={() => { window.location.hash = '#/story'; setMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#0085F4]">
               COMPANY STORY
             </button>
           </div>

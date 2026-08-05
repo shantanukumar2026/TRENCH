@@ -85,9 +85,17 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
           ))}
         </div>
 
-        {/* Engineering Studio Callout */}
-        <div className="bg-[#004AAD] text-white p-8 border-2 border-[#0085F4] flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
-          <div className="flex items-center gap-4">
+        {/* Engineering Studio Callout with Industrial Foundry Background */}
+        <div className="relative overflow-hidden bg-[#004AAD] text-white p-8 border-2 border-[#0085F4] flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <img
+              src="/examples/istockphoto-1313570090-2048x2048.jpg"
+              alt="Foundry Precision Casting"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="relative z-10 flex items-center gap-4">
             <div className="w-14 h-14 bg-[#0085F4] flex items-center justify-center shrink-0">
               <Compass className="w-7 h-7 text-white" />
             </div>
@@ -101,7 +109,7 @@ export const CustomFabricationStudioSection: React.FC<CustomFabricationStudioSec
           
           <button
             onClick={onRequestQuote}
-            className="bg-[#0085F4] hover:bg-[#00BBFF] text-white font-mono font-bold text-xs px-6 py-3 uppercase transition-colors shrink-0"
+            className="relative z-10 bg-[#0085F4] hover:bg-[#00BBFF] text-white font-mono font-bold text-xs px-6 py-3 uppercase transition-colors shrink-0"
           >
             REQUEST BESPOKE FOUNDRY QUOTE
           </button>

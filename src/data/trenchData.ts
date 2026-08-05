@@ -1,11 +1,14 @@
 import { Product, PrimaryCategory, Industry, DepthLevel, Hotspot, SolutionApp, AnatomyPoint, CaseStudyData } from '../types';
 
-// Image assets for iron castings, designer tree grates, and trench drainage
+// Image assets for iron castings, designer tree grates, trench drainage, and jobsite engineering
 const img01 = '/greates/TI-001.jpg'; // Architectural Square Tree Grate
 const img02 = '/greates/TI-002.JPG'; // Cast Iron Circular Sunburst Tree Grate
 const img03 = '/greates/trench-grates-vertical-view (3).jpeg'; // Vertical Iron Tree Guard
 const img04 = '/greates/trench-grate-horizontal-view (19).jpeg'; // Heavy Duty Trench Cover & Frame
 const img05 = '/greates/pre-trench-01.JPG'; // Heavy Precast & Airport Channel System
+const imgJobsiteExcavation = '/examples/Somerville-03.jpg'; // Heavy Utility Excavation Site
+const imgHeavyCasting = '/examples/istockphoto-1313570090-2048x2048.jpg'; // Industrial Foundry Casting
+const imgPipelineDrainage = '/examples/pexels-da-na-461418424-34439096.jpg'; // High-Flow Storm Infrastructure
 
 export const PRIMARY_CATEGORIES: PrimaryCategory[] = [
   {
@@ -380,7 +383,7 @@ export const CASE_STUDIES: CaseStudyData[] = [
   {
     id: 'cs-metropolitan-downtown',
     title: 'DOWNTOWN METROPOLITAN STREETSCAPE RENEWAL',
-    location: 'Chicago, IL — Urban Transit Corridor',
+    location: 'Metropolitan Transit District — Urban Transit Corridor',
     application: 'Cast Iron Tree Grates & Architectural Trench Covers',
     productsUsed: ['prod-tree-grate-sq-44', 'prod-trench-grate-ada-wave'],
     scale: '1,200 Tree Grates & 4,500 LF Trench Covers Installed',

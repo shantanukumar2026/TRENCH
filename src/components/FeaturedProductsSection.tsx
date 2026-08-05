@@ -18,15 +18,21 @@ export const FeaturedProductsSection: React.FC<FeaturedProductsSectionProps> = (
 
   const categories = [
     { id: 'all', label: 'ALL PRODUCTS' },
-    { id: 'trench-boxes', label: 'STEEL TRENCH BOXES' },
-    { id: 'hydraulic-shoring', label: 'HYDRAULIC SHORING' },
-    { id: 'slide-rail', label: 'SLIDE RAIL SYSTEMS' },
-    { id: 'drainage-grates', label: 'DRAINAGE CHANNELS' }
+    { id: 'trench-grates', label: 'TRENCH GRATINGS' },
+    { id: 'tree-grates', label: 'TREE GRATES & GUARDS' },
+    { id: 'catch-basin-drainage', label: 'CATCH BASIN & DRAINAGE' }
   ];
 
   const filteredProducts = activeTab === 'all'
     ? PRODUCTS_CATALOGUE.slice(0, 6)
-    : PRODUCTS_CATALOGUE.filter(p => p.category.toLowerCase().includes(activeTab.toLowerCase()) || p.subcategory.toLowerCase().includes(activeTab.toLowerCase())).slice(0, 6);
+    : PRODUCTS_CATALOGUE.filter(p => {
+        const catLower = p.category.toLowerCase();
+        const subLower = p.subcategory.toLowerCase();
+        if (activeTab === 'trench-grates') return catLower.includes('trench') || subLower.includes('trench');
+        if (activeTab === 'tree-grates') return catLower.includes('tree') || subLower.includes('tree');
+        if (activeTab === 'catch-basin-drainage') return catLower.includes('drainage') || catLower.includes('basin') || subLower.includes('civil') || catLower.includes('civil');
+        return catLower.includes(activeTab.toLowerCase());
+      }).slice(0, 6);
 
   return (
     <section id="featured-products" className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0] relative">

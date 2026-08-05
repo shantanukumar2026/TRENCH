@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProductFinderSection } from './components/ProductFinderSection';
@@ -31,11 +31,14 @@ import { SubmittalDrawer } from './components/SubmittalDrawer';
 import { RequestQuoteModal } from './components/RequestQuoteModal';
 import { ProductModal } from './components/ProductModal';
 import { ProductComparisonModal } from './components/ProductComparisonModal';
+import { HomePageTwo } from './components/HomePageTwo';
+import { NotFoundPage } from './components/NotFoundPage';
+import { MaintenancePage } from './components/MaintenancePage';
 import { Product } from './types';
 import { PRODUCTS_CATALOGUE } from './data/trenchData';
 
 export function App() {
-  const [activePage, setActivePage] = useState<'home' | 'products' | 'product' | 'story'>('home');
+  const [activePage, setActivePage] = useState<'home' | 'home-two' | 'products' | 'product' | 'solutions' | 'industries' | 'standards' | 'custom-studio' | 'rental-fleet' | 'story' | 'maintenance' | '404'>('home');
   const [activeProductPage, setActiveProductPage] = useState<Product | null>(null);
 
   const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
@@ -50,8 +53,55 @@ export function App() {
   const [comparedProductIds, setComparedProductIds] = useState<string[]>([]);
   const [comparisonModalOpen, setComparisonModalOpen] = useState<boolean>(false);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const rawHash = window.location.hash || '#/';
+      const hash = rawHash.toLowerCase();
+
+      if (hash.startsWith('#/product/')) {
+        const prodId = rawHash.replace('#/product/', '').split('?')[0].trim();
+        const foundProduct = PRODUCTS_CATALOGUE.find(p => p.id === prodId || p.partNumber.toLowerCase() === prodId.toLowerCase());
+        if (foundProduct) {
+          setActiveProductPage(foundProduct);
+          setActivePage('product');
+        } else {
+          setActivePage('404');
+        }
+      } else if (hash.includes('home-two') || hash.includes('home2') || hash.includes('orange')) {
+        setActivePage('home-two');
+      } else if (hash.startsWith('#/products') || hash.includes('catalogue')) {
+        setActivePage('products');
+      } else if (hash.startsWith('#/solutions')) {
+        setActivePage('solutions');
+      } else if (hash.startsWith('#/industries')) {
+        setActivePage('industries');
+      } else if (hash.startsWith('#/standards') || hash.includes('technical')) {
+        setActivePage('standards');
+      } else if (hash.startsWith('#/custom-studio') || hash.includes('custom')) {
+        setActivePage('custom-studio');
+      } else if (hash.startsWith('#/rental-fleet') || hash.includes('rental')) {
+        setActivePage('rental-fleet');
+      } else if (hash.startsWith('#/story') || hash.includes('about') || hash.includes('company')) {
+        setActivePage('story');
+      } else if (hash.startsWith('#/maintenance')) {
+        setActivePage('maintenance');
+      } else if (hash === '#/' || hash === '#/home' || hash === '' || hash.includes('home1') || hash.includes('default')) {
+        setActivePage('home');
+      } else if (hash.startsWith('#/404')) {
+        setActivePage('404');
+      } else {
+        setActivePage('404');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     if (activePage !== 'home') {
+      window.location.hash = '#/';
       setActivePage('home');
     }
     setTimeout(() => {
@@ -66,12 +116,14 @@ export function App() {
 
   const handleOpenProductsPage = (catId: string = 'all') => {
     setSelectedCategoryFilter(catId);
+    window.location.hash = '#/products';
     setActivePage('products');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenProductPage = (product: Product) => {
     setActiveProductPage(product);
+    window.location.hash = `#/product/${product.id}`;
     setActivePage('product');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -99,9 +151,9 @@ export function App() {
     <div className="min-h-screen bg-white text-[#004AAD] font-body selection:bg-[#0085F4] selection:text-white">
       {/* Primary Fixed Navbar */}
       <Navbar
-        activePage={activePage === 'story' ? 'story' : activePage === 'products' ? 'products' : 'home'}
+        activePage={activePage === 'product' ? 'products' : activePage}
         onSelectPage={(page) => {
-          setActivePage(page as any);
+          setActivePage(page);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onOpenQuoteModal={() => { setQuoteInitialProduct(null); setQuoteModalOpen(true); }}
@@ -110,7 +162,18 @@ export function App() {
       />
 
       {/* Dynamic View Rendering */}
-      {activePage === 'products' ? (
+      {activePage === 'home-two' ? (
+        <HomePageTwo
+          onExploreProducts={() => handleOpenProductsPage('all')}
+          onTalkToExpert={() => setQuoteModalOpen(true)}
+          onSelectCategory={(catId) => handleOpenProductsPage(catId)}
+          onSelectProduct={handleOpenProductPage}
+          onRequestQuote={(p) => p ? handleRequestQuoteForProduct(p) : setQuoteModalOpen(true)}
+          onExploreAll={() => handleOpenProductsPage('all')}
+          onOpenSubmittalDrawer={() => setSubmittalDrawerOpen(true)}
+          onNavigateToSection={scrollToSection}
+        />
+      ) : activePage === 'products' ? (
         <main>
           <ProductsPage
             selectedCategoryFilter={selectedCategoryFilter}
@@ -131,6 +194,37 @@ export function App() {
             onSelectRelatedProduct={handleOpenProductPage}
           />
         </main>
+      ) : activePage === 'solutions' ? (
+        <main className="pt-24">
+          <Solutions
+            onSelectSolution={(sId) => handleOpenProductsPage('all')}
+            onOpenDocLink={() => setSubmittalDrawerOpen(true)}
+          />
+        </main>
+      ) : activePage === 'industries' ? (
+        <main className="pt-24">
+          <IndustriesView
+            onSelectCategory={(cId) => handleOpenProductsPage(cId)}
+          />
+        </main>
+      ) : activePage === 'standards' ? (
+        <main className="pt-24">
+          <TechnicalStandards
+            onOpenDocLibrary={() => setSubmittalDrawerOpen(true)}
+          />
+        </main>
+      ) : activePage === 'custom-studio' ? (
+        <main className="pt-24">
+          <CustomFabricationStudioSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+        </main>
+      ) : activePage === 'rental-fleet' ? (
+        <main className="pt-24">
+          <RentalFleetSection
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+        </main>
       ) : activePage === 'story' ? (
         <main>
           <TrenchStory
@@ -141,6 +235,21 @@ export function App() {
           <FinalCTA
             onRequestQuote={() => setQuoteModalOpen(true)}
             onTalkToTeam={() => setQuoteModalOpen(true)}
+          />
+        </main>
+      ) : activePage === 'maintenance' ? (
+        <main className="pt-24">
+          <MaintenancePage
+            onNavigateHome={() => { window.location.hash = '#/'; setActivePage('home'); }}
+            onRequestQuote={() => setQuoteModalOpen(true)}
+          />
+        </main>
+      ) : activePage === '404' ? (
+        <main className="pt-24">
+          <NotFoundPage
+            onNavigateHome={() => { window.location.hash = '#/'; setActivePage('home'); }}
+            onNavigateProducts={() => handleOpenProductsPage('all')}
+            onRequestQuote={() => setQuoteModalOpen(true)}
           />
         </main>
       ) : (

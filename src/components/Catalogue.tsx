@@ -52,13 +52,13 @@ export const Catalogue: React.FC<CatalogueProps> = ({
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F0F7FF] border border-[#0085F4] text-xs font-mono font-bold text-[#004AAD]">
               <ShieldCheck className="w-4 h-4 text-[#0085F4]" />
-              <span>OSHA 1926 SUBPART P CERTIFIED — 1000+ PRODUCTS CATALOGUE</span>
+              <span>AASHTO M306 &amp; ASTM A536 FOUNDRY CATALOGUE</span>
             </div>
             <h2 className="text-section-title text-[#004AAD] uppercase">
-              TRENCH EQUIPMENT <span className="text-[#0085F4]">CATALOGUE</span>
+              TRENCH PRODUCTS <span className="text-[#0085F4]">CATALOGUE</span>
             </h2>
-            <p className="text-body-large text-[#475569] max-w-xl">
-              Explore <strong>1,000+ products</strong> — engineered trench shoring boxes, hydraulic shores, slide rail panels, access ladders, tree grates, and road plates.
+            <p className="text-body-large text-[#475569] max-w-xl font-medium">
+              Explore engineered trench covers, ADA heel-proof gratings, urban cast iron tree grates, and heavy duty airport drainage channels.
             </p>
           </div>
 

@@ -7,10 +7,10 @@ interface RentalFleetSectionProps {
 
 export const RentalFleetSection: React.FC<RentalFleetSectionProps> = ({ onRequestQuote }) => {
   const yards = [
-    { region: 'EAST COAST FOUNDRY HUB', city: 'Philadelphia, PA', status: 'In Stock', fleet: '4,500+ Cast Iron Tree Grates & Covers' },
-    { region: 'MIDWEST CENTRAL DISTRIBUTION', city: 'Chicago, IL', status: 'In Stock', fleet: '6,200+ Ductile Iron H-20 Gratings' },
-    { region: 'SOUTHERN REGIONAL METALS', city: 'Houston, TX', status: 'In Stock', fleet: '3,800+ ADA Architectural Trench Covers' },
-    { region: 'WEST COAST METRO WAREHOUSE', city: 'Sacramento, CA', status: 'In Stock', fleet: '2,900+ Class F900 Airport Channels' }
+    { region: 'EAST COAST FOUNDRY HUB', city: 'East Coast Yard', status: 'In Stock', fleet: '4,500+ Cast Iron Tree Grates & Covers' },
+    { region: 'MIDWEST CENTRAL DISTRIBUTION', city: 'Midwest Hub', status: 'In Stock', fleet: '6,200+ Ductile Iron H-20 Gratings' },
+    { region: 'SOUTHERN REGIONAL METALS', city: 'Southern Yard', status: 'In Stock', fleet: '3,800+ ADA Architectural Trench Covers' },
+    { region: 'WEST COAST METRO WAREHOUSE', city: 'West Coast Hub', status: 'In Stock', fleet: '2,900+ Class F900 Airport Channels' }
   ];
 
   return (

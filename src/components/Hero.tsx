@@ -8,17 +8,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert }) => {
   return (
-    <section id="hero" className="relative pt-28 pb-12 min-h-[calc(100vh-80px)] flex items-center bg-[#0B192C] bg-industrial-grid-dark border-b border-[#0085F4]/30 overflow-hidden text-white">
+    <section id="hero" className="relative pt-36 md:pt-40 pb-16 min-h-[calc(100vh-80px)] flex items-center bg-[#0B192C] bg-industrial-grid-dark border-b border-[#0085F4]/30 overflow-hidden text-white">
       {/* Background Radial Glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0085F4]/15 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-[#00BBFF]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="container-industrial relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Bold Copy & CTAs */}
           <div className="lg:col-span-6 space-y-5">
-            
+
             {/* American Foundry Eyebrow */}
             <div className="flex items-center gap-2.5 whitespace-nowrap overflow-x-auto scrollbar-none">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-[#00BBFF]/40 backdrop-blur-md shrink-0">
@@ -53,20 +53,20 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
             </p>
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={onExploreProducts} 
-                className="btn-brand-primary py-3 px-6 text-sm"
+            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={onExploreProducts}
+                className="btn-brand-primary py-2.5 px-5 text-xs font-mono font-extrabold tracking-wider"
               >
                 <span>EXPLORE CAST IRON PRODUCTS</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </button>
 
-              <button 
-                onClick={onTalkToExpert} 
-                className="btn-brand-secondary bg-white/10 text-white border-[#0085F4] hover:bg-white/20 py-3 px-6 text-sm"
+              <button
+                onClick={onTalkToExpert}
+                className="btn-brand-secondary bg-white/10 text-white border-[#0085F4] hover:bg-white py-2.5 px-5 text-xs font-mono font-extrabold tracking-wider"
               >
-                <Phone className="w-4 h-4 text-[#00BBFF]" />
+                <Phone className="w-3.5 h-3.5 text-[#00BBFF]" />
                 <span>REQUEST FOUNDRY QUOTE</span>
               </button>
             </div>
@@ -92,13 +92,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onTalkToExpert })
           {/* Right Column: High-Impact Site Media & Floating Telemetry Card */}
           <div className="lg:col-span-6 relative">
             <div className="relative border-2 border-[#0085F4]/40 bg-[#0B192C] shadow-[0_25px_60px_rgba(0,74,173,0.4)] overflow-hidden group">
-              
-              <video 
-                src="/greates/hero-section-video.mp4"
+
+              <video
+                src="/greates/hero-section-video12.mp4"
                 poster="/greates/trench-grate-horizontal-view (19).jpeg"
-                autoPlay 
-                loop 
-                muted 
+                autoPlay
+                loop
+                muted
                 playsInline
                 className="w-full h-[420px] object-cover"
               />
